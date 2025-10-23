@@ -1,0 +1,103 @@
+version: '3.8'
+
+services:
+  # ASR Whisper Service (Speech-to-Text)
+  asr-whisper:
+    build:
+      context: ./services/asr_whisper
+      dockerfile: Dockerfile
+    container_name: ekho-asr
+    ports:
+      - "8001:8001"
+    environment:
+      - WHISPER_MODEL=base
+      - WHISPER_DEVICE=cpu
+    volumes:
+      - whisper-models:/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - ekho-network
+
+  # NMT Service (Translation)
+  nmt:
+    build:
+      context: ./services/nmt
+      dockerfile: Dockerfile
+    container_name: ekho-nmt
+    ports:
+      - "8002:8002"
+    environment:
+      - NMT_MODEL_NAME=Helsinki-NLP/opus-mt-en-fr
+      - NMT_DEVICE=cpu
+    volumes:
+      - nmt-models:/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - ekho-network
+
+  # TTS Service (Text-to-Speech with Voice Cloning)
+  tts:
+    build:
+      context: ./services/tts
+      dockerfile: Dockerfile
+    container_name: ekho-tts
+    ports:
+      - "8003:8003"
+    environment:
+      - TTS_ENGINE=coqui
+      - TTS_DEVICE=cpu
+    volumes:
+      - tts-models:/models
+      - tts-voices:/voices
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+    networks:
+      - ekho-network
+
+  # EKHO API Orchestrator
+  ekho-api:
+    build:
+      context: ./packages/ekho_api
+      dockerfile: Dockerfile
+    container_name: ekho-api
+    ports:
+      - "8000:8000"
+    environment:
+      - EKHO_ASR_SERVICE_URL=http://asr-whisper:8001
+      - EKHO_NMT_SERVICE_URL=http://nmt:8002
+      - EKHO_TTS_SERVICE_URL=http://tts:8003
+    depends_on:
+      - asr-whisper
+      - nmt
+      - tts
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ekho-network
+
+volumes:
+  whisper-models:
+  nmt-models:
+  tts-models:
+  tts-voices:
+
+networks:
+  ekho-network:
+    driver: bridge
