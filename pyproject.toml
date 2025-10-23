@@ -9,10 +9,11 @@ line_length = 100
 [tool.ruff]
 line-length = 100
 target-version = "py313"
+exclude = ["venv",".venv",".git",".vscode"]
+
+[tool.ruff.lint]
 select = ["E","F","I","UP","B"]
 ignore = ["E501"]
-fix = true
-exclude = ["venv",".venv",".git",".vscode"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
