@@ -1,10 +1,10 @@
 {
-  "python.defaultInterpreterPath": ".venv/bin/python",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "always",
-    "source.organizeImports": "always"
-  },
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.organizeImports": "always"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
 }
