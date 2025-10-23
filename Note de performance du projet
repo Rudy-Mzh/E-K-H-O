@@ -1,0 +1,22 @@
+Composants requis:
+
+  1. Extraction vidéo/audio
+    - Séparer la piste audio de la vidéo
+    - Extraire les timestamps précis
+  2. ASR avec timestamps (Whisper)
+    - Transcription EN → texte
+    - Timestamps word-level (quand chaque mot commence/finit)
+  3. Traduction contextuelle (NMT)
+    - EN → FR avec préservation du contexte
+    - Idéalement avec ajustement de longueur
+  4. Voice cloning + TTS
+    - Analyse de la voix source
+    - Génération FR avec la voix clonée
+    - Préservation du timing (durée similaire)
+  5. Lip-sync / Timing alignment ⚠️ Composant complexe
+    - Synchronisation audio/vidéo
+    - Ajustement de la vitesse si nécessaire
+    - Mapping phonétique pour mouvement des lèvres
+  6. Remixage vidéo final
+    - Remplacer la piste audio
+    - Synchronisation parfaite
