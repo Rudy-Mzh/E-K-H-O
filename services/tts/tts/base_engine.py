@@ -26,25 +26,11 @@ class BaseTTSEngine(ABC):
         Args:
             text: Text to synthesize
             output_path: Path for output audio file
-            reference_audio: Optional reference audio for voice cloning
+            reference_audio: Optional reference audio (ignored in no-cloning version)
             language: Target language code
 
         Returns:
             Path to generated audio file
-        """
-        pass
-
-    @abstractmethod
-    def clone_voice(self, reference_audio: str | Path, voice_id: str) -> str:
-        """
-        Clone voice from reference audio.
-
-        Args:
-            reference_audio: Path to reference audio file
-            voice_id: Identifier for the cloned voice
-
-        Returns:
-            Voice ID for future synthesis
         """
         pass
 
