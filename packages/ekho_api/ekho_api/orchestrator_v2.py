@@ -5,11 +5,7 @@ from pathlib import Path
 
 import httpx
 from ekho_api.config import EkhoAPIConfig
-from ekho_core.audio import (
-    combine_audio_video,
-    extract_audio_from_video,
-    extract_voice_sample_for_cloning,
-)
+from ekho_core.audio import combine_audio_video, extract_audio_from_video
 
 logger = logging.getLogger(__name__)
 
@@ -66,16 +62,15 @@ class SegmentedDubbingOrchestrator:
         """
         Complete segmented video dubbing pipeline.
 
-        NEW Workflow:
+        Simplified Workflow (NO voice cloning):
         1. Extract audio from video
-        2. Extract voice sample for cloning (15s)
-        3. **SEGMENT audio by pauses** (VAD)
-        4. **Transcribe EACH segment** (ASR per segment)
-        5. **Analyze GLOBAL context** (LLM Pass #1)
-        6. **Translate EACH segment with context** (LLM Pass #2 per segment)
-        7. **Synthesize EACH segment** (TTS per segment with timing)
-        8. **Assemble segments at correct timestamps**
-        9. Combine final audio with video
+        2. **SEGMENT audio by pauses** (VAD)
+        3. **Transcribe EACH segment** (ASR per segment)
+        4. **Analyze GLOBAL context** (LLM Pass #1)
+        5. **Translate EACH segment with context** (LLM Pass #2 per segment)
+        6. **Synthesize EACH segment** (TTS per segment - default voice)
+        7. **Assemble segments at correct timestamps**
+        8. Combine final audio with video
 
         Args:
             video_path: Path to input video
@@ -98,25 +93,16 @@ class SegmentedDubbingOrchestrator:
 
         try:
             # Step 1: Extract audio from video
-            logger.info("Step 1/9: Extracting audio from video")
+            logger.info("Step 1/8: Extracting audio from video")
             audio_path = extract_audio_from_video(video_path)
 
-            # Step 2: Extract voice sample for cloning
-            logger.info("Step 2/9: Extracting voice sample for cloning")
-            voice_sample = extract_voice_sample_for_cloning(
-                audio_path,
-                start_time=0.0,
-                duration=15.0,
-            )
-            logger.info(f"Voice sample ready: {voice_sample}")
-
-            # Step 3: Segment audio by pauses (VAD)
-            logger.info("Step 3/9: Segmenting audio by pauses (VAD)")
+            # Step 2: Segment audio by pauses (VAD)
+            logger.info("Step 2/8: Segmenting audio by pauses (VAD)")
             segments = await self._segment_audio(audio_path)
             logger.info(f"Found {len(segments)} speech segments")
 
-            # Step 4: Transcribe EACH segment
-            logger.info("Step 4/9: Transcribing each segment")
+            # Step 3: Transcribe EACH segment
+            logger.info("Step 3/8: Transcribing each segment")
             transcribed_segments = await self._transcribe_segments(
                 audio_path, segments, source_lang
             )
@@ -125,29 +111,27 @@ class SegmentedDubbingOrchestrator:
             full_transcript = " ".join([seg["text"] for seg in transcribed_segments])
             logger.info(f"Full transcript: {len(full_transcript)} chars")
 
-            # Step 5: Analyze GLOBAL context (LLM Pass #1)
-            logger.info("Step 5/9: Analyzing global context with LLM")
+            # Step 4: Analyze GLOBAL context (LLM Pass #1)
+            logger.info("Step 4/8: Analyzing global context with LLM")
             context = await self._analyze_context(full_transcript, source_lang, target_lang)
             logger.info(f"Context analyzed: {len(context)} chars")
 
-            # Step 6: Translate EACH segment with context (LLM Pass #2)
-            logger.info("Step 6/9: Translating each segment with context")
+            # Step 5: Translate EACH segment with context (LLM Pass #2)
+            logger.info("Step 5/8: Translating each segment with context")
             translated_segments = await self._translate_segments(
                 transcribed_segments, context, source_lang, target_lang
             )
 
-            # Step 7: Synthesize EACH segment (TTS)
-            logger.info("Step 7/9: Synthesizing each segment with voice cloning")
-            audio_segments = await self._synthesize_segments(
-                translated_segments, voice_sample, target_lang
-            )
+            # Step 6: Synthesize EACH segment (TTS with default voice)
+            logger.info("Step 6/8: Synthesizing each segment with default voice")
+            audio_segments = await self._synthesize_segments(translated_segments, target_lang)
 
-            # Step 8: Assemble segments at correct timestamps
-            logger.info("Step 8/9: Assembling audio timeline")
+            # Step 7: Assemble segments at correct timestamps
+            logger.info("Step 7/8: Assembling audio timeline")
             final_audio = await self._assemble_audio_timeline(audio_segments, audio_path)
 
-            # Step 9: Combine with video
-            logger.info("Step 9/9: Combining audio with video")
+            # Step 8: Combine with video
+            logger.info("Step 8/8: Combining audio with video")
             dubbed_video = combine_audio_video(video_path, final_audio, output_path)
 
             logger.info(f"Segmented dubbing complete: {dubbed_video}")
@@ -257,10 +241,8 @@ class SegmentedDubbingOrchestrator:
 
         return translated
 
-    async def _synthesize_segments(
-        self, segments: list[dict], voice_sample: Path, language: str
-    ) -> list[dict]:
-        """Synthesize each segment with voice cloning."""
+    async def _synthesize_segments(self, segments: list[dict], language: str) -> list[dict]:
+        """Synthesize each segment with default TTS voice (no cloning)."""
         synthesized = []
 
         for i, segment in enumerate(segments):
@@ -268,12 +250,10 @@ class SegmentedDubbingOrchestrator:
 
             data = {"text": segment["text"], "language": language}
 
-            with open(voice_sample, "rb") as f:
-                files = {"reference_audio": (voice_sample.name, f, "audio/wav")}
-                response = await self.client.post(
-                    f"{self.config.tts_service_url}/synthesize", data=data, files=files
-                )
-                response.raise_for_status()
+            response = await self.client.post(
+                f"{self.config.tts_service_url}/synthesize", data=data
+            )
+            response.raise_for_status()
 
             # Save segment audio
             segment_audio_path = Path(f"/tmp/ekho/segment_{i}_{language}.wav")
