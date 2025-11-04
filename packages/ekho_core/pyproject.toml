@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ekho-core"
 version = "0.1.0"
 description = "Core utilities for EKHO voice translation platform"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "pydantic>=2.0",
     "pydub>=0.25.1",

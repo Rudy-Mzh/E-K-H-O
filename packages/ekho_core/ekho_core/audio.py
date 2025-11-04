@@ -4,9 +4,11 @@ import logging
 from pathlib import Path
 
 import ffmpeg
-from pydub import AudioSegment as PydubAudioSegment
 
-from ekho_core.models import AudioSegment, TimeRange
+# Note: pydub requires pyaudioop which is not available in Python 3.13
+# Commenting out pydub-related functions for now
+# from pydub import AudioSegment as PydubAudioSegment
+# from ekho_core.models import AudioSegment, TimeRange
 
 logger = logging.getLogger(__name__)
 
@@ -62,80 +64,81 @@ def extract_audio_from_video(
         raise
 
 
-def load_audio(
-    audio_path: str | Path, start_time: float | None = None, end_time: float | None = None
-) -> AudioSegment:
+# Note: Commenting out pydub-dependent functions (not used in main pipeline)
+# def load_audio(
+#     audio_path: str | Path, start_time: float | None = None, end_time: float | None = None
+# ) -> AudioSegment:
+#     """Load audio file and return AudioSegment model."""
+#     pass
+#
+# def save_audio(
+#     audio: PydubAudioSegment,
+#     output_path: str | Path,
+#     format: str = "wav",
+#     sample_rate: int | None = None,
+# ) -> Path:
+#     """Save pydub AudioSegment to file."""
+#     pass
+
+
+def extract_voice_sample_for_cloning(
+    audio_path: str | Path,
+    output_path: str | Path | None = None,
+    start_time: float = 0.0,
+    duration: float = 15.0,
+) -> Path:
     """
-    Load audio file and return AudioSegment model.
+    Extract optimal voice sample for cloning from audio file.
+
+    For best voice cloning with Coqui XTTS-v2:
+    - Use 6-30 seconds of clean speech
+    - Prefer the beginning where speaker introduces themselves
+    - Avoid music, background noise, or multiple speakers
 
     Args:
-        audio_path: Path to audio file
-        start_time: Optional start time in seconds to load from
-        end_time: Optional end time in seconds to load until
+        audio_path: Path to source audio file
+        output_path: Path for output sample (default: audio_path_sample.wav)
+        start_time: Start time in seconds (default: 0.0)
+        duration: Duration in seconds (default: 15.0, optimal for XTTS-v2)
 
     Returns:
-        AudioSegment with metadata
+        Path to extracted voice sample
 
     Raises:
         FileNotFoundError: If audio file doesn't exist
+        ffmpeg.Error: If ffmpeg processing fails
     """
     audio_path = Path(audio_path)
     if not audio_path.exists():
         raise FileNotFoundError(f"Audio file not found: {audio_path}")
 
-    logger.info(f"Loading audio from {audio_path}")
+    if output_path is None:
+        output_path = audio_path.parent / f"{audio_path.stem}_voice_sample.wav"
+    else:
+        output_path = Path(output_path)
 
-    # Load using pydub
-    audio = PydubAudioSegment.from_file(str(audio_path))
-
-    # Extract segment if times specified
-    if start_time is not None or end_time is not None:
-        start_ms = int(start_time * 1000) if start_time else 0
-        end_ms = int(end_time * 1000) if end_time else len(audio)
-        audio = audio[start_ms:end_ms]
-
-    time_range = None
-    if start_time is not None and end_time is not None:
-        time_range = TimeRange(start=start_time, end=end_time)
-
-    return AudioSegment(
-        audio_path=str(audio_path),
-        time_range=time_range,
-        sample_rate=audio.frame_rate,
-        channels=audio.channels,
-        duration=len(audio) / 1000.0,  # Convert ms to seconds
+    logger.info(
+        f"Extracting voice sample for cloning: {start_time}s-{start_time+duration}s "
+        f"from {audio_path.name}"
     )
 
+    try:
+        stream = ffmpeg.input(str(audio_path), ss=start_time, t=duration)
+        stream = ffmpeg.output(
+            stream.audio,
+            str(output_path),
+            acodec="pcm_s16le",
+            ar=22050,  # 22kHz is optimal for XTTS-v2
+            ac=1,  # mono
+            af="loudnorm",  # Normalize loudness for better cloning
+        )
+        ffmpeg.run(stream, overwrite_output=True, capture_stdout=True, capture_stderr=True)
+        logger.info(f"Voice sample extracted: {output_path}")
+        return output_path
 
-def save_audio(
-    audio: PydubAudioSegment,
-    output_path: str | Path,
-    format: str = "wav",
-    sample_rate: int | None = None,
-) -> Path:
-    """
-    Save pydub AudioSegment to file.
-
-    Args:
-        audio: Pydub AudioSegment object
-        output_path: Path for output file
-        format: Audio format (wav, mp3, etc.)
-        sample_rate: Optional target sample rate (resamples if different)
-
-    Returns:
-        Path to saved audio file
-    """
-    output_path = Path(output_path)
-    logger.info(f"Saving audio to {output_path}")
-
-    # Resample if needed
-    if sample_rate and audio.frame_rate != sample_rate:
-        logger.info(f"Resampling from {audio.frame_rate}Hz to {sample_rate}Hz")
-        audio = audio.set_frame_rate(sample_rate)
-
-    audio.export(str(output_path), format=format)
-    logger.info(f"Successfully saved audio to {output_path}")
-    return output_path
+    except ffmpeg.Error as e:
+        logger.error(f"FFmpeg error: {e.stderr.decode() if e.stderr else str(e)}")
+        raise
 
 
 def combine_audio_video(

@@ -1,12 +1,50 @@
 """Translation engine - isolated business logic."""
 
 import logging
+import re
 
 from ekho_core.models import TranslationResult
 from nmt.config import NMTConfig, get_device, get_model_for_pair
 from transformers import MarianMTModel, MarianTokenizer
 
 logger = logging.getLogger(__name__)
+
+
+def post_process_translation(text: str, target_lang: str) -> str:
+    """
+    Post-process translated text for more natural, concise output.
+
+    Args:
+        text: Translated text to post-process
+        target_lang: Target language code
+
+    Returns:
+        Post-processed text
+    """
+    # Remove extra whitespace
+    text = re.sub(r"\s+", " ", text).strip()
+
+    # Fix common issues with French translations
+    if target_lang == "fr":
+        # Fix spacing before punctuation (French typography)
+        text = re.sub(r"\s+([?!:;])", r"\1", text)
+        text = re.sub(r"([?!:;])", r" \1", text)
+        text = re.sub(r"\s+([.,])", r"\1", text)
+
+        # Remove redundant words that make translation longer
+        # (Common in literal translations)
+        text = re.sub(r"\bainsi que\b", "et", text)  # "ainsi que" → "et"
+        text = re.sub(r"\bafin de\b", "pour", text)  # "afin de" → "pour"
+        text = re.sub(r"\ben ce qui concerne\b", "pour", text)
+
+    # Remove duplicate punctuation
+    text = re.sub(r"([.!?])\1+", r"\1", text)
+
+    # Ensure sentence starts with capital letter
+    if text and not text[0].isupper():
+        text = text[0].upper() + text[1:]
+
+    return text
 
 
 class TranslationEngine:
@@ -113,17 +151,26 @@ class TranslationEngine:
             # Move inputs to device
             inputs = {k: v.to(self.device) for k, v in inputs.items()}
 
-            # Generate translation
+            # Generate translation with optimized parameters for natural, contextual output
             translated_tokens = self.model.generate(
                 **inputs,
                 max_length=self.config.max_length,
                 num_beams=self.config.num_beams,
                 temperature=self.config.temperature,
                 do_sample=self.config.do_sample,
+                top_k=self.config.top_k,
+                top_p=self.config.top_p,
+                repetition_penalty=self.config.repetition_penalty,
+                length_penalty=self.config.length_penalty,
+                early_stopping=True,  # Stop when all beams finish
+                no_repeat_ngram_size=3,  # Avoid repeating 3-grams
             )
 
             # Decode translation
             translated_text = self.tokenizer.decode(translated_tokens[0], skip_special_tokens=True)
+
+            # Post-process for more natural, concise output
+            translated_text = post_process_translation(translated_text, target_lang)
 
             logger.info(f"Translation complete: {len(translated_text)} chars")
 
@@ -187,19 +234,27 @@ class TranslationEngine:
             # Move inputs to device
             inputs = {k: v.to(self.device) for k, v in inputs.items()}
 
-            # Generate translations
+            # Generate translations with optimized parameters
             translated_tokens = self.model.generate(
                 **inputs,
                 max_length=self.config.max_length,
                 num_beams=self.config.num_beams,
                 temperature=self.config.temperature,
                 do_sample=self.config.do_sample,
+                top_k=self.config.top_k,
+                top_p=self.config.top_p,
+                repetition_penalty=self.config.repetition_penalty,
+                length_penalty=self.config.length_penalty,
+                early_stopping=True,
+                no_repeat_ngram_size=3,
             )
 
             # Decode all translations
             results = []
             for i, tokens in enumerate(translated_tokens):
                 translated_text = self.tokenizer.decode(tokens, skip_special_tokens=True)
+                # Post-process for more natural output
+                translated_text = post_process_translation(translated_text, target_lang)
                 results.append(
                     TranslationResult(
                         source_text=texts[i],

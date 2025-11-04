@@ -19,11 +19,19 @@ class NMTConfig(BaseSettings):
     )
     device: str = Field(default="auto", description="Device to use (cpu, cuda, auto)")
 
-    # Translation settings
+    # Translation settings (optimized for natural, contextual translations)
     max_length: int = Field(default=512, description="Maximum translation length in tokens")
-    num_beams: int = Field(default=4, description="Number of beams for beam search")
-    temperature: float = Field(default=1.0, description="Sampling temperature")
-    do_sample: bool = Field(default=False, description="Whether to use sampling")
+    num_beams: int = Field(
+        default=6, description="Number of beams for beam search (higher=better quality)"
+    )
+    temperature: float = Field(default=0.8, description="Sampling temperature (lower=more focused)")
+    do_sample: bool = Field(default=True, description="Use sampling for more natural translations")
+    top_k: int = Field(default=50, description="Top-k sampling for diversity")
+    top_p: float = Field(default=0.92, description="Nucleus sampling threshold")
+    repetition_penalty: float = Field(default=1.2, description="Penalty for repetitions")
+    length_penalty: float = Field(
+        default=0.8, description="Penalty for length (lower=more concise)"
+    )
 
     # Service settings
     service_host: str = Field(default="0.0.0.0", description="Service host")

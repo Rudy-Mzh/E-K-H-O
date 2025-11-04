@@ -85,15 +85,23 @@ class CoquiTTSEngine(BaseTTSEngine):
         )
 
         try:
-            # Generate speech with voice cloning
+            # Generate speech with voice cloning and optimized parameters
+            logger.info("Synthesizing with optimized Coqui XTTS-v2 parameters")
             self.model.tts_to_file(
                 text=text,
                 file_path=str(output_path),
                 speaker_wav=str(reference_audio),
                 language=language,
+                # Optimized parameters for best voice cloning quality:
+                temperature=0.75,  # Lower = more stable, higher = more expressive
+                length_penalty=1.0,  # Consistent speech speed
+                repetition_penalty=5.0,  # Avoid repetitions
+                top_k=50,  # Limit vocabulary for more natural speech
+                top_p=0.85,  # Nucleus sampling for better quality
+                speed=1.0,  # Natural speed
             )
 
-            logger.info(f"Speech synthesized successfully: {output_path}")
+            logger.info(f"Speech synthesized successfully with optimized parameters: {output_path}")
             return output_path
 
         except Exception as e:

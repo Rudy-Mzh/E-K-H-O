@@ -1,0 +1,15 @@
+#!/bin/bash
+# Stop all EKHO services
+
+echo "======================================================================"
+echo "  Stopping EKHO Services"
+echo "======================================================================"
+
+pkill -f "asr.api" && echo "  ✅ ASR stopped" || echo "  ℹ️  ASR not running"
+pkill -f "nmt.api" && echo "  ✅ NMT stopped" || echo "  ℹ️  NMT not running"
+pkill -f "tts.api" && echo "  ✅ TTS stopped" || echo "  ℹ️  TTS not running"
+pkill -f "ekho_api.api" && echo "  ✅ Orchestrator stopped" || echo "  ℹ️  Orchestrator not running"
+
+echo "======================================================================"
+echo "  All EKHO services stopped"
+echo "======================================================================"

@@ -5,7 +5,11 @@ from pathlib import Path
 
 import httpx
 from ekho_api.config import EkhoAPIConfig
-from ekho_core.audio import combine_audio_video, extract_audio_from_video
+from ekho_core.audio import (
+    combine_audio_video,
+    extract_audio_from_video,
+    extract_voice_sample_for_cloning,
+)
 from ekho_core.models import TranscriptionResult, TranslationResult
 
 logger = logging.getLogger(__name__)
@@ -138,16 +142,18 @@ class DubbingOrchestrator:
         if voice_id:
             data["voice_id"] = voice_id
 
-        files = {}
+        # Make request with file upload if needed
         if reference_audio and not voice_id:
             reference_audio = Path(reference_audio)
             with open(reference_audio, "rb") as f:
-                files["reference_audio"] = (reference_audio.name, f, "audio/wav")
-
-        # Make request
-        response = await self.client.post(
-            f"{self.config.tts_service_url}/synthesize", data=data, files=files if files else None
-        )
+                files = {"reference_audio": (reference_audio.name, f, "audio/wav")}
+                response = await self.client.post(
+                    f"{self.config.tts_service_url}/synthesize", data=data, files=files
+                )
+        else:
+            response = await self.client.post(
+                f"{self.config.tts_service_url}/synthesize", data=data
+            )
         response.raise_for_status()
 
         # Save synthesized audio
@@ -198,32 +204,43 @@ class DubbingOrchestrator:
 
         try:
             # Step 1: Extract audio from video
-            logger.info("Step 1/5: Extracting audio from video")
+            logger.info("Step 1/6: Extracting audio from video")
             audio_path = extract_audio_from_video(video_path)
 
-            # Step 2: Transcribe audio
-            logger.info("Step 2/5: Transcribing audio")
+            # Step 2: Extract optimal voice sample for cloning (NEW!)
+            logger.info("Step 2/6: Extracting optimal voice sample for cloning")
+            logger.info("Using first 15 seconds for best voice quality capture")
+            voice_sample = extract_voice_sample_for_cloning(
+                audio_path,
+                start_time=0.0,  # Start at beginning
+                duration=15.0,  # 15 seconds optimal for XTTS-v2
+            )
+            logger.info(f"Voice sample ready: {voice_sample}")
+
+            # Step 3: Transcribe audio (full audio for complete transcription)
+            logger.info("Step 3/6: Transcribing audio")
             transcription = await self.transcribe_audio(audio_path, language=source_lang)
 
-            # Step 3: Translate text
-            logger.info("Step 3/5: Translating text")
+            # Step 4: Translate text
+            logger.info("Step 4/6: Translating text")
             translation = await self.translate_text(
                 transcription.text, source_lang=source_lang, target_lang=target_lang
             )
 
-            # Step 4: Synthesize translated speech with voice cloning
-            logger.info("Step 4/5: Synthesizing translated speech with voice cloning")
+            # Step 5: Synthesize translated speech with optimized voice cloning
+            logger.info("Step 5/6: Synthesizing speech with optimized voice cloning")
+            logger.info("Using voice sample for high-quality cloning")
             synthesized_audio = await self.synthesize_speech(
                 text=translation.translated_text,
-                reference_audio=audio_path,  # Use original audio for voice cloning
+                reference_audio=voice_sample,  # Use optimized sample (not full audio!)
                 language=target_lang,
             )
 
-            # Step 5: Combine new audio with video
-            logger.info("Step 5/5: Combining audio with video")
+            # Step 6: Combine new audio with video
+            logger.info("Step 6/6: Combining audio with video")
             dubbed_video = combine_audio_video(video_path, synthesized_audio, output_path)
 
-            logger.info(f"Video dubbing complete: {dubbed_video}")
+            logger.info(f"Video dubbing complete with optimized voice cloning: {dubbed_video}")
             return dubbed_video
 
         except Exception as e:

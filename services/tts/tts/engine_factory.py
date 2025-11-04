@@ -4,8 +4,6 @@ import logging
 
 from tts.base_engine import BaseTTSEngine
 from tts.config import TTSConfig
-from tts.coqui_engine import CoquiTTSEngine
-from tts.openvoice_engine import OpenVoiceEngine
 
 logger = logging.getLogger(__name__)
 
@@ -30,12 +28,33 @@ class TTSEngineFactory:
         logger.info(f"Creating TTS engine: {config.engine}")
 
         if config.engine == "coqui":
-            return CoquiTTSEngine(config)
+            try:
+                from tts.coqui_engine import CoquiTTSEngine
+
+                return CoquiTTSEngine(config)
+            except ImportError:
+                logger.warning("Coqui TTS not available, falling back to mock engine")
+                from tts.mock_engine import MockTTSEngine
+
+                return MockTTSEngine(config)
         elif config.engine == "openvoice":
-            return OpenVoiceEngine(config)
+            try:
+                from tts.openvoice_engine import OpenVoiceEngine
+
+                return OpenVoiceEngine(config)
+            except ImportError:
+                logger.warning("OpenVoice not available, falling back to mock engine")
+                from tts.mock_engine import MockTTSEngine
+
+                return MockTTSEngine(config)
+        elif config.engine == "mock":
+            from tts.mock_engine import MockTTSEngine
+
+            return MockTTSEngine(config)
         else:
             raise ValueError(
-                f"Unknown TTS engine: {config.engine}. " f"Supported engines: 'coqui', 'openvoice'"
+                f"Unknown TTS engine: {config.engine}. "
+                f"Supported engines: 'coqui', 'openvoice', 'mock'"
             )
 
     @staticmethod
