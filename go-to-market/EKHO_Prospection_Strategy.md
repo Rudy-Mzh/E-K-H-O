@@ -119,6 +119,8 @@ Ce document constitue la base opérationnelle pour :
 - Format : vidéos courtes (5-15 min), peu de texte à l'écran
 - Niches : gaming, tutoriels tech, review produits, lifestyle, vulgarisation
 
+Important: quand tu fais tes vidéos sur youtube, certes tu as la traduction avec Youtube, mais le tunnel de vente que tu as créer pour vendre tes formations, ton savoir etc.. au final il se limitte à ton marché FR donc la traduction gratuite de youtube seule ne te sert pas.
+
 **Pourquoi cette cible ?**
 
 | Avantage | Description |
