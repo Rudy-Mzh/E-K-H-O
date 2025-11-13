@@ -78,11 +78,26 @@ class CoquiTTSEngine(BaseTTSEngine):
         try:
             # Use default speaker from XTTS-v2 model (no voice cloning)
             # XTTS-v2 has built-in multilingual speakers
-            logger.info("Synthesizing with Coqui XTTS-v2 default speaker")
+            # Default speakers: "Claribel Dervla", "Daisy Studious", "Gracie Wise", "Tammie Ema",
+            # "Alison Dietlinde", "Ana Florence", "Annmarie Nele", "Asya Anara", "Brenda Stern",
+            # "Gitta Nikolina", "Henriette Usha", "Sofia Hellen", "Tammy Grit", "Tanja Adelina",
+            # "Vjollca Johnnie", "Andrew Chipper", "Badr Odhiambo", "Dionisio Schuyler",
+            # "Royston Min", "Viktor Eka", "Abrahan Mack", "Adde Michal", "Baldur Sanjin",
+            # "Craig Gutsy", "Damien Black", "Gilberto Mathias", "Ilkin Urbano", "Kazuhiko Atallah",
+            # "Ludvig Milivoj", "Suad Qasim", "Torcull Diarmuid", "Viktor Menelaos", "Zacharie Aimilios"
+
+            # Select male speaker for French (using Viktor Eka, a male speaker)
+            default_speaker = "Claribel Dervla"  # Female default
+            if language in ["fr", "es", "de", "it", "pt"]:
+                # Use male speaker for Romance/European languages
+                default_speaker = "Dionisio Schuyler"  # Male speaker
+
+            logger.info(f"Synthesizing with Coqui XTTS-v2 speaker: {default_speaker}")
             self.model.tts_to_file(
                 text=text,
                 file_path=str(output_path),
                 language=language,
+                speaker=default_speaker,
                 # Optimized parameters for quality:
                 temperature=0.75,
                 length_penalty=1.0,

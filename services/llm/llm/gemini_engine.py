@@ -138,6 +138,8 @@ REQUIREMENTS:
 4. Sound natural when spoken aloud
 5. Maintain tone from context
 
+IMPORTANT: Provide ONLY the final translated text in {target_lang}, without any explanations, options, or additional formatting. Just the translation itself.
+
 Translation:"""
 
         try:

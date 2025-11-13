@@ -1,6 +1,7 @@
 """NEW Pipeline orchestrator with segment-based dubbing."""
 
 import logging
+import subprocess
 from pathlib import Path
 
 import httpx
@@ -154,7 +155,7 @@ class SegmentedDubbingOrchestrator:
     async def _transcribe_segments(
         self, audio_path: Path, segments: list[dict], language: str
     ) -> list[dict]:
-        """Transcribe each segment independently."""
+        """Transcribe each segment independently by extracting audio segments."""
         transcribed = []
 
         for i, segment in enumerate(segments):
@@ -162,10 +163,34 @@ class SegmentedDubbingOrchestrator:
                 f"Transcribing segment {i+1}/{len(segments)}: {segment['start']:.1f}s-{segment['end']:.1f}s"
             )
 
-            # For now, transcribe full audio (Whisper will handle it)
-            # TODO: Extract segment audio first for better accuracy
-            with open(audio_path, "rb") as f:
-                files = {"file": (audio_path.name, f, "audio/wav")}
+            # Extract this specific segment audio using ffmpeg
+            segment_audio_path = Path(f"/tmp/ekho/asr_segment_{i}.wav")
+            segment_audio_path.parent.mkdir(parents=True, exist_ok=True)
+
+            # Use ffmpeg to extract segment from start to end time
+            extract_cmd = [
+                "ffmpeg",
+                "-y",  # Overwrite
+                "-i",
+                str(audio_path),
+                "-ss",
+                str(segment["start"]),  # Start time
+                "-t",
+                str(segment["duration"]),  # Duration
+                "-acodec",
+                "pcm_s16le",  # WAV format
+                "-ar",
+                "16000",  # Sample rate for Whisper
+                "-ac",
+                "1",  # Mono
+                str(segment_audio_path),
+            ]
+
+            subprocess.run(extract_cmd, capture_output=True, text=True, check=True)
+
+            # Transcribe the extracted segment
+            with open(segment_audio_path, "rb") as f:
+                files = {"file": (segment_audio_path.name, f, "audio/wav")}
                 data = {"language": language}
 
                 response = await self.client.post(
@@ -175,14 +200,15 @@ class SegmentedDubbingOrchestrator:
 
             result = response.json()
 
-            # Match transcription to segment timing
-            # For now, use simple split (TODO: improve with word timestamps)
+            # Clean up segment audio file
+            segment_audio_path.unlink(missing_ok=True)
+
             transcribed.append(
                 {
                     "start": segment["start"],
                     "end": segment["end"],
                     "duration": segment["duration"],
-                    "text": result["text"],  # Full text for now
+                    "text": result["text"].strip(),
                 }
             )
 
@@ -230,12 +256,29 @@ class SegmentedDubbingOrchestrator:
 
             result = response.json()
 
+            # Clean translated text: remove quotes and extra whitespace
+            translated_text = result["translated_text"].strip()
+            # Remove surrounding quotes if present
+            if translated_text.startswith('"') and translated_text.endswith('"'):
+                translated_text = translated_text[1:-1]
+            if translated_text.startswith("'") and translated_text.endswith("'"):
+                translated_text = translated_text[1:-1]
+
+            # Limit to ~400 characters (to stay under XTTS 400 token limit)
+            # Approximate: 1 token ≈ 4 chars in French, so 400 tokens ≈ 1600 chars max
+            # But let's be conservative and limit to 800 chars to avoid issues
+            if len(translated_text) > 800:
+                logger.warning(
+                    f"Translated text too long ({len(translated_text)} chars), truncating to 800 chars"
+                )
+                translated_text = translated_text[:800]
+
             translated.append(
                 {
                     "start": segment["start"],
                     "end": segment["end"],
                     "duration": segment["duration"],
-                    "text": result["translated_text"],
+                    "text": translated_text,
                 }
             )
 
@@ -274,15 +317,108 @@ class SegmentedDubbingOrchestrator:
         return synthesized
 
     async def _assemble_audio_timeline(self, segments: list[dict], reference_audio: Path) -> Path:
-        """Assemble segments into final audio timeline."""
-        # TODO: Implement proper audio assembly with ffmpeg
-        # For now, return first segment (placeholder)
-        logger.warning("Audio assembly not fully implemented - using first segment only")
-
-        if segments:
-            return segments[0]["audio_path"]
-        else:
+        """Assemble segments in single pass with adelay to preserve volume."""
+        if not segments:
             raise RuntimeError("No segments to assemble")
+
+        logger.info(f"Assembling {len(segments)} audio segments into timeline")
+
+        # Get reference audio duration
+        probe_cmd = [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_entries",
+            "format=duration",
+            "-of",
+            "default=noprint_wrappers=1:nokey=1",
+            str(reference_audio),
+        ]
+        result = subprocess.run(probe_cmd, capture_output=True, text=True, check=True)
+        total_duration = float(result.stdout.strip())
+        logger.info(f"Reference audio duration: {total_duration:.2f}s")
+
+        # Sort segments by start time
+        sorted_segments = sorted(segments, key=lambda x: x["start"])
+
+        # Build inputs: base silence + all segments
+        inputs = ["-f", "lavfi", "-i", f"anullsrc=r=44100:cl=stereo:d={total_duration}"]
+
+        for segment in sorted_segments:
+            inputs.extend(["-i", str(segment["audio_path"])])
+
+        # Build filter_complex: delay each segment then mix
+        filter_parts = []
+
+        for i, segment in enumerate(sorted_segments):
+            delay_ms = int(segment["start"] * 1000)
+            logger.info(
+                f"Segment {i+1}/{len(sorted_segments)}: "
+                f"{segment['start']:.2f}s-{segment['end']:.2f}s (delay={delay_ms}ms)"
+            )
+            # Delay segment to correct timestamp
+            filter_parts.append(f"[{i+1}:a]adelay={delay_ms}|{delay_ms}[delayed{i}]")
+
+        # Mix base + all delayed segments (normalize=0 to preserve volume)
+        mix_inputs = "[0:a]"
+        for i in range(len(sorted_segments)):
+            mix_inputs += f"[delayed{i}]"
+
+        filter_parts.append(
+            f"{mix_inputs}amix=inputs={len(sorted_segments)+1}:duration=longest:normalize=0[out]"
+        )
+
+        filter_complex = ";".join(filter_parts)
+
+        # Output
+        output_path = Path("/tmp/ekho/assembled_audio.wav")
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        # Single-pass assembly
+        ffmpeg_cmd = [
+            "ffmpeg",
+            "-y",
+            *inputs,
+            "-filter_complex",
+            filter_complex,
+            "-map",
+            "[out]",
+            "-ar",
+            "44100",
+            "-ac",
+            "2",
+            str(output_path),
+        ]
+
+        logger.info("Running single-pass ffmpeg assembly...")
+        result = subprocess.run(ffmpeg_cmd, capture_output=True, text=True)
+
+        if result.returncode != 0:
+            logger.error(f"Single-pass failed: {result.stderr}")
+            # Fallback: simple concat (preserves volume but no timing)
+            logger.warning("Fallback: simple concatenation")
+
+            concat_inputs = []
+            for segment in sorted_segments:
+                concat_inputs.extend(["-i", str(segment["audio_path"])])
+
+            concat_filter = "".join([f"[{i}:a]" for i in range(len(sorted_segments))])
+            concat_filter += f"concat=n={len(sorted_segments)}:v=0:a=1[out]"
+
+            fallback_cmd = [
+                "ffmpeg",
+                "-y",
+                *concat_inputs,
+                "-filter_complex",
+                concat_filter,
+                "-map",
+                "[out]",
+                str(output_path),
+            ]
+            subprocess.run(fallback_cmd, capture_output=True, text=True, check=True)
+
+        logger.info(f"Audio timeline assembled: {output_path}")
+        return output_path
 
     async def close(self):
         """Close HTTP client."""
