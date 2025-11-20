@@ -1,5 +1,7 @@
 """Test script for GLOBAL TRANSLATION pipeline (Phase 1+2+3)."""
 
+# a supprimer avec anael et rudy
+
 import asyncio
 import sys
 from datetime import datetime
