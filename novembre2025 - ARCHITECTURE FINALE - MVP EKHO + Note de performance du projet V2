@@ -64,6 +64,9 @@ E-K-H-O/
 │
 └── 📁 tests/                              ← Tests unitaires
     └── test_cli.py
+
+
+
 🎯 PRINCIPES D'ARCHITECTURE
 1. Séparation par SILOS
 Chaque service est indépendant et communique via API REST :
@@ -71,16 +74,23 @@ ASR (port 8001) : Transcription audio → texte
 VAD (port 8004) : Détection des pauses
 LLM (port 8005) : Traduction contextuelle
 TTS (port 8003) : Synthèse vocale
+
 2. Packages PARTAGÉS
 ekho_core : Fonctions utilitaires (audio, config)
 ekho_api : Orchestrateur qui coordonne les 4 services
+
 3. Point d'entrée UNIQUE
+
 EKHO_fichier_de_lancement_V1.py = Script principal pour lancer une traduction
+
+
 🚀 UTILISATION
 1. Démarrer les services :
 ./scripts/start_all_services.sh
+
 2. Lancer une traduction :
 .venv/bin/python EKHO_fichier_de_lancement_V1.py
+
 3. Arrêter les services :
 ./scripts/stop_all_services.sh
 ✅ AVANTAGES DE CETTE ARCHITECTURE
