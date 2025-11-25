@@ -1,0 +1,184 @@
+3️⃣ PROCESSUS EKHO POUR MIND MAP (Prestataire)
+Voici le processus complet sous forme de texte structuré pour créer votre mind map :
+EKHO - PLATEFORME DE TRADUCTION VIDÉO EN TEMPS RÉEL
+│
+├── 📥 ENTRÉE
+│   └── Vidéo source (format: MP4, AVI, MOV, MKV)
+│       └── Langue source: Anglais (EN)
+│       └── Langue cible: Français (FR)
+│
+├── 🎬 ÉTAPE 1: EXTRACTION AUDIO
+│   └── Outil: FFmpeg
+│   └── Action: Extraire la piste audio de la vidéo
+│   └── Format sortie: WAV (16kHz, mono)
+│   └── Sortie: fichier audio.wav
+│
+├── ✂️ ÉTAPE 2: SEGMENTATION AUDIO (VAD - Voice Activity Detection)
+│   └── Service: VAD (port 8004)
+│   └── Technologie: Silero VAD
+│   └── Action: Détecter les pauses naturelles dans le discours
+│   └── Sortie: Liste de segments avec timestamps
+│       └── Segment 1: [0.0s - 3.2s, durée: 3.2s]
+│       └── Segment 2: [3.5s - 7.8s, durée: 4.3s]
+│       └── ...
+│       └── Segment N: [55.1s - 60.0s, durée: 4.9s]
+│
+├── 🎤 ÉTAPE 3: TRANSCRIPTION (ASR - Automatic Speech Recognition)
+│   └── Service: ASR (port 8001)
+│   └── Technologie: Whisper (OpenAI)
+│   └── Modèle: base
+│   └── Action: Transcrire CHAQUE segment audio en texte
+│   └── Entrée: Chaque segment audio individuellement
+│   └── Sortie: Texte transcrit pour chaque segment
+│       └── Segment 1 transcrit: "Welcome to this tutorial..."
+│       └── Segment 2 transcrit: "Today we will learn..."
+│       └── ...
+│
+├── 🧠 ÉTAPE 4: ANALYSE CONTEXTUELLE GLOBALE (LLM)
+│   └── Service: LLM (port 8005)
+│   └── Technologie: Google Gemini 2.0 Flash
+│   └── Action: Analyser le contexte global du discours complet
+│   └── Entrée: Transcription complète (tous segments concaténés)
+│   └── Analyse:
+│       ├── Thème général
+│       ├── Tone & style
+│       ├── Niveau de formalité
+│       ├── Public cible
+│       └── Intention du message
+│   └── Sortie: Contexte structuré (JSON)
+│
+├── 🌍 ÉTAPE 5: TRADUCTION CONTEXTUELLE (LLM)
+│   └── Service: LLM (port 8005)
+│   └── Technologie: Google Gemini 2.0 Flash
+│   └── Action: Traduire CHAQUE segment avec le contexte global
+│   └── Entrée par segment:
+│       ├── Texte source (segment N)
+│       ├── Contexte global (étape 4)
+│       ├── Durée cible (pour adapter la longueur)
+│       └── Langues (source → cible)
+│   └── Optimisations:
+│       ├── Cohérence avec le contexte global
+│       ├── Adaptation de la longueur au timing
+│       ├── Conservation du tone et style
+│       └── Expressions naturelles en langue cible
+│   └── Sortie: Texte traduit pour chaque segment
+│       └── Segment 1 traduit: "Bienvenue dans ce tutoriel..."
+│       └── Segment 2 traduit: "Aujourd'hui nous allons apprendre..."
+│       └── ...
+│
+├── 🗣️ ÉTAPE 6: SYNTHÈSE VOCALE (TTS - Text-to-Speech)
+│   └── Service: TTS (port 8003)
+│   └── Technologie: Coqui TTS (XTTS)
+│   └── Action: Générer l'audio traduit pour CHAQUE segment
+│   └── Configuration:
+│       ├── Voix: Voix française par défaut (homme)
+│       ├── Qualité: 44.1kHz, stéréo
+│       └── Limite: 800 caractères max par segment
+│   └── Sortie: Fichier audio WAV pour chaque segment
+│       └── segment_0_fr.wav
+│       └── segment_1_fr.wav
+│       └── ...
+│
+├── 🔗 ÉTAPE 7: ASSEMBLAGE AUDIO
+│   └── Outil: FFmpeg (filter_complex)
+│   └── Action: Assembler tous les segments audio au bon timing
+│   └── Processus:
+│       ├── Créer une piste audio silencieuse (durée = vidéo originale)
+│       ├── Placer chaque segment à son timestamp original
+│       ├── Appliquer fade-in/fade-out (transitions douces)
+│       ├── Mixer tous les segments ensemble
+│       └── Normaliser le volume
+│   └── Optimisations:
+│       ├── Trim exacte à la durée du segment (éviter chevauchements)
+│       ├── Fade-in: 50ms
+│       └── Fade-out: 100ms
+│   └── Sortie: assembled_audio.wav
+│
+├── 🎥 ÉTAPE 8: COMBINAISON VIDÉO + AUDIO
+│   └── Outil: FFmpeg
+│   └── Action: Remplacer l'audio original par l'audio traduit
+│   └── Processus:
+│       ├── Garder la vidéo originale (piste vidéo)
+│       ├── Remplacer la piste audio par assembled_audio.wav
+│       └── Encoder en MP4 (H.264)
+│   └── Sortie: EKHO_NEW_PIPELINE_[timestamp]_dubbed_fr.mp4
+│
+└── 📤 SORTIE FINALE
+    └── Vidéo doublée complète
+        ├── Vidéo: Originale (images non modifiées)
+        ├── Audio: Traduit et synchronisé
+        └── Taille: ~9-10 MB (pour vidéo 1 min)
+
+
+═══════════════════════════════════════════════════════════
+
+ARCHITECTURE TECHNIQUE
+
+├── MICROSERVICES (Indépendants, Communication API REST)
+│   ├── ASR Service (port 8001)
+│   │   └── Responsabilité: Transcription audio → texte
+│   │
+│   ├── VAD Service (port 8004)
+│   │   └── Responsabilité: Détection de pauses
+│   │
+│   ├── LLM Service (port 8005)
+│   │   └── Responsabilité: Analyse contexte + Traduction
+│   │
+│   └── TTS Service (port 8003)
+│       └── Responsabilité: Synthèse vocale
+│
+├── ORCHESTRATEUR
+│   └── orchestrator_v2.py
+│       └── Rôle: Coordonner les 4 services
+│       └── Méthode: dub_video_segmented()
+│       └── Gestion des erreurs & logs
+│
+└── PACKAGES PARTAGÉS
+    ├── ekho_core
+    │   └── Utilitaires: manipulation audio, config
+    │
+    └── ekho_api
+        └── Orchestration & configuration
+
+
+═══════════════════════════════════════════════════════════
+
+TECHNOLOGIES UTILISÉES
+
+├── Langages
+│   ├── Python 3.13 (services ASR, VAD, LLM)
+│   └── Python 3.11 (service TTS - compatibilité Coqui)
+│
+├── Frameworks
+│   └── FastAPI (API REST pour chaque service)
+│
+├── IA / Machine Learning
+│   ├── Whisper (OpenAI) - Transcription
+│   ├── Silero VAD - Détection voix
+│   ├── Gemini 2.0 Flash (Google) - Traduction contextuelle
+│   └── Coqui TTS (XTTS) - Synthèse vocale
+│
+└── Outils
+    └── FFmpeg - Manipulation audio/vidéo
+
+
+═══════════════════════════════════════════════════════════
+
+AVANTAGES DU PROCESSUS
+
+✅ QUALITÉ
+├── Traduction contextuelle (pas mot-à-mot)
+├── Cohérence sur toute la vidéo
+├── Timing synchronisé avec l'original
+└── Transitions audio naturelles
+
+✅ PERFORMANCE
+├── Segmentation intelligente (pauses naturelles)
+├── Traitement parallèle possible
+└── Architecture microservices scalable
+
+✅ MAINTENABILITÉ
+├── Chaque service est indépendant
+├── Logs détaillés pour debugging
+├── Code modulaire et testable
+└── Facile d'améliorer un service sans toucher aux autres
