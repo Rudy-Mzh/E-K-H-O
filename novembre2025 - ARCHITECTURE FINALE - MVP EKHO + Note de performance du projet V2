@@ -1,0 +1,91 @@
+🏗️ ARCHITECTURE FINALE - MVP EKHO
+E-K-H-O/
+│
+├── 📄 EKHO_fichier_de_lancement_V1.py    ← POINT D'ENTRÉE PRINCIPAL
+├── 📄 CLAUDE.md                           ← Documentation pour Claude
+├── 📄 README.md                           ← Documentation projet
+├── 📄 pyproject.toml                      ← Config Python projet
+│
+├── 📁 packages/                           ← PACKAGES PARTAGÉS
+│   ├── ekho_core/                         ← Utilitaires communs
+│   │   ├── ekho_core/
+│   │   │   ├── __init__.py
+│   │   │   ├── audio.py                   ← Extraction/combinaison audio
+│   │   │   ├── config.py                  ← Config de base
+│   │   │   ├── models.py                  ← Modèles de données
+│   │   │   └── utils.py                   ← Utilitaires génériques
+│   │   └── pyproject.toml
+│   │
+│   └── ekho_api/                          ← Orchestrateur pipeline
+│       ├── ekho_api/
+│       │   ├── __init__.py
+│       │   ├── config.py                  ← Config orchestrateur
+│       │   └── orchestrator_v2.py         ← PIPELINE PRINCIPAL ⭐
+│       └── pyproject.toml
+│
+├── 📁 services/                           ← MICROSERVICES (SILOS)
+│   ├── asr_whisper/                       ← Speech-to-Text (Whisper)
+│   │   ├── asr_whisper/
+│   │   │   ├── __init__.py
+│   │   │   ├── api.py                     ← API FastAPI
+│   │   │   ├── config.py                  ← Config ASR
+│   │   │   └── whisper_engine.py          ← Moteur Whisper
+│   │   └── pyproject.toml
+│   │
+│   ├── vad/                               ← Voice Activity Detection
+│   │   ├── vad/
+│   │   │   ├── __init__.py
+│   │   │   ├── api.py                     ← API FastAPI
+│   │   │   ├── config.py                  ← Config VAD
+│   │   │   └── segmentation_engine.py     ← Détection pauses
+│   │   └── pyproject.toml
+│   │
+│   ├── llm/                               ← Traduction AI (Gemini)
+│   │   ├── llm/
+│   │   │   ├── __init__.py
+│   │   │   ├── api.py                     ← API FastAPI
+│   │   │   ├── config.py                  ← Config LLM
+│   │   │   └── gemini_engine.py           ← Moteur Gemini
+│   │   └── pyproject.toml
+│   │
+│   └── tts/                               ← Text-to-Speech (Coqui)
+│       ├── tts/
+│       │   ├── __init__.py
+│       │   ├── api.py                     ← API FastAPI
+│       │   ├── config.py                  ← Config TTS
+│       │   ├── base_engine.py             ← Interface TTS
+│       │   ├── coqui_engine.py            ← Moteur Coqui ⭐
+│       │   └── engine_factory.py          ← Factory pattern
+│       └── pyproject.toml
+│
+├── 📁 scripts/                            ← SCRIPTS UTILITAIRES
+│   ├── start_all_services.sh              ← Démarrer tous les services
+│   └── stop_all_services.sh               ← Arrêter tous les services
+│
+└── 📁 tests/                              ← Tests unitaires
+    └── test_cli.py
+🎯 PRINCIPES D'ARCHITECTURE
+1. Séparation par SILOS
+Chaque service est indépendant et communique via API REST :
+ASR (port 8001) : Transcription audio → texte
+VAD (port 8004) : Détection des pauses
+LLM (port 8005) : Traduction contextuelle
+TTS (port 8003) : Synthèse vocale
+2. Packages PARTAGÉS
+ekho_core : Fonctions utilitaires (audio, config)
+ekho_api : Orchestrateur qui coordonne les 4 services
+3. Point d'entrée UNIQUE
+EKHO_fichier_de_lancement_V1.py = Script principal pour lancer une traduction
+🚀 UTILISATION
+1. Démarrer les services :
+./scripts/start_all_services.sh
+2. Lancer une traduction :
+.venv/bin/python EKHO_fichier_de_lancement_V1.py
+3. Arrêter les services :
+./scripts/stop_all_services.sh
+✅ AVANTAGES DE CETTE ARCHITECTURE
+✅ Claire : 1 fichier = 1 responsabilité
+✅ Modulaire : Chaque service peut être modifié indépendamment
+✅ Testable : Chaque service peut être testé séparément
+✅ Maintenable : Facile de trouver où corriger un bug
+✅ Scalable : Facile d'ajouter de nouveaux services
