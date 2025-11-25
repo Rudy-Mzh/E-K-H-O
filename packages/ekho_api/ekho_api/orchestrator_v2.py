@@ -317,7 +317,7 @@ class SegmentedDubbingOrchestrator:
         return synthesized
 
     async def _assemble_audio_timeline(self, segments: list[dict], reference_audio: Path) -> Path:
-        """Assemble segments in single pass with adelay to preserve volume."""
+        """Assemble segments at original timestamps with smooth transitions."""
         if not segments:
             raise RuntimeError("No segments to assemble")
 
@@ -347,17 +347,24 @@ class SegmentedDubbingOrchestrator:
         for segment in sorted_segments:
             inputs.extend(["-i", str(segment["audio_path"])])
 
-        # Build filter_complex: delay each segment then mix
+        # Build filter_complex: trim to duration with fades, then delay each segment, then mix
         filter_parts = []
 
         for i, segment in enumerate(sorted_segments):
             delay_ms = int(segment["start"] * 1000)
+            duration = segment["end"] - segment["start"]
             logger.info(
                 f"Segment {i+1}/{len(sorted_segments)}: "
-                f"{segment['start']:.2f}s-{segment['end']:.2f}s (delay={delay_ms}ms)"
+                f"{segment['start']:.2f}s-{segment['end']:.2f}s (duration={duration:.2f}s, delay={delay_ms}ms)"
             )
-            # Delay segment to correct timestamp
-            filter_parts.append(f"[{i+1}:a]adelay={delay_ms}|{delay_ms}[delayed{i}]")
+            # CRITICAL FIX: Trim audio to exact duration to prevent overlapping
+            # Add fade-in (50ms) and fade-out (100ms) for smooth transitions
+            # Then delay segment to original timestamp
+            fade_out_start = max(0, duration - 0.1)  # Start fade-out 100ms before end
+            filter_parts.append(
+                f"[{i+1}:a]atrim=0:{duration},afade=t=in:st=0:d=0.05,afade=t=out:st={fade_out_start}:d=0.1[trimmed{i}];"
+                f"[trimmed{i}]adelay={delay_ms}|{delay_ms}[delayed{i}]"
+            )
 
         # Mix base + all delayed segments (normalize=0 to preserve volume)
         mix_inputs = "[0:a]"

@@ -90,6 +90,189 @@ Context Analysis:"""
             logger.error(f"Context analysis failed: {e}", exc_info=True)
             raise
 
+    def analyze_deep_context(
+        self, full_transcript: str, source_lang: str, target_lang: str
+    ) -> dict:
+        """
+        Deep contextual analysis for professional translation (Phase 1).
+
+        Args:
+            full_transcript: Complete transcription of video
+            source_lang: Source language code
+            target_lang: Target language code
+
+        Returns:
+            Structured context as dict with keys:
+            - subject: Main subject and themes
+            - narrative_arc: Structure and key points
+            - glossary: Terminology with recommended translations
+            - tone_style: Register and emotion
+            - attention_points: Cultural references, idioms, etc.
+            - target_audience: Demographic and knowledge level
+
+        Raises:
+            RuntimeError: If model not loaded
+        """
+        if self.model is None:
+            raise RuntimeError("Model not loaded. Call load_model() first.")
+
+        logger.info(f"Deep context analysis for {len(full_transcript)} chars")
+
+        prompt = f"""Analyse approfondie de ce contenu vidéo pour traduction professionnelle de haute qualité.
+
+LANGUE: {source_lang} → {target_lang}
+
+TRANSCRIPTION COMPLÈTE:
+{full_transcript}
+
+MISSION: Extraire tous les éléments critiques pour une traduction contextuelle optimale.
+
+FOURNIR (format JSON structuré):
+{{
+  "subject": {{
+    "main_topic": "Sujet principal détaillé",
+    "sub_themes": ["sous-thème 1", "sous-thème 2"],
+    "author_intent": "Intention de l'auteur"
+  }},
+  "narrative_arc": {{
+    "structure": "Introduction / Développement / Conclusion",
+    "key_points": ["point clé 1 avec timing approximatif", "point clé 2"],
+    "emotional_moments": ["moment émotionnel fort 1", "moment 2"]
+  }},
+  "glossary": {{
+    "technical_terms": {{"terme1": "traduction recommandée", "terme2": "traduction"}},
+    "recurring_terms": {{"terme récurrent": "traduction cohérente"}},
+    "proper_nouns": ["Nom propre 1", "Nom propre 2"]
+  }},
+  "tone_style": {{
+    "register": "formel / informel / technique / conversationnel",
+    "dominant_emotion": "émotion principale",
+    "style": "pédagogique / informatif / divertissant / etc."
+  }},
+  "attention_points": {{
+    "wordplay": ["jeu de mots 1"],
+    "cultural_references": ["référence culturelle nécessitant adaptation"],
+    "idioms": ["expression idiomatique"],
+    "difficult_concepts": ["concept difficile à traduire"]
+  }},
+  "target_audience": {{
+    "demographic": "Profil démographique",
+    "knowledge_level": "Niveau de connaissance supposé",
+    "expectations": "Attentes du public"
+  }}
+}}
+
+IMPORTANT: Réponds UNIQUEMENT avec du JSON valide, sans texte avant ou après."""
+
+        try:
+            response = self.model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
+                    temperature=0.3,  # Lower temperature for structured output
+                    max_output_tokens=2048,
+                ),
+            )
+
+            # Extract JSON from response
+            import json
+            import re
+
+            response_text = response.text.strip()
+
+            # Try to extract JSON if wrapped in markdown code blocks
+            json_match = re.search(r"```(?:json)?\s*(\{.*\})\s*```", response_text, re.DOTALL)
+            if json_match:
+                response_text = json_match.group(1)
+
+            context_data = json.loads(response_text)
+            logger.info("Deep context analysis complete (structured)")
+            return context_data
+
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse JSON context: {e}")
+            logger.error(f"Response text: {response_text}")
+            # Fallback: return text as-is in simple structure
+            return {"raw_analysis": response_text}
+
+        except Exception as e:
+            logger.error(f"Deep context analysis failed: {e}", exc_info=True)
+            raise
+
+    def translate_global(
+        self,
+        full_transcript: str,
+        deep_context: dict,
+        source_lang: str,
+        target_lang: str,
+    ) -> str:
+        """
+        Global translation with pause markers (Phase 2).
+
+        Args:
+            full_transcript: Complete transcription to translate
+            deep_context: Structured context from analyze_deep_context()
+            source_lang: Source language code
+            target_lang: Target language code
+
+        Returns:
+            Translated text with [PAUSE] markers
+
+        Raises:
+            RuntimeError: If model not loaded
+        """
+        if self.model is None:
+            raise RuntimeError("Model not loaded. Call load_model() first.")
+
+        logger.info(f"Global translation: {len(full_transcript)} chars")
+
+        # Format context for prompt
+        import json
+
+        context_str = json.dumps(deep_context, ensure_ascii=False, indent=2)
+
+        prompt = f"""Traduction professionnelle de haute qualité pour doublage vidéo.
+
+CONTEXTE ENRICHI:
+{context_str}
+
+LANGUE: {source_lang} → {target_lang}
+
+TRANSCRIPTION À TRADUIRE:
+{full_transcript}
+
+INSTRUCTIONS:
+1. Utiliser le glossaire terminologique pour assurer la cohérence
+2. Respecter rigoureusement le ton et style identifiés
+3. Adapter les références culturelles selon le public cible
+4. Insérer [PAUSE] aux pauses naturelles du discours (fin de phrases, respirations)
+5. Privilégier la fluidité, l'impact émotionnel et le naturel sur la littéralité stricte
+6. Longueur cible: ±15% de l'original (acceptable)
+7. Sonner naturel à l'oral, pas écrit
+
+IMPORTANT: Fournir UNIQUEMENT la traduction finale en {target_lang} avec les marqueurs [PAUSE], sans explications ni formatage additionnel.
+
+TRADUCTION AVEC MARQUEURS [PAUSE]:"""
+
+        try:
+            response = self.model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
+                    temperature=self.config.temperature,
+                    max_output_tokens=4096,  # Higher for full translation
+                ),
+            )
+
+            translated_text = response.text.strip()
+            logger.info(
+                f"Global translation complete: {len(translated_text)} chars, "
+                f"{translated_text.count('[PAUSE]')} pauses"
+            )
+            return translated_text
+
+        except Exception as e:
+            logger.error(f"Global translation failed: {e}", exc_info=True)
+            raise
+
     def translate_segment(
         self,
         text: str,
