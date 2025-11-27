@@ -24,7 +24,9 @@ class EkhoAPIConfig(BaseSettings):
     max_file_size: int = Field(default=500 * 1024 * 1024, description="Max upload size (500MB)")
 
     # Timeout settings
-    service_timeout: int = Field(default=300, description="Service request timeout in seconds")
+    service_timeout: int = Field(
+        default=1800, description="Service request timeout in seconds (30min for long videos)"
+    )
 
     # Pipeline settings
     source_language: str = Field(default="en", description="Default source language")
