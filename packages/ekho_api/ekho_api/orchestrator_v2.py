@@ -5,6 +5,8 @@ import subprocess
 from pathlib import Path
 
 import httpx
+import librosa
+import numpy as np
 from ekho_api.config import EkhoAPIConfig
 from ekho_core.audio import combine_audio_video, extract_audio_from_video
 
@@ -97,6 +99,10 @@ class SegmentedDubbingOrchestrator:
             logger.info("Step 1/8: Extracting audio from video")
             audio_path = extract_audio_from_video(video_path)
 
+            # Step 1.5: Detect speaker gender from source audio
+            logger.info("Step 1.5/8: Detecting speaker gender")
+            speaker_gender = self._detect_speaker_gender(audio_path)
+
             # Step 2: Segment audio by pauses (VAD)
             logger.info("Step 2/8: Segmenting audio by pauses (VAD)")
             segments = await self._segment_audio(audio_path)
@@ -123,9 +129,20 @@ class SegmentedDubbingOrchestrator:
                 transcribed_segments, context, source_lang, target_lang
             )
 
-            # Step 6: Synthesize EACH segment (TTS with default voice)
-            logger.info("Step 6/8: Synthesizing each segment with default voice")
-            audio_segments = await self._synthesize_segments(translated_segments, target_lang)
+            # Save transcriptions for debugging
+            self._save_transcriptions(
+                transcribed_segments,
+                translated_segments,
+                output_path,
+                source_lang,
+                target_lang,
+            )
+
+            # Step 6: Synthesize EACH segment (TTS with detected gender)
+            logger.info(f"Step 6/8: Synthesizing each segment ({speaker_gender} voice)")
+            audio_segments = await self._synthesize_segments(
+                translated_segments, target_lang, speaker_gender
+            )
 
             # Step 7: Assemble segments at correct timestamps
             logger.info("Step 7/8: Assembling audio timeline")
@@ -284,14 +301,20 @@ class SegmentedDubbingOrchestrator:
 
         return translated
 
-    async def _synthesize_segments(self, segments: list[dict], language: str) -> list[dict]:
-        """Synthesize each segment with default TTS voice (no cloning)."""
+    async def _synthesize_segments(
+        self, segments: list[dict], language: str, speaker_gender: str = "male"
+    ) -> list[dict]:
+        """Synthesize each segment with voice matching detected speaker gender."""
         synthesized = []
 
         for i, segment in enumerate(segments):
             logger.info(f"Synthesizing segment {i+1}/{len(segments)}: {len(segment['text'])} chars")
 
-            data = {"text": segment["text"], "language": language}
+            data = {
+                "text": segment["text"],
+                "language": language,
+                "speaker_gender": speaker_gender,
+            }
 
             response = await self.client.post(
                 f"{self.config.tts_service_url}/synthesize", data=data
@@ -426,6 +449,106 @@ class SegmentedDubbingOrchestrator:
 
         logger.info(f"Audio timeline assembled: {output_path}")
         return output_path
+
+    def _save_transcriptions(
+        self,
+        source_segments: list[dict],
+        target_segments: list[dict],
+        output_video_path: Path,
+        source_lang: str,
+        target_lang: str,
+    ) -> None:
+        """
+        Save transcriptions for debugging and quality analysis.
+
+        Creates 3 files:
+        - {output}_transcription_source.txt: Original transcription
+        - {output}_transcription_target.txt: Translated text
+        - {output}_transcription_comparison.txt: Side-by-side comparison
+
+        Args:
+            source_segments: Transcribed segments (original language)
+            target_segments: Translated segments (target language)
+            output_video_path: Path to output video (used as base for filenames)
+            source_lang: Source language code
+            target_lang: Target language code
+        """
+        base_path = output_video_path.with_suffix("")
+
+        # File 1: Source transcription
+        source_file = base_path.with_name(f"{base_path.name}_transcription_source.txt")
+        with open(source_file, "w", encoding="utf-8") as f:
+            f.write(f"=== SOURCE TRANSCRIPTION ({source_lang.upper()}) ===\n\n")
+            for i, seg in enumerate(source_segments, 1):
+                timing = f"[{seg['start']:.2f}s - {seg['end']:.2f}s]"
+                f.write(f"{i}. {timing}\n{seg['text']}\n\n")
+        logger.info(f"Source transcription saved: {source_file}")
+
+        # File 2: Target translation
+        target_file = base_path.with_name(f"{base_path.name}_transcription_target.txt")
+        with open(target_file, "w", encoding="utf-8") as f:
+            f.write(f"=== TARGET TRANSLATION ({target_lang.upper()}) ===\n\n")
+            for i, seg in enumerate(target_segments, 1):
+                timing = f"[{seg['start']:.2f}s - {seg['end']:.2f}s]"
+                f.write(f"{i}. {timing}\n{seg['translated_text']}\n\n")
+        logger.info(f"Target translation saved: {target_file}")
+
+        # File 3: Side-by-side comparison
+        comparison_file = base_path.with_name(f"{base_path.name}_transcription_comparison.txt")
+        with open(comparison_file, "w", encoding="utf-8") as f:
+            f.write(
+                f"=== TRANSCRIPTION COMPARISON ({source_lang.upper()} → {target_lang.upper()}) ===\n\n"
+            )
+            for i, (src, tgt) in enumerate(zip(source_segments, target_segments, strict=False), 1):
+                timing = f"[{src['start']:.2f}s - {src['end']:.2f}s]"
+                f.write(f"{'='*70}\n")
+                f.write(f"Segment {i} {timing}\n")
+                f.write(f"{'='*70}\n\n")
+                f.write(f"SOURCE ({source_lang.upper()}):\n{src['text']}\n\n")
+                f.write(f"TARGET ({target_lang.upper()}):\n{tgt['translated_text']}\n\n")
+        logger.info(f"Comparison saved: {comparison_file}")
+
+    def _detect_speaker_gender(self, audio_path: Path) -> str:
+        """
+        Detect speaker gender from audio using pitch analysis.
+
+        Args:
+            audio_path: Path to audio file
+
+        Returns:
+            "male" or "female" based on fundamental frequency analysis
+        """
+        try:
+            # Load audio
+            y, sr = librosa.load(str(audio_path), sr=None, duration=30)  # Analyze first 30s
+
+            # Extract fundamental frequency (F0) using pyin algorithm
+            f0, voiced_flag, voiced_probs = librosa.pyin(
+                y, fmin=librosa.note_to_hz("C2"), fmax=librosa.note_to_hz("C7"), sr=sr
+            )
+
+            # Filter out unvoiced frames (silence, noise)
+            f0_voiced = f0[voiced_flag]
+
+            if len(f0_voiced) == 0:
+                logger.warning("No voiced frames detected, defaulting to male")
+                return "male"
+
+            # Calculate median pitch
+            median_pitch = np.nanmedian(f0_voiced)
+
+            # Gender classification based on typical pitch ranges:
+            # Male: 85-180 Hz (median ~120 Hz)
+            # Female: 165-255 Hz (median ~210 Hz)
+            # Threshold: 165 Hz
+            gender = "male" if median_pitch < 165 else "female"
+
+            logger.info(f"Detected speaker gender: {gender} (median pitch: {median_pitch:.1f} Hz)")
+            return gender
+
+        except Exception as e:
+            logger.error(f"Gender detection failed: {e}, defaulting to male")
+            return "male"  # Default to male if detection fails
 
     async def close(self):
         """Close HTTP client."""

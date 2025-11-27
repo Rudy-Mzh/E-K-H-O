@@ -50,15 +50,17 @@ class CoquiTTSEngine(BaseTTSEngine):
         output_path: str | Path,
         reference_audio: str | Path | None = None,
         language: str = "fr",
+        speaker_gender: str = "male",
     ) -> Path:
         """
-        Synthesize speech from text using Coqui TTS with DEFAULT speaker.
+        Synthesize speech from text using Coqui TTS with gender-matched speaker.
 
         Args:
             text: Text to synthesize
             output_path: Path for output audio file
             reference_audio: IGNORED - kept for API compatibility only
             language: Target language code
+            speaker_gender: Speaker gender ("male" or "female")
 
         Returns:
             Path to generated audio file
@@ -72,27 +74,22 @@ class CoquiTTSEngine(BaseTTSEngine):
         output_path = Path(output_path)
 
         logger.info(
-            f"Synthesizing with Coqui DEFAULT speaker: {len(text)} chars, language={language}"
+            f"Synthesizing with Coqui: {len(text)} chars, language={language}, gender={speaker_gender}"
         )
 
         try:
-            # Use default speaker from XTTS-v2 model (no voice cloning)
-            # XTTS-v2 has built-in multilingual speakers
-            # Default speakers: "Claribel Dervla", "Daisy Studious", "Gracie Wise", "Tammie Ema",
-            # "Alison Dietlinde", "Ana Florence", "Annmarie Nele", "Asya Anara", "Brenda Stern",
-            # "Gitta Nikolina", "Henriette Usha", "Sofia Hellen", "Tammy Grit", "Tanja Adelina",
-            # "Vjollca Johnnie", "Andrew Chipper", "Badr Odhiambo", "Dionisio Schuyler",
-            # "Royston Min", "Viktor Eka", "Abrahan Mack", "Adde Michal", "Baldur Sanjin",
-            # "Craig Gutsy", "Damien Black", "Gilberto Mathias", "Ilkin Urbano", "Kazuhiko Atallah",
-            # "Ludvig Milivoj", "Suad Qasim", "Torcull Diarmuid", "Viktor Menelaos", "Zacharie Aimilios"
+            # Select speaker based on gender (XTTS-v2 built-in speakers)
+            # Male speakers: Dionisio Schuyler, Andrew Chipper, Badr Odhiambo, Craig Gutsy, etc.
+            # Female speakers: Claribel Dervla, Daisy Studious, Gracie Wise, Ana Florence, etc.
 
-            # Select male speaker for French (using Viktor Eka, a male speaker)
-            default_speaker = "Claribel Dervla"  # Female default
-            if language in ["fr", "es", "de", "it", "pt"]:
-                # Use male speaker for Romance/European languages
-                default_speaker = "Dionisio Schuyler"  # Male speaker
+            if speaker_gender.lower() == "female":
+                default_speaker = "Claribel Dervla"  # Female voice
+            else:
+                default_speaker = "Dionisio Schuyler"  # Male voice
 
-            logger.info(f"Synthesizing with Coqui XTTS-v2 speaker: {default_speaker}")
+            logger.info(
+                f"Synthesizing with Coqui XTTS-v2 speaker: {default_speaker} ({speaker_gender})"
+            )
             self.model.tts_to_file(
                 text=text,
                 file_path=str(output_path),
