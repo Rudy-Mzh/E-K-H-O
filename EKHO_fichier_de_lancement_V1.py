@@ -21,14 +21,14 @@ async def test_video_dubbing_auto():
 
     # Configuration
     video_path = Path(
-        "/Users/rudymezoughi/Documents/Documents - MacBook Pro de RUDY - 1/2. Projet Polyglotte/Résultats vidéos/Vidéo Source En --> FR/Vidéo 1 minute US.mp4"
+        "/Users/rudymezoughi/Documents/Documents - MacBook Pro de RUDY - 1/2. Projet Polyglotte/Résultats vidéos/Vidéo Source En --> FR/TEDx_Samuel_Guillot_3min.mp4"
     )
     output_dir = Path(
-        "/Users/rudymezoughi/Documents/Documents - MacBook Pro de RUDY - 1/2. Projet Polyglotte/Résultats vidéos/Vidéo Test Traduite"
+        "/Users/rudymezoughi/Documents/Documents - MacBook Pro de RUDY - 1/2. Projet Polyglotte/Résultats vidéos/Vidéo Test Traduite/Vidéo FR à EN"
     )
 
-    source_lang = "en"
-    target_lang = "fr"
+    source_lang = "fr"
+    target_lang = "en"
 
     # Generate output filename with timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

@@ -6,6 +6,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from llm.config import config
 from llm.gemini_engine import GeminiEngine
+from llm.openai_engine import OpenAIEngine
 from pydantic import BaseModel
 
 logging.basicConfig(level=logging.INFO)
@@ -14,12 +15,12 @@ logger = logging.getLogger(__name__)
 # Initialize FastAPI app
 app = FastAPI(
     title="EKHO LLM - Contextual Translation",
-    description="Gemini-powered contextual translation for video dubbing",
-    version="0.1.0",
+    description="Multi-provider LLM contextual translation for video dubbing",
+    version="0.2.0",
 )
 
-# Initialize Gemini engine
-gemini_engine = GeminiEngine(config)
+# Initialize LLM engine based on config
+llm_engine = None
 
 
 class ContextRequest(BaseModel):
@@ -52,12 +53,22 @@ class GlobalTranslationRequest(BaseModel):
 @app.on_event("startup")
 async def startup_event():
     """Initialize service on startup."""
+    global llm_engine
+
     logger.info("Starting LLM service...")
     logger.info(f"Port: {config.service_port}")
-    logger.info(f"Gemini model: {config.gemini_model}")
+    logger.info(f"Provider: {config.provider}")
+
+    # Initialize the appropriate engine
+    if config.provider.lower() == "openai":
+        logger.info(f"Using OpenAI with model: {config.openai_model}")
+        llm_engine = OpenAIEngine(config)
+    else:
+        logger.info(f"Using Gemini with model: {config.gemini_model}")
+        llm_engine = GeminiEngine(config)
 
     # Load model
-    gemini_engine.load_model()
+    llm_engine.load_model()
     logger.info("LLM service started successfully")
 
 
@@ -65,18 +76,21 @@ async def startup_event():
 async def shutdown_event():
     """Cleanup on shutdown."""
     logger.info("Shutting down LLM service...")
-    gemini_engine.unload_model()
+    if llm_engine:
+        llm_engine.unload_model()
     logger.info("LLM service stopped")
 
 
 @app.get("/health")
 async def health_check():
     """Health check endpoint."""
+    model_name = config.openai_model if config.provider.lower() == "openai" else config.gemini_model
     return {
         "status": "healthy",
         "service": "llm",
-        "model": config.gemini_model,
-        "version": "0.1.0",
+        "provider": config.provider,
+        "model": model_name,
+        "version": "0.2.0",
     }
 
 
@@ -96,7 +110,7 @@ async def analyze_context(request: ContextRequest):
             f"Analyzing context: {len(request.transcript)} chars ({request.source_lang} → {request.target_lang})"
         )
 
-        context = gemini_engine.analyze_context(
+        context = llm_engine.analyze_context(
             request.transcript, request.source_lang, request.target_lang
         )
 
@@ -130,7 +144,7 @@ async def translate_segment(request: TranslationRequest):
             f"Translating segment: {len(request.text)} chars, duration={request.target_duration:.1f}s"
         )
 
-        translated_text = gemini_engine.translate_segment(
+        translated_text = llm_engine.translate_segment(
             request.text,
             request.context,
             request.source_lang,
@@ -169,7 +183,7 @@ async def analyze_deep_context(request: ContextRequest):
             f"Deep context analysis: {len(request.transcript)} chars ({request.source_lang} → {request.target_lang})"
         )
 
-        deep_context = gemini_engine.analyze_deep_context(
+        deep_context = llm_engine.analyze_deep_context(
             request.transcript, request.source_lang, request.target_lang
         )
 
@@ -203,7 +217,7 @@ async def translate_global(request: GlobalTranslationRequest):
             f"Global translation: {len(request.transcript)} chars ({request.source_lang} → {request.target_lang})"
         )
 
-        translated_text = gemini_engine.translate_global(
+        translated_text = llm_engine.translate_global(
             request.transcript,
             request.deep_context,
             request.source_lang,

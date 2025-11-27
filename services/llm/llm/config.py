@@ -14,11 +14,17 @@ logger = logging.getLogger(__name__)
 
 
 class LLMConfig(BaseSettings):
-    """Configuration for LLM service using Gemini."""
+    """Configuration for LLM service supporting multiple providers."""
 
     # Service settings
     service_host: str = Field(default="0.0.0.0", description="Service host")
     service_port: int = Field(default=8005, description="Service port")
+
+    # Provider selection
+    provider: str = Field(
+        default_factory=lambda: os.getenv("LLM_PROVIDER", "gemini"),
+        description="LLM provider (gemini or openai)",
+    )
 
     # Gemini API settings
     gemini_api_key: str = Field(
@@ -28,6 +34,16 @@ class LLMConfig(BaseSettings):
     gemini_model: str = Field(
         default="gemini-2.0-flash-exp",
         description="Gemini model name",
+    )
+
+    # OpenAI API settings
+    openai_api_key: str = Field(
+        default_factory=lambda: os.getenv("OPENAI_API_KEY", ""),
+        description="OpenAI API key",
+    )
+    openai_model: str = Field(
+        default="gpt-4o",
+        description="OpenAI model name",
     )
 
     # Translation settings
