@@ -23,6 +23,10 @@ dev = [
     "ruff>=0.6",
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ekho_api*"]
+
 [tool.black]
 line-length = 100
 target-version = ["py313"]

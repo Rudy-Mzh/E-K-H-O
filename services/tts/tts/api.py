@@ -131,14 +131,16 @@ async def synthesize_speech(
     text: str = Form(..., description="Text to synthesize", min_length=1),
     language: str = Form(default="fr", description="Target language code"),
     speaker_gender: str = Form(default="male", description="Speaker gender (male/female)"),
+    speaker_id: int = Form(default=0, description="Speaker ID for voice selection"),
 ):
     """
-    Synthesize speech from text with voice matching speaker gender.
+    Synthesize speech from text with voice matching speaker gender and ID.
 
     Args:
         text: Text to synthesize
         language: Target language code (default: fr)
         speaker_gender: Speaker gender for voice selection (male/female, default: male)
+        speaker_id: Speaker ID to assign different voices to different speakers (default: 0)
 
     Returns:
         Audio file (wav format)
@@ -147,7 +149,8 @@ async def synthesize_speech(
         HTTPException: If synthesis fails
     """
     logger.info(
-        f"Received synthesis request: {len(text)} chars, language={language}, gender={speaker_gender}"
+        f"Received synthesis request: {len(text)} chars, language={language}, "
+        f"gender={speaker_gender}, speaker_id={speaker_id}"
     )
 
     output_file = None
@@ -156,7 +159,7 @@ async def synthesize_speech(
         # Create output file
         output_file = Path(tempfile.mktemp(suffix=".wav"))
 
-        # Synthesize speech with gender-matched voice
+        # Synthesize speech with speaker-specific voice
         engine = get_tts_engine()
         result_path = engine.synthesize(
             text=text,
@@ -164,6 +167,7 @@ async def synthesize_speech(
             reference_audio=None,
             language=language,
             speaker_gender=speaker_gender,
+            speaker_id=speaker_id,
         )
 
         logger.info(f"Synthesis successful: {result_path}")

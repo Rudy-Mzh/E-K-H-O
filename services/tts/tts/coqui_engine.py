@@ -9,6 +9,19 @@ from tts.config import TTSConfig, get_device
 
 logger = logging.getLogger(__name__)
 
+# Define speaker pools for multi-speaker support
+MALE_SPEAKERS = [
+    "Dionisio Schuyler",
+    "Andrew Chipper",
+    "Badr Odhiambo",
+]
+
+FEMALE_SPEAKERS = [
+    "Claribel Dervla",
+    "Daisy Studious",
+    "Gracie Wise",
+]
+
 
 class CoquiTTSEngine(BaseTTSEngine):
     """Coqui TTS engine with XTTS-v2 using default speakers (NO voice cloning)."""
@@ -51,9 +64,10 @@ class CoquiTTSEngine(BaseTTSEngine):
         reference_audio: str | Path | None = None,
         language: str = "fr",
         speaker_gender: str = "male",
+        speaker_id: int = 0,
     ) -> Path:
         """
-        Synthesize speech from text using Coqui TTS with gender-matched speaker.
+        Synthesize speech from text using Coqui TTS with speaker-specific voice.
 
         Args:
             text: Text to synthesize
@@ -61,6 +75,7 @@ class CoquiTTSEngine(BaseTTSEngine):
             reference_audio: IGNORED - kept for API compatibility only
             language: Target language code
             speaker_gender: Speaker gender ("male" or "female")
+            speaker_id: Speaker ID for voice selection (round-robin mapping)
 
         Returns:
             Path to generated audio file
@@ -74,34 +89,38 @@ class CoquiTTSEngine(BaseTTSEngine):
         output_path = Path(output_path)
 
         logger.info(
-            f"Synthesizing with Coqui: {len(text)} chars, language={language}, gender={speaker_gender}"
+            f"Synthesizing with Coqui: {len(text)} chars, language={language}, "
+            f"gender={speaker_gender}, speaker_id={speaker_id}"
         )
 
         try:
-            # Select speaker based on gender (XTTS-v2 built-in speakers)
-            # Male speakers: Dionisio Schuyler, Andrew Chipper, Badr Odhiambo, Craig Gutsy, etc.
-            # Female speakers: Claribel Dervla, Daisy Studious, Gracie Wise, Ana Florence, etc.
-
+            # Select voice pool by gender
             if speaker_gender.lower() == "female":
-                default_speaker = "Claribel Dervla"  # Female voice
+                speakers = FEMALE_SPEAKERS
             else:
-                default_speaker = "Dionisio Schuyler"  # Male voice
+                speakers = MALE_SPEAKERS
+
+            # Map speaker_id to available speakers (round-robin)
+            speaker_idx = speaker_id % len(speakers)
+            selected_speaker = speakers[speaker_idx]
 
             logger.info(
-                f"Synthesizing with Coqui XTTS-v2 speaker: {default_speaker} ({speaker_gender})"
+                f"Synthesizing with speaker: {selected_speaker} "
+                f"(speaker_id={speaker_id}, gender={speaker_gender})"
             )
+
             self.model.tts_to_file(
                 text=text,
                 file_path=str(output_path),
                 language=language,
-                speaker=default_speaker,
-                # Optimized parameters for quality:
-                temperature=0.75,
+                speaker=selected_speaker,
+                # Optimized parameters for dubbing quality:
+                temperature=0.65,  # Lower = more stable voice
                 length_penalty=1.0,
-                repetition_penalty=5.0,
-                top_k=50,
-                top_p=0.85,
-                speed=1.0,
+                repetition_penalty=6.0,  # Higher = less repetition
+                top_k=40,
+                top_p=0.80,
+                speed=1.05,  # Slightly faster for dubbing sync
             )
 
             logger.info(f"Speech synthesized successfully: {output_path}")

@@ -19,6 +19,8 @@ class BaseTTSEngine(ABC):
         output_path: str | Path,
         reference_audio: str | Path | None = None,
         language: str = "fr",
+        speaker_gender: str = "male",
+        speaker_id: int = 0,
     ) -> Path:
         """
         Synthesize speech from text.
@@ -28,6 +30,8 @@ class BaseTTSEngine(ABC):
             output_path: Path for output audio file
             reference_audio: Optional reference audio (ignored in no-cloning version)
             language: Target language code
+            speaker_gender: Speaker gender for voice selection (male/female)
+            speaker_id: Speaker ID for multi-speaker support
 
         Returns:
             Path to generated audio file

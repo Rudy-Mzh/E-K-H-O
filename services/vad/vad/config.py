@@ -34,6 +34,19 @@ class VADConfig(BaseSettings):
         default=30.0, description="Maximum segment duration in seconds"
     )
 
+    # Diarization settings
+    enable_diarization: bool = Field(
+        default=True, description="Enable speaker diarization to identify different speakers"
+    )
+    max_num_speakers: int = Field(default=5, description="Maximum expected number of speakers")
+    diarization_model: str = Field(
+        default="pyannote/speaker-diarization-3.1",
+        description="HuggingFace model for speaker diarization",
+    )
+    huggingface_token: str = Field(
+        default="", description="HuggingFace API token for pyannote.audio models"
+    )
+
     # Cache settings
     model_cache_dir: Path | None = Field(default=None, description="Directory for caching models")
 
@@ -42,6 +55,9 @@ class VADConfig(BaseSettings):
 
         env_prefix = "VAD_"
         case_sensitive = False
+        env_file = "../../.env"  # Load from root .env file
+        env_file_encoding = "utf-8"
+        extra = "ignore"  # Ignore extra fields from .env
 
 
 def get_device(config: VADConfig) -> str:

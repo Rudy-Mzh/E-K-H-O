@@ -1,34 +1,38 @@
 """Automated test script for video dubbing with new pipeline."""
 
+import argparse
 import asyncio
 import sys
 from datetime import datetime
 from pathlib import Path
 
 # Add packages to path
-sys.path.insert(0, str(Path(__file__).parent / "packages"))
+sys.path.insert(0, str(Path(__file__).parent / "packages" / "ekho_api"))
 
 from ekho_api.config import EkhoAPIConfig
 from ekho_api.orchestrator_v2 import SegmentedDubbingOrchestrator
 
 
-async def test_video_dubbing_auto():
+def parse_args():
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(description="EKHO Video Dubbing Pipeline")
+    parser.add_argument("video", help="Path to input video file")
+    parser.add_argument("--source-lang", "-s", default="en", help="Source language (default: en)")
+    parser.add_argument("--target-lang", "-t", default="fr", help="Target language (default: fr)")
+    parser.add_argument(
+        "--output-dir", "-o", default="/Users/rudymezoughi/Desktop", help="Output directory"
+    )
+    return parser.parse_args()
+
+
+async def test_video_dubbing_auto(
+    video_path: Path, output_dir: Path, source_lang: str, target_lang: str
+):
     """Test complete video dubbing pipeline automatically."""
     print("=" * 70)
     print("  EKHO Video Dubbing Test - Automated (New Pipeline)")
     print("=" * 70)
     print()
-
-    # Configuration
-    video_path = Path(
-        "/Users/rudymezoughi/Documents/Documents - MacBook Pro de RUDY - 1/2. Projet Polyglotte/Résultats vidéos/Vidéo Source En --> FR/TEDx_Samuel_Guillot_3min.mp4"
-    )
-    output_dir = Path(
-        "/Users/rudymezoughi/Documents/Documents - MacBook Pro de RUDY - 1/2. Projet Polyglotte/Résultats vidéos/Vidéo Test Traduite/Vidéo FR à EN"
-    )
-
-    source_lang = "fr"
-    target_lang = "en"
 
     # Generate output filename with timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -129,7 +133,17 @@ async def test_video_dubbing_auto():
 
 if __name__ == "__main__":
     try:
-        asyncio.run(test_video_dubbing_auto())
+        args = parse_args()
+        video_path = Path(args.video)
+        output_dir = Path(args.output_dir)
+
+        if not video_path.exists():
+            print(f"❌ Video file not found: {video_path}")
+            sys.exit(1)
+
+        asyncio.run(
+            test_video_dubbing_auto(video_path, output_dir, args.source_lang, args.target_lang)
+        )
     except KeyboardInterrupt:
         print("\n\n❌ Interrupted by user")
     except Exception as e:

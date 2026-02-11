@@ -4,8 +4,9 @@ import json
 import logging
 import re
 
-from llm.config import LLMConfig
 from openai import OpenAI
+
+from llm.config import LLMConfig
 
 logger = logging.getLogger(__name__)
 
@@ -243,7 +244,7 @@ TRADUCTION AVEC MARQUEURS [PAUSE]:"""
                 model=self.config.openai_model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=self.config.temperature,
-                max_tokens=4096,
+                max_tokens=16384,  # Increased for long videos (5+ minutes)
             )
 
             translated_text = response.choices[0].message.content.strip()
