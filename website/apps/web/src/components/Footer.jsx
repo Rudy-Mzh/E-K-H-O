@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Instagram, Mail, Phone, MessageCircle, Copy, Check } from 'lucide-react';
+import { Linkedin, Mail, Phone, MessageCircle, Copy, Check } from 'lucide-react';
 
 const EMAIL = 'contact@ekho-studio.com';
 
@@ -152,31 +152,13 @@ const Footer = () => {
             </ul>
             <div className="flex space-x-4 mt-6">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/services/page/194044342554583271/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-electric-purple transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-electric-purple transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={24} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-electric-purple transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={24} />
               </a>
             </div>
           </div>

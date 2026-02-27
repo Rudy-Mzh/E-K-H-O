@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import * as Tabs from '@radix-ui/react-tabs';
-import { Video, Music, Mic, Megaphone, GraduationCap, Dumbbell, Star } from 'lucide-react';
+import { Video, Megaphone, Dumbbell, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const DemosPage = () => {
@@ -13,11 +13,7 @@ const DemosPage = () => {
     { id: 'all', name: 'Tous', icon: <Video className="w-5 h-5" /> },
     { id: 'sport', name: 'Coaching Sportif', icon: <Dumbbell className="w-5 h-5" /> },
     { id: 'speaker', name: 'Motivation Speaker', icon: <Star className="w-5 h-5" /> },
-    { id: 'youtube', name: 'Vidéo YouTube', icon: <Video className="w-5 h-5" /> },
-    { id: 'tutorial', name: 'Tutoriel', icon: <Music className="w-5 h-5" /> },
-    { id: 'podcast', name: 'Podcast', icon: <Mic className="w-5 h-5" /> },
     { id: 'ad', name: 'Publicité', icon: <Megaphone className="w-5 h-5" /> },
-    { id: 'training', name: 'Formation', icon: <GraduationCap className="w-5 h-5" /> }
   ];
 
   const demos = [
@@ -48,78 +44,6 @@ const DemosPage = () => {
       beforeVideo: { id: '1168816208', ratio: '56.25%' },
       afterVideo: { id: '1168815869', ratio: '56.25%' }
     },
-    {
-      id: 1,
-      category: 'tutorial',
-      title: 'Tutoriel guitare : débutant à intermédiaire',
-      languages: 'FR → EN',
-      context: 'Tutoriel de guitare pour débutants, adapté pour le marché anglophone',
-      before: 'Bonjour, aujourd\'hui nous allons apprendre les accords de base...',
-      after: 'Hello, today we\'re going to learn the basic chords...'
-    },
-    {
-      id: 2,
-      category: 'podcast',
-      title: 'Podcast business : stratégies de croissance',
-      languages: 'FR → ES',
-      context: 'Épisode sur les stratégies de croissance pour startups',
-      before: 'Dans cet épisode, nous explorons les meilleures stratégies...',
-      after: 'En este episodio, exploramos las mejores estrategias...'
-    },
-    {
-      id: 3,
-      category: 'ad',
-      title: 'Publicité produit : lancement nouvelle gamme',
-      languages: 'EN → FR',
-      context: 'Publicité pour le lancement d\'une nouvelle gamme de produits',
-      before: 'Introducing our revolutionary new product line...',
-      after: 'Découvrez notre nouvelle gamme de produits révolutionnaire...'
-    },
-    {
-      id: 4,
-      category: 'training',
-      title: 'Formation marketing digital : SEO avancé',
-      languages: 'FR → DE',
-      context: 'Module de formation sur les techniques SEO avancées',
-      before: 'Le référencement naturel est essentiel pour votre visibilité...',
-      after: 'Suchmaschinenoptimierung ist entscheidend für Ihre Sichtbarkeit...'
-    },
-    {
-      id: 5,
-      category: 'youtube',
-      title: 'Vidéo tech : revue de produit',
-      languages: 'EN → FR',
-      context: 'Revue détaillée d\'un nouveau produit technologique',
-      before: 'Today we\'re reviewing the latest smartphone on the market...',
-      after: 'Aujourd\'hui, nous testons le dernier smartphone du marché...'
-    },
-    {
-      id: 6,
-      category: 'tutorial',
-      title: 'Tutoriel cuisine : recettes traditionnelles',
-      languages: 'FR → IT',
-      context: 'Tutoriel de cuisine française adapté pour l\'Italie',
-      before: 'Nous allons préparer un bœuf bourguignon authentique...',
-      after: 'Prepareremo un autentico bœuf bourguignon...'
-    },
-    {
-      id: 7,
-      category: 'podcast',
-      title: 'Podcast santé : bien-être au quotidien',
-      languages: 'FR → EN',
-      context: 'Conseils santé et bien-être pour un public international',
-      before: 'Aujourd\'hui, parlons de l\'importance du sommeil...',
-      after: 'Today, let\'s talk about the importance of sleep...'
-    },
-    {
-      id: 8,
-      category: 'ad',
-      title: 'Publicité service : solution SaaS B2B',
-      languages: 'FR → EN',
-      context: 'Publicité pour une solution SaaS destinée aux entreprises',
-      before: 'Simplifiez la gestion de vos projets avec notre solution...',
-      after: 'Simplify your project management with our solution...'
-    }
   ];
 
   const filteredDemos = activeTab === 'all' 
@@ -202,7 +126,7 @@ const DemosPage = () => {
                     {demo.beforeVideo ? (
                       <div className="space-y-4 mb-6">
                         <div className="bg-dark-navy rounded-lg p-4">
-                          <p className="text-sm font-semibold text-neon-blue mb-3">Version originale — FR</p>
+                          <p className="text-sm font-semibold text-neon-blue mb-3">Version originale — {demo.languages.split(' → ')[0]}</p>
                           <div style={{ padding: `${demo.beforeVideo.ratio} 0 0 0`, position: 'relative' }}>
                             <iframe
                               src={`https://player.vimeo.com/video/${demo.beforeVideo.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
@@ -216,7 +140,7 @@ const DemosPage = () => {
                           </div>
                         </div>
                         <div className="bg-dark-navy rounded-lg p-4">
-                          <p className="text-sm font-semibold text-hot-pink mb-3">Version adaptée EKHO — ES</p>
+                          <p className="text-sm font-semibold text-hot-pink mb-3">Version adaptée EKHO — {demo.languages.split(' → ')[1]}</p>
                           <div style={{ padding: `${demo.afterVideo.ratio} 0 0 0`, position: 'relative' }}>
                             <iframe
                               src={`https://player.vimeo.com/video/${demo.afterVideo.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
@@ -254,6 +178,24 @@ const DemosPage = () => {
               </div>
             </Tabs.Content>
           </Tabs.Root>
+
+          {/* Coming soon */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto mt-8 mb-8 bg-gradient-to-br from-electric-purple/10 to-neon-blue/10 border border-electric-purple/30 rounded-xl p-8 text-center hover:border-electric-purple/60 transition-all duration-300"
+          >
+            <p className="text-2xl font-bold text-white mb-2">D'autres adaptations arrivent.</p>
+            <p className="text-gray-400 mb-6">Vous avez un contenu à adapter ? Faites-en la première démo.</p>
+            <Link
+              to="/contact"
+              className="inline-block px-8 py-3 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
+            >
+              Soumettre mon contenu →
+            </Link>
+          </motion.div>
+
         </div>
       </div>
     </>
