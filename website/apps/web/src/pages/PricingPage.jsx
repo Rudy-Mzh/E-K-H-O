@@ -3,11 +3,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast.js';
+import { openCalendly } from '@/lib/calendly.js';
 
 const PricingPage = () => {
-  const { toast } = useToast();
-
   const pricingPlans = [
     {
       name: 'PACK STARTER',
@@ -15,11 +13,13 @@ const PricingPage = () => {
       period: '/vidéo',
       description: 'Parfait pour tester EKHO',
       features: [
-        '1 langue cible',
-        'Vidéos jusqu\'à 10 min',
-        'Livraison en 48h',
-        'Support par email',
-        'Révision incluse'
+        { text: 'Jusqu\'à 10 min de vidéo' },
+        { text: '1 langue cible' },
+        { text: 'Synchronisation labiale avancée incluse' },
+        { text: 'Un seul intervenant sur la vidéo' },
+        { text: 'Livraison en 48h' },
+        { text: 'Support par email' },
+        { text: '1 révision incluse' },
       ],
       highlighted: false
     },
@@ -29,12 +29,14 @@ const PricingPage = () => {
       period: '/vidéo',
       description: 'Le plus choisi',
       features: [
-        '2 langues cibles',
-        'Vidéos jusqu\'à 30 min',
-        'Livraison en 48h',
-        'Support prioritaire',
-        '2 révisions incluses',
-        'Optimisation audio'
+        { text: 'Jusqu\'à 30 min de vidéo', badge: '-22% vs Pack Starter' },
+        { text: '1 langue cible' },
+        { text: 'Synchronisation labiale avancée incluse' },
+        { text: 'Un seul intervenant sur la vidéo' },
+        { text: 'Livraison en 48h' },
+        { text: 'Support prioritaire' },
+        { text: '2 révisions incluses' },
+        { text: 'Optimisation audio' },
       ],
       highlighted: true
     },
@@ -44,13 +46,15 @@ const PricingPage = () => {
       period: '',
       description: 'Pour scaler sans limite',
       features: [
-        'Langues illimitées',
-        'Vidéos de toute durée',
-        'Livraison express',
-        'Account manager dédié',
-        'Révisions illimitées',
-        'Intégration API',
-        'Clone de votre voix'
+        { text: 'Langues illimitées' },
+        { text: 'Vidéos de toute durée' },
+        { text: 'Multi-intervenants disponibles' },
+        { text: 'Livraison express' },
+        { text: 'Account manager dédié' },
+        { text: 'Révisions incluses selon projet' },
+        { text: 'Script livrable' },
+        { text: 'Sous-titres personnalisés inclus' },
+        { text: 'Clone de votre voix' },
       ],
       highlighted: false
     }
@@ -58,18 +62,11 @@ const PricingPage = () => {
 
   const addOns = [
     { name: 'Langue supplémentaire', price: '+89€' },
-    { name: 'Synchronisation labiale avancée', price: '+79€' },
     { name: 'Optimisation audio source', price: '+49€' },
     { name: 'Livraison express (-24h)', price: '+59€' },
     { name: 'Sous-titres intégrés', price: '+39€' },
     { name: 'Clone de votre voix', price: 'Sur devis' }
   ];
-
-  const handleSelectPlan = () => {
-    toast({
-      title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
-    });
-  };
 
   return (
     <>
@@ -78,26 +75,39 @@ const PricingPage = () => {
         <meta name="description" content="Découvrez nos tarifs transparents et flexibles. Starter à 149€, Pro à 349€, ou sur-mesure pour vos besoins spécifiques." />
       </Helmet>
 
-      <div className="min-h-screen bg-dark-navy pt-24 pb-20">
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
-            >
-              Des tarifs transparents. Pensés pour scaler.
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-gray-300 max-w-3xl mx-auto"
-            >
-              Pas de surprise, pas de frais cachés. Juste des tarifs clairs pour des résultats mesurables.
-            </motion.p>
-          </div>
+      {/* Hero with video background */}
+      <section className="relative flex items-center justify-center min-h-[50vh] pt-24 pb-20 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/pricing-bg.mp4"
+        />
+        <div className="absolute inset-0 bg-black/70 z-0" />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
+          >
+            Des tarifs transparents. Pensés pour scaler.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
+          >
+            Pas de surprise, pas de frais cachés. Juste des tarifs clairs pour des résultats mesurables.
+          </motion.p>
+        </div>
+      </section>
+
+      <div className="bg-dark-navy pb-20">
+        <div className="container mx-auto px-4 pt-16">
 
           {/* Pricing Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
@@ -136,19 +146,25 @@ const PricingPage = () => {
                   <span className="text-gray-400 ml-2 transition-colors duration-300 group-hover:text-gray-300">
                     {plan.period}
                   </span>
+                  <sup className="text-electric-purple/70 text-sm ml-1">*</sup>
                 </div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 transition-colors duration-300 ${plan.highlighted ? 'text-electric-purple group-hover:text-neon-blue' : 'text-electric-purple'}`} />
-                      <span className="text-gray-300 transition-colors duration-300 group-hover:text-white">
-                        {feature}
+                      <span className="text-gray-300 transition-colors duration-300 group-hover:text-white flex flex-wrap items-center gap-2">
+                        {feature.text}
+                        {feature.badge && (
+                          <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-xs bg-hot-pink/20 text-hot-pink border border-hot-pink/40 px-2 py-0.5 rounded-full font-semibold whitespace-nowrap">
+                            {feature.badge}
+                          </span>
+                        )}
                       </span>
                     </li>
                   ))}
                 </ul>
                 <button
-                  onClick={handleSelectPlan}
+                  onClick={openCalendly}
                   className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
                     plan.highlighted
                       ? 'bg-electric-purple text-white group-hover:bg-neon-blue group-hover:shadow-[0_0_20px_rgba(0,194,255,0.6)]'
@@ -160,6 +176,12 @@ const PricingPage = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Footnote */}
+          <p className="text-gray-500 text-sm text-center max-w-2xl mx-auto mb-16 border border-electric-purple/20 rounded-lg px-6 py-4">
+            <span className="text-electric-purple/70 font-semibold">* </span>
+            Nos tarifs sont fournis à titre indicatif. Chaque projet étant unique, seul un devis établi suite à un échange sera retenu comme base contractuelle.
+          </p>
 
           {/* Add-ons Section */}
           <motion.div

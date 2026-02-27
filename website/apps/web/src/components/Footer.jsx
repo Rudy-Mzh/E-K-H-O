@@ -1,9 +1,39 @@
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, Instagram, Mail, Phone } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Mail, Phone, MessageCircle, Copy, Check } from 'lucide-react';
+
+const EMAIL = 'contact@ekho-studio.com';
 
 const Footer = () => {
+  const [phoneMenuOpen, setPhoneMenuOpen] = useState(false);
+  const [emailMenuOpen, setEmailMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const phoneRef = useRef(null);
+  const emailRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (phoneRef.current && !phoneRef.current.contains(e.target)) {
+        setPhoneMenuOpen(false);
+      }
+      if (emailRef.current && !emailRef.current.contains(e.target)) {
+        setEmailMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+      setEmailMenuOpen(false);
+    }, 1500);
+  };
+
   return (
     <footer className="bg-[#050814] border-t border-electric-purple/20 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -26,6 +56,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/about" className="text-gray-400 hover:text-electric-purple transition-colors">
+                  Notre vision
+                </Link>
+              </li>
+              <li>
                 <Link to="/demos" className="text-gray-400 hover:text-electric-purple transition-colors">
                   Démos
                 </Link>
@@ -41,8 +76,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-electric-purple transition-colors">
-                  À Propos
+                <Link to="/contact" className="text-gray-400 hover:text-electric-purple transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -52,13 +87,67 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
-              <li className="flex items-center space-x-2 text-gray-400">
-                <Mail size={18} className="text-electric-purple" />
-                <span>contact@ekho-studio.com</span>
+              <li className="flex items-center space-x-2 text-gray-400" ref={emailRef}>
+                <Mail size={18} className="text-electric-purple flex-shrink-0" />
+                <div className="relative">
+                  <button
+                    onClick={() => setEmailMenuOpen(!emailMenuOpen)}
+                    className="hover:text-electric-purple transition-colors"
+                  >
+                    {EMAIL}
+                  </button>
+                  {emailMenuOpen && (
+                    <div className="absolute bottom-full left-0 mb-2 bg-[#0d0f23] border border-electric-purple/30 rounded-lg overflow-hidden shadow-xl z-50 min-w-[210px]">
+                      <a
+                        href={`mailto:${EMAIL}`}
+                        className="group flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-electric-purple/20 hover:text-white transition-all duration-200 border-l-2 border-transparent hover:border-electric-purple"
+                      >
+                        <Mail size={15} className="text-electric-purple group-hover:scale-110 transition-transform duration-200" />
+                        Ouvrir la messagerie
+                      </a>
+                      <button
+                        onClick={copyEmail}
+                        className="group w-full flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-neon-blue/20 hover:text-white transition-all duration-200 border-l-2 border-transparent hover:border-neon-blue border-t border-electric-purple/20"
+                      >
+                        {copied
+                          ? <><Check size={15} className="text-green-400" /><span className="text-green-400 font-medium">Copié !</span></>
+                          : <><Copy size={15} className="text-neon-blue group-hover:scale-110 transition-transform duration-200" />Copier l'adresse</>
+                        }
+                      </button>
+                    </div>
+                  )}
+                </div>
               </li>
-              <li className="flex items-center space-x-2 text-gray-400">
-                <Phone size={18} className="text-electric-purple" />
-                <span>+33 X XX XX XX XX</span>
+              <li className="flex items-center space-x-2 text-gray-400" ref={phoneRef}>
+                <Phone size={18} className="text-electric-purple flex-shrink-0" />
+                <div className="relative">
+                  <button
+                    onClick={() => setPhoneMenuOpen(!phoneMenuOpen)}
+                    className="hover:text-electric-purple transition-colors"
+                  >
+                    06 30 13 51 89
+                  </button>
+                  {phoneMenuOpen && (
+                    <div className="absolute bottom-full left-0 mb-2 bg-[#0d0f23] border border-electric-purple/30 rounded-lg overflow-hidden shadow-xl z-50 min-w-[180px]">
+                      <a
+                        href="tel:+33630135189"
+                        className="group flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-electric-purple/20 hover:text-white transition-all duration-200 border-l-2 border-transparent hover:border-electric-purple"
+                      >
+                        <Phone size={15} className="text-electric-purple group-hover:scale-110 transition-transform duration-200" />
+                        Appeler
+                      </a>
+                      <a
+                        href="https://wa.me/33630135189"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-green-500/20 hover:text-white transition-all duration-200 border-l-2 border-transparent hover:border-green-400 border-t border-electric-purple/20"
+                      >
+                        <MessageCircle size={15} className="text-green-400 group-hover:scale-110 transition-transform duration-200" />
+                        WhatsApp
+                      </a>
+                    </div>
+                  )}
+                </div>
               </li>
             </ul>
             <div className="flex space-x-4 mt-6">

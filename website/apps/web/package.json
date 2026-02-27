@@ -4,9 +4,9 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "vite --host :: --port 3000",
-		"build": "node tools/generate-llms.js || true && vite build --outDir ../../dist/apps/web",
-		"start": "vite preview --outDir ../../dist/apps/web --host :: --port 3000",
+		"dev": "vite --port 3000",
+		"build": "vite build",
+		"start": "vite preview",
 		"lint": "eslint . --quiet",
 		"lint:warn": "eslint ."
 	},
@@ -33,10 +33,6 @@
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
-		"@babel/generator": "^7.26.3",
-		"@babel/parser": "^7.26.3",
-		"@babel/traverse": "^7.26.4",
-		"@babel/types": "^7.26.3",
 		"@types/node": "^20.17.10",
 		"@types/react": "^18.3.18",
 		"@types/react-dom": "^18.3.5",

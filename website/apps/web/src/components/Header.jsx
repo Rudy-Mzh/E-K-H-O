@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { openCalendly } from '@/lib/calendly.js';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { name: 'Accueil', path: '/' },
+    { name: 'Notre vision', path: '/about' },
     { name: 'Démos', path: '/demos' },
     { name: 'Services', path: '/services' },
     { name: 'Tarifs', path: '/pricing' },
-    { name: 'À Propos', path: '/about' },
-    { name: 'Réserver un appel', path: '/contact', highlight: true }
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-dark-navy/90 backdrop-blur-lg border-b border-electric-purple/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A0E27] md:bg-dark-navy/90 md:backdrop-blur-lg border-b border-electric-purple/20">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -30,15 +31,17 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`transition-all duration-300 ${
-                  link.highlight
-                    ? 'px-6 py-2 bg-electric-purple text-white rounded-lg btn-neon-purple hover:bg-electric-purple/90'
-                    : 'text-white hover:text-electric-purple'
-                }`}
+                className="text-white hover:text-electric-purple transition-all duration-300"
               >
                 {link.name}
               </Link>
             ))}
+            <button
+              onClick={openCalendly}
+              className="px-6 py-2 bg-electric-purple text-white rounded-lg btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
+            >
+              Réserver un appel
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -60,7 +63,7 @@ const Header = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-[73px] right-0 bottom-0 w-full bg-dark-navy border-l border-electric-purple/20 md:hidden"
+            className="fixed top-[73px] right-0 bottom-0 w-full bg-[#0A0E27] border-l border-electric-purple/20 md:hidden"
           >
             <nav className="flex flex-col p-6 space-y-4">
               {navLinks.map((link) => (
@@ -68,15 +71,17 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-lg transition-all duration-300 ${
-                    link.highlight
-                      ? 'px-6 py-3 bg-electric-purple text-white rounded-lg btn-neon-purple text-center'
-                      : 'text-white hover:text-electric-purple'
-                  }`}
+                  className="text-lg text-white hover:text-electric-purple transition-all duration-300"
                 >
                   {link.name}
                 </Link>
               ))}
+              <button
+                onClick={() => { openCalendly(); setMobileMenuOpen(false); }}
+                className="px-6 py-3 bg-electric-purple text-white rounded-lg btn-neon-purple text-center text-lg"
+              >
+                Réserver un appel
+              </button>
             </nav>
           </motion.div>
         )}

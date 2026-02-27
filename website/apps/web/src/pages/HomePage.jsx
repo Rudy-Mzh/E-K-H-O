@@ -3,6 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { openCalendly } from '@/lib/calendly.js';
 import { Zap, DollarSign, Target, Globe, Users, RefreshCw, ArrowRight, Upload, Sparkles, Rocket } from 'lucide-react';
 
 const HomePage = () => {
@@ -73,7 +74,7 @@ const HomePage = () => {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
-          src="https://images.unsplash.com/photo-1675292310383-0f4ef53fa3ab"
+          src="/hero-bg.mp4"
         />
         
         {/* Dark Overlay */}
@@ -240,12 +241,12 @@ const HomePage = () => {
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 neon-glow-blue">
               Prêt à transformer vos vidéos ?
             </h2>
-            <Link
-              to="/contact"
+            <button
+              onClick={openCalendly}
               className="inline-block px-10 py-5 bg-electric-purple text-white text-lg rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
             >
               Réserver un appel
-            </Link>
+            </button>
           </motion.div>
         </div>
       </section>

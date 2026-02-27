@@ -1,16 +1,18 @@
 
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
 import * as Tabs from '@radix-ui/react-tabs';
-import { Video, Music, Mic, Megaphone, GraduationCap } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast.js';
+import { Video, Music, Mic, Megaphone, GraduationCap, Dumbbell, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const DemosPage = () => {
-  const { toast } = useToast();
   const [activeTab, setActiveTab] = useState('all');
 
   const categories = [
     { id: 'all', name: 'Tous', icon: <Video className="w-5 h-5" /> },
+    { id: 'sport', name: 'Coaching Sportif', icon: <Dumbbell className="w-5 h-5" /> },
+    { id: 'speaker', name: 'Motivation Speaker', icon: <Star className="w-5 h-5" /> },
     { id: 'youtube', name: 'Vidéo YouTube', icon: <Video className="w-5 h-5" /> },
     { id: 'tutorial', name: 'Tutoriel', icon: <Music className="w-5 h-5" /> },
     { id: 'podcast', name: 'Podcast', icon: <Mic className="w-5 h-5" /> },
@@ -19,6 +21,33 @@ const DemosPage = () => {
   ];
 
   const demos = [
+    {
+      id: 9,
+      category: 'sport',
+      title: 'Coaching sportif : Sissy Mua — Cardio en conditions réelles',
+      languages: 'FR → ES',
+      context: "Extrait de Sissy Mua filmé en pleine séance de cardio. La voix est portée par le mouvement, l'effort et l'intensité physique. EKHO préserve l'énergie, le rythme et l'authenticité dans l'adaptation.",
+      beforeVideo: { id: '1168777376', ratio: '75%' },
+      afterVideo: { id: '1168777402', ratio: '56.25%' }
+    },
+    {
+      id: 10,
+      category: 'speaker',
+      title: 'Motivation Speaker : David Laroche — Stoïcisme',
+      languages: 'FR → EN',
+      context: "Extrait de David Laroche, figure majeure du coaching motivationnel. Rythme, intonation et énergie sont au cœur du message. EKHO recrée l'expérience complète pour une audience anglophone.",
+      beforeVideo: { id: '1168782805', ratio: '75%' },
+      afterVideo: { id: '1168103220', ratio: '56.25%' }
+    },
+    {
+      id: 11,
+      category: 'ad',
+      title: 'Publicité : BOKU — Adaptation marché anglophone',
+      languages: 'FR → EN',
+      context: "Extrait publicitaire BOKU adapté par EKHO pour le marché anglophone. Même énergie, même impact, nouvelle langue.",
+      beforeVideo: { id: '1168816208', ratio: '56.25%' },
+      afterVideo: { id: '1168815869', ratio: '56.25%' }
+    },
     {
       id: 1,
       category: 'tutorial',
@@ -97,12 +126,6 @@ const DemosPage = () => {
     ? demos 
     : demos.filter(demo => demo.category === activeTab);
 
-  const handleDemoRequest = () => {
-    toast({
-      title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
-    });
-  };
-
   return (
     <>
       <Helmet>
@@ -110,17 +133,39 @@ const DemosPage = () => {
         <meta name="description" content="Découvrez des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue." />
       </Helmet>
 
-      <div className="min-h-screen bg-dark-navy pt-24 pb-20">
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple">
-              Entendez la différence.
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Voici des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue.
-            </p>
-          </div>
+      {/* Hero with video background */}
+      <section className="relative flex items-center justify-center min-h-[50vh] pt-24 pb-20 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/demos-bg.mp4"
+        />
+        <div className="absolute inset-0 bg-black/70 z-0" />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
+          >
+            Entendez la différence.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
+          >
+            Voici des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue.
+          </motion.p>
+        </div>
+      </section>
+
+      <div className="bg-dark-navy pb-20">
+        <div className="container mx-auto px-4 pt-16">
 
           {/* Tabs */}
           <Tabs.Root value={activeTab} onValueChange={setActiveTab} className="mb-12">
@@ -154,23 +199,56 @@ const DemosPage = () => {
                       <p className="text-gray-400 text-sm mt-2">{demo.context}</p>
                     </div>
 
-                    <div className="space-y-4 mb-6">
-                      <div className="bg-dark-navy rounded-lg p-4">
-                        <p className="text-sm font-semibold text-neon-blue mb-2">Avant</p>
-                        <p className="text-gray-300 italic">"{demo.before}"</p>
+                    {demo.beforeVideo ? (
+                      <div className="space-y-4 mb-6">
+                        <div className="bg-dark-navy rounded-lg p-4">
+                          <p className="text-sm font-semibold text-neon-blue mb-3">Version originale — FR</p>
+                          <div style={{ padding: `${demo.beforeVideo.ratio} 0 0 0`, position: 'relative' }}>
+                            <iframe
+                              src={`https://player.vimeo.com/video/${demo.beforeVideo.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
+                              frameBorder="0"
+                              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                              referrerPolicy="strict-origin-when-cross-origin"
+                              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                              title="Version originale"
+                              className="rounded"
+                            />
+                          </div>
+                        </div>
+                        <div className="bg-dark-navy rounded-lg p-4">
+                          <p className="text-sm font-semibold text-hot-pink mb-3">Version adaptée EKHO — ES</p>
+                          <div style={{ padding: `${demo.afterVideo.ratio} 0 0 0`, position: 'relative' }}>
+                            <iframe
+                              src={`https://player.vimeo.com/video/${demo.afterVideo.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
+                              frameBorder="0"
+                              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                              referrerPolicy="strict-origin-when-cross-origin"
+                              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                              title="Version adaptée EKHO"
+                              className="rounded"
+                            />
+                          </div>
+                        </div>
                       </div>
-                      <div className="bg-dark-navy rounded-lg p-4">
-                        <p className="text-sm font-semibold text-hot-pink mb-2">Après</p>
-                        <p className="text-gray-300 italic">"{demo.after}"</p>
+                    ) : (
+                      <div className="space-y-4 mb-6">
+                        <div className="bg-dark-navy rounded-lg p-4">
+                          <p className="text-sm font-semibold text-neon-blue mb-2">Avant</p>
+                          <p className="text-gray-300 italic">"{demo.before}"</p>
+                        </div>
+                        <div className="bg-dark-navy rounded-lg p-4">
+                          <p className="text-sm font-semibold text-hot-pink mb-2">Après</p>
+                          <p className="text-gray-300 italic">"{demo.after}"</p>
+                        </div>
                       </div>
-                    </div>
+                    )}
 
-                    <button
-                      onClick={handleDemoRequest}
-                      className="w-full px-6 py-3 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
+                    <Link
+                      to="/contact"
+                      className="block w-full px-6 py-3 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300 text-center"
                     >
                       Je veux le même résultat → Demander une démo
-                    </button>
+                    </Link>
                   </div>
                 ))}
               </div>
