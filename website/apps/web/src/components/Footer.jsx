@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MessageCircle, Copy, Check } from 'lucide-react';
 
-const EMAIL = 'contact@ekho-studio.com';
+const EMAIL = 'rudy.m@ekho-studio.com';
 
 const Footer = () => {
   const [phoneMenuOpen, setPhoneMenuOpen] = useState(false);

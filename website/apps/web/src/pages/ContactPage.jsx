@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, Calendar, Loader2, MessageCircle, Copy, Check } from 'lucide-react';
 import { CALENDLY_URL } from '@/lib/calendly.js';
 
-const EMAIL = 'contact@ekho-studio.com';
+const EMAIL = 'rudy.m@ekho-studio.com';
 
 const FORMSPREE_URL = 'https://formspree.io/f/xvzbldlq';
 
