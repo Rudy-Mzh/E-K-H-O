@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Calendar, Loader2, MessageCircle, Copy, Check } from 'lucide-react';
-import { CALENDLY_URL } from '@/lib/calendly.js';
+import { CALENDLY_URL, openCalendly } from '@/lib/calendly.js';
 
 const EMAIL = 'rudy.m@ekho-studio.com';
 
@@ -206,7 +206,8 @@ const ContactPage = () => {
               <p className="text-gray-300 mb-6">
                 Choisissez directement un créneau qui vous convient. Appel de découverte gratuit, 20 min.
               </p>
-              <div className="flex-1 min-h-0">
+              {/* Desktop : iframe intégrée */}
+              <div className="hidden lg:flex flex-1 min-h-0">
                 <iframe
                   src={`${CALENDLY_URL}?background_color=050814&text_color=ffffff&primary_color=00c2ff`}
                   width="100%"
@@ -216,6 +217,15 @@ const ContactPage = () => {
                   title="Réserver un appel EKHO"
                   className="rounded-lg"
                 />
+              </div>
+              {/* Mobile : bouton popup léger */}
+              <div className="flex lg:hidden flex-1 items-center justify-center">
+                <button
+                  onClick={openCalendly}
+                  className="w-full px-8 py-5 bg-neon-blue/10 border-2 border-neon-blue text-neon-blue rounded-lg font-semibold text-lg hover:bg-neon-blue hover:text-dark-navy transition-all duration-300"
+                >
+                  Choisir mon créneau →
+                </button>
               </div>
             </motion.div>
 
