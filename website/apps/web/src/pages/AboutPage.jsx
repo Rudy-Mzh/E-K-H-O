@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { openCalendly } from '@/lib/calendly.js';
+import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
+import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 
 const AboutPage = () => {
+  const [choiceOpen, setChoiceOpen] = useState(false);
+  const [tunnelOpen, setTunnelOpen] = useState(false);
+
   return (
     <>
+      <ContactChoiceModal
+        isOpen={choiceOpen}
+        onClose={() => setChoiceOpen(false)}
+        onOpenTunnel={() => setTunnelOpen(true)}
+      />
+      <DemoTunnelModal isOpen={tunnelOpen} onClose={() => setTunnelOpen(false)} />
+
       <Helmet>
         <title>Libérer le vrai potentiel de votre contenu — EKHO Studio</title>
         <meta name="description" content="Votre contenu est un actif. Ne le laissez pas devenir passif. EKHO transforme vos actifs existants en versions multilingues." />
@@ -120,10 +131,10 @@ const AboutPage = () => {
               </p>
               <div>
                 <button
-                  onClick={openCalendly}
+                  onClick={() => setChoiceOpen(true)}
                   className="inline-block px-10 py-5 bg-electric-purple text-white text-lg rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
                 >
-                  Demander une démo gratuite
+                  Obtenez votre démo gratuite
                 </button>
               </div>
             </motion.div>

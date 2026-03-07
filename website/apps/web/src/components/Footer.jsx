@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Phone, MessageCircle, Copy, Check } from 'lucide-react';
+import { Linkedin, Instagram, Mail, Phone, MessageCircle, Copy, Check } from 'lucide-react';
 
 const EMAIL = 'rudy.m@ekho-studio.com';
 
@@ -159,6 +159,15 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/ekho_studio_la_rochelle/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-electric-purple transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={24} />
               </a>
             </div>
           </div>

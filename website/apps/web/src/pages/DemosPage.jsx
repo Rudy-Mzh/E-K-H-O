@@ -4,10 +4,13 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import * as Tabs from '@radix-ui/react-tabs';
 import { Video, Megaphone, Dumbbell, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
+import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 
 const DemosPage = () => {
   const [activeTab, setActiveTab] = useState('all');
+  const [choiceOpen, setChoiceOpen] = useState(false);
+  const [tunnelOpen, setTunnelOpen] = useState(false);
 
   const categories = [
     { id: 'all', name: 'Tous', icon: <Video className="w-5 h-5" /> },
@@ -52,6 +55,13 @@ const DemosPage = () => {
 
   return (
     <>
+      <ContactChoiceModal
+        isOpen={choiceOpen}
+        onClose={() => setChoiceOpen(false)}
+        onOpenTunnel={() => setTunnelOpen(true)}
+      />
+      <DemoTunnelModal isOpen={tunnelOpen} onClose={() => setTunnelOpen(false)} />
+
       <Helmet>
         <title>Démos - EKHO Studio | Entendez la différence</title>
         <meta name="description" content="Découvrez des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue." />
@@ -167,12 +177,12 @@ const DemosPage = () => {
                       </div>
                     )}
 
-                    <Link
-                      to="/contact"
+                    <button
+                      onClick={() => setChoiceOpen(true)}
                       className="block w-full px-6 py-3 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300 text-center"
                     >
                       Je veux le même résultat → Demander une démo
-                    </Link>
+                    </button>
                   </div>
                 ))}
               </div>
@@ -188,12 +198,12 @@ const DemosPage = () => {
           >
             <p className="text-2xl font-bold text-white mb-2">D'autres adaptations arrivent.</p>
             <p className="text-gray-400 mb-6">Vous avez un contenu à adapter ? Faites-en la première démo.</p>
-            <Link
-              to="/contact"
+            <button
+              onClick={() => setChoiceOpen(true)}
               className="inline-block px-8 py-3 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
             >
               Soumettre mon contenu →
-            </Link>
+            </button>
           </motion.div>
 
         </div>

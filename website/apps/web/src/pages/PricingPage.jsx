@@ -1,11 +1,150 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check, X, Calendar, CreditCard, Lock, Wallet } from 'lucide-react';
 import { openCalendly } from '@/lib/calendly.js';
 
+// ─── Liens de paiement ──────────────────────────────────────────────────────
+//
+// STRIPE (recommandé, ~1.5% + 0.25€ par transaction)
+// 1. Créez un compte sur https://stripe.com
+// 2. Dashboard → Payment Links → créer un lien par pack
+// 3. Collez les URLs ci-dessous (ex: https://buy.stripe.com/xxxx)
+//
+// PAYPAL (alternatif, ~3.4% + frais fixes)
+// 1. Compte PayPal Business sur https://www.paypal.com/fr/business
+// 2. Outils → Boutons de paiement → Créer un lien
+// 3. Collez les URLs ci-dessous (ex: https://www.paypal.com/ncp/payment/xxxx)
+//
+// Laissez '' pour masquer le bouton correspondant.
+// ───────────────────────────────────────────────────────────────────────────
+const STRIPE_LINKS = {
+  'PACK STARTER':    '',  // TODO: https://buy.stripe.com/xxxx
+  'PACK PRO':        '',  // TODO: https://buy.stripe.com/xxxx
+  'PACK SUR-MESURE': '',
+};
+
+const PAYPAL_LINKS = {
+  'PACK STARTER':    '',  // TODO: https://www.paypal.com/ncp/payment/xxxx
+  'PACK PRO':        '',  // TODO: https://www.paypal.com/ncp/payment/xxxx
+  'PACK SUR-MESURE': '',
+};
+
+const OrderModal = ({ plan, onClose }) => {
+  if (!plan) return null;
+
+  const stripeUrl = STRIPE_LINKS[plan.name] || '';
+  const paypalUrl = PAYPAL_LINKS[plan.name] || '';
+  const hasStripe = !!stripeUrl;
+  const hasPaypal = !!paypalUrl;
+  const hasAnyPayment = hasStripe || hasPaypal;
+
+  const handleCalendly = () => {
+    onClose();
+    openCalendly();
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ duration: 0.3 }}
+        className="relative w-full max-w-md bg-[#080b1a] border border-electric-purple/50 rounded-2xl shadow-[0_0_60px_rgba(123,47,255,0.3)] overflow-hidden"
+      >
+        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+          <X size={20} />
+        </button>
+
+        <div className="p-8">
+          {/* Plan summary */}
+          <div className="mb-6">
+            <span className="inline-block px-3 py-1 bg-electric-purple/20 text-electric-purple text-xs font-semibold rounded-full mb-3">
+              Pack sélectionné
+            </span>
+            <h2 className="text-2xl font-bold text-white">{plan.name}</h2>
+            <div className="flex items-baseline gap-1 mt-1">
+              <span className="text-3xl font-bold text-electric-purple">{plan.price}</span>
+              {plan.period && <span className="text-gray-400">{plan.period}</span>}
+            </div>
+          </div>
+
+          {/* Features summary */}
+          <ul className="space-y-2 mb-6 border-t border-electric-purple/20 pt-5">
+            {plan.features.slice(0, 4).map((f, i) => (
+              <li key={i} className="flex items-center gap-2 text-gray-300 text-sm">
+                <Check size={14} className="text-electric-purple flex-shrink-0" />
+                {f.text}
+              </li>
+            ))}
+            {plan.features.length > 4 && (
+              <li className="text-gray-500 text-xs pl-5">+ {plan.features.length - 4} autres inclus</li>
+            )}
+          </ul>
+
+          {/* Payment buttons */}
+          <div className="space-y-3">
+            {hasStripe && (
+              <a
+                href={stripeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 py-4 bg-electric-purple text-white rounded-xl font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
+              >
+                <CreditCard size={18} />
+                Payer par carte — Stripe
+              </a>
+            )}
+
+            {hasPaypal && (
+              <a
+                href={paypalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 py-4 bg-[#003087] text-white rounded-xl font-semibold hover:bg-[#002370] transition-all duration-300"
+              >
+                <Wallet size={18} />
+                Payer avec PayPal
+              </a>
+            )}
+
+            <button
+              onClick={handleCalendly}
+              className={`w-full flex items-center justify-center gap-2 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                hasAnyPayment
+                  ? 'border border-electric-purple/40 text-electric-purple hover:bg-electric-purple/10'
+                  : 'bg-electric-purple text-white btn-neon-purple hover:bg-electric-purple/90'
+              }`}
+            >
+              <Calendar size={18} />
+              {hasAnyPayment ? 'Ou réserver un appel' : 'Réserver un appel pour commander'}
+            </button>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <Lock size={12} className="text-gray-500" />
+            <p className="text-gray-500 text-xs">
+              {hasAnyPayment ? 'Paiement 100% sécurisé · Sans engagement' : 'Appel gratuit, sans engagement · 20 min'}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const PricingPage = () => {
+  const [selectedPlan, setSelectedPlan] = useState(null);
   const pricingPlans = [
     {
       name: 'PACK STARTER',
@@ -70,6 +209,12 @@ const PricingPage = () => {
 
   return (
     <>
+      <AnimatePresence>
+        {selectedPlan && (
+          <OrderModal plan={selectedPlan} onClose={() => setSelectedPlan(null)} />
+        )}
+      </AnimatePresence>
+
       <Helmet>
         <title>Tarifs - EKHO Studio | Des tarifs transparents</title>
         <meta name="description" content="Découvrez nos tarifs transparents et flexibles. Starter à 149€, Pro à 349€, ou sur-mesure pour vos besoins spécifiques." />
@@ -164,7 +309,7 @@ const PricingPage = () => {
                   ))}
                 </ul>
                 <button
-                  onClick={openCalendly}
+                  onClick={() => setSelectedPlan(plan)}
                   className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
                     plan.highlighted
                       ? 'bg-electric-purple text-white group-hover:bg-neon-blue group-hover:shadow-[0_0_20px_rgba(0,194,255,0.6)]'
