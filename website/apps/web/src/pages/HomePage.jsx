@@ -9,6 +9,15 @@ import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 
 const FEATURED_DEMOS = [
   {
+    title: 'Interview — Yann Darwin & Alec Henry',
+    languages: 'FR → ES',
+    desc: "Authenticité de l'échange, flow naturel, ambiance sonore — préservés intégralement.",
+    beforeId: '1171690830',
+    afterId: '1171691552',
+    beforeRatio: '56.25%',
+    afterRatio: '56.25%',
+  },
+  {
     title: 'Coaching sportif — Sissy Mua',
     languages: 'FR → ES',
     desc: 'Même énergie, même intensité — en espagnol.',

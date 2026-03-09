@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import * as Tabs from '@radix-ui/react-tabs';
-import { Video, Megaphone, Dumbbell, Star } from 'lucide-react';
+import { Video, Megaphone, Dumbbell, Star, Mic2 } from 'lucide-react';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 
@@ -14,12 +14,22 @@ const DemosPage = () => {
 
   const categories = [
     { id: 'all', name: 'Tous', icon: <Video className="w-5 h-5" /> },
+    { id: 'interview', name: 'Interview', icon: <Mic2 className="w-5 h-5" /> },
     { id: 'sport', name: 'Coaching Sportif', icon: <Dumbbell className="w-5 h-5" /> },
     { id: 'speaker', name: 'Motivation Speaker', icon: <Star className="w-5 h-5" /> },
     { id: 'ad', name: 'Publicité', icon: <Megaphone className="w-5 h-5" /> },
   ];
 
   const demos = [
+    {
+      id: 12,
+      category: 'interview',
+      title: 'Interview : Yann Darwin & Alec Henry — Entrepreneuriat immobilier',
+      languages: 'FR → ES',
+      context: "Extrait d'une interview de Yann Darwin avec Alec Henry. L'authenticité de l'échange, le flow naturel de la conversation et l'ambiance sonore — autant d'éléments qu'EKHO préserve intégralement dans l'adaptation.",
+      beforeVideo: { id: '1171690830', ratio: '56.25%' },
+      afterVideo: { id: '1171691552', ratio: '56.25%' },
+    },
     {
       id: 9,
       category: 'sport',
