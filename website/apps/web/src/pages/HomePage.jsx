@@ -14,8 +14,6 @@ const FEATURED_DEMOS = [
     desc: "Authenticité de l'échange, flow naturel, ambiance sonore — préservés intégralement.",
     beforeId: '1171690830',
     afterId: '1171691552',
-    beforeRatio: '56.25%',
-    afterRatio: '56.25%',
   },
   {
     title: 'Coaching sportif — Sissy Mua',
@@ -23,8 +21,6 @@ const FEATURED_DEMOS = [
     desc: 'Même énergie, même intensité — en espagnol.',
     beforeId: '1168777376',
     afterId: '1168777402',
-    beforeRatio: '75%',
-    afterRatio: '75%',
   },
   {
     title: 'Motivation Speaker — David Laroche',
@@ -32,8 +28,6 @@ const FEATURED_DEMOS = [
     desc: 'Rythme, intonation et énergie recréés pour une audience anglophone.',
     beforeId: '1168782805',
     afterId: '1168103220',
-    beforeRatio: '75%',
-    afterRatio: '56.25%',
   },
   {
     title: 'Publicité — BOKU',
@@ -41,8 +35,6 @@ const FEATURED_DEMOS = [
     desc: 'Même impact, nouvelle langue, nouveau marché.',
     beforeId: '1168816208',
     afterId: '1168815869',
-    beforeRatio: '56.25%',
-    afterRatio: '56.25%',
   },
 ];
 
@@ -229,36 +221,34 @@ const HomePage = () => {
                       {demoIndex + 1} / {FEATURED_DEMOS.length}
                     </span>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-[#050814] rounded-lg p-4">
-                      <p className="text-sm font-semibold text-neon-blue mb-3">
-                        Version originale — {FEATURED_DEMOS[demoIndex].languages.split(' → ')[0]}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="bg-[#050814] rounded-lg p-3">
+                      <p className="text-xs font-semibold text-neon-blue mb-2 uppercase tracking-wide">
+                        Original — {FEATURED_DEMOS[demoIndex].languages.split(' → ')[0]}
                       </p>
-                      <div style={{ padding: `${FEATURED_DEMOS[demoIndex].beforeRatio} 0 0 0`, position: 'relative' }}>
+                      <div className="aspect-video w-full rounded overflow-hidden">
                         <iframe
                           src={`https://player.vimeo.com/video/${FEATURED_DEMOS[demoIndex].beforeId}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
                           frameBorder="0"
                           allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                           referrerPolicy="strict-origin-when-cross-origin"
-                          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                          className="w-full h-full"
                           title="Version originale"
-                          className="rounded"
                         />
                       </div>
                     </div>
-                    <div className="bg-[#050814] rounded-lg p-4">
-                      <p className="text-sm font-semibold text-hot-pink mb-3">
-                        Version adaptée EKHO — {FEATURED_DEMOS[demoIndex].languages.split(' → ')[1]}
+                    <div className="bg-[#050814] rounded-lg p-3">
+                      <p className="text-xs font-semibold text-hot-pink mb-2 uppercase tracking-wide">
+                        EKHO — {FEATURED_DEMOS[demoIndex].languages.split(' → ')[1]}
                       </p>
-                      <div style={{ padding: `${FEATURED_DEMOS[demoIndex].afterRatio} 0 0 0`, position: 'relative' }}>
+                      <div className="aspect-video w-full rounded overflow-hidden">
                         <iframe
                           src={`https://player.vimeo.com/video/${FEATURED_DEMOS[demoIndex].afterId}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
                           frameBorder="0"
                           allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                           referrerPolicy="strict-origin-when-cross-origin"
-                          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                          className="w-full h-full"
                           title="Version adaptée EKHO"
-                          className="rounded"
                         />
                       </div>
                     </div>

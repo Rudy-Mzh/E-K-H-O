@@ -27,8 +27,8 @@ const DemosPage = () => {
       title: 'Interview : Yann Darwin & Alec Henry — Entrepreneuriat immobilier',
       languages: 'FR → ES',
       context: "Extrait d'une interview de Yann Darwin avec Alec Henry. L'authenticité de l'échange, le flow naturel de la conversation et l'ambiance sonore — autant d'éléments qu'EKHO préserve intégralement dans l'adaptation.",
-      beforeVideo: { id: '1171690830', ratio: '56.25%' },
-      afterVideo: { id: '1171691552', ratio: '56.25%' },
+      beforeVideo: { id: '1171690830' },
+      afterVideo: { id: '1171691552' },
     },
     {
       id: 9,
@@ -36,8 +36,8 @@ const DemosPage = () => {
       title: 'Coaching sportif : Sissy Mua — Cardio en conditions réelles',
       languages: 'FR → ES',
       context: "Extrait de Sissy Mua filmé en pleine séance de cardio. La voix est portée par le mouvement, l'effort et l'intensité physique. EKHO préserve l'énergie, le rythme et l'authenticité dans l'adaptation.",
-      beforeVideo: { id: '1168777376', ratio: '75%' },
-      afterVideo: { id: '1168777402', ratio: '56.25%' }
+      beforeVideo: { id: '1168777376' },
+      afterVideo: { id: '1168777402' },
     },
     {
       id: 10,
@@ -45,8 +45,8 @@ const DemosPage = () => {
       title: 'Motivation Speaker : David Laroche — Stoïcisme',
       languages: 'FR → EN',
       context: "Extrait de David Laroche, figure majeure du coaching motivationnel. Rythme, intonation et énergie sont au cœur du message. EKHO recrée l'expérience complète pour une audience anglophone.",
-      beforeVideo: { id: '1168782805', ratio: '75%' },
-      afterVideo: { id: '1168103220', ratio: '56.25%' }
+      beforeVideo: { id: '1168782805' },
+      afterVideo: { id: '1168103220' },
     },
     {
       id: 11,
@@ -54,8 +54,8 @@ const DemosPage = () => {
       title: 'Publicité : BOKU — Adaptation marché anglophone',
       languages: 'FR → EN',
       context: "Extrait publicitaire BOKU adapté par EKHO pour le marché anglophone. Même énergie, même impact, nouvelle langue.",
-      beforeVideo: { id: '1168816208', ratio: '56.25%' },
-      afterVideo: { id: '1168815869', ratio: '56.25%' }
+      beforeVideo: { id: '1168816208' },
+      afterVideo: { id: '1168815869' },
     },
   ];
 
@@ -144,32 +144,34 @@ const DemosPage = () => {
                     </div>
 
                     {demo.beforeVideo ? (
-                      <div className="space-y-4 mb-6">
-                        <div className="bg-dark-navy rounded-lg p-4">
-                          <p className="text-sm font-semibold text-neon-blue mb-3">Version originale — {demo.languages.split(' → ')[0]}</p>
-                          <div style={{ padding: `${demo.beforeVideo.ratio} 0 0 0`, position: 'relative' }}>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                        <div className="bg-dark-navy rounded-lg p-3">
+                          <p className="text-xs font-semibold text-neon-blue mb-2 uppercase tracking-wide">
+                            Original — {demo.languages.split(' → ')[0]}
+                          </p>
+                          <div className="aspect-video w-full rounded overflow-hidden">
                             <iframe
                               src={`https://player.vimeo.com/video/${demo.beforeVideo.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
                               frameBorder="0"
                               allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                               referrerPolicy="strict-origin-when-cross-origin"
-                              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                              className="w-full h-full"
                               title="Version originale"
-                              className="rounded"
                             />
                           </div>
                         </div>
-                        <div className="bg-dark-navy rounded-lg p-4">
-                          <p className="text-sm font-semibold text-hot-pink mb-3">Version adaptée EKHO — {demo.languages.split(' → ')[1]}</p>
-                          <div style={{ padding: `${demo.afterVideo.ratio} 0 0 0`, position: 'relative' }}>
+                        <div className="bg-dark-navy rounded-lg p-3">
+                          <p className="text-xs font-semibold text-hot-pink mb-2 uppercase tracking-wide">
+                            EKHO — {demo.languages.split(' → ')[1]}
+                          </p>
+                          <div className="aspect-video w-full rounded overflow-hidden">
                             <iframe
                               src={`https://player.vimeo.com/video/${demo.afterVideo.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
                               frameBorder="0"
                               allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                               referrerPolicy="strict-origin-when-cross-origin"
-                              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                              className="w-full h-full"
                               title="Version adaptée EKHO"
-                              className="rounded"
                             />
                           </div>
                         </div>
