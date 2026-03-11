@@ -42,7 +42,7 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   style={{ transform: 'rotate(-1.5deg)' }}
-                  className="relative inline-flex items-center gap-1.5 px-3 py-1 bg-orange-500 text-white text-sm font-black rounded-md shadow-lg shadow-orange-500/30 hover:shadow-orange-500/60 hover:scale-110 hover:rotate-0 transition-all duration-200"
+                  className="relative inline-flex items-center gap-1.5 px-3 py-1 bg-orange-500 text-white text-sm font-black rounded-md mag-sticker-glow hover:scale-110 hover:rotate-0 transition-all duration-200"
                 >
                   <span className="text-[10px] opacity-70">✦</span>
                   {t(`nav.${link.key}`)}
