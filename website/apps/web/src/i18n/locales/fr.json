@@ -1,0 +1,262 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "vision": "Notre vision",
+    "demos": "Démos",
+    "services": "Services",
+    "pricing": "Tarifs",
+    "mag": "Le Mag",
+    "contact": "Contact",
+    "cta": "Réserver un appel"
+  },
+  "footer": {
+    "tagline": "Adaptez vos vidéos pour de nouveaux marchés. Même message, nouvelle langue, nouvelle audience.",
+    "links": "Liens rapides",
+    "contact": "Contact",
+    "rights": "Tous droits réservés.",
+    "openMail": "Ouvrir la messagerie",
+    "copyAddress": "Copier l'adresse",
+    "copied": "Copié !",
+    "call": "Appeler"
+  },
+  "home": {
+    "seoTitle": "EKHO Studio - Adaptez vos vidéos pour de nouveaux marchés",
+    "seoDesc": "EKHO adapte vos vidéos pour de nouveaux marchés. Même message, nouvelle langue, nouvelle audience. Déployez en 48h.",
+    "hero": "Même contenu. Nouveau marché. Nouveau revenu.",
+    "heroSub": "EKHO adapte vos vidéos pour de nouveaux marchés. Même message, nouvelle langue, nouvelle audience.",
+    "ctaDemo": "Obtenez votre démo gratuite ici",
+    "ctaBefore": "Voir les avant/après",
+    "demoTitle": "Entendez la différence.",
+    "demoSub": "Des exemples réels. Même message, nouvelle langue, même énergie.",
+    "seeAllDemos": "Voir toutes les démos",
+    "original": "Original",
+    "adapted": "EKHO",
+    "problemTitle": "Vous avez déjà investi. Pourquoi limiter votre portée ?",
+    "problemSub": "Vous avez créé du contenu de qualité. Mais il ne touche qu'un seul marché. EKHO vous permet de multiplier votre impact sans recommencer de zéro.",
+    "solutionTitle": "Un contenu. Plusieurs marchés. Sans recommencer.",
+    "benefitsTitle": "Pourquoi choisir EKHO ?",
+    "testimonialsTitle": "Ils ont franchi le pas.",
+    "testimonialsSub": "Ce que nos clients disent après leur première adaptation.",
+    "pricingTitle": "Des tarifs pensés pour scaler",
+    "pricingSub": "Transparents, flexibles, et adaptés à votre croissance. Pas de surprise, juste des résultats.",
+    "seePricing": "Voir tous les tarifs",
+    "ctaTitle": "Prêt à transformer vos vidéos ?",
+    "benefits": [
+      { "title": "Vitesse stratégique", "desc": "Déployez sur de nouveaux marchés en 48h, pas en 6 mois" },
+      { "title": "Rentabilité optimisée", "desc": "Multipliez votre ROI sans multiplier vos coûts de production" },
+      { "title": "Fidélité éditoriale", "desc": "Votre message reste intact, seule la langue change" },
+      { "title": "Expansion immédiate", "desc": "Touchez de nouveaux marchés sans équipe locale" },
+      { "title": "Accompagnement dédié", "desc": "Un expert EKHO suit votre projet de A à Z" },
+      { "title": "Flexibilité totale", "desc": "Adaptez autant de vidéos que nécessaire, sans engagement" }
+    ],
+    "steps": [
+      { "title": "Vous partagez", "desc": "Envoyez votre vidéo et vos langues cibles" },
+      { "title": "Nous adaptons", "desc": "L'IA accélère la traduction, nos experts affinent" },
+      { "title": "Vous déployez", "desc": "Votre vidéo adaptée est livrée en moins de 48h" }
+    ],
+    "testimonials": [
+      {
+        "name": "Marie L.",
+        "role": "Créatrice de contenu",
+        "text": "J'ai voulu tester EKHO sur une vidéo avant d'aller plus loin. Le résultat en espagnol était tellement bluffant que j'ai enchaîné avec trois autres vidéos dans la semaine. Le rendu est naturel, on ne dirait vraiment pas une adaptation."
+      },
+      {
+        "name": "Thomas R.",
+        "role": "Fondateur, marque de sport",
+        "text": "J'ai fait appel à EKHO pour voir le rendu de ma pub en anglais avant de m'engager sur un marché étranger. Honnêtement, ça m'a convaincu. Depuis, je travaille l'internationalisation de ma marque avec bien plus de confiance."
+      },
+      {
+        "name": "Sofia M.",
+        "role": "Coach et formatrice",
+        "text": "Ce qui m'a surprise, c'est la vitesse. J'ai envoyé ma vidéo le lundi matin et j'avais la version adaptée le mardi. La voix ressemble vraiment à la mienne. Mes clients allemands n'ont rien remarqué — pour eux, c'est moi qui parle."
+      }
+    ]
+  },
+  "services": {
+    "seoTitle": "Services - EKHO Studio | Comment ça marche",
+    "seoDesc": "Découvrez le processus EKHO en 3 étapes : partagez, nous adaptons, vous déployez. Simple, rapide, efficace.",
+    "heroTitle": "Comment ça marche",
+    "heroSub": "Un processus simple en 3 étapes pour transformer vos vidéos et toucher de nouveaux marchés.",
+    "diffTitle": "EKHO n'est pas un outil de traduction. C'est un studio d'adaptation.",
+    "diffSub": "Nous ne nous contentons pas de traduire des mots. Nous adaptons votre message pour qu'il résonne dans une nouvelle culture, avec la même force et la même authenticité.",
+    "diffTagline": "Votre message intact — votre impact, décuplé.",
+    "claim1": "IA pour la vitesse",
+    "claim2": "Humains pour l'exigence",
+    "claim3": "Fidèle à votre ADN",
+    "steps": [
+      {
+        "title": "Vous partagez",
+        "desc": "Envoyez-nous votre vidéo et vos langues cibles. Nous analysons le contenu et vous proposons un devis en 24h. Simple, rapide, transparent."
+      },
+      {
+        "title": "Nous adaptons",
+        "desc": "L'IA accélère la traduction et la synchronisation. Nos experts affinent chaque détail pour garantir la fidélité au message original.",
+        "highlight": "L'IA accélère le processus. Nos experts garantissent la qualité.",
+        "sub": "Qualité humaine, vitesse technologique."
+      },
+      {
+        "title": "Vous déployez",
+        "desc": "Votre vidéo adaptée est livrée en moins de 48h, prête à être publiée sur vos canaux. Nouveau marché, nouvelle audience, nouveaux revenus."
+      }
+    ]
+  },
+  "pricing": {
+    "seoTitle": "Tarifs - EKHO Studio | Des tarifs transparents",
+    "seoDesc": "Découvrez nos tarifs transparents et flexibles. Starter à 149€, Pro à 349€, ou sur-mesure pour vos besoins spécifiques.",
+    "heroTitle": "Des tarifs transparents. Pensés pour scaler.",
+    "heroSub": "Pas de surprise, pas de frais cachés. Juste des tarifs clairs pour des résultats mesurables.",
+    "selectedPack": "Pack sélectionné",
+    "payStripe": "Payer par carte — Stripe",
+    "payPaypal": "Payer avec PayPal",
+    "bookCallOr": "Ou réserver un appel",
+    "bookCallOrder": "Réserver un appel pour commander",
+    "securePayment": "Paiement 100% sécurisé · Sans engagement",
+    "freeCall": "Appel gratuit, sans engagement · 20 min",
+    "moreIncluded": "autres inclus",
+    "choosePack": "Choisir ce pack",
+    "addOnsTitle": "Options supplémentaires",
+    "option": "Option",
+    "price": "Prix",
+    "footnote": "Nos tarifs sont fournis à titre indicatif. Chaque projet étant unique, seul un devis établi suite à un échange sera retenu comme base contractuelle.",
+    "plans": [
+      {
+        "name": "PACK STARTER",
+        "price": "€149",
+        "period": "/vidéo",
+        "desc": "Parfait pour tester EKHO",
+        "features": [
+          "Jusqu'à 10 min de vidéo",
+          "1 langue cible",
+          "Synchronisation labiale avancée incluse",
+          "Un seul intervenant sur la vidéo",
+          "Livraison en 48h",
+          "Support par email",
+          "1 révision incluse"
+        ]
+      },
+      {
+        "name": "PACK PRO",
+        "price": "€349",
+        "period": "/vidéo",
+        "desc": "Le plus choisi",
+        "features": [
+          "Jusqu'à 30 min de vidéo",
+          "1 langue cible",
+          "Synchronisation labiale avancée incluse",
+          "Un seul intervenant sur la vidéo",
+          "Livraison en 48h",
+          "Support prioritaire",
+          "2 révisions incluses",
+          "Optimisation audio"
+        ],
+        "badge": "-22% vs Pack Starter"
+      },
+      {
+        "name": "PACK SUR-MESURE",
+        "price": "Sur devis",
+        "period": "",
+        "desc": "Pour scaler sans limite",
+        "features": [
+          "Langues illimitées",
+          "Vidéos de toute durée",
+          "Multi-intervenants disponibles",
+          "Livraison express",
+          "Account manager dédié",
+          "Révisions incluses selon projet",
+          "Script livrable",
+          "Sous-titres personnalisés inclus",
+          "Clone de votre voix"
+        ]
+      }
+    ],
+    "addOns": [
+      { "name": "Langue supplémentaire", "price": "+89€" },
+      { "name": "Optimisation audio source", "price": "+49€" },
+      { "name": "Livraison express (-24h)", "price": "+59€" },
+      { "name": "Sous-titres intégrés", "price": "+39€" },
+      { "name": "Clone de votre voix", "price": "Sur devis" }
+    ]
+  },
+  "about": {
+    "seoTitle": "Libérer le vrai potentiel de votre contenu — EKHO Studio",
+    "seoDesc": "Votre contenu est un actif. Ne le laissez pas devenir passif. EKHO transforme vos actifs existants en versions multilingues.",
+    "heroTitle": "Libérer le vrai potentiel de votre contenu",
+    "result": "Le résultat",
+    "gain1": "Gagnez du temps.",
+    "gain2": "Ouvrez votre audience.",
+    "gain3": "Boostez votre business.",
+    "tagline": "Brutalement simple.\nInsanely powerful.",
+    "ctaDemo": "Obtenez votre démo gratuite",
+    "founderTitle": "Fondateur, EKHO Studio",
+    "founderLocation": "La Rochelle, France",
+    "blocks": [
+      {
+        "title": "Votre contenu est un actif.\nNe le laissez pas devenir passif.",
+        "body": "Vous avez investi du temps, de l'argent et une énergie considérable dans la création de vos contenus. Vos vidéos, vos podcasts et vos campagnes ont déjà prouvé leur valeur sur votre marché. Pourtant, une fois diffusés, leur potentiel s'arrête aux frontières linguistiques. Vous laissez dormir une audience immense."
+      },
+      {
+        "title": "La course à la visibilité ne doit pas\nêtre un éternel recommencement.",
+        "body": "Pendant que vous vous épuisez à produire toujours plus pour rester « trendy », vos concurrents internationaux scalent déjà leurs succès. Résultat ? Votre croissance reste linéaire, alors qu'elle pourrait être exponentielle."
+      },
+      {
+        "title": "C'est là qu'EKHO intervient —\nsans repartir de zéro.",
+        "body": "Nous transformons vos actifs existants en versions multilingues. Nous utilisons l'IA pour la puissance et nos experts pour la précision, garantissant un rendu naturel, fidèle à votre voix et à votre ton. Vous gardez l'authenticité de votre message ; nous lui donnons une portée mondiale."
+      }
+    ]
+  },
+  "demos": {
+    "seoTitle": "Démos - EKHO Studio | Entendez la différence",
+    "seoDesc": "Découvrez des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue.",
+    "heroTitle": "Entendez la différence.",
+    "heroSub": "Voici des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue.",
+    "before": "Avant",
+    "after": "Après",
+    "original": "Original",
+    "adapted": "EKHO",
+    "ctaCard": "Je veux le même résultat → Demander une démo",
+    "comingSoonTitle": "D'autres adaptations arrivent.",
+    "comingSoonSub": "Vous avez un contenu à adapter ? Faites-en la première démo.",
+    "submit": "Soumettre mon contenu →",
+    "categories": {
+      "all": "Tous",
+      "interview": "Interview",
+      "sport": "Coaching Sportif",
+      "speaker": "Motivation Speaker",
+      "ad": "Publicité",
+      "tutorial": "Tutoriel"
+    }
+  },
+  "contact": {
+    "seoTitle": "Contact - EKHO Studio | On vous répond sous 24h",
+    "seoDesc": "Contactez EKHO Studio. Nous vous répondons sous 24h. Demandez une démo ou réservez un appel de 20 minutes.",
+    "heroTitle": "On vous répond sous 24h.",
+    "heroSub": "Une question ? Un projet ? Choisissez comment vous souhaitez nous contacter.",
+    "formTitle": "Envoyez-nous un message",
+    "name": "Prénom/Nom",
+    "email": "Email professionnel",
+    "need": "Votre besoin",
+    "selectOption": "Sélectionnez une option",
+    "needOptions": {
+      "creator": "Créateur",
+      "brand": "Marque",
+      "agency": "Agence",
+      "other": "Autre"
+    },
+    "message": "Lien vers votre vidéo ou message libre",
+    "messagePlaceholder": "Parlez-nous de votre projet...",
+    "send": "Envoyer",
+    "sending": "Envoi en cours…",
+    "thankYou": "Merci !",
+    "replyTime": "Nous vous répondrons sous 24h.",
+    "errorGeneric": "Une erreur est survenue. Veuillez réessayer.",
+    "errorNetwork": "Une erreur est survenue. Vérifiez votre connexion.",
+    "calendlyTitle": "Réservez un appel",
+    "calendlySub": "Choisissez directement un créneau qui vous convient. Appel de découverte gratuit, 20 min.",
+    "chooseSlot": "Choisir mon créneau →",
+    "infoTitle": "Informations de contact",
+    "openMail": "Ouvrir la messagerie",
+    "copyAddress": "Copier l'adresse",
+    "copied": "Copié !",
+    "call": "Appeler"
+  }
+}

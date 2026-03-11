@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import * as Tabs from '@radix-ui/react-tabs';
 import { Video, Megaphone, Dumbbell, Star, Mic2, BookOpen } from 'lucide-react';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
@@ -9,21 +10,22 @@ import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 import { demos } from '@/data/demos.js';
 
 const DemosPage = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('all');
   const [choiceOpen, setChoiceOpen] = useState(false);
   const [tunnelOpen, setTunnelOpen] = useState(false);
 
   const categories = [
-    { id: 'all', name: 'Tous', icon: <Video className="w-5 h-5" /> },
-    { id: 'interview', name: 'Interview', icon: <Mic2 className="w-5 h-5" /> },
-    { id: 'sport', name: 'Coaching Sportif', icon: <Dumbbell className="w-5 h-5" /> },
-    { id: 'speaker', name: 'Motivation Speaker', icon: <Star className="w-5 h-5" /> },
-    { id: 'ad', name: 'Publicité', icon: <Megaphone className="w-5 h-5" /> },
-    { id: 'tutorial', name: 'Tutoriel', icon: <BookOpen className="w-5 h-5" /> },
+    { id: 'all', name: t('demos.categories.all'), icon: <Video className="w-5 h-5" /> },
+    { id: 'interview', name: t('demos.categories.interview'), icon: <Mic2 className="w-5 h-5" /> },
+    { id: 'sport', name: t('demos.categories.sport'), icon: <Dumbbell className="w-5 h-5" /> },
+    { id: 'speaker', name: t('demos.categories.speaker'), icon: <Star className="w-5 h-5" /> },
+    { id: 'ad', name: t('demos.categories.ad'), icon: <Megaphone className="w-5 h-5" /> },
+    { id: 'tutorial', name: t('demos.categories.tutorial'), icon: <BookOpen className="w-5 h-5" /> },
   ];
 
-  const filteredDemos = activeTab === 'all' 
-    ? demos 
+  const filteredDemos = activeTab === 'all'
+    ? demos
     : demos.filter(demo => demo.category === activeTab);
 
   return (
@@ -36,8 +38,8 @@ const DemosPage = () => {
       <DemoTunnelModal isOpen={tunnelOpen} onClose={() => setTunnelOpen(false)} />
 
       <Helmet>
-        <title>Démos - EKHO Studio | Entendez la différence</title>
-        <meta name="description" content="Découvrez des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue." />
+        <title>{t('demos.seoTitle')}</title>
+        <meta name="description" content={t('demos.seoDesc')} />
       </Helmet>
 
       {/* Hero with video background */}
@@ -58,7 +60,7 @@ const DemosPage = () => {
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
           >
-            Entendez la différence.
+            {t('demos.heroTitle')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -66,7 +68,7 @@ const DemosPage = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            Voici des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue.
+            {t('demos.heroSub')}
           </motion.p>
         </div>
       </section>
@@ -110,7 +112,7 @@ const DemosPage = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                         <div className="bg-dark-navy rounded-lg p-3">
                           <p className="text-xs font-semibold text-neon-blue mb-2 uppercase tracking-wide">
-                            Original — {demo.languages.split(' → ')[0]}
+                            {t('demos.original')} — {demo.languages.split(' → ')[0]}
                           </p>
                           <div className="aspect-video w-full rounded overflow-hidden">
                             <iframe
@@ -125,7 +127,7 @@ const DemosPage = () => {
                         </div>
                         <div className="bg-dark-navy rounded-lg p-3">
                           <p className="text-xs font-semibold text-hot-pink mb-2 uppercase tracking-wide">
-                            EKHO — {demo.languages.split(' → ')[1]}
+                            {t('demos.adapted')} — {demo.languages.split(' → ')[1]}
                           </p>
                           <div className="aspect-video w-full rounded overflow-hidden">
                             <iframe
@@ -142,11 +144,11 @@ const DemosPage = () => {
                     ) : (
                       <div className="space-y-4 mb-6">
                         <div className="bg-dark-navy rounded-lg p-4">
-                          <p className="text-sm font-semibold text-neon-blue mb-2">Avant</p>
+                          <p className="text-sm font-semibold text-neon-blue mb-2">{t('demos.before')}</p>
                           <p className="text-gray-300 italic">"{demo.before}"</p>
                         </div>
                         <div className="bg-dark-navy rounded-lg p-4">
-                          <p className="text-sm font-semibold text-hot-pink mb-2">Après</p>
+                          <p className="text-sm font-semibold text-hot-pink mb-2">{t('demos.after')}</p>
                           <p className="text-gray-300 italic">"{demo.after}"</p>
                         </div>
                       </div>
@@ -156,7 +158,7 @@ const DemosPage = () => {
                       onClick={() => setChoiceOpen(true)}
                       className="block w-full px-6 py-3 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300 text-center"
                     >
-                      Je veux le même résultat → Demander une démo
+                      {t('demos.ctaCard')}
                     </button>
                   </div>
                 ))}
@@ -171,13 +173,13 @@ const DemosPage = () => {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto mt-8 mb-8 bg-gradient-to-br from-electric-purple/10 to-neon-blue/10 border border-electric-purple/30 rounded-xl p-8 text-center hover:border-electric-purple/60 transition-all duration-300"
           >
-            <p className="text-2xl font-bold text-white mb-2">D'autres adaptations arrivent.</p>
-            <p className="text-gray-400 mb-6">Vous avez un contenu à adapter ? Faites-en la première démo.</p>
+            <p className="text-2xl font-bold text-white mb-2">{t('demos.comingSoonTitle')}</p>
+            <p className="text-gray-400 mb-6">{t('demos.comingSoonSub')}</p>
             <button
               onClick={() => setChoiceOpen(true)}
               className="inline-block px-8 py-3 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
             >
-              Soumettre mon contenu →
+              {t('demos.submit')}
             </button>
           </motion.div>
 

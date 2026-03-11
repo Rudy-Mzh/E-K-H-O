@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Check, X, Calendar, CreditCard, Lock, Wallet } from 'lucide-react';
 import { openCalendly } from '@/lib/calendly.js';
 
@@ -32,6 +33,7 @@ const PAYPAL_LINKS = {
 };
 
 const OrderModal = ({ plan, onClose }) => {
+  const { t } = useTranslation();
   if (!plan) return null;
 
   const stripeUrl = STRIPE_LINKS[plan.name] || '';
@@ -69,7 +71,7 @@ const OrderModal = ({ plan, onClose }) => {
           {/* Plan summary */}
           <div className="mb-6">
             <span className="inline-block px-3 py-1 bg-electric-purple/20 text-electric-purple text-xs font-semibold rounded-full mb-3">
-              Pack sélectionné
+              {t('pricing.selectedPack')}
             </span>
             <h2 className="text-2xl font-bold text-white">{plan.name}</h2>
             <div className="flex items-baseline gap-1 mt-1">
@@ -87,7 +89,7 @@ const OrderModal = ({ plan, onClose }) => {
               </li>
             ))}
             {plan.features.length > 4 && (
-              <li className="text-gray-500 text-xs pl-5">+ {plan.features.length - 4} autres inclus</li>
+              <li className="text-gray-500 text-xs pl-5">+ {plan.features.length - 4} {t('pricing.moreIncluded')}</li>
             )}
           </ul>
 
@@ -101,7 +103,7 @@ const OrderModal = ({ plan, onClose }) => {
                 className="w-full flex items-center justify-center gap-2 py-4 bg-electric-purple text-white rounded-xl font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
               >
                 <CreditCard size={18} />
-                Payer par carte — Stripe
+                {t('pricing.payStripe')}
               </a>
             )}
 
@@ -113,7 +115,7 @@ const OrderModal = ({ plan, onClose }) => {
                 className="w-full flex items-center justify-center gap-2 py-4 bg-[#003087] text-white rounded-xl font-semibold hover:bg-[#002370] transition-all duration-300"
               >
                 <Wallet size={18} />
-                Payer avec PayPal
+                {t('pricing.payPaypal')}
               </a>
             )}
 
@@ -126,7 +128,7 @@ const OrderModal = ({ plan, onClose }) => {
               }`}
             >
               <Calendar size={18} />
-              {hasAnyPayment ? 'Ou réserver un appel' : 'Réserver un appel pour commander'}
+              {hasAnyPayment ? t('pricing.bookCallOr') : t('pricing.bookCallOrder')}
             </button>
           </div>
 
@@ -134,7 +136,7 @@ const OrderModal = ({ plan, onClose }) => {
           <div className="flex items-center justify-center gap-2 mt-4">
             <Lock size={12} className="text-gray-500" />
             <p className="text-gray-500 text-xs">
-              {hasAnyPayment ? 'Paiement 100% sécurisé · Sans engagement' : 'Appel gratuit, sans engagement · 20 min'}
+              {hasAnyPayment ? t('pricing.securePayment') : t('pricing.freeCall')}
             </p>
           </div>
         </div>
@@ -144,68 +146,23 @@ const OrderModal = ({ plan, onClose }) => {
 };
 
 const PricingPage = () => {
+  const { t } = useTranslation();
   const [selectedPlan, setSelectedPlan] = useState(null);
-  const pricingPlans = [
-    {
-      name: 'PACK STARTER',
-      price: '€149',
-      period: '/vidéo',
-      description: 'Parfait pour tester EKHO',
-      features: [
-        { text: 'Jusqu\'à 10 min de vidéo' },
-        { text: '1 langue cible' },
-        { text: 'Synchronisation labiale avancée incluse' },
-        { text: 'Un seul intervenant sur la vidéo' },
-        { text: 'Livraison en 48h' },
-        { text: 'Support par email' },
-        { text: '1 révision incluse' },
-      ],
-      highlighted: false
-    },
-    {
-      name: 'PACK PRO',
-      price: '€349',
-      period: '/vidéo',
-      description: 'Le plus choisi',
-      features: [
-        { text: 'Jusqu\'à 30 min de vidéo', badge: '-22% vs Pack Starter' },
-        { text: '1 langue cible' },
-        { text: 'Synchronisation labiale avancée incluse' },
-        { text: 'Un seul intervenant sur la vidéo' },
-        { text: 'Livraison en 48h' },
-        { text: 'Support prioritaire' },
-        { text: '2 révisions incluses' },
-        { text: 'Optimisation audio' },
-      ],
-      highlighted: true
-    },
-    {
-      name: 'PACK SUR-MESURE',
-      price: 'Sur devis',
-      period: '',
-      description: 'Pour scaler sans limite',
-      features: [
-        { text: 'Langues illimitées' },
-        { text: 'Vidéos de toute durée' },
-        { text: 'Multi-intervenants disponibles' },
-        { text: 'Livraison express' },
-        { text: 'Account manager dédié' },
-        { text: 'Révisions incluses selon projet' },
-        { text: 'Script livrable' },
-        { text: 'Sous-titres personnalisés inclus' },
-        { text: 'Clone de votre voix' },
-      ],
-      highlighted: false
-    }
-  ];
 
-  const addOns = [
-    { name: 'Langue supplémentaire', price: '+89€' },
-    { name: 'Optimisation audio source', price: '+49€' },
-    { name: 'Livraison express (-24h)', price: '+59€' },
-    { name: 'Sous-titres intégrés', price: '+39€' },
-    { name: 'Clone de votre voix', price: 'Sur devis' }
-  ];
+  const rawPlans = t('pricing.plans', { returnObjects: true });
+  const pricingPlans = rawPlans.map((p, i) => ({
+    name: p.name,
+    price: p.price,
+    period: p.period,
+    description: p.desc,
+    features: p.features.map((f, fi) => ({
+      text: f,
+      ...(i === 1 && fi === 0 ? { badge: p.badge } : {})
+    })),
+    highlighted: i === 1
+  }));
+
+  const addOns = t('pricing.addOns', { returnObjects: true });
 
   return (
     <>
@@ -216,8 +173,8 @@ const PricingPage = () => {
       </AnimatePresence>
 
       <Helmet>
-        <title>Tarifs - EKHO Studio | Des tarifs transparents</title>
-        <meta name="description" content="Découvrez nos tarifs transparents et flexibles. Starter à 149€, Pro à 349€, ou sur-mesure pour vos besoins spécifiques." />
+        <title>{t('pricing.seoTitle')}</title>
+        <meta name="description" content={t('pricing.seoDesc')} />
       </Helmet>
 
       {/* Hero with video background */}
@@ -238,7 +195,7 @@ const PricingPage = () => {
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
           >
-            Des tarifs transparents. Pensés pour scaler.
+            {t('pricing.heroTitle')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -246,7 +203,7 @@ const PricingPage = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            Pas de surprise, pas de frais cachés. Juste des tarifs clairs pour des résultats mesurables.
+            {t('pricing.heroSub')}
           </motion.p>
         </div>
       </section>
@@ -316,7 +273,7 @@ const PricingPage = () => {
                       : 'bg-transparent border-2 border-electric-purple text-electric-purple group-hover:bg-electric-purple group-hover:text-white group-hover:shadow-[0_0_20px_rgba(123,47,255,0.5)]'
                   }`}
                 >
-                  Choisir ce pack
+                  {t('pricing.choosePack')}
                 </button>
               </motion.div>
             ))}
@@ -325,7 +282,7 @@ const PricingPage = () => {
           {/* Footnote */}
           <p className="text-gray-500 text-sm text-center max-w-2xl mx-auto mb-16 border border-electric-purple/20 rounded-lg px-6 py-4">
             <span className="text-electric-purple/70 font-semibold">* </span>
-            Nos tarifs sont fournis à titre indicatif. Chaque projet étant unique, seul un devis établi suite à un échange sera retenu comme base contractuelle.
+            {t('pricing.footnote')}
           </p>
 
           {/* Add-ons Section */}
@@ -336,14 +293,14 @@ const PricingPage = () => {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center neon-glow-blue">
-              Options supplémentaires
+              {t('pricing.addOnsTitle')}
             </h2>
             <div className="bg-[#050814] border border-electric-purple/30 rounded-xl overflow-hidden">
               <table className="w-full">
                 <thead className="bg-electric-purple/10">
                   <tr>
-                    <th className="px-6 py-4 text-left text-white font-semibold">Option</th>
-                    <th className="px-6 py-4 text-right text-white font-semibold">Prix</th>
+                    <th className="px-6 py-4 text-left text-white font-semibold">{t('pricing.option')}</th>
+                    <th className="px-6 py-4 text-right text-white font-semibold">{t('pricing.price')}</th>
                   </tr>
                 </thead>
                 <tbody>

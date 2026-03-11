@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { openCalendly } from '@/lib/calendly.js';
 import { Zap, DollarSign, Target, Globe, Users, RefreshCw, ArrowRight, Upload, Sparkles, Rocket, Star, Quote } from 'lucide-react';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
@@ -19,6 +20,7 @@ const FEATURED_DEMOS = demos.map(d => ({
 const AUTO_ROTATE_INTERVAL = 8000; // 8 secondes par démo
 
 const HomePage = () => {
+  const { t } = useTranslation();
   const [tunnelOpen, setTunnelOpen] = useState(false);
   const [demoIndex, setDemoIndex] = useState(0);
 
@@ -30,83 +32,17 @@ const HomePage = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const benefits = [
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Vitesse stratégique',
-      description: 'Déployez sur de nouveaux marchés en 48h, pas en 6 mois'
-    },
-    {
-      icon: <DollarSign className="w-8 h-8" />,
-      title: 'Rentabilité optimisée',
-      description: 'Multipliez votre ROI sans multiplier vos coûts de production'
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: 'Fidélité éditoriale',
-      description: 'Votre message reste intact, seule la langue change'
-    },
-    {
-      icon: <Globe className="w-8 h-8" />,
-      title: 'Expansion immédiate',
-      description: 'Touchez de nouveaux marchés sans équipe locale'
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Accompagnement dédié',
-      description: 'Un expert EKHO suit votre projet de A à Z'
-    },
-    {
-      icon: <RefreshCw className="w-8 h-8" />,
-      title: 'Flexibilité totale',
-      description: 'Adaptez autant de vidéos que nécessaire, sans engagement'
-    }
-  ];
+  const benefits = t('home.benefits', { returnObjects: true }).map((b, i) => ({ icon: [<Zap className="w-8 h-8" />, <DollarSign className="w-8 h-8" />, <Target className="w-8 h-8" />, <Globe className="w-8 h-8" />, <Users className="w-8 h-8" />, <RefreshCw className="w-8 h-8" />][i], title: b.title, description: b.desc }));
 
-  const steps = [
-    {
-      icon: <Upload className="w-12 h-12" />,
-      title: 'Vous partagez',
-      description: 'Envoyez votre vidéo et vos langues cibles'
-    },
-    {
-      icon: <Sparkles className="w-12 h-12" />,
-      title: 'Nous adaptons',
-      description: "L'IA accélère la traduction, nos experts affinent"
-    },
-    {
-      icon: <Rocket className="w-12 h-12" />,
-      title: 'Vous déployez',
-      description: 'Votre vidéo adaptée est livrée en moins de 48h'
-    }
-  ];
+  const steps = t('home.steps', { returnObjects: true }).map((s, i) => ({ icon: [<Upload className="w-12 h-12" />, <Sparkles className="w-12 h-12" />, <Rocket className="w-12 h-12" />][i], title: s.title, description: s.desc }));
 
-  const testimonials = [
-    {
-      name: 'Marie L.',
-      role: 'Créatrice de contenu',
-      text: "J'ai voulu tester EKHO sur une vidéo avant d'aller plus loin. Le résultat en espagnol était tellement bluffant que j'ai enchaîné avec trois autres vidéos dans la semaine. Le rendu est naturel, on ne dirait vraiment pas une adaptation.",
-      stars: 5,
-    },
-    {
-      name: 'Thomas R.',
-      role: 'Fondateur, marque de sport',
-      text: "J'ai fait appel à EKHO pour voir le rendu de ma pub en anglais avant de m'engager sur un marché étranger. Honnêtement, ça m'a convaincu. Depuis, je travaille l'internationalisation de ma marque avec bien plus de confiance.",
-      stars: 5,
-    },
-    {
-      name: 'Sofia M.',
-      role: 'Coach et formatrice',
-      text: "Ce qui m'a surprise, c'est la vitesse. J'ai envoyé ma vidéo le lundi matin et j'avais la version adaptée le mardi. La voix ressemble vraiment à la mienne. Mes clients allemands n'ont rien remarqué — pour eux, c'est moi qui parle.",
-      stars: 5,
-    },
-  ];
+  const testimonials = t('home.testimonials', { returnObjects: true }).map(t => ({ ...t, stars: 5 }));
 
   return (
     <>
       <Helmet>
-        <title>EKHO Studio - Adaptez vos vidéos pour de nouveaux marchés</title>
-        <meta name="description" content="EKHO adapte vos vidéos pour de nouveaux marchés. Même message, nouvelle langue, nouvelle audience. Déployez en 48h." />
+        <title>{t('home.seoTitle')}</title>
+        <meta name="description" content={t('home.seoDesc')} />
       </Helmet>
 
       {/* Demo Tunnel Modal */}
@@ -123,7 +59,7 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 neon-glow-purple"
           >
-            Même contenu. Nouveau marché. Nouveau revenu.
+            {t('home.hero')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -131,7 +67,7 @@ const HomePage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
-            EKHO adapte vos vidéos pour de nouveaux marchés. Même message, nouvelle langue, nouvelle audience.
+            {t('home.heroSub')}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -143,13 +79,13 @@ const HomePage = () => {
               onClick={() => setTunnelOpen(true)}
               className="px-8 py-4 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300 text-lg"
             >
-              Obtenez votre démo gratuite ici
+              {t('home.ctaDemo')}
             </button>
             <Link
               to="/demos"
               className="px-8 py-4 border-2 border-electric-purple text-electric-purple rounded-lg font-semibold hover:bg-electric-purple/10 transition-all duration-300"
             >
-              Voir les avant/après
+              {t('home.ctaBefore')}
             </Link>
           </motion.div>
         </div>
@@ -165,10 +101,10 @@ const HomePage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 neon-glow-blue">
-              Entendez la différence.
+              {t('home.demoTitle')}
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Des exemples réels. Même message, nouvelle langue, même énergie.
+              {t('home.demoSub')}
             </p>
           </motion.div>
 
@@ -202,7 +138,7 @@ const HomePage = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="bg-[#050814] rounded-lg p-3">
                       <p className="text-xs font-semibold text-neon-blue mb-2 uppercase tracking-wide">
-                        Original — {FEATURED_DEMOS[demoIndex].languages.split(' → ')[0]}
+                        {t('home.original')} — {FEATURED_DEMOS[demoIndex].languages.split(' → ')[0]}
                       </p>
                       <div className="aspect-video w-full rounded overflow-hidden">
                         <iframe
@@ -217,7 +153,7 @@ const HomePage = () => {
                     </div>
                     <div className="bg-[#050814] rounded-lg p-3">
                       <p className="text-xs font-semibold text-hot-pink mb-2 uppercase tracking-wide">
-                        EKHO — {FEATURED_DEMOS[demoIndex].languages.split(' → ')[1]}
+                        {t('home.adapted')} — {FEATURED_DEMOS[demoIndex].languages.split(' → ')[1]}
                       </p>
                       <div className="aspect-video w-full rounded overflow-hidden">
                         <iframe
@@ -251,7 +187,7 @@ const HomePage = () => {
                 to="/demos"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-electric-purple text-electric-purple rounded-lg font-semibold hover:bg-electric-purple/10 transition-all duration-300"
               >
-                Voir toutes les démos
+                {t('home.seeAllDemos')}
                 <ArrowRight size={18} />
               </Link>
             </div>
@@ -270,10 +206,10 @@ const HomePage = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 neon-glow-blue">
-              Vous avez déjà investi. Pourquoi limiter votre portée ?
+              {t('home.problemTitle')}
             </h2>
             <p className="text-xl text-gray-300">
-              Vous avez créé du contenu de qualité. Mais il ne touche qu'un seul marché. EKHO vous permet de multiplier votre impact sans recommencer de zéro.
+              {t('home.problemSub')}
             </p>
           </motion.div>
         </div>
@@ -288,7 +224,7 @@ const HomePage = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white text-center mb-16 neon-glow-purple"
           >
-            Un contenu. Plusieurs marchés. Sans recommencer.
+            {t('home.solutionTitle')}
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {steps.map((step, index) => (
@@ -318,7 +254,7 @@ const HomePage = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white text-center mb-16 neon-glow-blue"
           >
-            Pourquoi choisir EKHO ?
+            {t('home.benefitsTitle')}
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {benefits.map((benefit, index) => (
@@ -349,9 +285,9 @@ const HomePage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 neon-glow-purple">
-              Ils ont franchi le pas.
+              {t('home.testimonialsTitle')}
             </h2>
-            <p className="text-xl text-gray-300">Ce que nos clients disent après leur première adaptation.</p>
+            <p className="text-xl text-gray-300">{t('home.testimonialsSub')}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -391,16 +327,16 @@ const HomePage = () => {
             className="max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 neon-glow-purple">
-              Des tarifs pensés pour scaler
+              {t('home.pricingTitle')}
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Transparents, flexibles, et adaptés à votre croissance. Pas de surprise, juste des résultats.
+              {t('home.pricingSub')}
             </p>
             <Link
               to="/pricing"
               className="inline-flex items-center px-8 py-4 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
             >
-              Voir tous les tarifs
+              {t('home.seePricing')}
               <ArrowRight className="ml-2" size={20} />
             </Link>
           </motion.div>
@@ -417,20 +353,20 @@ const HomePage = () => {
             className="max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 neon-glow-blue">
-              Prêt à transformer vos vidéos ?
+              {t('home.ctaTitle')}
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setTunnelOpen(true)}
                 className="inline-block px-10 py-5 bg-electric-purple text-white text-lg rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
               >
-                Obtenez votre démo gratuite ici
+                {t('home.ctaDemo')}
               </button>
               <button
                 onClick={openCalendly}
                 className="inline-block px-10 py-5 border-2 border-electric-purple text-electric-purple text-lg rounded-lg font-semibold hover:bg-electric-purple/10 transition-all duration-300"
               >
-                Réserver un appel
+                {t('nav.cta')}
               </button>
             </div>
           </motion.div>

@@ -1,0 +1,262 @@
+{
+  "nav": {
+    "home": "Home",
+    "vision": "Our vision",
+    "demos": "Demos",
+    "services": "How it works",
+    "pricing": "Pricing",
+    "mag": "The Mag",
+    "contact": "Contact",
+    "cta": "Book a call"
+  },
+  "footer": {
+    "tagline": "Adapt your videos for new markets. Same message, new language, new audience.",
+    "links": "Quick links",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "openMail": "Open mail client",
+    "copyAddress": "Copy address",
+    "copied": "Copied!",
+    "call": "Call"
+  },
+  "home": {
+    "seoTitle": "EKHO Studio - Adapt Your Videos for New Markets",
+    "seoDesc": "EKHO adapts your videos for new markets. Same message, new language, new audience. Deploy in 48h.",
+    "hero": "Same content. New market. New revenue.",
+    "heroSub": "EKHO adapts your videos for new markets. Same message, new language, new audience.",
+    "ctaDemo": "Get your free demo",
+    "ctaBefore": "See before/after",
+    "demoTitle": "Hear the difference.",
+    "demoSub": "Real examples. Same message, new language, same energy.",
+    "seeAllDemos": "See all demos",
+    "original": "Original",
+    "adapted": "EKHO",
+    "problemTitle": "You've already invested. Why limit your reach?",
+    "problemSub": "You've created quality content. But it only reaches one market. EKHO lets you multiply your impact without starting over.",
+    "solutionTitle": "One piece of content. Multiple markets. No rebuild.",
+    "benefitsTitle": "Why choose EKHO?",
+    "testimonialsTitle": "They took the leap.",
+    "testimonialsSub": "What our clients say after their first adaptation.",
+    "pricingTitle": "Pricing built to scale",
+    "pricingSub": "Transparent, flexible, and designed for your growth. No surprises, just results.",
+    "seePricing": "See all pricing",
+    "ctaTitle": "Ready to transform your videos?",
+    "benefits": [
+      { "title": "Strategic speed", "desc": "Deploy in new markets in 48h, not 6 months" },
+      { "title": "Optimized ROI", "desc": "Multiply your returns without multiplying production costs" },
+      { "title": "Editorial fidelity", "desc": "Your message stays intact — only the language changes" },
+      { "title": "Instant expansion", "desc": "Reach new markets without a local team" },
+      { "title": "Dedicated support", "desc": "An EKHO expert guides your project from start to finish" },
+      { "title": "Total flexibility", "desc": "Adapt as many videos as you need, no commitment" }
+    ],
+    "steps": [
+      { "title": "You share", "desc": "Send your video and your target languages" },
+      { "title": "We adapt", "desc": "AI accelerates translation, our experts refine every detail" },
+      { "title": "You deploy", "desc": "Your adapted video is delivered in under 48h" }
+    ],
+    "testimonials": [
+      {
+        "name": "Marie L.",
+        "role": "Content creator",
+        "text": "I wanted to test EKHO on one video before going further. The result in Spanish was so impressive that I did three more videos that same week. It sounds completely natural — you'd never know it was an adaptation."
+      },
+      {
+        "name": "Thomas R.",
+        "role": "Founder, sports brand",
+        "text": "I used EKHO to see what my ad would look like in English before committing to a foreign market. Honestly, it convinced me. Since then I've been building out my brand's internationalization with a lot more confidence."
+      },
+      {
+        "name": "Sofia M.",
+        "role": "Coach and trainer",
+        "text": "What surprised me was the speed. I sent my video Monday morning and had the adapted version by Tuesday. The voice really sounds like me. My German clients didn't notice a thing — to them, I'm the one speaking."
+      }
+    ]
+  },
+  "services": {
+    "seoTitle": "How It Works - EKHO Studio",
+    "seoDesc": "Discover the EKHO process in 3 steps: share, we adapt, you deploy. Simple, fast, effective.",
+    "heroTitle": "How it works",
+    "heroSub": "A simple 3-step process to transform your videos and reach new markets.",
+    "diffTitle": "EKHO isn't a translation tool. It's an adaptation studio.",
+    "diffSub": "We don't just translate words. We adapt your message so it resonates in a new culture, with the same force and authenticity.",
+    "diffTagline": "Your message intact — your impact, multiplied.",
+    "claim1": "AI for speed",
+    "claim2": "Humans for quality",
+    "claim3": "True to your DNA",
+    "steps": [
+      {
+        "title": "You share",
+        "desc": "Send us your video and target languages. We analyze the content and send you a quote within 24h. Simple, fast, transparent."
+      },
+      {
+        "title": "We adapt",
+        "desc": "AI accelerates translation and synchronization. Our experts refine every detail to ensure fidelity to your original message.",
+        "highlight": "AI accelerates the process. Our experts guarantee the quality.",
+        "sub": "Human quality, technological speed."
+      },
+      {
+        "title": "You deploy",
+        "desc": "Your adapted video is delivered in under 48h, ready to publish on your channels. New market, new audience, new revenue."
+      }
+    ]
+  },
+  "pricing": {
+    "seoTitle": "Pricing - EKHO Studio | Transparent pricing",
+    "seoDesc": "Discover our transparent, flexible pricing. Starter at €149, Pro at €349, or custom for specific needs.",
+    "heroTitle": "Transparent pricing. Built to scale.",
+    "heroSub": "No surprises, no hidden fees. Just clear pricing for measurable results.",
+    "selectedPack": "Selected plan",
+    "payStripe": "Pay by card — Stripe",
+    "payPaypal": "Pay with PayPal",
+    "bookCallOr": "Or book a call",
+    "bookCallOrder": "Book a call to order",
+    "securePayment": "100% secure payment · No commitment",
+    "freeCall": "Free call, no commitment · 20 min",
+    "moreIncluded": "more included",
+    "choosePack": "Choose this plan",
+    "addOnsTitle": "Add-ons",
+    "option": "Option",
+    "price": "Price",
+    "footnote": "Our pricing is provided as an estimate. Each project is unique — only a quote issued after discussion will serve as the contractual basis.",
+    "plans": [
+      {
+        "name": "STARTER PLAN",
+        "price": "€149",
+        "period": "/video",
+        "desc": "Perfect for testing EKHO",
+        "features": [
+          "Up to 10 min of video",
+          "1 target language",
+          "Advanced lip sync included",
+          "Single speaker on the video",
+          "Delivery in 48h",
+          "Email support",
+          "1 revision included"
+        ]
+      },
+      {
+        "name": "PRO PLAN",
+        "price": "€349",
+        "period": "/video",
+        "desc": "Most popular",
+        "features": [
+          "Up to 30 min of video",
+          "1 target language",
+          "Advanced lip sync included",
+          "Single speaker on the video",
+          "Delivery in 48h",
+          "Priority support",
+          "2 revisions included",
+          "Audio optimization"
+        ],
+        "badge": "-22% vs Starter Plan"
+      },
+      {
+        "name": "CUSTOM PLAN",
+        "price": "Custom quote",
+        "period": "",
+        "desc": "Scale without limits",
+        "features": [
+          "Unlimited languages",
+          "Videos of any length",
+          "Multiple speakers available",
+          "Express delivery",
+          "Dedicated account manager",
+          "Revisions included per project",
+          "Script deliverable",
+          "Custom subtitles included",
+          "Voice clone"
+        ]
+      }
+    ],
+    "addOns": [
+      { "name": "Additional language", "price": "+€89" },
+      { "name": "Source audio optimization", "price": "+€49" },
+      { "name": "Express delivery (-24h)", "price": "+€59" },
+      { "name": "Embedded subtitles", "price": "+€39" },
+      { "name": "Voice clone", "price": "Custom quote" }
+    ]
+  },
+  "about": {
+    "seoTitle": "Unlocking the True Potential of Your Content — EKHO Studio",
+    "seoDesc": "Your content is an asset. Don't let it become passive. EKHO transforms your existing assets into multilingual versions.",
+    "heroTitle": "Unlocking the true potential of your content",
+    "result": "The result",
+    "gain1": "Save time.",
+    "gain2": "Grow your audience.",
+    "gain3": "Boost your business.",
+    "tagline": "Brutally simple.\nInsanely powerful.",
+    "ctaDemo": "Get your free demo",
+    "founderTitle": "Founder, EKHO Studio",
+    "founderLocation": "La Rochelle, France",
+    "blocks": [
+      {
+        "title": "Your content is an asset.\nDon't let it go passive.",
+        "body": "You've invested time, money, and considerable energy into creating your content. Your videos, podcasts, and campaigns have already proven their value in your market. Yet once published, their potential stops at linguistic borders. You're leaving a massive audience asleep."
+      },
+      {
+        "title": "The race for visibility shouldn't\nbe an endless restart.",
+        "body": "While you exhaust yourself producing more to stay \"trendy\", your international competitors are already scaling their successes. The result? Your growth stays linear when it could be exponential."
+      },
+      {
+        "title": "That's where EKHO comes in —\nwithout starting from scratch.",
+        "body": "We transform your existing assets into multilingual versions. We use AI for power and our experts for precision, guaranteeing a natural result, faithful to your voice and tone. You keep the authenticity of your message — we give it global reach."
+      }
+    ]
+  },
+  "demos": {
+    "seoTitle": "Demos - EKHO Studio | Hear the difference",
+    "seoDesc": "Discover real examples of content adapted by EKHO. Before/after, same message, new language.",
+    "heroTitle": "Hear the difference.",
+    "heroSub": "Real examples of content adapted by EKHO. Before/after, same message, new language.",
+    "before": "Before",
+    "after": "After",
+    "original": "Original",
+    "adapted": "EKHO",
+    "ctaCard": "I want the same result → Request a demo",
+    "comingSoonTitle": "More adaptations coming.",
+    "comingSoonSub": "Have content to adapt? Make it the first demo.",
+    "submit": "Submit my content →",
+    "categories": {
+      "all": "All",
+      "interview": "Interview",
+      "sport": "Sports Coaching",
+      "speaker": "Motivation Speaker",
+      "ad": "Advertising",
+      "tutorial": "Tutorial"
+    }
+  },
+  "contact": {
+    "seoTitle": "Contact - EKHO Studio | We reply within 24h",
+    "seoDesc": "Contact EKHO Studio. We reply within 24h. Request a demo or book a 20-minute call.",
+    "heroTitle": "We reply within 24h.",
+    "heroSub": "A question? A project? Choose how you'd like to reach us.",
+    "formTitle": "Send us a message",
+    "name": "First/Last name",
+    "email": "Professional email",
+    "need": "Your need",
+    "selectOption": "Select an option",
+    "needOptions": {
+      "creator": "Creator",
+      "brand": "Brand",
+      "agency": "Agency",
+      "other": "Other"
+    },
+    "message": "Link to your video or free message",
+    "messagePlaceholder": "Tell us about your project...",
+    "send": "Send",
+    "sending": "Sending…",
+    "thankYou": "Thank you!",
+    "replyTime": "We'll reply within 24h.",
+    "errorGeneric": "An error occurred. Please try again.",
+    "errorNetwork": "An error occurred. Check your connection.",
+    "calendlyTitle": "Book a call",
+    "calendlySub": "Pick a time that works for you. Free discovery call, 20 min.",
+    "chooseSlot": "Choose my slot →",
+    "infoTitle": "Contact information",
+    "openMail": "Open mail client",
+    "copyAddress": "Copy address",
+    "copied": "Copied!",
+    "call": "Call"
+  }
+}

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 
 const AboutPage = () => {
+  const { t } = useTranslation();
   const [choiceOpen, setChoiceOpen] = useState(false);
   const [tunnelOpen, setTunnelOpen] = useState(false);
+
+  const blocks = t('about.blocks', { returnObjects: true });
 
   return (
     <>
@@ -18,8 +22,8 @@ const AboutPage = () => {
       <DemoTunnelModal isOpen={tunnelOpen} onClose={() => setTunnelOpen(false)} />
 
       <Helmet>
-        <title>Libérer le vrai potentiel de votre contenu — EKHO Studio</title>
-        <meta name="description" content="Votre contenu est un actif. Ne le laissez pas devenir passif. EKHO transforme vos actifs existants en versions multilingues." />
+        <title>{t('about.seoTitle')}</title>
+        <meta name="description" content={t('about.seoDesc')} />
       </Helmet>
 
       {/* Hero with video background */}
@@ -40,7 +44,7 @@ const AboutPage = () => {
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-6xl font-bold text-white neon-glow-purple text-center"
           >
-            Libérer le vrai potentiel de votre contenu
+            {t('about.heroTitle')}
           </motion.h1>
         </div>
       </section>
@@ -59,11 +63,11 @@ const AboutPage = () => {
             >
               <span className="block text-center text-electric-purple font-bold text-sm tracking-widest uppercase mb-4">01</span>
               <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-6 neon-glow-purple">
-                Votre contenu est un actif.<br />Ne le laissez pas devenir passif.
+                {blocks[0].title.split('\n').map((l, i) => i === 0 ? l : <><br/>{l}</>)}
               </h2>
               <div className="w-12 h-px bg-electric-purple/50 mx-auto mb-6" />
               <p className="text-gray-300 text-lg leading-relaxed">
-                Vous avez investi du temps, de l'argent et une énergie considérable dans la création de vos contenus. Vos vidéos, vos podcasts et vos campagnes ont déjà prouvé leur valeur sur votre marché. Pourtant, une fois diffusés, leur potentiel s'arrête aux frontières linguistiques. Vous laissez dormir une audience immense.
+                {blocks[0].body}
               </p>
             </motion.div>
 
@@ -77,11 +81,11 @@ const AboutPage = () => {
             >
               <span className="block text-center text-electric-purple font-bold text-sm tracking-widest uppercase mb-4">02</span>
               <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-6 neon-glow-purple">
-                La course à la visibilité ne doit pas<br />être un éternel recommencement.
+                {blocks[1].title.split('\n').map((l, i) => i === 0 ? l : <><br/>{l}</>)}
               </h2>
               <div className="w-12 h-px bg-electric-purple/50 mx-auto mb-6" />
               <p className="text-gray-300 text-lg leading-relaxed">
-                Pendant que vous vous épuisez à produire toujours plus pour rester « trendy », vos concurrents internationaux scalent déjà leurs succès. Résultat ? Votre croissance reste linéaire, alors qu'elle pourrait être exponentielle.
+                {blocks[1].body}
               </p>
             </motion.div>
 
@@ -95,11 +99,11 @@ const AboutPage = () => {
             >
               <span className="block text-center text-electric-purple font-bold text-sm tracking-widest uppercase mb-4">03</span>
               <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-6 neon-glow-purple">
-                C'est là qu'EKHO intervient —<br />sans repartir de zéro.
+                {blocks[2].title.split('\n').map((l, i) => i === 0 ? l : <><br/>{l}</>)}
               </h2>
               <div className="w-12 h-px bg-electric-purple/50 mx-auto mb-6" />
               <p className="text-gray-300 text-lg leading-relaxed">
-                Nous transformons vos actifs existants en versions multilingues. Nous utilisons l'IA pour la puissance et nos experts pour la précision, garantissant un rendu naturel, fidèle à votre voix et à votre ton. Vous gardez l'authenticité de votre message ; nous lui donnons une portée mondiale.
+                {blocks[2].body}
               </p>
             </motion.div>
 
@@ -111,11 +115,11 @@ const AboutPage = () => {
               transition={{ delay: 0.1 }}
               className="bg-gradient-to-br from-electric-purple/10 to-neon-blue/10 border border-electric-purple/40 rounded-xl p-8 md:p-10 hover:border-electric-purple/70 hover:-translate-y-1 transition-all duration-300 text-center"
             >
-              <span className="block text-center text-electric-purple font-bold text-sm tracking-widest uppercase mb-6">Le résultat</span>
+              <span className="block text-center text-electric-purple font-bold text-sm tracking-widest uppercase mb-6">{t('about.result')}</span>
               <div className="space-y-3">
-                <p className="text-2xl md:text-3xl font-bold text-white">Gagnez du temps.</p>
-                <p className="text-2xl md:text-3xl font-bold text-white">Ouvrez votre audience.</p>
-                <p className="text-2xl md:text-3xl font-bold text-white">Boostez votre business.</p>
+                <p className="text-2xl md:text-3xl font-bold text-white">{t('about.gain1')}</p>
+                <p className="text-2xl md:text-3xl font-bold text-white">{t('about.gain2')}</p>
+                <p className="text-2xl md:text-3xl font-bold text-white">{t('about.gain3')}</p>
               </div>
             </motion.div>
 
@@ -134,7 +138,7 @@ const AboutPage = () => {
                   onClick={() => setChoiceOpen(true)}
                   className="inline-block px-10 py-5 bg-electric-purple text-white text-lg rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
                 >
-                  Obtenez votre démo gratuite
+                  {t('about.ctaDemo')}
                 </button>
               </div>
             </motion.div>
@@ -157,8 +161,8 @@ const AboutPage = () => {
                 />
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl font-bold text-white mb-2">Rudy Mezoughi</h3>
-                  <p className="text-electric-purple font-semibold mb-1">Fondateur, EKHO Studio</p>
-                  <p className="text-gray-400">La Rochelle, France</p>
+                  <p className="text-electric-purple font-semibold mb-1">{t('about.founderTitle')}</p>
+                  <p className="text-gray-400">{t('about.founderLocation')}</p>
                 </div>
               </div>
             </motion.div>

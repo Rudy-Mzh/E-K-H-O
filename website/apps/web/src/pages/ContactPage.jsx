@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Mail, Phone, Calendar, Loader2, MessageCircle, Copy, Check } from 'lucide-react';
 import { CALENDLY_URL, openCalendly } from '@/lib/calendly.js';
 
@@ -9,6 +10,7 @@ const EMAIL = 'rudy.m@ekho-studio.com';
 const FORMSPREE_URL = 'https://formspree.io/f/xvzbldlq';
 
 const ContactPage = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({ name: '', email: '', need: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -52,10 +54,10 @@ const ContactPage = () => {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setError('Une erreur est survenue. Veuillez réessayer.');
+        setError(t('contact.errorGeneric'));
       }
     } catch {
-      setError('Une erreur est survenue. Vérifiez votre connexion.');
+      setError(t('contact.errorNetwork'));
     } finally {
       setLoading(false);
     }
@@ -64,8 +66,8 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact - EKHO Studio | On vous répond sous 24h</title>
-        <meta name="description" content="Contactez EKHO Studio. Nous vous répondons sous 24h. Demandez une démo ou réservez un appel de 20 minutes." />
+        <title>{t('contact.seoTitle')}</title>
+        <meta name="description" content={t('contact.seoDesc')} />
       </Helmet>
 
       {/* Hero with video background */}
@@ -86,7 +88,7 @@ const ContactPage = () => {
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
           >
-            On vous répond sous 24h.
+            {t('contact.heroTitle')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -94,7 +96,7 @@ const ContactPage = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            Une question ? Un projet ? Choisissez comment vous souhaitez nous contacter.
+            {t('contact.heroSub')}
           </motion.p>
         </div>
       </section>
@@ -113,20 +115,20 @@ const ContactPage = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Mail className="w-7 h-7 text-electric-purple" />
-                <h2 className="text-2xl font-bold text-white">Envoyez-nous un message</h2>
+                <h2 className="text-2xl font-bold text-white">{t('contact.formTitle')}</h2>
               </div>
 
               {submitted ? (
                 <div className="flex-1 flex items-center justify-center">
                   <div className="bg-electric-purple/20 border border-electric-purple rounded-lg p-8 text-center w-full">
-                    <p className="text-white text-xl font-semibold mb-2">Merci !</p>
-                    <p className="text-gray-300">Nous vous répondrons sous 24h.</p>
+                    <p className="text-white text-xl font-semibold mb-2">{t('contact.thankYou')}</p>
+                    <p className="text-gray-300">{t('contact.replyTime')}</p>
                   </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col flex-1 space-y-5">
                   <div>
-                    <label htmlFor="name" className="block text-white font-semibold mb-2">Prénom/Nom *</label>
+                    <label htmlFor="name" className="block text-white font-semibold mb-2">{t('contact.name')} *</label>
                     <input
                       type="text"
                       id="name"
@@ -139,7 +141,7 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-white font-semibold mb-2">Email professionnel *</label>
+                    <label htmlFor="email" className="block text-white font-semibold mb-2">{t('contact.email')} *</label>
                     <input
                       type="email"
                       id="email"
@@ -152,7 +154,7 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="need" className="block text-white font-semibold mb-2">Votre besoin *</label>
+                    <label htmlFor="need" className="block text-white font-semibold mb-2">{t('contact.need')} *</label>
                     <select
                       id="need"
                       name="need"
@@ -161,15 +163,15 @@ const ContactPage = () => {
                       required
                       className="w-full px-4 py-3 bg-dark-navy border border-electric-purple/30 rounded-lg text-white focus:outline-none focus:border-electric-purple transition-colors"
                     >
-                      <option value="">Sélectionnez une option</option>
-                      <option value="creator">Créateur</option>
-                      <option value="brand">Marque</option>
-                      <option value="agency">Agence</option>
-                      <option value="other">Autre</option>
+                      <option value="">{t('contact.selectOption')}</option>
+                      <option value="creator">{t('contact.needOptions.creator')}</option>
+                      <option value="brand">{t('contact.needOptions.brand')}</option>
+                      <option value="agency">{t('contact.needOptions.agency')}</option>
+                      <option value="other">{t('contact.needOptions.other')}</option>
                     </select>
                   </div>
                   <div className="flex-1 flex flex-col">
-                    <label htmlFor="message" className="block text-white font-semibold mb-2">Lien vers votre vidéo ou message libre *</label>
+                    <label htmlFor="message" className="block text-white font-semibold mb-2">{t('contact.message')} *</label>
                     <textarea
                       id="message"
                       name="message"
@@ -178,7 +180,7 @@ const ContactPage = () => {
                       required
                       rows="5"
                       className="flex-1 w-full px-4 py-3 bg-dark-navy border border-electric-purple/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-electric-purple transition-colors resize-none"
-                      placeholder="Parlez-nous de votre projet..."
+                      placeholder={t('contact.messagePlaceholder')}
                     />
                   </div>
                   {error && <p className="text-red-400 text-sm text-center">{error}</p>}
@@ -187,7 +189,7 @@ const ContactPage = () => {
                     disabled={loading}
                     className="w-full px-6 py-4 bg-electric-purple text-white rounded-lg font-semibold btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    {loading ? <><Loader2 className="w-5 h-5 animate-spin" />Envoi en cours…</> : 'Envoyer'}
+                    {loading ? <><Loader2 className="w-5 h-5 animate-spin" />{t('contact.sending')}</> : t('contact.send')}
                   </button>
                 </form>
               )}
@@ -201,10 +203,10 @@ const ContactPage = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Calendar className="w-7 h-7 text-neon-blue" />
-                <h2 className="text-2xl font-bold text-white">Réservez un appel</h2>
+                <h2 className="text-2xl font-bold text-white">{t('contact.calendlyTitle')}</h2>
               </div>
               <p className="text-gray-300 mb-6">
-                Choisissez directement un créneau qui vous convient. Appel de découverte gratuit, 20 min.
+                {t('contact.calendlySub')}
               </p>
               {/* Desktop : iframe intégrée */}
               <div className="hidden lg:flex flex-1 min-h-0">
@@ -224,7 +226,7 @@ const ContactPage = () => {
                   onClick={openCalendly}
                   className="w-full px-8 py-5 bg-neon-blue/10 border-2 border-neon-blue text-neon-blue rounded-lg font-semibold text-lg hover:bg-neon-blue hover:text-dark-navy transition-all duration-300"
                 >
-                  Choisir mon créneau →
+                  {t('contact.chooseSlot')}
                 </button>
               </div>
             </motion.div>
@@ -238,7 +240,7 @@ const ContactPage = () => {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto bg-[#050814] border border-hot-pink/30 rounded-xl p-8 hover:border-hot-pink/60 hover:shadow-[0_0_40px_rgba(255,45,155,0.2)] transition-all duration-300"
           >
-            <h2 className="text-2xl font-bold text-white mb-6 text-center">Informations de contact</h2>
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">{t('contact.infoTitle')}</h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
 
               {/* Email */}
@@ -258,15 +260,15 @@ const ContactPage = () => {
                         className="group flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-electric-purple/20 hover:text-white transition-all duration-200 border-l-2 border-transparent hover:border-electric-purple"
                       >
                         <Mail size={15} className="text-electric-purple group-hover:scale-110 transition-transform duration-200" />
-                        Ouvrir la messagerie
+                        {t('contact.openMail')}
                       </a>
                       <button
                         onClick={copyEmail}
                         className="group w-full flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-neon-blue/20 hover:text-white transition-all duration-200 border-l-2 border-transparent hover:border-neon-blue border-t border-electric-purple/20"
                       >
                         {copied
-                          ? <><Check size={15} className="text-green-400" /><span className="text-green-400 font-medium">Copié !</span></>
-                          : <><Copy size={15} className="text-neon-blue group-hover:scale-110 transition-transform duration-200" />Copier l'adresse</>
+                          ? <><Check size={15} className="text-green-400" /><span className="text-green-400 font-medium">{t('contact.copied')}</span></>
+                          : <><Copy size={15} className="text-neon-blue group-hover:scale-110 transition-transform duration-200" />{t('contact.copyAddress')}</>
                         }
                       </button>
                     </div>
@@ -293,7 +295,7 @@ const ContactPage = () => {
                         className="group flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-electric-purple/20 hover:text-white transition-all duration-200 border-l-2 border-transparent hover:border-electric-purple"
                       >
                         <Phone size={15} className="text-electric-purple group-hover:scale-110 transition-transform duration-200" />
-                        Appeler
+                        {t('contact.call')}
                       </a>
                       <a
                         href="https://wa.me/33630135189"

@@ -2,9 +2,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Upload, Sparkles, Rocket } from 'lucide-react';
 
 const ServicesPage = () => {
+  const { t } = useTranslation();
+
   const claimContainerVariants = {
     hidden: {},
     visible: { transition: { staggerChildren: 1.0, delayChildren: 0.3 } }
@@ -37,34 +40,19 @@ const ServicesPage = () => {
     }
   };
 
-  const steps = [
-    {
-      number: '01',
-      icon: <Upload className="w-16 h-16" />,
-      title: 'Vous partagez',
-      description: 'Envoyez-nous votre vidéo et vos langues cibles. Nous analysons le contenu et vous proposons un devis en 24h. Simple, rapide, transparent.'
-    },
-    {
-      number: '02',
-      icon: <Sparkles className="w-16 h-16" />,
-      title: 'Nous adaptons',
-      description: "L'IA accélère la traduction et la synchronisation. Nos experts affinent chaque détail pour garantir la fidélité au message original.",
-      highlight: "L'IA accélère le processus. Nos experts garantissent la qualité.",
-      sub: "Qualité humaine, vitesse technologique."
-    },
-    {
-      number: '03',
-      icon: <Rocket className="w-16 h-16" />,
-      title: 'Vous déployez',
-      description: 'Votre vidéo adaptée est livrée en moins de 48h, prête à être publiée sur vos canaux. Nouveau marché, nouvelle audience, nouveaux revenus.'
-    }
-  ];
+  const steps = t('services.steps', { returnObjects: true }).map((s, i) => ({
+    number: ['01','02','03'][i],
+    icon: [<Upload className="w-16 h-16" />, <Sparkles className="w-16 h-16" />, <Rocket className="w-16 h-16" />][i],
+    title: s.title,
+    description: s.desc,
+    ...(s.highlight ? { highlight: s.highlight, sub: s.sub } : {})
+  }));
 
   return (
     <>
       <Helmet>
-        <title>Services - EKHO Studio | Comment ça marche</title>
-        <meta name="description" content="Découvrez le processus EKHO en 3 étapes : partagez, nous adaptons, vous déployez. Simple, rapide, efficace." />
+        <title>{t('services.seoTitle')}</title>
+        <meta name="description" content={t('services.seoDesc')} />
       </Helmet>
 
       {/* Hero with video background */}
@@ -85,7 +73,7 @@ const ServicesPage = () => {
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
           >
-            Comment ça marche
+            {t('services.heroTitle')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -93,7 +81,7 @@ const ServicesPage = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            Un processus simple en 3 étapes pour transformer vos vidéos et toucher de nouveaux marchés.
+            {t('services.heroSub')}
           </motion.p>
         </div>
       </section>
@@ -148,15 +136,15 @@ const ServicesPage = () => {
             className="max-w-4xl mx-auto bg-gradient-to-br from-electric-purple/20 to-neon-blue/20 border border-electric-purple/40 rounded-xl p-8 md:p-12 hover:border-electric-purple/70 hover:shadow-[0_0_60px_rgba(123,47,255,0.35)] transition-all duration-300 cursor-default"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 neon-glow-blue text-center">
-              EKHO n'est pas un outil de traduction.<br className="hidden md:block" /> C'est un studio d'adaptation.
+              {t('services.diffTitle')}
             </h2>
 
             <p className="text-lg text-gray-300 leading-relaxed text-center mb-4">
-              Nous ne nous contentons pas de traduire des mots. Nous adaptons votre message pour qu'il résonne dans une nouvelle culture, avec la même force et la même authenticité.
+              {t('services.diffSub')}
             </p>
 
             <p className="text-xl md:text-2xl font-semibold text-white text-center mb-8">
-              Votre message intact — votre impact, décuplé.
+              {t('services.diffTagline')}
             </p>
 
             {/* Closing claim — cascade + glow on scroll */}
@@ -171,19 +159,19 @@ const ServicesPage = () => {
                 variants={claimLine1Variants}
                 className="text-2xl md:text-4xl font-bold text-gray-300"
               >
-                IA pour la vitesse
+                {t('services.claim1')}
               </motion.p>
               <motion.p
                 variants={claimLine2Variants}
                 className="text-3xl md:text-5xl font-bold text-white"
               >
-                Humains pour l'exigence
+                {t('services.claim2')}
               </motion.p>
               <motion.p
                 variants={claimLine3Variants}
                 className="text-4xl md:text-7xl font-bold text-electric-purple"
               >
-                Fidèle à votre ADN
+                {t('services.claim3')}
               </motion.p>
             </motion.div>
           </motion.div>
