@@ -49,6 +49,15 @@ const DemosPage = () => {
       afterVideo: { id: '1168103220' },
     },
     {
+      id: 13,
+      category: 'ad',
+      title: 'Publicité : Apple — Adaptation marché francophone',
+      languages: 'EN → FR',
+      context: "Publicité Apple originale en anglais, adaptée par EKHO pour le marché francophone. Même ton, même précision, même impact — dans une nouvelle langue.",
+      beforeVideo: { id: '1172424476' },
+      afterVideo: { id: '1172424471' },
+    },
+    {
       id: 11,
       category: 'ad',
       title: 'Publicité : BOKU — Adaptation marché anglophone',
