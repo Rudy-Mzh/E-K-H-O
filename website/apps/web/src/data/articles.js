@@ -532,6 +532,273 @@ export const articles = [
       <h2>Ce que ça veut dire pour la suite</h2>
       <p>Avant de conclure, fais ce diagnostic honnêtement. Si l'un de ces trois éléments n'était pas en place, tu n'as pas encore vraiment testé. Tu as testé une version imparfaite de ta stratégie. Et la vraie stratégie, elle, mérite encore d'être essayée.</p>
     `
+  },
+
+  // ── ENGLISH ARTICLES ──────────────────────────────────────────────────────
+  {
+    id: 21,
+    slug: 'your-content-is-trapped-in-one-language',
+    lang: 'en',
+    title: 'Your Content Is Trapped in One Language',
+    excerpt: 'Every video you publish in a single language is invisible to 94% of the internet. It\'s not a quality problem. It\'s a distribution problem.',
+    category: 'Strategy',
+    readTime: 5,
+    publishDate: '2026-03-13',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
+    tags: ['strategy', 'revenue', 'international'],
+    content: `
+      <h2>The invisible ceiling nobody tells you about</h2>
+      <p>You've been creating content for months, maybe years. You've refined your quality, your editing, your delivery. And yet there's a ceiling you've never identified: the language you speak.</p>
+      <p>There are roughly 1.5 billion English speakers in the world. That sounds huge — until you realize it's about 18% of the global population. Which means 82% of people on Earth can't consume what you're creating.</p>
+      <h2>The math no one does</h2>
+      <p>Take your best video. The one that crushed it, the one you're proud of. Now multiply its view count by 5 for Spanish, by 3 for Portuguese, by 2 for French, by 4 for German-speaking markets. That's not theory — that's the audience you're leaving behind every single day.</p>
+      <p>And it's not just views. It's revenue. Your sponsorships, your affiliate income, your course sales — your entire business model is capped by the linguistic reach of your content.</p>
+      <blockquote>The creators scaling fastest in 2026 aren't creating more. They're distributing smarter what they already have.</blockquote>
+      <h2>Why you haven't done it yet</h2>
+      <p>The most common reason: "I don't speak Spanish" or "Translation is too expensive." Both were valid barriers five years ago. They're not anymore.</p>
+      <p>The second reason, less spoken: the fear that it "won't sound like me." That your audience won't recognize your energy, your tone, your style. That's a real concern — and it's exactly where the approach matters.</p>
+      <h2>The question you should be asking</h2>
+      <p>Not "can my content reach international audiences?" — it clearly can. But rather: how much longer are you going to leave 80% of your potential revenue on the table?</p>
+      <p>Creators who answer that question today will be the ones cited in three years as examples of intelligent scale.</p>
+    `
+  },
+  {
+    id: 22,
+    slug: 'fitness-coaches-biggest-missed-market',
+    lang: 'en',
+    title: 'Why Fitness Coaches Are Missing Their Biggest Market',
+    excerpt: 'The fitness industry is exploding globally — but most coaches are only speaking to 18% of it. Here\'s what the top 1% figured out.',
+    category: 'Industries',
+    readTime: 5,
+    publishDate: '2026-03-15',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80',
+    tags: ['fitness', 'coaching', 'global', 'sports'],
+    content: `
+      <h2>The fitness content paradox</h2>
+      <p>Fitness is one of the most universal content categories on the internet. Bodies work the same way in France as in Brazil. A squat technique video doesn't require cultural translation — it requires linguistic translation. And yet 95% of fitness coaches create exclusively in their native language.</p>
+      <p>The result: massively underperforming content on markets that are desperate for quality fitness guidance.</p>
+      <h2>Where the money actually is</h2>
+      <p>The Spanish-speaking fitness market is worth over $40 billion. The Brazilian fitness industry is the third largest in the world by gym memberships. French-speaking Africa has a rapidly growing middle class with enormous appetite for health content — and almost no local creators serving them at scale.</p>
+      <p>These aren't niche markets. They're massive, underserved audiences who would follow you tomorrow if they could understand you today.</p>
+      <blockquote>The best fitness coaches in the world are already known globally. But most are unknown outside their language. That's a distribution problem, not a talent problem.</blockquote>
+      <h2>What the top fitness creators do differently</h2>
+      <p>Look at the fitness accounts with 5M+ followers across multiple languages. They didn't start bilingual. They started in one language, built a proven library of content, then expanded. The content was already good. It just needed to be understood by more people.</p>
+      <h2>Your workout doesn't need a new script</h2>
+      <p>The technique is the same. The energy is the same. The transformation you help people achieve is the same. What changes is the language — and when done right, the voice that delivers it still sounds like you.</p>
+    `
+  },
+  {
+    id: 23,
+    slug: 'stop-translating-start-adapting',
+    lang: 'en',
+    title: 'Stop Translating. Start Adapting.',
+    excerpt: 'Translation changes words. Adaptation changes connection. One creates awkward content. The other creates loyal audiences in new markets.',
+    category: 'Strategy',
+    readTime: 4,
+    publishDate: '2026-03-17',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?w=1200&q=80',
+    tags: ['adaptation', 'localization', 'strategy'],
+    content: `
+      <h2>The translation trap</h2>
+      <p>You decide to go international. Great. You find a translator, send them your script, get back a word-for-word version. You publish it. And... nothing. The content feels off. The audience doesn't connect. You conclude that international content "doesn't work for you."</p>
+      <p>Wrong diagnosis. The content failed not because of the market, but because of the approach.</p>
+      <h2>What translation actually gives you</h2>
+      <p>A translated video delivers information in another language. A viewer in São Paulo can technically understand what you're saying. But they feel like they're watching content made for someone else — because they are.</p>
+      <p>The references don't resonate. The humor doesn't land. The cultural context is missing. They get the words, but not the connection.</p>
+      <blockquote>Translation is the floor. Adaptation is the ceiling. Most people stop at the floor and wonder why no one's coming up.</blockquote>
+      <h2>What adaptation actually looks like</h2>
+      <p>A great adaptation preserves your energy, your tone, your personality — while making the content feel native to the new audience. Local references where relevant. Adjusted pacing if needed. The same message, but delivered in a way that says "this was made for you."</p>
+      <p>The result? Audiences that don't just watch — they subscribe, comment, share. Because they feel seen.</p>
+      <h2>The practical difference</h2>
+      <p>Same video, two approaches. Translation: a technically accurate but emotionally flat version. Adaptation: a version that connects. The cost difference is minimal. The results difference is enormous.</p>
+    `
+  },
+  {
+    id: 24,
+    slug: 'youtube-algorithm-multilingual-secret',
+    lang: 'en',
+    title: 'The YouTube Algorithm Secret Nobody Talks About',
+    excerpt: 'YouTube actively suppresses your video from non-native audiences. It\'s not a preference — it\'s in their documentation. Here\'s how to fix it.',
+    category: 'Strategy',
+    readTime: 5,
+    publishDate: '2026-03-19',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&q=80',
+    tags: ['YouTube', 'algorithm', 'SEO', 'distribution'],
+    content: `
+      <h2>How YouTube decides who sees your video</h2>
+      <p>The YouTube algorithm doesn't distribute videos randomly. It matches content to user profiles — language, region, watch history, device. If your video exists in a single language, it's filtered out of recommendations for users who speak other languages.</p>
+      <p>It's mechanical. No editorial judgment, no quality assessment. Just a language filter that caps your audience from day one.</p>
+      <h2>The "ghost views" phenomenon</h2>
+      <p>There are thousands of people who would have watched your video — and will never see it. Not because they're not interested. Because the algorithm never surfaced it. Because it's not in their language.</p>
+      <p>These views don't appear in your analytics. You never see what you're missing. It's the most silent problem in content creation.</p>
+      <blockquote>You're not losing views. You just never had the chance to gain them. That's different — and it's recoverable.</blockquote>
+      <h2>What the algorithm rewards</h2>
+      <p>YouTube's documentation explicitly states that adding subtitles, dubbed audio tracks, and localized titles/descriptions increases content discovery across languages. Channels that localize consistently outperform equivalent channels that don't — in the same niche, with the same production quality.</p>
+      <h2>The compounding effect</h2>
+      <p>A video that performs in two languages builds two algorithmic histories. Two separate recommendation loops. Two audiences that grow independently and cross-reference each other over time. The longer you wait to localize, the more algorithmic ground you're leaving to competitors who already did.</p>
+    `
+  },
+  {
+    id: 25,
+    slug: 'how-course-creators-multiply-revenue-without-more-content',
+    lang: 'en',
+    title: 'How Course Creators Multiply Revenue Without Creating More Content',
+    excerpt: 'Your best course already exists. The students who need it most just can\'t understand it yet. Here\'s the math that changes everything.',
+    category: 'Practical tips',
+    readTime: 5,
+    publishDate: '2026-03-21',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80',
+    tags: ['course', 'e-learning', 'revenue', 'scale'],
+    content: `
+      <h2>The course creator's hidden ceiling</h2>
+      <p>You've built a course. Maybe several. You've refined the curriculum, the production, the sales funnel. And your revenue is growing — but it's hitting a ceiling you can't quite identify.</p>
+      <p>That ceiling is linguistic. Your course is only accessible to people who speak your language. Every other potential student can't buy it — not because they don't want to, but because they can't understand it.</p>
+      <h2>The revenue math is simple</h2>
+      <p>A $400 course sold to 200 English-speaking students = $80,000. The same course, adapted into Spanish, sold to 200 students = another $80,000. Same content. Same creation effort. Double the revenue.</p>
+      <p>Add French, Portuguese, German. The math doesn't lie. And the creation cost of adapting is a fraction of the original production.</p>
+      <blockquote>Your best course doesn't need a new curriculum. It needs a new audience. One that can actually understand it.</blockquote>
+      <h2>Why "subtitles" aren't enough for courses</h2>
+      <p>Subtitles are better than nothing. But research consistently shows that learners retain less from subtitled content than from content in their native language. Your completion rates, satisfaction scores, and word-of-mouth referrals all suffer when you rely on subtitles alone.</p>
+      <p>The best course experience is the one where students feel taught, not translated.</p>
+      <h2>Where to start</h2>
+      <p>Pick your highest-performing course. The one with the best completion rate, the most testimonials, the clearest transformation. That's your international ambassador. Start there — one language, one market — and measure the results before expanding.</p>
+    `
+  },
+  {
+    id: 26,
+    slug: 'podcast-playbook-going-global',
+    lang: 'en',
+    title: 'The Podcast Playbook for Going Global',
+    excerpt: 'Audio content is the most underutilized format for international expansion. Most podcasters don\'t even know this market exists.',
+    category: 'Industries',
+    readTime: 5,
+    publishDate: '2026-03-23',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80',
+    tags: ['podcast', 'audio', 'international', 'distribution'],
+    content: `
+      <h2>The podcast market nobody's competing in</h2>
+      <p>English-language podcasting is saturated. For every niche, there are dozens of shows competing for the same listeners. Algorithms are crowded. Discovery is expensive.</p>
+      <p>But step outside English, and the landscape changes completely. Spanish-language business podcasts. French-language personal development shows. Brazilian Portuguese entrepreneurship content. These categories are growing at double-digit rates with a fraction of the competition.</p>
+      <h2>Audio adaptation is different from video</h2>
+      <p>Video localization is more complex — faces, lip sync, visual elements all need to align. Audio is simpler. A great adaptation of a podcast episode can be produced in less time, at lower cost, with fewer moving parts. And the intimacy of audio — the sense of hearing a voice in your ear — creates an even stronger connection when done right.</p>
+      <blockquote>Podcast listeners who hear content in their own language have significantly higher retention, episode completion rates, and subscription loyalty.</blockquote>
+      <h2>The distribution advantage</h2>
+      <p>Spotify, Apple Podcasts, and other platforms have language-based discovery features. A podcast that publishes consistently in multiple languages can rank in multiple markets simultaneously — without competing with the same shows for the same listeners.</p>
+      <h2>Your existing episodes are a content library</h2>
+      <p>A 100-episode podcast archive is not just content for your current audience. It's a complete educational library waiting to be accessible to the 82% of the world that doesn't speak your language. You don't need to record more. You need to distribute smarter.</p>
+    `
+  },
+  {
+    id: 27,
+    slug: '3-signs-your-content-is-ready-to-go-international',
+    lang: 'en',
+    title: '3 Signs Your Content Is Ready to Go International',
+    excerpt: 'Most creators wait too long. The truth is, if your content already works in one market, it\'s already ready for another.',
+    category: 'Practical tips',
+    readTime: 4,
+    publishDate: '2026-03-25',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80',
+    tags: ['readiness', 'international', 'checklist', 'growth'],
+    content: `
+      <h2>The waiting game that costs you</h2>
+      <p>Creators often have a mental list of prerequisites before going international. "When I have 100K subscribers." "When I have a team." "When I've refined my format." The problem: these milestones keep moving. And every month you wait is another month your competitors are building their international presence.</p>
+      <h2>Sign #1: Your content is topic-driven, not context-dependent</h2>
+      <p>Does your content work because of what you say, or because of who you are within a very specific cultural context? Business strategy, personal development, fitness, cooking, music — these translate universally. Hyperlocal politics, regional humor, deeply cultural references — these need more adaptation.</p>
+      <p>If someone in another country could get value from your content just by understanding the language, you're ready.</p>
+      <h2>Sign #2: You have a catalog of proven content</h2>
+      <p>Going international with brand-new, untested content is a gamble. Going international with your best 10 videos — the ones you know work, the ones with proven retention and engagement — that's a strategy. A catalog of 10+ strong pieces is all you need to start.</p>
+      <blockquote>Don't test a new market with your weakest content. Send your best work first.</blockquote>
+      <h2>Sign #3: You're leaving consistent revenue on the table</h2>
+      <p>Are you selling digital products? Courses? Coaching? Merchandise? If you have something to sell and an audience that buys, you have something worth expanding. Every month your offer exists in one language only is a month you're not serving a market that would pay for it.</p>
+      <h2>The honest question</h2>
+      <p>If your content is good enough that people pay for it in one language, why wouldn't they pay for it in another? The answer, almost always, is that they would — they just can't.</p>
+    `
+  },
+  {
+    id: 28,
+    slug: 'ecommerce-brand-doubled-sales-speaking-french',
+    lang: 'en',
+    title: 'The E-Commerce Brand That Doubled Its Reach by Speaking French',
+    excerpt: 'You don\'t need a French office or a French team. You need French content. The market is there — it\'s just waiting to understand you.',
+    category: 'Industries',
+    readTime: 5,
+    publishDate: '2026-03-27',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80',
+    tags: ['e-commerce', 'french market', 'brand', 'international'],
+    content: `
+      <h2>300 million reasons to speak French</h2>
+      <p>French is spoken in 29 countries across 5 continents. 300 million native and fluent speakers. High purchasing power in France, Belgium, Switzerland. A rapidly growing digital consumer class across Francophone Africa. And English-language e-commerce brands rarely speaking directly to them.</p>
+      <p>That's not a crowded space. That's a wide-open door.</p>
+      <h2>What "speaking French" actually means for a brand</h2>
+      <p>It doesn't mean hiring a French-speaking team. It doesn't mean opening a French office. It means your product videos, your ad campaigns, your social content — your voice — reaches French speakers in their language.</p>
+      <p>A French consumer presented with a product in English feels like the brand wasn't made for them. A French consumer presented with the same product in fluid, natural French feels like the brand understands them. The product is identical. The connection is not.</p>
+      <blockquote>In e-commerce, trust converts. And trust is easier to build when you speak someone's language.</blockquote>
+      <h2>The ad spend implication</h2>
+      <p>Facebook, Instagram, TikTok, YouTube — all of these platforms charge you per click or per thousand impressions. Ads in languages that match the user's profile consistently outperform translated ads in terms of click-through rates and conversion. You're not just expanding your reach — you're improving your ROI on every impression.</p>
+      <h2>Start with your best-performing ad creative</h2>
+      <p>Don't adapt your entire catalog on day one. Take your top-performing video ad — the one with the best ROAS — and adapt it into French first. Run both versions. The data will tell you everything you need to know about whether to continue.</p>
+    `
+  },
+  {
+    id: 29,
+    slug: 'before-you-rebuild-repurpose',
+    lang: 'en',
+    title: 'Before You Rebuild, Repurpose.',
+    excerpt: 'The best content strategy isn\'t creating more. It\'s making what you have available to more people. Here\'s the framework.',
+    category: 'Practical tips',
+    readTime: 4,
+    publishDate: '2026-03-29',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
+    tags: ['repurpose', 'content strategy', 'efficiency', 'scale'],
+    content: `
+      <h2>The content creation treadmill</h2>
+      <p>Most creators spend 80% of their time creating new content and 20% distributing it. The highest-performing creators invert this ratio. They create less. They distribute more. The output is greater, the effort is lower.</p>
+      <p>The pivot point is realizing that every piece of content you've already created is a distribution-ready asset — it just hasn't been distributed everywhere yet.</p>
+      <h2>Your content archive is undervalued</h2>
+      <p>Think about your last 50 videos. Each one took hours to script, record, edit, publish. Each one has proven value — or proven failure. Your best ones have already demonstrated that they connect with an audience.</p>
+      <p>Now ask: how many markets have those videos reached? If the answer is one language worth of markets, you've barely scratched the surface of what those assets can do.</p>
+      <blockquote>Stop thinking about content creation as a production line. Start thinking about it as asset management.</blockquote>
+      <h2>The repurpose framework</h2>
+      <p>Step 1: Audit your top 10 performing pieces. Step 2: Identify the 3 markets where your content type has proven demand. Step 3: Adapt — don't translate — those 10 pieces for market #1. Step 4: Measure. Step 5: Expand.</p>
+      <p>This isn't a creative decision. It's a distribution decision. And distribution decisions are some of the highest-ROI decisions a creator can make.</p>
+      <h2>What you stop doing</h2>
+      <p>When you think in terms of asset management, the content treadmill slows down. You're not scrambling to create the next video. You're maximizing the value of the last one. That's a fundamentally different — and more sustainable — way to grow.</p>
+    `
+  },
+  {
+    id: 30,
+    slug: 'from-local-expert-to-global-voice',
+    lang: 'en',
+    title: 'From Local Expert to Global Voice',
+    excerpt: 'Being the best in your niche in one country is great. Being known globally for the same expertise is another level entirely. Here\'s the path.',
+    category: 'Strategy',
+    readTime: 5,
+    publishDate: '2026-03-31',
+    visible: true,
+    coverImage: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&q=80',
+    tags: ['personal brand', 'authority', 'global', 'positioning'],
+    content: `
+      <h2>The local expert trap</h2>
+      <p>You've built genuine expertise. You have an audience that respects your knowledge. You're recognized in your industry — within your language market. And that feels good. Until you realize that your influence, your impact, and your income are all bounded by the language you speak in.</p>
+      <p>The world has no shortage of local experts. Global voices are rare. That rarity is valuable.</p>
+      <h2>What makes someone a global voice</h2>
+      <p>It's not more credentials. It's not more content. It's accessibility. A global voice is an expert whose ideas can be understood, absorbed, and applied by people regardless of their native language. The expertise is identical to the local expert. The reach is not.</p>
+      <p>Every major global thought leader in business, self-development, science, and culture became global because their ideas were made accessible across languages. Some did it intentionally. Others benefited from it organically. Either way, the mechanism is the same: their content traveled.</p>
+      <blockquote>Authority is local until it's distributed globally. The knowledge doesn't change. Only the audience size does.</blockquote>
+      <h2>The compound effect of global presence</h2>
+      <p>A global reputation creates a feedback loop. International media citations. Cross-border speaking opportunities. Partnerships with brands that operate globally. A customer base not dependent on a single country's economic conditions. These aren't just nice-to-haves — they're fundamental risk diversifiers.</p>
+      <h2>The practical path</h2>
+      <p>You don't need to become a different person. You don't need to change your message. You need to make your existing message audible to a much larger room. The expertise is already there. The stage just needs to be bigger.</p>
+    `
   }
 ];
 
