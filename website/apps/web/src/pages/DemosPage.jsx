@@ -49,6 +49,15 @@ const DemosPage = () => {
       afterVideo: { id: '1168103220' },
     },
     {
+      id: 14,
+      category: 'ad',
+      title: 'Publicité : Old Spice — Adaptation marché canadien',
+      languages: 'EN → FR-CA',
+      context: "\"The Man Your Man Could Smell Like\", l'une des publicités les plus iconiques d'Old Spice. EKHO adapte l'humour, le ton et le rythme pour le marché canadien francophone — sans rien perdre de l'impact original.",
+      beforeVideo: { id: '1172445718' },
+      afterVideo: { id: '1172445691' },
+    },
+    {
       id: 13,
       category: 'ad',
       title: 'Publicité : Apple — Adaptation marché francophone',
