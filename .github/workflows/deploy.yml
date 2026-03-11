@@ -22,7 +22,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        working-directory: website/apps/web
+        working-directory: website
         run: npm ci
 
       - name: Build
