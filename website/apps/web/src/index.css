@@ -83,6 +83,25 @@ h1, h2, h3, h4, h5, h6 {
   transition-duration: 150ms;
 }
 
+/* Lang toggle neon pulse */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(123,47,255,1),
+                0 0 14px rgba(123,47,255,0.8),
+                0 0 28px rgba(123,47,255,0.5),
+                0 0 50px rgba(123,47,255,0.25);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(123,47,255,1),
+                0 0 22px rgba(123,47,255,1),
+                0 0 45px rgba(123,47,255,0.7),
+                0 0 80px rgba(123,47,255,0.35);
+  }
+}
+.lang-neon-active {
+  animation: neon-pulse 1.8s ease-in-out infinite;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

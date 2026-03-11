@@ -67,7 +67,7 @@ const Header = () => {
                   onClick={() => { i18n.changeLanguage(l); localStorage.setItem('ekho_lang', l); }}
                   className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-200 ${
                     i18n.language === l
-                      ? 'bg-electric-purple text-white shadow-[0_0_10px_rgba(123,47,255,0.9),0_0_20px_rgba(123,47,255,0.5),0_0_35px_rgba(123,47,255,0.25)]'
+                      ? 'bg-electric-purple text-white lang-neon-active'
                       : 'text-white/40 hover:text-white'
                   }`}
                 >
@@ -94,7 +94,7 @@ const Header = () => {
                   onClick={() => { i18n.changeLanguage(l); localStorage.setItem('ekho_lang', l); }}
                   className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-200 ${
                     i18n.language === l
-                      ? 'bg-electric-purple text-white shadow-[0_0_10px_rgba(123,47,255,0.9),0_0_20px_rgba(123,47,255,0.5)]'
+                      ? 'bg-electric-purple text-white lang-neon-active'
                       : 'text-white/40'
                   }`}
                 >

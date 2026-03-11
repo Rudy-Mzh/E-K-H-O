@@ -10,7 +10,7 @@ import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 import { demos } from '@/data/demos.js';
 
 const DemosPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState('all');
   const [choiceOpen, setChoiceOpen] = useState(false);
   const [tunnelOpen, setTunnelOpen] = useState(false);
@@ -103,9 +103,9 @@ const DemosPage = () => {
                     className="bg-[#050814] border border-electric-purple/30 rounded-xl p-6 hover:border-electric-purple/60 transition-all duration-300 hover:-translate-y-2"
                   >
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-white mb-2">{demo.title}</h3>
+                      <h3 className="text-xl font-bold text-white mb-2">{i18n.language === 'en' ? (demo.titleEn || demo.title) : demo.title}</h3>
                       <p className="text-electric-purple font-semibold">{demo.languages}</p>
-                      <p className="text-gray-400 text-sm mt-2">{demo.context}</p>
+                      <p className="text-gray-400 text-sm mt-2">{i18n.language === 'en' ? (demo.contextEn || demo.context) : demo.context}</p>
                     </div>
 
                     {demo.beforeVideo ? (
