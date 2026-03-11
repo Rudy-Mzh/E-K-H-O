@@ -26,12 +26,14 @@ jobs:
         working-directory: website/apps/web
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy via SSH/SCP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_HOST }}
+          host: ekho-studio.com
+          port: 65002
           username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: website/apps/web/dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          dangerous-clean-slate: false
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: website/apps/web/dist/*
+          target: /home/u753560618/domains/ekho-studio.com/public_html/
+          strip_components: 4
+          rm: false
