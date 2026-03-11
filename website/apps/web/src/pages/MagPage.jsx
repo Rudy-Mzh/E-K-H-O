@@ -111,7 +111,12 @@ const MagPage = () => {
   const [activeLang, setActiveLang] = useState('fr');
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const langArticles = articles.filter(a => (a.lang || 'fr') === activeLang);
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+  const langArticles = articles.filter(a =>
+    (a.lang || 'fr') === activeLang &&
+    new Date(a.publishDate) <= today
+  );
   const categories = ['all', ...new Set(langArticles.map(a => a.category))];
   const filtered = activeCategory === 'all'
     ? langArticles

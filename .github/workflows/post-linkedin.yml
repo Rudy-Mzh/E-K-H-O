@@ -1,0 +1,39 @@
+name: Post to LinkedIn
+
+on:
+  schedule:
+    # Mon & Thu at 7:45 UTC = 8:45 Paris (CET/winter)
+    - cron: '45 7 * * 1,4'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Override date (YYYY-MM-DD) — leave empty for today'
+        required: false
+      lang:
+        description: 'Language to post: fr or en'
+        required: false
+        default: 'fr'
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Post FR article to LinkedIn
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          SITE_URL: ${{ secrets.SITE_URL || 'https://ekho.fr' }}
+          POST_LANG: ${{ github.event.inputs.lang || 'fr' }}
+        run: node scripts/linkedin-post.mjs
