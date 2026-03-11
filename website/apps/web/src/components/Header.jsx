@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { openCalendly } from '@/lib/calendly.js';
 
@@ -59,12 +59,17 @@ const Header = () => {
             )}
 
             {/* Lang toggle */}
-            <div className="flex items-center gap-0.5 bg-white/5 rounded-full p-0.5">
+            <div className="flex items-center gap-1 border border-white/20 rounded-full px-1 py-1 bg-white/[0.04]">
+              <Globe size={13} className="text-white/40 ml-1.5 flex-shrink-0" />
               {['fr', 'en'].map(l => (
                 <button
                   key={l}
                   onClick={() => { i18n.changeLanguage(l); localStorage.setItem('ekho_lang', l); }}
-                  className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-200 ${i18n.language === l ? 'bg-electric-purple text-white' : 'text-gray-500 hover:text-white'}`}
+                  className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-200 ${
+                    i18n.language === l
+                      ? 'bg-white text-[#0A0E27] shadow-sm'
+                      : 'text-white/50 hover:text-white'
+                  }`}
                 >
                   {l}
                 </button>
@@ -82,12 +87,16 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-3 md:hidden">
             {/* Mobile lang toggle */}
-            <div className="flex items-center gap-0.5 bg-white/5 rounded-full p-0.5">
+            <div className="flex items-center gap-1 border border-white/20 rounded-full px-1 py-1 bg-white/[0.04]">
               {['fr', 'en'].map(l => (
                 <button
                   key={l}
                   onClick={() => { i18n.changeLanguage(l); localStorage.setItem('ekho_lang', l); }}
-                  className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-200 ${i18n.language === l ? 'bg-electric-purple text-white' : 'text-gray-500'}`}
+                  className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-200 ${
+                    i18n.language === l
+                      ? 'bg-white text-[#0A0E27] shadow-sm'
+                      : 'text-white/50'
+                  }`}
                 >
                   {l}
                 </button>
