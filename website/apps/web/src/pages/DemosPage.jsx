@@ -6,6 +6,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 import { Video, Megaphone, Dumbbell, Star, Mic2 } from 'lucide-react';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
+import { demos } from '@/data/demos.js';
 
 const DemosPage = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -18,63 +19,6 @@ const DemosPage = () => {
     { id: 'sport', name: 'Coaching Sportif', icon: <Dumbbell className="w-5 h-5" /> },
     { id: 'speaker', name: 'Motivation Speaker', icon: <Star className="w-5 h-5" /> },
     { id: 'ad', name: 'Publicité', icon: <Megaphone className="w-5 h-5" /> },
-  ];
-
-  const demos = [
-    {
-      id: 12,
-      category: 'interview',
-      title: 'Interview : Yann Darwin & Alec Henry — Entrepreneuriat immobilier',
-      languages: 'FR → ES',
-      context: "Extrait d'une interview de Yann Darwin avec Alec Henry. L'authenticité de l'échange, le flow naturel de la conversation et l'ambiance sonore — autant d'éléments qu'EKHO préserve intégralement dans l'adaptation.",
-      beforeVideo: { id: '1171690830' },
-      afterVideo: { id: '1171691552' },
-    },
-    {
-      id: 9,
-      category: 'sport',
-      title: 'Coaching sportif : Sissy Mua — Cardio en conditions réelles',
-      languages: 'FR → ES',
-      context: "Extrait de Sissy Mua filmé en pleine séance de cardio. La voix est portée par le mouvement, l'effort et l'intensité physique. EKHO préserve l'énergie, le rythme et l'authenticité dans l'adaptation.",
-      beforeVideo: { id: '1168777376' },
-      afterVideo: { id: '1168777402' },
-    },
-    {
-      id: 10,
-      category: 'speaker',
-      title: 'Motivation Speaker : David Laroche — Stoïcisme',
-      languages: 'FR → EN',
-      context: "Extrait de David Laroche, figure majeure du coaching motivationnel. Rythme, intonation et énergie sont au cœur du message. EKHO recrée l'expérience complète pour une audience anglophone.",
-      beforeVideo: { id: '1168782805' },
-      afterVideo: { id: '1168103220' },
-    },
-    {
-      id: 14,
-      category: 'ad',
-      title: 'Publicité : Old Spice — Adaptation marché canadien',
-      languages: 'EN → FR-CA',
-      context: "\"The Man Your Man Could Smell Like\", l'une des publicités les plus iconiques d'Old Spice. EKHO adapte l'humour, le ton et le rythme pour le marché canadien francophone — sans rien perdre de l'impact original.",
-      beforeVideo: { id: '1172445718' },
-      afterVideo: { id: '1172445691' },
-    },
-    {
-      id: 13,
-      category: 'ad',
-      title: 'Publicité : Apple — Adaptation marché francophone',
-      languages: 'EN → FR',
-      context: "Publicité Apple originale en anglais, adaptée par EKHO pour le marché francophone. Même ton, même précision, même impact — dans une nouvelle langue.",
-      beforeVideo: { id: '1172424476' },
-      afterVideo: { id: '1172424471' },
-    },
-    {
-      id: 11,
-      category: 'ad',
-      title: 'Publicité : BOKU — Adaptation marché anglophone',
-      languages: 'FR → EN',
-      context: "Extrait publicitaire BOKU adapté par EKHO pour le marché anglophone. Même énergie, même impact, nouvelle langue.",
-      beforeVideo: { id: '1168816208' },
-      afterVideo: { id: '1168815869' },
-    },
   ];
 
   const filteredDemos = activeTab === 'all' 

@@ -6,37 +6,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { openCalendly } from '@/lib/calendly.js';
 import { Zap, DollarSign, Target, Globe, Users, RefreshCw, ArrowRight, Upload, Sparkles, Rocket, Star, Quote } from 'lucide-react';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
+import { demos } from '@/data/demos.js';
 
-const FEATURED_DEMOS = [
-  {
-    title: 'Interview — Yann Darwin & Alec Henry',
-    languages: 'FR → ES',
-    desc: "Authenticité de l'échange, flow naturel, ambiance sonore — préservés intégralement.",
-    beforeId: '1171690830',
-    afterId: '1171691552',
-  },
-  {
-    title: 'Coaching sportif — Sissy Mua',
-    languages: 'FR → ES',
-    desc: 'Même énergie, même intensité — en espagnol.',
-    beforeId: '1168777376',
-    afterId: '1168777402',
-  },
-  {
-    title: 'Motivation Speaker — David Laroche',
-    languages: 'FR → EN',
-    desc: 'Rythme, intonation et énergie recréés pour une audience anglophone.',
-    beforeId: '1168782805',
-    afterId: '1168103220',
-  },
-  {
-    title: 'Publicité — BOKU',
-    languages: 'FR → EN',
-    desc: 'Même impact, nouvelle langue, nouveau marché.',
-    beforeId: '1168816208',
-    afterId: '1168815869',
-  },
-];
+const FEATURED_DEMOS = demos.map(d => ({
+  title: d.shortTitle,
+  languages: d.languages,
+  desc: d.desc,
+  beforeId: d.beforeVideo.id,
+  afterId: d.afterVideo.id,
+}));
 
 const AUTO_ROTATE_INTERVAL = 8000; // 8 secondes par démo
 
