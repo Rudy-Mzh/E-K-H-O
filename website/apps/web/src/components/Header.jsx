@@ -29,13 +29,25 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-white hover:text-electric-purple transition-all duration-300"
-              >
-                {link.name}
-              </Link>
+              link.path === '/mag' ? (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  style={{ transform: 'rotate(-1.5deg)' }}
+                  className="relative inline-flex items-center gap-1.5 px-3 py-1 bg-orange-500 text-white text-sm font-black rounded-md shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 transition-all duration-200"
+                >
+                  <span className="text-[10px] opacity-70">✦</span>
+                  {link.name}
+                </Link>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-white hover:text-electric-purple transition-all duration-300"
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
             <button
               onClick={openCalendly}
@@ -68,14 +80,27 @@ const Header = () => {
           >
             <nav className="flex flex-col p-6 space-y-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg text-white hover:text-electric-purple transition-all duration-300"
-                >
-                  {link.name}
-                </Link>
+                link.path === '/mag' ? (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    style={{ transform: 'rotate(-1deg)' }}
+                    className="self-start inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white text-lg font-black rounded-md shadow-lg shadow-orange-500/30"
+                  >
+                    <span className="text-xs opacity-70">✦</span>
+                    {link.name}
+                  </Link>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg text-white hover:text-electric-purple transition-all duration-300"
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <button
                 onClick={() => { openCalendly(); setMobileMenuOpen(false); }}
