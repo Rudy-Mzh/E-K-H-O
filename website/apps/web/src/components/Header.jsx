@@ -121,38 +121,47 @@ const Header = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-[73px] right-0 bottom-0 w-full bg-[#0A0E27] border-l border-electric-purple/20 md:hidden"
+            className="fixed top-[73px] right-0 bottom-0 w-full bg-[#0A0E27]/95 backdrop-blur-xl border-l border-electric-purple/40 md:hidden"
+            style={{ boxShadow: '-8px 0 40px rgba(123,47,255,0.15)' }}
           >
-            <nav className="flex flex-col p-6 space-y-4">
+            {/* Ambient glow top */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-electric-purple/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-20 left-0 w-48 h-48 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
+
+            <nav className="relative flex flex-col p-6 space-y-1">
               {navLinks.map((link) =>
                 link.sticker ? (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    style={{ transform: 'rotate(-1deg)' }}
-                    className="self-start inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white text-lg font-black rounded-md shadow-lg shadow-orange-500/30"
-                  >
-                    <span className="text-xs opacity-70">✦</span>
-                    {t(`nav.${link.key}`)}
-                  </Link>
+                  <div key={link.path} className="pt-3">
+                    <Link
+                      to={link.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      style={{ transform: 'rotate(-1deg)' }}
+                      className="self-start inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white text-lg font-black rounded-md mag-sticker-glow"
+                    >
+                      <span className="text-xs opacity-70">✦</span>
+                      {t(`nav.${link.key}`)}
+                    </Link>
+                  </div>
                 ) : (
                   <Link
                     key={link.path}
                     to={link.path}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-lg text-white hover:text-electric-purple transition-all duration-300"
+                    className="group flex items-center justify-between py-3 border-b border-white/5 text-lg text-white/80 hover:text-electric-purple transition-all duration-300"
                   >
                     {t(`nav.${link.key}`)}
+                    <span className="text-electric-purple/0 group-hover:text-electric-purple/60 transition-all duration-300 text-sm">→</span>
                   </Link>
                 )
               )}
-              <button
-                onClick={() => { openCalendly(); setMobileMenuOpen(false); }}
-                className="px-6 py-3 bg-electric-purple text-white rounded-lg btn-neon-cta text-center text-lg"
-              >
-                {t('nav.cta')}
-              </button>
+              <div className="pt-4">
+                <button
+                  onClick={() => { openCalendly(); setMobileMenuOpen(false); }}
+                  className="w-full px-6 py-4 bg-electric-purple text-white rounded-lg btn-neon-cta text-center text-lg font-bold"
+                >
+                  {t('nav.cta')}
+                </button>
+              </div>
             </nav>
           </motion.div>
         )}
