@@ -21,8 +21,8 @@ const Header = () => {
     { key: 'demos',   path: '/demos' },
     { key: 'services',path: '/services' },
     { key: 'pricing', path: '/pricing' },
-    { key: 'mag',     path: '/mag', sticker: true },
     { key: 'contact', path: '/contact' },
+    { key: 'mag',     path: '/mag', sticker: true },
   ];
 
   return (
