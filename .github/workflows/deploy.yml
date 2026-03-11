@@ -1,7 +1,9 @@
 name: Build & Deploy to Hostinger
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -24,14 +26,18 @@ jobs:
         working-directory: website/apps/web
         run: npm run build
 
-      - name: Deploy via SSH/SCP
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ekho-studio.com
-          port: 65002
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          source: website/apps/web/dist/*
-          target: /home/u753560618/domains/ekho-studio.com/public_html/
-          strip_components: 4
-          rm: false
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: website/apps/web/dist/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
