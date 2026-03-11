@@ -42,7 +42,7 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   style={{ transform: 'rotate(-1.5deg)' }}
-                  className="relative inline-flex items-center gap-1.5 px-3 py-1 bg-orange-500 text-white text-sm font-black rounded-md shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 transition-all duration-200"
+                  className="relative inline-flex items-center gap-1.5 px-3 py-1 bg-orange-500 text-white text-sm font-black rounded-md shadow-lg shadow-orange-500/30 hover:shadow-orange-500/60 hover:scale-110 hover:rotate-0 transition-all duration-200"
                 >
                   <span className="text-[10px] opacity-70">✦</span>
                   {t(`nav.${link.key}`)}
@@ -67,8 +67,8 @@ const Header = () => {
                   onClick={() => { i18n.changeLanguage(l); localStorage.setItem('ekho_lang', l); }}
                   className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-200 ${
                     i18n.language === l
-                      ? 'bg-white text-[#0A0E27] shadow-sm'
-                      : 'text-white/50 hover:text-white'
+                      ? 'bg-electric-purple text-white shadow-[0_0_10px_rgba(123,47,255,0.9),0_0_20px_rgba(123,47,255,0.5),0_0_35px_rgba(123,47,255,0.25)]'
+                      : 'text-white/40 hover:text-white'
                   }`}
                 >
                   {l}
@@ -94,8 +94,8 @@ const Header = () => {
                   onClick={() => { i18n.changeLanguage(l); localStorage.setItem('ekho_lang', l); }}
                   className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-200 ${
                     i18n.language === l
-                      ? 'bg-white text-[#0A0E27] shadow-sm'
-                      : 'text-white/50'
+                      ? 'bg-electric-purple text-white shadow-[0_0_10px_rgba(123,47,255,0.9),0_0_20px_rgba(123,47,255,0.5)]'
+                      : 'text-white/40'
                   }`}
                 >
                   {l}
