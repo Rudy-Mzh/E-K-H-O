@@ -31,10 +31,22 @@ jobs:
 
       - name: Push dist to deploy branch
         run: |
-          cd website/apps/web/dist
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Clone la branche deploy existante (ou la crée si elle n'existe pas)
+          git clone --depth=1 --branch deploy \
+            https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git \
+            deploy-branch 2>/dev/null || \
+          (git clone --depth=1 \
+            https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git \
+            deploy-branch && \
+           cd deploy-branch && git checkout --orphan deploy && git rm -rf .)
+
+          # Remplace les fichiers par le nouveau build
+          rsync -a --delete --exclude='.git' website/apps/web/dist/ deploy-branch/
+
+          cd deploy-branch
           git add -A
-          git commit -m "deploy: build from ${{ github.sha }}"
-          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:deploy
+          git diff --staged --quiet || git commit -m "deploy: build from ${{ github.sha }}"
+          git push origin deploy
