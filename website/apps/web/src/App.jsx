@@ -10,6 +10,8 @@ import ServicesPage from './pages/ServicesPage.jsx';
 import PricingPage from './pages/PricingPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import MagPage from './pages/MagPage.jsx';
+import ArticlePage from './pages/ArticlePage.jsx';
 import { Toaster } from './components/ui/toaster.jsx';
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/mag" element={<MagPage />} />
+            <Route path="/mag/:slug" element={<ArticlePage />} />
           </Routes>
         </main>
         <Footer />

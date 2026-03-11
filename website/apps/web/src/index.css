@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,6 +14,23 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Syne', sans-serif;
 }
+
+/* ── Le Mag — typo serif ── */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif !important;
+}
+
+/* ── Prose styles : Style A (clair) ── */
+.prose-light h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: #1a1a1a; margin: 2rem 0 1rem; }
+.prose-light p { color: #374151; line-height: 1.85; margin-bottom: 1.25rem; font-size: 1.05rem; }
+.prose-light blockquote { border-left: 4px solid #f59e0b; padding: 1rem 1.5rem; background: #fffbeb; border-radius: 0 12px 12px 0; margin: 2rem 0; font-style: italic; color: #92400e; font-size: 1.1rem; font-family: 'Playfair Display', serif; }
+.prose-light strong { color: #111827; font-weight: 700; }
+
+/* ── Prose styles : Style B (dark) ── */
+.prose-dark h2 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 900; color: #ffffff; margin: 2rem 0 1rem; }
+.prose-dark p { color: #9ca3af; line-height: 1.85; margin-bottom: 1.25rem; font-size: 1.05rem; }
+.prose-dark blockquote { border-left: 4px solid #f97316; padding: 1rem 1.5rem; background: rgba(249,115,22,0.08); border-radius: 0 12px 12px 0; margin: 2rem 0; font-style: italic; color: #fdba74; font-size: 1.1rem; }
+.prose-dark strong { color: #f3f4f6; font-weight: 700; }
 
 /* Neon Glow Effects */
 .neon-glow-purple {
