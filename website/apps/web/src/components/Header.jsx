@@ -78,7 +78,7 @@ const Header = () => {
 
             <button
               onClick={openCalendly}
-              className="px-6 py-2 bg-electric-purple text-white rounded-lg btn-neon-purple hover:bg-electric-purple/90 transition-all duration-300"
+              className="px-6 py-2 bg-electric-purple text-white rounded-lg btn-neon-cta hover:bg-electric-purple/90 transition-all duration-300"
             >
               {t('nav.cta')}
             </button>
@@ -149,7 +149,7 @@ const Header = () => {
               )}
               <button
                 onClick={() => { openCalendly(); setMobileMenuOpen(false); }}
-                className="px-6 py-3 bg-electric-purple text-white rounded-lg btn-neon-purple text-center text-lg"
+                className="px-6 py-3 bg-electric-purple text-white rounded-lg btn-neon-cta text-center text-lg"
               >
                 {t('nav.cta')}
               </button>

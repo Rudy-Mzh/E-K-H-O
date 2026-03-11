@@ -64,6 +64,32 @@ h1, h2, h3, h4, h5, h6 {
               0 0 70px rgba(123, 47, 255, 0.4);
 }
 
+/* Header CTA — pulsing intense */
+@keyframes cta-pulse {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(123,47,255,1),
+                0 0 25px rgba(123,47,255,0.9),
+                0 0 50px rgba(123,47,255,0.6),
+                0 0 90px rgba(123,47,255,0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(123,47,255,1),
+                0 0 40px rgba(123,47,255,1),
+                0 0 80px rgba(123,47,255,0.7),
+                0 0 130px rgba(123,47,255,0.4);
+  }
+}
+.btn-neon-cta {
+  animation: cta-pulse 2.2s ease-in-out infinite;
+}
+.btn-neon-cta:hover {
+  box-shadow: 0 0 25px rgba(123,47,255,1),
+              0 0 50px rgba(123,47,255,1),
+              0 0 90px rgba(123,47,255,0.8),
+              0 0 150px rgba(123,47,255,0.5);
+  animation: none;
+}
+
 .btn-neon-blue {
   box-shadow: 0 0 20px rgba(0, 194, 255, 0.6),
               0 0 40px rgba(0, 194, 255, 0.4);
