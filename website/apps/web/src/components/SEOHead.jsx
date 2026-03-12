@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const SITE_URL = 'https://ekho.fr';
+const SITE_URL = 'https://ekho-studio.com';
 const SITE_NAME = 'EKHO Studio';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-ekho.jpg`;
 

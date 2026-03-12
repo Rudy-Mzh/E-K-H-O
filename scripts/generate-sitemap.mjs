@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const SITE_URL = 'https://ekho.fr';
+const SITE_URL = 'https://ekho-studio.com';
 const today = new Date();
 today.setHours(23, 59, 59, 999);
 
