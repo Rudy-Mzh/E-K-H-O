@@ -41,7 +41,7 @@ const ArticlePage = () => {
 
         {/* Content */}
         <div className="container mx-auto px-4 max-w-3xl -mt-28 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             {/* Back */}
             <Link to="/mag" className="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold mb-8 hover:gap-3 transition-all group">
               <ArrowLeft size={15} className="group-hover:-translate-x-1 transition-transform" /> {article.lang === 'en' ? 'Back to The Mag' : 'Retour au Mag'}

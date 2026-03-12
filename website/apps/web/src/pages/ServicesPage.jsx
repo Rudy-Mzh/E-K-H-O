@@ -14,7 +14,7 @@ const ServicesPage = () => {
   };
 
   const claimLine1Variants = {
-    hidden: { opacity: 0, y: 30, filter: 'drop-shadow(0 0 0px rgba(123,47,255,0))' },
+    hidden: { opacity: 0, y: 10, filter: 'drop-shadow(0 0 0px rgba(123,47,255,0))' },
     visible: {
       opacity: 1, y: 0,
       filter: 'drop-shadow(0 0 12px rgba(123,47,255,0.7))',
@@ -23,7 +23,7 @@ const ServicesPage = () => {
   };
 
   const claimLine2Variants = {
-    hidden: { opacity: 0, y: 30, filter: 'drop-shadow(0 0 0px rgba(123,47,255,0)) drop-shadow(0 0 0px rgba(123,47,255,0))' },
+    hidden: { opacity: 0, y: 10, filter: 'drop-shadow(0 0 0px rgba(123,47,255,0)) drop-shadow(0 0 0px rgba(123,47,255,0))' },
     visible: {
       opacity: 1, y: 0,
       filter: 'drop-shadow(0 0 18px rgba(123,47,255,0.85)) drop-shadow(0 0 40px rgba(123,47,255,0.4))',
@@ -32,7 +32,7 @@ const ServicesPage = () => {
   };
 
   const claimLine3Variants = {
-    hidden: { opacity: 0, y: 30, filter: 'drop-shadow(0 0 0px rgba(123,47,255,0)) drop-shadow(0 0 0px rgba(123,47,255,0)) drop-shadow(0 0 0px rgba(123,47,255,0))' },
+    hidden: { opacity: 0, y: 10, filter: 'drop-shadow(0 0 0px rgba(123,47,255,0)) drop-shadow(0 0 0px rgba(123,47,255,0)) drop-shadow(0 0 0px rgba(123,47,255,0))' },
     visible: {
       opacity: 1, y: 0,
       filter: 'drop-shadow(0 0 25px rgba(123,47,255,1)) drop-shadow(0 0 60px rgba(123,47,255,0.7)) drop-shadow(0 0 100px rgba(123,47,255,0.35))',
@@ -70,17 +70,17 @@ const ServicesPage = () => {
         <div className="absolute inset-0 bg-black/70 z-0" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
           >
             {t('services.heroTitle')}
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
             {t('services.heroSub')}
@@ -98,8 +98,8 @@ const ServicesPage = () => {
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.5, delay: index * 0.07 }}
                 className="bg-[#050814] border border-electric-purple/30 rounded-xl p-8 md:p-12 hover:border-electric-purple/60 transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row items-start gap-8">
@@ -130,10 +130,10 @@ const ServicesPage = () => {
 
           {/* Differentiator Section */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.02 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto bg-gradient-to-br from-electric-purple/20 to-neon-blue/20 border border-electric-purple/40 rounded-xl p-8 md:p-12 hover:border-electric-purple/70 hover:shadow-[0_0_60px_rgba(123,47,255,0.35)] transition-all duration-300 cursor-default"
           >
@@ -154,7 +154,7 @@ const ServicesPage = () => {
               variants={claimContainerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-60px' }}
               className="border-t border-electric-purple/30 pt-8 text-center space-y-3"
             >
               <motion.p

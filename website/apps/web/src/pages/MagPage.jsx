@@ -19,7 +19,7 @@ const catColor = {
 // ── Article Card ──────────────────────────────────────────────────────────────
 const Card = ({ article, featured = false, index = 0 }) => (
   <motion.article
-    initial={{ opacity: 0, y: 28 }}
+    initial={{ opacity: 0, y: 8 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-40px' }}
     transition={{ duration: 0.5, delay: (index % 6) * 0.07 }}
@@ -74,7 +74,7 @@ const Claim = ({ children, rotate = '0deg', accent = false, big = false, classNa
   <motion.div
     initial={{ opacity: 0, scale: 0.96 }}
     whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
+    viewport={{ once: true, margin: '-60px' }}
     style={{ transform: `rotate(${rotate})` }}
     className={`${accent ? 'border-l-4 border-orange-500 pl-5' : ''} ${className}`}
   >
@@ -162,9 +162,9 @@ const MagPage = () => {
             {/* Title + floating claims */}
             <div className="relative flex items-start justify-between gap-8">
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.5 }}
                 className="text-[clamp(5rem,16vw,11rem)] font-black text-white leading-[0.9] tracking-tight"
               >
                 {activeLang === 'en' ? <>The<br /><span className="relative">Mag<span className="text-orange-500">.</span></span></> : <>Le<br /><span className="relative">Mag<span className="text-orange-500">.</span></span></>}
@@ -276,7 +276,7 @@ const MagPage = () => {
               <motion.blockquote
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '-60px' }}
                 style={{ transform: 'rotate(-0.7deg)' }}
                 className="text-2xl md:text-4xl font-black text-white/20 italic text-center flex-shrink-0 leading-tight max-w-2xl"
               >
@@ -297,9 +297,9 @@ const MagPage = () => {
           {filtered.length > 6 && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 items-center">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '-60px' }}
                 style={{ transform: 'rotate(-1.5deg)' }}
                 className="flex flex-col gap-4 p-6 bg-orange-500/[0.06] border border-orange-500/20 rounded-2xl"
               >
@@ -337,7 +337,7 @@ const MagPage = () => {
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '-60px' }}
                 className="relative z-10"
               >
                 <p className="text-4xl md:text-[3.5rem] font-black text-white leading-tight">
@@ -367,7 +367,7 @@ const MagPage = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: '-60px' }}
                   style={{ transform: 'rotate(0.8deg)' }}
                   className="leading-none"
                 >
@@ -378,7 +378,7 @@ const MagPage = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: '-60px' }}
                   style={{ transform: 'rotate(-1.2deg)' }}
                   className="border border-white/10 rounded-xl p-5 bg-white/[0.02]"
                 >

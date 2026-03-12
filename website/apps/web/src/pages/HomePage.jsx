@@ -57,25 +57,25 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-black/70 z-0"></div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 neon-glow-purple"
           >
             {t('home.hero')}
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
             {t('home.heroSub')}
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <button
@@ -98,9 +98,9 @@ const HomePage = () => {
       <section className="py-20 bg-[#050814]">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 neon-glow-blue">
@@ -112,9 +112,9 @@ const HomePage = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="max-w-4xl mx-auto"
           >
             {/* Auto-carousel */}
@@ -202,10 +202,10 @@ const HomePage = () => {
       <section className="py-20 bg-dark-navy">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 neon-glow-blue">
@@ -222,9 +222,9 @@ const HomePage = () => {
       <section className="py-20 bg-[#050814]">
         <div className="container mx-auto px-4">
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="text-3xl md:text-5xl font-bold text-white text-center mb-16 neon-glow-purple"
           >
             {t('home.solutionTitle')}
@@ -233,10 +233,10 @@ const HomePage = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: index * 0.07 }}
                 className="bg-dark-navy border border-electric-purple/30 rounded-xl p-8 text-center hover:border-electric-purple/60 transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="text-electric-purple mb-4 flex justify-center">{step.icon}</div>
@@ -252,9 +252,9 @@ const HomePage = () => {
       <section className="py-20 bg-dark-navy">
         <div className="container mx-auto px-4">
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="text-3xl md:text-5xl font-bold text-white text-center mb-16 neon-glow-blue"
           >
             {t('home.benefitsTitle')}
@@ -263,10 +263,10 @@ const HomePage = () => {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: index * 0.05 }}
                 className="bg-[#050814] border border-electric-purple/30 rounded-xl p-6 hover:border-electric-purple/60 transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="text-electric-purple mb-4">{benefit.icon}</div>
@@ -282,9 +282,9 @@ const HomePage = () => {
       <section className="py-20 bg-[#050814]">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 neon-glow-purple">
@@ -297,10 +297,10 @@ const HomePage = () => {
             {testimonials.map((t, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: index * 0.06 }}
                 className="bg-dark-navy border border-electric-purple/30 rounded-xl p-6 hover:border-electric-purple/60 hover:shadow-[0_0_30px_rgba(123,47,255,0.15)] transition-all duration-300 flex flex-col"
               >
                 <Quote className="w-8 h-8 text-electric-purple/40 mb-4 flex-shrink-0" />
@@ -324,9 +324,9 @@ const HomePage = () => {
       <section className="py-20 bg-dark-navy">
         <div className="container mx-auto px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 neon-glow-purple">
@@ -350,9 +350,9 @@ const HomePage = () => {
       <section className="py-20 bg-[#050814]">
         <div className="container mx-auto px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 neon-glow-blue">

@@ -41,9 +41,9 @@ const AboutPage = () => {
         <div className="absolute inset-0 bg-black/70 z-0" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
             className="text-4xl md:text-6xl font-bold text-white neon-glow-purple text-center"
           >
             {t('about.heroTitle')}
@@ -57,9 +57,9 @@ const AboutPage = () => {
 
             {/* Block 1 */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.1 }}
               className="bg-[#050814] border border-electric-purple/30 rounded-xl p-8 md:p-10 hover:border-electric-purple/60 hover:-translate-y-1 transition-all duration-300"
             >
@@ -75,9 +75,9 @@ const AboutPage = () => {
 
             {/* Block 2 */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.1 }}
               className="bg-[#050814] border border-electric-purple/30 rounded-xl p-8 md:p-10 hover:border-electric-purple/60 hover:-translate-y-1 transition-all duration-300"
             >
@@ -93,9 +93,9 @@ const AboutPage = () => {
 
             {/* Block 3 */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.1 }}
               className="bg-[#050814] border border-electric-purple/30 rounded-xl p-8 md:p-10 hover:border-electric-purple/60 hover:-translate-y-1 transition-all duration-300"
             >
@@ -111,9 +111,9 @@ const AboutPage = () => {
 
             {/* Block 4 — Gains */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.1 }}
               className="bg-gradient-to-br from-electric-purple/10 to-neon-blue/10 border border-electric-purple/40 rounded-xl p-8 md:p-10 hover:border-electric-purple/70 hover:-translate-y-1 transition-all duration-300 text-center"
             >
@@ -127,9 +127,9 @@ const AboutPage = () => {
 
             {/* Tagline + CTA */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-60px' }}
               className="text-center py-8 space-y-8"
             >
               <p className="text-4xl md:text-6xl font-bold text-white cursor-default select-none transition-colors duration-300 hover:text-electric-purple hover:[text-shadow:0_0_30px_rgba(123,47,255,0.8)]">
@@ -150,9 +150,9 @@ const AboutPage = () => {
 
             {/* Founder */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-60px' }}
               className="bg-gradient-to-br from-electric-purple/20 to-neon-blue/20 border border-electric-purple/40 rounded-xl p-8 md:p-12"
             >
               <div className="flex flex-col md:flex-row items-center gap-8">

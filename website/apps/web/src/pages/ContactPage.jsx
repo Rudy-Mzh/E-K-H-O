@@ -85,17 +85,17 @@ const ContactPage = () => {
         <div className="absolute inset-0 bg-black/70 z-0" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
           >
             {t('contact.heroTitle')}
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
             {t('contact.heroSub')}
@@ -237,9 +237,9 @@ const ContactPage = () => {
 
           {/* Informations de contact — centré en bas */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="max-w-2xl mx-auto bg-[#050814] border border-hot-pink/30 rounded-xl p-8 hover:border-hot-pink/60 hover:shadow-[0_0_40px_rgba(255,45,155,0.2)] transition-all duration-300"
           >
             <h2 className="text-2xl font-bold text-white mb-6 text-center">{t('contact.infoTitle')}</h2>

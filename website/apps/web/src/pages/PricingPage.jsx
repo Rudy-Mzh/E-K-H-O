@@ -57,9 +57,9 @@ const OrderModal = ({ plan, onClose }) => {
         onClick={onClose}
       />
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        initial={{ opacity: 0, scale: 0.95, y: 8 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        exit={{ opacity: 0, scale: 0.95, y: 8 }}
         transition={{ duration: 0.3 }}
         className="relative w-full max-w-md bg-[#080b1a] border border-electric-purple/50 rounded-2xl shadow-[0_0_60px_rgba(123,47,255,0.3)] overflow-hidden"
       >
@@ -192,17 +192,17 @@ const PricingPage = () => {
         <div className="absolute inset-0 bg-black/70 z-0" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 neon-glow-purple"
           >
             {t('pricing.heroTitle')}
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
             {t('pricing.heroSub')}
@@ -218,10 +218,10 @@ const PricingPage = () => {
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: index * 0.05 }}
                 className={`group relative rounded-xl p-8 transition-all duration-300 ease-out hover:-translate-y-2 ${
                   plan.highlighted
                     ? 'bg-gradient-to-br from-electric-purple/20 to-neon-blue/20 border-2 border-electric-purple hover:border-neon-blue hover:from-electric-purple/30 hover:to-neon-blue/30 hover:shadow-[0_0_40px_rgba(0,194,255,0.5),inset_0_0_20px_rgba(0,194,255,0.2)]'
@@ -289,9 +289,9 @@ const PricingPage = () => {
 
           {/* Add-ons Section */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center neon-glow-blue">
