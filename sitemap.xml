@@ -45,4 +45,60 @@
     <priority>0.6</priority>
     <lastmod>2026-03-12</lastmod>
   </url>
+  <url>
+    <loc>https://ekho.fr/mag/tu-perds-80-pourcent-de-tes-revenus-potentiels</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho.fr/mag/tu-perds-80-pourcent-de-tes-revenus-potentiels"/>
+  </url>
+  <url>
+    <loc>https://ekho.fr/mag/pourquoi-ta-meilleure-video-ne-touche-quune-fraction</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho.fr/mag/pourquoi-ta-meilleure-video-ne-touche-quune-fraction"/>
+  </url>
+  <url>
+    <loc>https://ekho.fr/mag/ce-que-les-grands-createurs-font-differemment</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho.fr/mag/ce-que-les-grands-createurs-font-differemment"/>
+  </url>
+  <url>
+    <loc>https://ekho.fr/mag/arbitrage-geographique-une-video-dix-marches</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho.fr/mag/arbitrage-geographique-une-video-dix-marches"/>
+  </url>
+  <url>
+    <loc>https://ekho.fr/mag/your-content-is-trapped-in-one-language</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho.fr/mag/your-content-is-trapped-in-one-language"/>
+  </url>
+  <url>
+    <loc>https://ekho.fr/mag/fitness-coaches-biggest-missed-market</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho.fr/mag/fitness-coaches-biggest-missed-market"/>
+  </url>
+  <url>
+    <loc>https://ekho.fr/mag/stop-translating-start-adapting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho.fr/mag/stop-translating-start-adapting"/>
+  </url>
+  <url>
+    <loc>https://ekho.fr/mag/youtube-algorithm-multilingual-secret</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho.fr/mag/youtube-algorithm-multilingual-secret"/>
+  </url>
 </urlset>
