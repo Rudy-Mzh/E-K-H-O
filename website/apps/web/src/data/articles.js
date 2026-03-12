@@ -1,5 +1,3 @@
-// Articles publiés tous les 2 jours à partir du 13 mars 2026
-// visible: true = aperçu complet pour maquette finale
 
 export const articles = [
   {
@@ -10,7 +8,6 @@ export const articles = [
     category: 'Stratégie',
     readTime: 5,
     publishDate: '2026-03-02',
-    visible: true,
     coverImage: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80',
     tags: ['revenus', 'stratégie', 'international'],
     content: `
@@ -37,7 +34,6 @@ export const articles = [
     category: 'Stratégie',
     readTime: 5,
     publishDate: '2026-03-05',
-    visible: true,
     coverImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&q=80',
     tags: ['YouTube', 'algorithme', 'audience'],
     content: `
@@ -64,7 +60,6 @@ export const articles = [
     category: 'Stratégie',
     readTime: 5,
     publishDate: '2026-03-09',
-    visible: true,
     coverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80',
     tags: ['créateurs', 'scale', 'stratégie'],
     content: `
@@ -91,7 +86,6 @@ export const articles = [
     category: 'Stratégie',
     readTime: 5,
     publishDate: '2026-03-11',
-    visible: true,
     coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     tags: ['arbitrage', 'international', 'marchés'],
     content: `
@@ -117,8 +111,7 @@ export const articles = [
     excerpt: 'Le français est parlé dans 29 pays. Mais beaucoup de créateurs l\'ignorent et se limitent à la France. Voilà ce que tu rates.',
     category: 'Stratégie',
     readTime: 4,
-    publishDate: '2026-03-21',
-    visible: true,
+    publishDate: '2026-03-16',
     coverImage: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200&q=80',
     tags: ['francophonie', 'québec', 'belgique', 'afrique'],
     content: `
@@ -143,8 +136,7 @@ export const articles = [
     excerpt: 'Avant de te lancer à l\'international, il y a 7 questions auxquelles tu dois répondre. La plupart des créateurs en ignorent la moitié.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-03-23',
-    visible: true,
+    publishDate: '2026-03-19',
     coverImage: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=1200&q=80',
     tags: ['checklist', 'lancement', 'international'],
     content: `
@@ -175,8 +167,7 @@ export const articles = [
     excerpt: 'Des créateurs non-anglophones touchent des millions de personnes à l\'international. Leur secret n\'est pas linguistique. C\'est stratégique.',
     category: 'Stratégie',
     readTime: 5,
-    publishDate: '2026-03-25',
-    visible: true,
+    publishDate: '2026-03-23',
     coverImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     tags: ['personal branding', 'audience', 'global'],
     content: `
@@ -203,8 +194,7 @@ export const articles = [
     excerpt: 'Dans 5 ans, les créateurs de contenu qui n\'auront pas de stratégie multilingue seront dans la même position que ceux qui n\'avaient pas de chaîne YouTube en 2012.',
     category: 'Stratégie',
     readTime: 4,
-    publishDate: '2026-03-27',
-    visible: true,
+    publishDate: '2026-03-26',
     coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     tags: ['futur', 'multilingue', 'tendances'],
     content: `
@@ -229,8 +219,7 @@ export const articles = [
     excerpt: 'Tu as une boutique en ligne avec des vidéos produit en français. Tu livres à l\'international. Mais tes conversions hors France sont quasi nulles. Ce n\'est pas ton produit le problème.',
     category: 'Secteurs',
     readTime: 5,
-    publishDate: '2026-03-29',
-    visible: true,
+    publishDate: '2026-03-30',
     coverImage: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80',
     tags: ['e-commerce', 'conversion', 'vente'],
     content: `
@@ -256,8 +245,7 @@ export const articles = [
     excerpt: 'Tu as créé une formation qui cartonne en France. La même formation, dans 3 langues, c\'est potentiellement 10x plus de revenus avec 0 heure de création supplémentaire.',
     category: 'Secteurs',
     readTime: 5,
-    publishDate: '2026-03-31',
-    visible: true,
+    publishDate: '2026-04-02',
     coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     tags: ['formation', 'infopreneurs', 'e-learning'],
     content: `
@@ -282,8 +270,7 @@ export const articles = [
     excerpt: 'Tu as une pub qui performe en France. Tu la diffuses en Belgique, au Québec, en Espagne. Les résultats sont décevants. Le problème n\'est souvent pas là où tu le cherches.',
     category: 'Secteurs',
     readTime: 5,
-    publishDate: '2026-04-02',
-    visible: true,
+    publishDate: '2026-04-06',
     coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
     tags: ['publicité', 'ads', 'conversion'],
     content: `
@@ -308,8 +295,7 @@ export const articles = [
     excerpt: 'Le podcast vidéo est le format le plus adapté à une stratégie multilingue. Voici pourquoi — et surtout comment.',
     category: 'Secteurs',
     readTime: 4,
-    publishDate: '2026-04-04',
-    visible: true,
+    publishDate: '2026-04-09',
     coverImage: 'https://images.unsplash.com/photo-1579389083046-e3df9c2b3325?w=1200&q=80',
     tags: ['podcast', 'vidéo', 'distribution'],
     content: `
@@ -332,8 +318,7 @@ export const articles = [
     excerpt: 'Le Québec a le plus fort taux de consommation de contenu vidéo en ligne de tout l\'espace francophone. Et presque aucun créateur français ne s\'y adresse directement.',
     category: 'Secteurs',
     readTime: 4,
-    publishDate: '2026-04-06',
-    visible: true,
+    publishDate: '2026-04-13',
     coverImage: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80',
     tags: ['québec', 'canada', 'francophonie'],
     content: `
@@ -356,8 +341,7 @@ export const articles = [
     excerpt: 'Mal adapté, c\'est pire que pas adapté. Voici les 5 erreurs les plus fréquentes — et comment les éviter.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-08',
-    visible: true,
+    publishDate: '2026-04-16',
     coverImage: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     tags: ['erreurs', 'adaptation', 'qualité'],
     content: `
@@ -384,8 +368,7 @@ export const articles = [
     excerpt: 'Avant que ton audience décide si ton contenu vaut son temps, elle a déjà jugé ta voix. En 200 millisecondes. Voici ce que ça implique.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-10',
-    visible: true,
+    publishDate: '2026-04-20',
     coverImage: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80',
     tags: ['voix', 'confiance', 'psychologie'],
     content: `
@@ -409,8 +392,7 @@ export const articles = [
     excerpt: 'Tout le monde n\'est pas prêt en même temps à se lancer à l\'international. Voici les 3 indicateurs qui montrent que le moment est venu pour toi.',
     category: 'Conseils pratiques',
     readTime: 4,
-    publishDate: '2026-04-12',
-    visible: true,
+    publishDate: '2026-04-23',
     coverImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80',
     tags: ['préparation', 'timing', 'stratégie'],
     content: `
@@ -434,8 +416,7 @@ export const articles = [
     excerpt: 'Retourner tes vidéos dans une autre langue te semble impossible. Trop coûteux, trop long, trop risqué. Mais personne ne te demande de recommencer de zéro.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-14',
-    visible: true,
+    publishDate: '2026-04-27',
     coverImage: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=1200&q=80',
     tags: ['vente', 'international', 'pratique'],
     content: `
@@ -461,8 +442,7 @@ export const articles = [
     excerpt: 'Tu as essayé de te lancer à l\'international. Ça n\'a pas marché. Avant de conclure que "l\'international, c\'est pas pour toi", identifie les vraies barrières.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-16',
-    visible: true,
+    publishDate: '2026-04-30',
     coverImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&q=80',
     tags: ['obstacles', 'stratégie', 'international'],
     content: `
@@ -488,8 +468,7 @@ export const articles = [
     excerpt: 'L\'inaction a un coût. Il est juste moins visible que le coût de l\'action. Voici ce que tu laisses sur la table chaque mois.',
     category: 'Conseils pratiques',
     readTime: 4,
-    publishDate: '2026-04-18',
-    visible: true,
+    publishDate: '2026-05-04',
     coverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     tags: ['opportunité', 'coût', 'stratégie'],
     content: `
@@ -513,8 +492,7 @@ export const articles = [
     excerpt: 'Tu as essayé. Tu as posté. Et rien. Avant de conclure que l\'international "ne marche pas pour toi", voici le vrai diagnostic.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-20',
-    visible: true,
+    publishDate: '2026-05-07',
     coverImage: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&q=80',
     tags: ['performance', 'diagnostic', 'international'],
     content: `
@@ -544,7 +522,6 @@ export const articles = [
     category: 'Strategy',
     readTime: 5,
     publishDate: '2026-03-02',
-    visible: true,
     coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     tags: ['strategy', 'revenue', 'international'],
     content: `
@@ -572,7 +549,6 @@ export const articles = [
     category: 'Industries',
     readTime: 5,
     publishDate: '2026-03-05',
-    visible: true,
     coverImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80',
     tags: ['fitness', 'coaching', 'global', 'sports'],
     content: `
@@ -598,7 +574,6 @@ export const articles = [
     category: 'Strategy',
     readTime: 4,
     publishDate: '2026-03-09',
-    visible: true,
     coverImage: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?w=1200&q=80',
     tags: ['adaptation', 'localization', 'strategy'],
     content: `
@@ -625,7 +600,6 @@ export const articles = [
     category: 'Strategy',
     readTime: 5,
     publishDate: '2026-03-11',
-    visible: true,
     coverImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&q=80',
     tags: ['YouTube', 'algorithm', 'SEO', 'distribution'],
     content: `
@@ -650,8 +624,7 @@ export const articles = [
     excerpt: 'Your best course already exists. The students who need it most just can\'t understand it yet. Here\'s the math that changes everything.',
     category: 'Practical tips',
     readTime: 5,
-    publishDate: '2026-03-21',
-    visible: true,
+    publishDate: '2026-03-16',
     coverImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80',
     tags: ['course', 'e-learning', 'revenue', 'scale'],
     content: `
@@ -677,8 +650,7 @@ export const articles = [
     excerpt: 'Audio content is the most underutilized format for international expansion. Most podcasters don\'t even know this market exists.',
     category: 'Industries',
     readTime: 5,
-    publishDate: '2026-03-23',
-    visible: true,
+    publishDate: '2026-03-19',
     coverImage: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80',
     tags: ['podcast', 'audio', 'international', 'distribution'],
     content: `
@@ -702,8 +674,7 @@ export const articles = [
     excerpt: 'Most creators wait too long. The truth is, if your content already works in one market, it\'s already ready for another.',
     category: 'Practical tips',
     readTime: 4,
-    publishDate: '2026-03-25',
-    visible: true,
+    publishDate: '2026-03-23',
     coverImage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80',
     tags: ['readiness', 'international', 'checklist', 'growth'],
     content: `
@@ -729,8 +700,7 @@ export const articles = [
     excerpt: 'You don\'t need a French office or a French team. You need French content. The market is there — it\'s just waiting to understand you.',
     category: 'Industries',
     readTime: 5,
-    publishDate: '2026-03-27',
-    visible: true,
+    publishDate: '2026-03-26',
     coverImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80',
     tags: ['e-commerce', 'french market', 'brand', 'international'],
     content: `
@@ -755,8 +725,7 @@ export const articles = [
     excerpt: 'The best content strategy isn\'t creating more. It\'s making what you have available to more people. Here\'s the framework.',
     category: 'Practical tips',
     readTime: 4,
-    publishDate: '2026-03-29',
-    visible: true,
+    publishDate: '2026-03-30',
     coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     tags: ['repurpose', 'content strategy', 'efficiency', 'scale'],
     content: `
@@ -782,8 +751,7 @@ export const articles = [
     excerpt: 'Being the best in your niche in one country is great. Being known globally for the same expertise is another level entirely. Here\'s the path.',
     category: 'Strategy',
     readTime: 5,
-    publishDate: '2026-03-31',
-    visible: true,
+    publishDate: '2026-04-02',
     coverImage: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&q=80',
     tags: ['personal brand', 'authority', 'global', 'positioning'],
     content: `
@@ -799,14 +767,464 @@ export const articles = [
       <h2>The practical path</h2>
       <p>You don't need to become a different person. You don't need to change your message. You need to make your existing message audible to a much larger room. The expertise is already there. The stage just needs to be bigger.</p>
     `
+  },
+
+  // ─── NOUVEAUX ARTICLES FR (31-40) ────────────────────────────────────────
+  {
+    id: 31,
+    slug: 'contenu-court-tiktok-reels-international',
+    title: 'Comment adapter ton contenu court TikTok et Reels pour toucher l\'international',
+    excerpt: 'Le format court est roi. Mais sa viralité reste prisonnière d\'une seule langue. Voici comment changer ça sans repartir de zéro.',
+    category: 'Stratégie',
+    readTime: 4,
+    publishDate: '2026-05-11',
+    coverImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&q=80',
+    tags: ['tiktok', 'reels', 'format court', 'international'],
+    content: `
+      <h2>Le format court change les règles du jeu international</h2>
+      <p>Une vidéo TikTok de 60 secondes peut traverser les frontières linguistiques plus vite que n'importe quelle vidéo YouTube de 20 minutes. Pourquoi ? Parce que le rythme, l'énergie visuelle et l'accroche parlent avant même les mots. Mais les mots finissent toujours par compter — surtout dans les premières secondes qui décident de la rétention.</p>
+      <p>Le problème du format court, c'est qu'on croit qu'il n'y a "presque rien à adapter". C'est une erreur coûteuse. Dans 60 secondes, chaque mot a un poids 10 fois supérieur à celui d'une vidéo longue. Une adaptation bâclée détruit l'impact en quelques syllabes.</p>
+      <h2>Ce que les algos TikTok et Instagram regardent vraiment</h2>
+      <p>TikTok distribue massivement les contenus locaux dans leur langue — et les contenus adaptés bénéficient du même traitement. Une vidéo doublée en espagnol sera poussée vers les 60 millions de locuteurs hispanophones aux États-Unis exactement comme une vidéo native espagnole. L'algorithme ne juge pas l'origine. Il juge la langue détectée et la rétention.</p>
+      <blockquote>Sur TikTok, la barrière de la langue est un filtre algorithmique avant d'être une barrière humaine. Franchis le filtre, et tu accèdes à une audience qui ne t'a jamais vu.</blockquote>
+      <h2>Le workflow adapté au format court</h2>
+      <p>La localisation d'un Reel ou d'un TikTok ne fonctionne pas comme celle d'une vidéo YouTube. L'accroche des 3 premières secondes est sacrée — elle ne se traduit pas mot pour mot, elle se réécrit pour avoir le même impact émotionnel dans la langue cible. Le rythme labial doit coller. L'énergie vocale doit être identique.</p>
+      <p>Résultat : une vidéo TikTok de 60 secondes bien adaptée peut générer 10x plus d'engagement dans un nouveau marché qu'une vidéo créée from scratch — parce que le format, le montage, et la dynamique sont déjà éprouvés. Tu sais que ça marche. Il suffit de le rendre accessible.</p>
+    `
+  },
+  {
+    id: 32,
+    slug: 'marche-hispanique-etats-unis-60-millions',
+    title: 'Le marché hispanique aux États-Unis : 60 millions de locuteurs qui t\'attendent',
+    excerpt: 'Le plus grand marché hispanophone du monde n\'est pas en Espagne ni au Mexique. Il est aux États-Unis. Et il est massivement sous-servi en contenu de qualité.',
+    category: 'Marchés',
+    readTime: 5,
+    publishDate: '2026-05-14',
+    coverImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=1200&q=80',
+    tags: ['espagnol', 'etats-unis', 'hispanique', 'marché'],
+    content: `
+      <h2>Le chiffre que personne ne te dit</h2>
+      <p>62 millions. C'est le nombre de locuteurs hispaniques aux États-Unis. C'est plus que la population entière de l'Espagne. C'est un marché avec un pouvoir d'achat collectif estimé à 1 800 milliards de dollars. Et c'est un marché qui consomme massivement du contenu vidéo — sur YouTube, Instagram, TikTok — avec une forte préférence pour le contenu en espagnol.</p>
+      <p>Ce marché est structurellement sous-servi. La majorité des créateurs anglophones ne s'y adressent pas. La majorité des créateurs hispanophones d'Amérique latine ne les connaissent pas. C'est un espace presque vide pour les créateurs qui font le pas.</p>
+      <h2>Pourquoi maintenant ?</h2>
+      <p>La démographie hispanique aux États-Unis est la plus jeune de toutes les communautés linguistiques du pays. L'âge médian est 11 ans en dessous de la moyenne nationale. Ces consommateurs vont représenter une part croissante du pouvoir d'achat américain pendant les 30 prochaines années. Les créateurs qui s'y positionnent aujourd'hui installent une présence que les autres mettront une décennie à rattraper.</p>
+      <blockquote>Le marché hispanique américain n'est pas une niche. C'est une économie entière que la plupart des créateurs mondiaux ignorent par méconnaissance géographique.</blockquote>
+      <h2>Comment y entrer concrètement</h2>
+      <p>L'entrée la plus efficace passe par l'espagnol neutre — compréhensible par les Mexicains, Portoricains, Cubains et toutes les autres communautés qui composent la diaspora hispanique américaine. Une adaptation dans un dialecte trop marqué limite l'audience. Un espagnol neutre la maximise.</p>
+      <p>Le contenu qui performe le mieux dans ce marché : fitness, business, développement personnel, cuisine, finance personnelle. Si tu crées dans l'un de ces secteurs en français, tu as un double avantage compétitif — tu apportes une perspective culturelle européenne dans un espace saturé de voix américaines et latino-américaines.</p>
+    `
+  },
+  {
+    id: 33,
+    slug: 'doublage-voice-over-lip-sync-quelle-technique',
+    title: 'Doublage, voice-over, lip-sync : quelle technique choisir pour ton contenu ?',
+    excerpt: 'Il n\'existe pas une seule façon d\'adapter une vidéo dans une autre langue. Chaque technique a ses forces, ses limites, et son contexte d\'utilisation optimal.',
+    category: 'Techniques',
+    readTime: 6,
+    publishDate: '2026-05-18',
+    coverImage: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80',
+    tags: ['doublage', 'voice-over', 'adaptation', 'technique'],
+    content: `
+      <h2>Trois techniques, trois philosophies différentes</h2>
+      <p>Le voice-over superpose une nouvelle voix par-dessus la voix originale, souvent légèrement audible en dessous. C'est la technique documentaire par excellence — elle signale au spectateur qu'il accède à une traduction. Elle est rapide, économique, et fonctionnelle pour le contenu informatif.</p>
+      <p>Le doublage remplace intégralement la voix originale par une voix dans la langue cible, synchronisée avec les mouvements de bouche. C'est la technique cinéma, la plus immersive, celle qui crée la suspension d'incrédulité linguistique. Elle exige plus de travail mais produit une expérience native pour le spectateur.</p>
+      <h2>Le lip-sync : la révolution silencieuse</h2>
+      <p>Le lip-sync adaptatif est la technique émergente qui change la donne pour les créateurs. Elle va plus loin que le doublage classique : elle synchronise non seulement la voix mais aussi les mouvements faciaux pour correspondre à la nouvelle langue. Le résultat est une vidéo où le créateur semble parler nativement dans une langue qu'il ne maîtrise pas forcément.</p>
+      <blockquote>Le lip-sync, c'est l'illusion parfaite. Ton audience espagnole voit quelqu'un qui parle espagnol. Pas quelqu'un qui a été traduit en espagnol. La nuance est psychologiquement énorme.</blockquote>
+      <h2>Quelle technique pour quel contexte ?</h2>
+      <p>Voice-over : interviews, reportages, contenus éducatifs formels. Rapide à produire, crédible pour ce format.</p>
+      <p>Doublage : vlogs, vidéos de marque personnelle, contenu de divertissement. Optimal pour maintenir la connexion émotionnelle avec le spectateur.</p>
+      <p>Lip-sync : publicités, contenu viral, personal branding premium. Investissement plus élevé, mais résultat professionnel impossible à distinguer du contenu natif. Pour les créateurs qui veulent être perçus comme des voix locales dans chaque marché qu'ils pénètrent.</p>
+    `
+  },
+  {
+    id: 34,
+    slug: 'b2b-localisation-doubler-pipeline-international',
+    title: 'Comment les marques B2B utilisent la localisation pour doubler leur pipeline international',
+    excerpt: 'Dans le B2B, une vidéo de présentation dans la langue du prospect peut faire la différence entre un deal signé et un email sans réponse.',
+    category: 'Business',
+    readTime: 5,
+    publishDate: '2026-05-21',
+    coverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80',
+    tags: ['b2b', 'marques', 'pipeline', 'ventes'],
+    content: `
+      <h2>Le B2B est encore plus sensible à la langue que le B2C</h2>
+      <p>Dans le B2C, un client peut acheter un produit sans parler la même langue que la marque si l'interface est traduite. Dans le B2B, la relation se construit sur la confiance, la compréhension des enjeux, et la clarté du message. Une présentation vidéo dans une langue que le prospect ne maîtrise pas parfaitement crée une friction cognitive qui nuit à la conversion — même si le produit est objectivement supérieur.</p>
+      <p>Des études en neuromarketing montrent que la prise de décision d'achat est 40% plus rapide quand la communication se fait dans la langue maternelle du décideur. Pour un deal B2B à 50 000€, cette statistique se traduit en semaines de cycle de vente raccourcies et en taux de closing amélioré.</p>
+      <h2>Les cas d'usage concrets</h2>
+      <p>Vidéo de prospection outbound : une vidéo personnalisée en anglais pour un prospect US, en allemand pour un prospect allemand. Les équipes commerciales qui utilisent des vidéos localisées rapportent des taux de réponse 3x supérieurs aux emails texte standards.</p>
+      <blockquote>Un prospect qui entend son propre accent, ses propres références culturelles, ses propres codes professionnels dans une vidéo de prospection ne voit plus un vendeur étranger. Il voit un partenaire potentiel.</blockquote>
+      <h2>L'investissement vs. le retour</h2>
+      <p>Localiser une vidéo de prospection de 2 minutes coûte une fraction du coût d'un voyage commercial. Elle peut être réutilisée 100 fois, partagée dans toute une équipe d'achat, visionnée à tout moment du cycle de décision. Le ROI d'une vidéo B2B bien localisée se mesure en deals closés, pas en vues.</p>
+      <p>La question pour les marques B2B n'est plus "est-ce que ça vaut le coup ?" mais "combien de deals est-ce qu'on laisse sur la table chaque mois sans ça ?"</p>
+    `
+  },
+  {
+    id: 35,
+    slug: 'erreur-fatale-createurs-international',
+    title: 'L\'erreur fatale que font 95% des créateurs qui essaient de percer à l\'international',
+    excerpt: 'Ce n\'est pas un manque de budget. Ce n\'est pas un manque de temps. C\'est une erreur de stratégie qui sabote leur expansion dès le départ.',
+    category: 'Stratégie',
+    readTime: 5,
+    publishDate: '2026-05-25',
+    coverImage: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
+    tags: ['erreur', 'stratégie', 'international', 'créateurs'],
+    content: `
+      <h2>L'erreur : créer du contenu natif pour chaque marché</h2>
+      <p>La plupart des créateurs qui veulent toucher l'international arrivent à la même conclusion erronée : "Je dois créer du contenu spécifique pour chaque marché." Ils imaginent une chaîne YouTube anglaise, une chaîne espagnole, des équipes locales, des sujets locaux. Résultat : ils s'épuisent avant de commencer, ou ils créent du contenu médiocre dans une langue qu'ils ne maîtrisent pas.</p>
+      <p>Cette logique est exactement à l'opposé de ce qui fonctionne. Les créateurs qui réussissent à l'international ne créent pas plus de contenu. Ils font voyager le contenu qu'ils ont déjà — celui qui a déjà prouvé son efficacité dans leur marché d'origine.</p>
+      <h2>Pourquoi cette erreur est si répandue</h2>
+      <p>L'intuition nous dit qu'un marché différent nécessite un message différent. Et c'est partiellement vrai pour la forme — la culture, les références, le ton. Mais le fond — le problème résolu, la valeur apportée, l'expertise démontrée — est universel. Ton meilleure vidéo sur la discipline mentale a autant de valeur en espagnol qu'en français. La résilience, l'ambition, la santé financière — ces sujets n'ont pas de passeport.</p>
+      <blockquote>Tu n'as pas besoin d'une nouvelle identité pour un nouveau marché. Tu as besoin que ton identité existante soit accessible à ce marché.</blockquote>
+      <h2>La stratégie qui fonctionne</h2>
+      <p>Identifie tes 5 à 10 meilleures vidéos — celles avec le meilleur ratio engagement/vues, celles qui ont le mieux converti, celles dont tu es le plus fier. Ce sont tes actifs de base. Adapte-les dans 1 ou 2 langues cibles. Mesure la réception. Ajuste. Puis déploie progressivement.</p>
+      <p>Cette approche a un nom dans le monde du business : asset leverage. Tu as déjà fait le travail difficile de créer du bon contenu. Le reste, c'est de la distribution intelligente.</p>
+    `
+  },
+  {
+    id: 36,
+    slug: 'roi-strategie-multilingue-5-metriques',
+    title: 'Mesurer le ROI de ta stratégie multilingue : les 5 métriques qui comptent vraiment',
+    excerpt: 'Tu as localisé tes premières vidéos. Maintenant, comment savoir si c\'est rentable ? Voici les 5 indicateurs concrets à surveiller — et comment les lire.',
+    category: 'Business',
+    readTime: 5,
+    publishDate: '2026-05-28',
+    coverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+    tags: ['ROI', 'métriques', 'analytics', 'multilingue'],
+    content: `
+      <h2>Le piège du "je verrai bien si ça marche"</h2>
+      <p>Beaucoup de créateurs et de marques lancent leurs premières vidéos localisées sans définir à l'avance ce que signifie "ça marche". Résultat : après 3 mois, ils regardent des chiffres disparates sans savoir quoi en conclure — et soit ils abandonnent trop tôt, soit ils continuent sans optimiser.</p>
+      <p>Mesurer le ROI d'une stratégie multilingue, c'est avant tout définir des comparatifs valides : même type de contenu, même durée, mêmes conditions de distribution. Voici les 5 métriques qui donnent une image réelle du retour sur investissement.</p>
+      <h2>Les 5 métriques essentielles</h2>
+      <p><strong>1. Reach incrémental</strong> : combien de vues viennent de marchés où tu n'avais aucune présence avant ? C'est la métrique la plus directe — chaque vue dans un nouveau pays est un gain net.</p>
+      <p><strong>2. Taux de rétention comparé</strong> : une vidéo localisée doit avoir une rétention similaire à la version originale. Si elle chute, c'est un signal qualité sur l'adaptation.</p>
+      <p><strong>3. Conversion par langue</strong> : newsletters signées, formations achetées, appels réservés — segmente tes conversions par langue pour voir quels marchés convertissent.</p>
+      <blockquote>Le ROI d'une vidéo localisée se lit sur 6 à 12 mois. L'algorithme a besoin de temps pour distribuer. La patience est une métrique que YouTube Analytics ne mesure pas.</blockquote>
+      <p><strong>4. CPM local</strong> : les CPM varient massivement selon les marchés. L'anglais US est 5 à 15x plus rentable que le français en termes de revenus AdSense par millier de vues. Ton contenu localisé peut générer plus de revenus publicitaires avec moins de vues.</p>
+      <p><strong>5. Croissance d'abonnés par langue</strong> : surveille la croissance de tes abonnés dans les pays ciblés semaine par semaine. Une accélération nette dans les 4 à 8 semaines après publication est le signal que l'algorithme a commencé à distribuer.</p>
+    `
+  },
+  {
+    id: 37,
+    slug: 'de-createur-fr-a-voix-globale-playbook',
+    title: 'De créateur FR à voix globale : le playbook étape par étape',
+    excerpt: 'Il n\'existe pas de chemin unique pour aller de "créateur local" à "voix internationale". Mais il existe des étapes communes à tous ceux qui l\'ont fait.',
+    category: 'Stratégie',
+    readTime: 6,
+    publishDate: '2026-06-01',
+    coverImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80',
+    tags: ['playbook', 'global', 'étapes', 'créateur'],
+    content: `
+      <h2>Étape 1 : identifier ton contenu exportable</h2>
+      <p>Tout ton contenu n'a pas le même potentiel international. Le contenu très ancré dans l'actualité française, les références culturelles hexagonales spécifiques, ou l'humour basé sur des jeux de mots intraduisibles — ce contenu voyage mal. Le contenu universaliste — stratégie, santé, mindset, business, performance — voyage parfaitement.</p>
+      <p>Commence par auditer tes 20 meilleures vidéos selon un critère simple : si ce contenu était en anglais, est-ce qu'un Américain ou un Espagnol serait intéressé ? Si oui, tu as ton pool de départ.</p>
+      <h2>Étape 2 : choisir 1 marché cible, pas 5</h2>
+      <p>La dispersion est l'ennemi de l'expansion internationale. Choisir simultanément l'anglais, l'espagnol, le portugais et l'allemand, c'est s'assurer de ne bien faire aucun des quatre. Un marché à la fois permet de mesurer, d'apprendre et d'optimiser avant de dupliquer.</p>
+      <blockquote>Chaque marché que tu pénètres est une machine à apprentissage. Le deuxième marché bénéficiera de tout ce que tu auras appris sur le premier. Précipiter l'expansion, c'est priver chaque marché de cette intelligence.</blockquote>
+      <h2>Étape 3 : construire un rythme de publication local</h2>
+      <p>L'algorithme ne fait pas de cadeau aux comptes qui publient sporadiquement. Une stratégie d'expansion internationale réaliste prévoit un rythme de publication : 2 à 4 vidéos localisées par mois minimum pendant les 3 premiers mois. C'est le seuil au-dessous duquel l'algorithme ne commence pas à distribuer de manière significative.</p>
+      <h2>Étape 4 : engager, même partiellement</h2>
+      <p>Répondre en anglais à des commentaires anglais, même avec un niveau imparfait, envoie un signal fort à ton audience internationale et à l'algorithme : ce créateur appartient à notre espace. L'authenticité des efforts est reconnue et valorisée par les communautés qui ne sont pas habituées à être directement adressées.</p>
+    `
+  },
+  {
+    id: 38,
+    slug: 'afrique-francophone-marche-sous-exploite-contenu',
+    title: 'Pourquoi l\'Afrique francophone est le marché de contenu le plus sous-exploité du monde',
+    excerpt: '300 millions de locuteurs francophones, une population jeune ultra-connectée, une appétence pour le contenu digital en forte croissance. Et presque personne n\'y fait attention.',
+    category: 'Marchés',
+    readTime: 5,
+    publishDate: '2026-06-04',
+    coverImage: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80',
+    tags: ['afrique', 'francophone', 'marché', 'opportunité'],
+    content: `
+      <h2>Les chiffres qui changent tout</h2>
+      <p>L'Afrique subsaharienne francophone compte 24 pays et plus de 300 millions de locuteurs français. D'ici 2050, la moitié des locuteurs français dans le monde seront africains. La jeunesse de cette population — âge médian inférieur à 20 ans — combinée à une pénétration smartphone qui double tous les 18 mois crée une explosion de l'audience digitale sans équivalent.</p>
+      <p>Ce marché n'est pas marginal. Il est en construction. Et les créateurs qui s'y installent maintenant bénéficieront d'un avantage "first mover" comparable à ce qu'ont vécu les créateurs YouTube qui ont démarré en 2010.</p>
+      <h2>Ce que les créateurs FR ratent</h2>
+      <p>La plupart des créateurs français regardent leurs analytics et voient quelques pourcents venant du Sénégal, de la Côte d'Ivoire, du Cameroun. Ils n'y prêtent pas attention parce que ces pays ont des CPM publicitaires très bas. Mais CPM bas ne veut pas dire marché sans valeur — ça veut dire que le modèle publicitaire n'est pas le bon levier pour ce marché.</p>
+      <blockquote>L'Afrique francophone ne va pas te rendre riche via AdSense. Elle va te construire une audience de 50 millions de personnes qui n'ont jamais entendu parler de tes concurrents directs.</blockquote>
+      <h2>La stratégie adaptée</h2>
+      <p>Le contenu business, finance personnelle, entrepreneuriat, et développement personnel performe extrêmement bien dans ces marchés. Les formations en ligne, les coachings, les produits numériques ont des taux de conversion qui surprennent les créateurs qui testent pour la première fois — parce que la concurrence locale est quasi inexistante sur ces sujets en français.</p>
+      <p>Adapter ton contenu pour l'Afrique francophone, ce n'est pas forcément un travail de localisation profonde. C'est souvent simplement s'assurer que les références culturelles ne sont pas trop hexagonales, que les exemples ne supposent pas des revenus ou des réalités trop franco-françaises. Un ajustement léger pour un gain d'audience massif.</p>
+    `
+  },
+  {
+    id: 39,
+    slug: 'ia-adaptation-video-ce-qui-change-reste-humain',
+    title: 'IA et adaptation vidéo : ce qui change vraiment, ce qui reste irréductiblement humain',
+    excerpt: 'L\'IA transforme l\'adaptation vidéo. Mais elle ne peut pas remplacer ce qui fait la différence entre une traduction et une adaptation. Démystification sans nostalgie.',
+    category: 'Techniques',
+    readTime: 6,
+    publishDate: '2026-06-08',
+    coverImage: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80',
+    tags: ['IA', 'intelligence artificielle', 'adaptation', 'futur'],
+    content: `
+      <h2>Ce que l\'IA fait vraiment bien (et ce que beaucoup ignorent)</h2>
+      <p>En 2026, les outils d'IA permettent de transcrire automatiquement une vidéo en 60 langues avec une précision supérieure à 95%. Ils peuvent générer une voix synthétique qui ressemble à la voix originale dans n'importe quelle langue, synchroniser des sous-titres à la milliseconde, et même proposer une première ébauche de traduction contextuelle bien supérieure aux traducteurs automatiques d'il y a cinq ans.</p>
+      <p>Ces capacités ont réduit le temps de traitement d'une vidéo de plusieurs heures à quelques dizaines de minutes pour la partie mécanique. C'est une révolution de productivité réelle et non contestable.</p>
+      <h2>Le gouffre entre traduction et adaptation</h2>
+      <p>Où l'IA échoue encore systématiquement, c'est dans la compréhension des nuances culturelles de l'humour, des références implicites, du rythme rhétorique propre à une langue. Une blague française qui repose sur un jeu de mots intraduisible ne devient pas une blague espagnole en étant traduite mot à mot — elle devient un non-sens. L'IA génère la traduction. Elle ne génère pas l'équivalent.</p>
+      <blockquote>L'IA traduit. Un expert adapte. La différence, c'est la réaction émotionnelle de l'audience : incompréhension polie d'un côté, vraie connexion de l'autre.</blockquote>
+      <h2>Le workflow hybride optimal</h2>
+      <p>Les adaptations qui fonctionnent le mieux aujourd'hui suivent un workflow hybride : l'IA gère la transcription, la synthèse vocale de première passe, et la synchronisation temporelle. L'expertise humaine intervient sur le script — réécriture des passages culturellement spécifiques, ajustement du rythme, validation du ton — et sur la production finale vocale quand l'authenticité est critique.</p>
+      <p>Ce workflow n'est pas un compromis. C'est la combinaison optimale : la vitesse et l'échelle de l'IA avec la précision culturelle et émotionnelle de l'expertise humaine. Le résultat dépasse ce que les deux peuvent faire séparément.</p>
+    `
+  },
+  {
+    id: 40,
+    slug: '2027-contenu-monolingue-amateur',
+    title: '2027 : le contenu monolingue sera perçu comme amateur',
+    excerpt: 'Ce qui était une différenciation il y a trois ans est en train de devenir un standard. Les créateurs qui n\'adaptent pas leur contenu seront bientôt dans la même position que ceux qui refusaient de monter en 16:9 en 2015.',
+    category: 'Tendances',
+    readTime: 5,
+    publishDate: '2026-06-11',
+    coverImage: 'https://images.unsplash.com/photo-1488229297570-58520851e868?w=1200&q=80',
+    tags: ['tendances', 'avenir', 'multilingue', 'contenu'],
+    content: `
+      <h2>La courbe d\'adoption est en train de s\'accélérer</h2>
+      <p>En 2022, moins de 5% des créateurs de plus de 100 000 abonnés adaptaient leur contenu dans plus de 2 langues. En 2024, ce chiffre est passé à 22%. En 2026, certaines plateformes intègrent des outils de localisation directement dans leurs interfaces de publication. La courbe est exponentielle, pas linéaire.</p>
+      <p>Ce n'est pas une tendance de niche. C'est une restructuration fondamentale de ce que signifie "créer du contenu professionnel". Exactement comme le passage du 4:3 au 16:9 a redéfini le standard technique, le multilinguisme redéfinit le standard de distribution.</p>
+      <h2>Les plateformes poussent dans cette direction</h2>
+      <p>YouTube a lancé des fonctions de doublage automatique dans son Creator Studio. TikTok teste des sous-titres multilingues automatiques dans plusieurs régions. Ces outils ne produisent pas encore des résultats professionnels — mais ils signalent clairement où vont les plateformes. Elles veulent que le contenu traverse les frontières linguistiques. Les créateurs qui l'anticipent sont avantagés.</p>
+      <blockquote>Dans 18 mois, un créateur qui publie uniquement en français sera perçu par les algorithmes comme un créateur local. Et être perçu comme local sur des plateformes globales, c'est être plafonné par design.</blockquote>
+      <h2>Ce que ça change pour ta stratégie aujourd\'hui</h2>
+      <p>La fenêtre pour être "pionnier" du multilinguisme dans ta niche est encore ouverte — mais elle se referme rapidement. Dans chaque catégorie de contenu, il y aura 2 ou 3 créateurs qui vont s'installer comme les voix de référence dans chaque langue. Ces positions seront extrêmement difficiles à déloger une fois établies.</p>
+      <p>La question n'est plus si le contenu multilingue deviendra un standard. C'est déjà acquis. La question est : est-ce que tu seras parmi les créateurs qui ont établi leur présence avant que ça devienne incontournable, ou parmi ceux qui essaieront de rattraper leur retard ?</p>
+    `
+  },
+
+  // ─── NOUVEAUX ARTICLES EN (41-50) ────────────────────────────────────────
+  {
+    id: 41,
+    lang: 'en',
+    slug: 'creator-economy-hidden-language-barrier',
+    title: 'The Creator Economy\'s Hidden Language Barrier',
+    excerpt: 'Every creator optimization guide talks about thumbnails, titles, posting frequency. None of them talk about the one filter that cuts your potential audience by 95% before you even begin.',
+    category: 'Strategy',
+    readTime: 5,
+    publishDate: '2026-04-06',
+    coverImage: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80',
+    tags: ['creator economy', 'revenue', 'audience', 'global'],
+    content: `
+      <h2>The optimization blind spot</h2>
+      <p>The creator economy has produced an extraordinary volume of tactical advice. A/B test your thumbnails. Post at peak hours. Use pattern interrupts in the first 3 seconds. Hook, retain, convert. The advice is good. But almost every guide assumes a single, invisible constraint: you're speaking to one linguistic audience.</p>
+      <p>That assumption cuts your addressable audience by 95% before a single optimization takes effect. You're running a marathon with both legs, while optimizing your shoelaces.</p>
+      <h2>The math that changes everything</h2>
+      <p>English reaches 1.5 billion people. That sounds enormous — until you realize 6.3 billion people speak something else. Spanish adds 500 million. Portuguese 250 million. French 300 million. Arabic 420 million. Each language you add doesn't increase your audience incrementally. It multiplies the total addressable market of every single piece of content you've already made.</p>
+      <blockquote>Language isn't a distribution channel. It's an access filter. And right now, for most creators, it's filtering out 95% of the world's potential viewers before the algorithm even gets involved.</blockquote>
+      <h2>The first-mover advantage is still available</h2>
+      <p>In most niches — fitness, business, personal development, finance — there is no established creator who has built a dominant multilingual presence. The YouTube search results for fitness content in Spanish are dominated by native Spanish speakers from Latin America and Spain. A French or English creator who adds Spanish is entering a market with low competition and massive demand.</p>
+      <p>That window won't stay open indefinitely. The creators who move now will build position before their competitors realize the opportunity exists.</p>
+    `
+  },
+  {
+    id: 42,
+    lang: 'en',
+    slug: 'european-creators-winning-us-market-2026',
+    title: 'Why European Creators Are Quietly Winning the US Market in 2026',
+    excerpt: 'A growing number of French, Spanish, and German creators are building massive US audiences. Not by becoming American. By staying authentically European — and making themselves accessible.',
+    category: 'Strategy',
+    readTime: 5,
+    publishDate: '2026-04-09',
+    coverImage: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&q=80',
+    tags: ['european creators', 'us market', 'strategy', 'growth'],
+    content: `
+      <h2>The European perspective premium</h2>
+      <p>American audiences are, paradoxically, hungry for non-American perspectives. The US self-help, business, and fitness spaces are saturated with creators who share the same cultural references, the same success archetypes, the same environmental assumptions. A European creator who talks about wealth-building, health optimization, or mindset brings a genuinely different framework — and that difference is perceived as valuable, not foreign.</p>
+      <p>European creators who have succeeded in the US market consistently report that their "outsider" perspective is an asset, not a liability. The key is making the content accessible — linguistically and culturally — without erasing the perspective that makes it distinctive.</p>
+      <h2>What "accessible" actually means</h2>
+      <p>Accessible doesn't mean Americanized. It means removing unnecessary friction without removing what makes you unique. Linguistic friction (a video in French that 98% of Americans can't understand) is unnecessary. Cultural perspective friction (a European view on work-life balance) is exactly what makes the content valuable to that audience.</p>
+      <blockquote>The European creators winning in the US aren't pretending to be American. They're making their European perspective comprehensible to Americans. That's a completely different strategy — and it works dramatically better.</blockquote>
+      <h2>The practical playbook</h2>
+      <p>Identify your content that has the most universal applicability — the videos where the core insight would land equally well in Paris and New York. Adapt those first. Measure the US response. Build from there. The key metric isn't US views — it's US subscriber growth. Are people from this new market choosing to follow your journey? That's the signal that the expansion is working.</p>
+    `
+  },
+  {
+    id: 43,
+    lang: 'en',
+    slug: 'voice-consistency-across-languages-brand-asset',
+    title: 'Voice Consistency Across Languages: Your Most Valuable (and Most Overlooked) Brand Asset',
+    excerpt: 'Your voice isn\'t just the sounds you make. It\'s the specific energy, pace, tone, and emotional signature that your audience recognizes before you say a word. Here\'s how to preserve it across every language.',
+    category: 'Techniques',
+    readTime: 6,
+    publishDate: '2026-04-13',
+    coverImage: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80',
+    tags: ['voice', 'brand', 'consistency', 'adaptation'],
+    content: `
+      <h2>What "voice" actually means in video content</h2>
+      <p>When creators talk about their "voice," they usually mean their writing style or their personality. But in video content, voice has a second, literal dimension: the actual acoustic signature that viewers associate with your brand. The energy in your delivery. The pace of your sentences. The emotional intensity in key moments. The warmth or authority in your default register.</p>
+      <p>This acoustic identity is built through thousands of hours of content. Your audience recognizes it immediately. And it's the single most important element to preserve when your content crosses into another language.</p>
+      <h2>The problem with generic voice-overs</h2>
+      <p>Generic dubbing fails not because of poor translation quality, but because it uses a generic voice — one that sounds like "a professional narrator" rather than you. The result is content that sounds dubbed, which triggers an immediate psychological distance in the viewer. They're watching you but listening to someone else. The parasocial connection that took years to build is severed in seconds.</p>
+      <blockquote>Your audience in any language should feel like they're hearing you — not hearing a translation of you. That distinction is the difference between audience loyalty and audience indifference.</blockquote>
+      <h2>How to brief a voice adaptation correctly</h2>
+      <p>Preserving voice consistency requires briefing the adaptation with more than just a transcript. You need to define: your default energy level (low/medium/high intensity), your pace signature (your typical words-per-minute and pause patterns), your emotional dynamic range (how much you vary from neutral to excited), and your authority-warmth balance. The best adaptations start with a reference analysis of 5 to 10 of your best-performing videos to extract these parameters before a single word is recorded.</p>
+    `
+  },
+  {
+    id: 44,
+    lang: 'en',
+    slug: 'b2b-video-localization-international-deals',
+    title: 'B2B Video Localization: The Fastest Path to International Deals',
+    excerpt: 'A localized sales video in a prospect\'s native language can cut your deal cycle in half. Here\'s the data — and the implementation guide.',
+    category: 'Business',
+    readTime: 5,
+    publishDate: '2026-04-16',
+    coverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80',
+    tags: ['b2b', 'localization', 'international', 'deals'],
+    content: `
+      <h2>Why B2B is more language-sensitive than B2C</h2>
+      <p>In B2C, a consumer can decide to buy a product in 30 seconds based on visual appeal and price. In B2B, decisions involve committees, legal review, procurement processes, and months of relationship-building. Every element of communication that introduces friction — including language friction — extends that process. A VP of Sales in Germany who processes information 30% faster in German than in English will, consciously or not, give more attention to vendors who communicate in his language.</p>
+      <p>This isn't about fluency. It's about cognitive ease. Decision-making under uncertainty (which every B2B purchase involves) is measurably easier in one's native language. Vendors who reduce that cognitive load win deals faster.</p>
+      <h2>The three highest-ROI B2B video types to localize</h2>
+      <p>Outbound prospecting videos: personalized short videos in the prospect's language achieve response rates 3-5x higher than text emails. Product demos: a 10-minute product walkthrough in French for a French company reduces objections and shortens evaluation cycles. Customer testimonials: a case study featuring a customer from the prospect's country, speaking their language, is the most persuasive social proof in cross-border B2B sales.</p>
+      <blockquote>You don't need to localize your entire video library to see B2B results. Localizing your top 3 sales assets — intro video, product demo, key testimonials — is enough to measurably change deal velocity in a target market.</blockquote>
+      <h2>Measuring the impact</h2>
+      <p>Track: email response rate by language of outreach video, average deal cycle length by market, and conversion rate from demo to contract by language. These three metrics, measured over a 6-month period, will give you a clear ROI calculation — typically between 300% and 800% for companies that implement systematically.</p>
+    `
+  },
+  {
+    id: 45,
+    lang: 'en',
+    slug: 'spanish-speaking-us-market-60-million-viewers',
+    title: 'The Spanish-Speaking Market in the US: 62 Million Viewers Your Competitors Aren\'t Reaching',
+    excerpt: 'The largest Spanish-speaking market in the world isn\'t Spain or Mexico. It\'s the United States. And it\'s massively underserved by quality content in its language.',
+    category: 'Markets',
+    readTime: 5,
+    publishDate: '2026-04-20',
+    coverImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=1200&q=80',
+    tags: ['spanish', 'us market', 'hispanic', 'audience'],
+    content: `
+      <h2>The market that most creators overlook</h2>
+      <p>62 million Spanish speakers live in the United States. Their collective purchasing power exceeds $1.8 trillion — larger than the entire GDP of Spain. They consume video content at rates comparable to or higher than the general US population, with a strong preference for Spanish-language content across YouTube, TikTok, and Instagram.</p>
+      <p>Yet the US Spanish-language content market is dominated almost entirely by creators from Latin America and Spain. International creators — French, English, German — who add Spanish are entering a market with enormous demand and minimal competition from their direct peers.</p>
+      <h2>What this market actually wants</h2>
+      <p>The US Hispanic market skews young (median age significantly below the US average), urban, digitally native, and economically mobile. The highest-performing content categories: personal finance and wealth building (especially content that addresses first-generation wealth creation), entrepreneurship, health and fitness, and professional development. These happen to be the same categories where French and European creators have built strong reputations.</p>
+      <blockquote>A French fitness creator who adds Spanish isn't competing against American fitness channels. He's competing against Latin American channels — in a US market where the audience is actively looking for new voices. The competition gap is substantial.</blockquote>
+      <h2>The practical entry point</h2>
+      <p>Neutral Spanish — not too regionally marked — reaches the full US Hispanic audience regardless of national background. Starting with your 5 highest-performing videos in Spanish gives the YouTube algorithm enough content to begin building a distribution footprint. The first 90 days are about seeding. The compound growth starts in month 4 to 6, when the algorithm begins recommending based on established watch patterns.</p>
+    `
+  },
+  {
+    id: 46,
+    lang: 'en',
+    slug: 'audit-content-international-readiness',
+    title: 'How to Audit Your Content for International Readiness (A Practical Checklist)',
+    excerpt: 'Not all your content will travel well. Some will perform better internationally than it does locally. Here\'s how to tell which is which — before you invest in localization.',
+    category: 'Techniques',
+    readTime: 5,
+    publishDate: '2026-04-23',
+    coverImage: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=80',
+    tags: ['audit', 'international', 'checklist', 'content'],
+    content: `
+      <h2>Why some content travels better than others</h2>
+      <p>There's a spectrum of cultural portability in content. At one end: content with universal human appeal — ambition, discipline, health, financial independence, relationships. At the other end: content deeply embedded in specific cultural context — local political commentary, idiomatic humor, references to nationally-specific institutions or events.</p>
+      <p>The goal of a localization audit isn't to eliminate all cultural specificity (that would erase what makes your content distinctive). It's to identify which content has the right ratio of universal appeal to cultural context — and which content would require so much adaptation that it loses its core.</p>
+      <h2>The 5-question content audit</h2>
+      <p><strong>1. Could someone from another country who doesn't know your country understand the core message?</strong> If yes, the content has high international potential. If no, it may require significant cultural adaptation.</p>
+      <p><strong>2. Does the content rely on references that won't exist in the target market?</strong> Local brands, local events, local public figures — these require substitution or removal in localization.</p>
+      <p><strong>3. Is the emotional core of the content cultural or universal?</strong> The desire to succeed financially is universal. The specific anxiety about the French retirement system is cultural.</p>
+      <blockquote>The best content to localize first is your content that already feels slightly universal — the videos where you're thinking about principles rather than local applications.</blockquote>
+      <p><strong>4. What's the retention rate on this video?</strong> High-retention content has a proven ability to hold attention. That retention ability tends to transfer across languages when the adaptation quality is high.</p>
+      <p><strong>5. Has this topic performed well in international search?</strong> Tools like vidIQ and TubeBuddy show search volume by country. Topics with high search volume in your target market have built-in distribution potential.</p>
+    `
+  },
+  {
+    id: 47,
+    lang: 'en',
+    slug: 'short-form-long-form-localization-benefits',
+    title: 'Short-Form vs. Long-Form: Which Type of Content Benefits Most from Localization?',
+    excerpt: 'The localization dynamics of a 60-second TikTok and a 20-minute YouTube tutorial are completely different. Understanding which to prioritize can double your ROI on localization investment.',
+    category: 'Strategy',
+    readTime: 5,
+    publishDate: '2026-04-27',
+    coverImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&q=80',
+    tags: ['short-form', 'long-form', 'tiktok', 'youtube'],
+    content: `
+      <h2>Short-form localization: speed, virality, discovery</h2>
+      <p>Short-form content (TikTok, Reels, YouTube Shorts) localization has a specific dynamic: the primary value is algorithmic discovery. When a 60-second video is localized into Spanish, the algorithm begins recommending it to Spanish-speaking audiences who've shown interest in similar content. The viral loop can activate extremely fast — sometimes within days of publication.</p>
+      <p>The ROI calculation for short-form is primarily about audience acquisition speed. You're not monetizing directly from these views (CPM on Shorts is relatively low). You're building a subscriber base in a new market that you'll convert later through long-form content, newsletters, or products.</p>
+      <h2>Long-form localization: depth, conversion, revenue</h2>
+      <p>Long-form content localization works on a different timescale and with different economics. A 20-minute YouTube video on investment strategy localized into German will accumulate views more slowly — but each view represents significantly higher intent and engagement. Long-form CPM in English or German is 5 to 15 times higher than equivalent French content. A video with 50,000 views in English can generate more AdSense revenue than 300,000 views in French.</p>
+      <blockquote>Short-form localization builds your audience. Long-form localization monetizes it. The optimal strategy uses both — short-form to discover new viewers, long-form to convert them.</blockquote>
+      <h2>The sequencing that works</h2>
+      <p>Start with localizing your best-performing long-form content (top 5 to 10 videos by watch time and retention). These form the foundation of your international library and begin generating revenue. Simultaneously, localize 2 to 3 short-form pieces per month to drive discovery and feed new viewers into your long-form catalog. This sequencing optimizes both audience growth and revenue generation from day one.</p>
+    `
+  },
+  {
+    id: 48,
+    lang: 'en',
+    slug: 'one-multilingual-video-worth-ten-monolingual',
+    title: 'The Compound Effect: Why One Multilingual Video Is Worth Ten Monolingual Ones',
+    excerpt: 'A single well-localized video working in 3 languages simultaneously can outperform ten monolingual videos combined — in views, in revenue, and in audience growth. Here\'s the math.',
+    category: 'Strategy',
+    readTime: 5,
+    publishDate: '2026-04-30',
+    coverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+    tags: ['compound', 'multilingual', 'ROI', 'growth'],
+    content: `
+      <h2>The asset leverage principle</h2>
+      <p>Every piece of content you create has a fixed production cost — your time, energy, and resources. The revenue and reach it generates is determined by how many people it can reach. In a single-language model, that cost is amortized across one audience. In a multilingual model, the same cost is amortized across three, four, or five audiences simultaneously.</p>
+      <p>This isn't just a scaling trick. It's a fundamentally different economics of content creation. The production cost of localization is a fraction of the original production cost. The additional reach can be several times the original audience. The math consistently favors doing less new content and more distribution of existing content.</p>
+      <h2>The compound effect in practice</h2>
+      <p>A fitness video with 100,000 French views generates a certain revenue and a certain subscriber growth. The same video, adapted into Spanish and English, can reach 500,000 to 1,000,000 additional views across both language audiences — while generating significantly higher AdSense revenue (English CPM being 5-10x higher than French), and building subscriber bases in two new markets that compound with each subsequent video.</p>
+      <blockquote>The tenth video you publish in a new language benefits from the audience built by the first nine. Every new video accelerates the growth of every future video. That's the compound effect — and it's why the ROI of multilingual content keeps increasing over time.</blockquote>
+      <h2>The inflection point</h2>
+      <p>Most creators who localize see modest initial returns in the first 60 days. The inflection point comes between months 3 and 6, when the algorithm has gathered enough data about viewing behavior to begin aggressive distribution. Creators who understand this curve and commit through the early phase consistently report that their multilingual content generates more revenue than their original language content within 12 months of launch.</p>
+    `
+  },
+  {
+    id: 49,
+    lang: 'en',
+    slug: 'international-audience-without-leaving-studio',
+    title: 'Building an International Audience Without Leaving Your Studio',
+    excerpt: 'You don\'t need a local team in each market. You don\'t need to travel to shoot content in 5 countries. You need the right workflow — and the right partner for the linguistic layer.',
+    category: 'Strategy',
+    readTime: 5,
+    publishDate: '2026-05-04',
+    coverImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80',
+    tags: ['international audience', 'studio', 'workflow', 'process'],
+    content: `
+      <h2>The false complexity of going global</h2>
+      <p>When most creators think about building international audiences, they imagine complexity: local teams, cultural consultants, in-market filming, translated websites, multilingual customer service. This vision is accurate for a multinational corporation. It's completely unnecessary for a creator building an international content presence.</p>
+      <p>The operational reality is simpler: your production process stays exactly the same. You create the same content in the same way with the same tools. The localization happens as a parallel workflow after your primary content is finished — not as a disruption to it.</p>
+      <h2>What the parallel workflow looks like</h2>
+      <p>Week 1: You publish your French (or English) video as normal. Week 2: The localized version is in production. Week 3: The adapted version is published on the same channel (or a secondary channel). Your production cadence doesn't change. Your localization partner handles the linguistic and vocal layer independently. You review the final output. You approve. It's published.</p>
+      <blockquote>International expansion shouldn't add complexity to your creative process. It should add distribution to your finished work. When it feels like the former, something is wrong with the workflow. When it feels like the latter, you've found the right model.</blockquote>
+      <h2>Channel strategy: same channel vs. dedicated channels</h2>
+      <p>Publishing localized content on your main channel reaches your existing audience with the adapted version and signals to the algorithm that your content serves multiple languages. Creating dedicated language channels allows for more targeted SEO and potentially faster market-specific growth but requires building each from zero. Most creators start with the same channel approach to validate demand, then consider dedicated channels once they've confirmed the international audience exists.</p>
+    `
+  },
+  {
+    id: 50,
+    lang: 'en',
+    slug: 'multilingual-creator-manifesto-global-voices',
+    title: 'The Multilingual Creator Manifesto: This Is the Decade of Global Voices',
+    excerpt: 'The internet was supposed to make us all global. For most creators, it hasn\'t — yet. Here\'s why that\'s about to change, and what it means for anyone creating content today.',
+    category: 'Strategy',
+    readTime: 6,
+    publishDate: '2026-05-07',
+    coverImage: 'https://images.unsplash.com/photo-1488229297570-58520851e868?w=1200&q=80',
+    tags: ['manifesto', 'global', 'multilingual', 'future'],
+    content: `
+      <h2>The promise of the global internet — and why it failed</h2>
+      <p>The early internet promised to make information borderless. In many ways it delivered: news, academic research, open-source software all became globally accessible. But for creators — people whose value is expressed through language, personality, and cultural context — the internet remained deeply local. YouTube's front page shows you content in your language. TikTok's algorithm serves your cultural defaults. The global internet turned out to be a collection of highly efficient local internets.</p>
+      <p>Language remained the last hard wall. And unlike most walls of the early internet — geographic restrictions, payment barriers, distribution costs — this one never fell. Until now.</p>
+      <h2>The convergence that changes everything</h2>
+      <p>Three forces are converging in 2026 to make the multilingual creator economically viable for the first time: the cost of voice adaptation has dropped 80% in three years; AI tools handle the mechanical layer of localization at scale; and platforms are actively building discovery infrastructure for multilingual content. The remaining element — cultural authenticity and vocal brand consistency — is where human expertise remains irreplaceable, and where the real differentiation lives.</p>
+      <blockquote>We are at the beginning of a shift as significant as the shift from television to internet distribution. The creators who understand that language is a distribution variable — not an identity constraint — will build the next generation of global audiences.</blockquote>
+      <h2>What global creators look like in 2026</h2>
+      <p>They create once, in their native language, with their authentic voice. They distribute in 2 to 4 languages, with adaptations that preserve their vocal identity. They measure performance across markets and allocate resources to wherever the data shows traction. They build not one audience but a portfolio of audiences, each compounding independently and contributing to a total reach that no monolingual creator in their niche can match.</p>
+      <p>This is the decade of global voices. The question is simply whether your voice will be one of them.</p>
+    `
   }
+
 ];
 
 // Retourne uniquement les articles publiés (pour la mise en production)
 export const getPublishedArticles = () => {
   const today = new Date();
-  return articles.filter(a => a.visible && new Date(a.publishDate) <= today);
+  today.setHours(23, 59, 59, 999);
+  return articles.filter(a => new Date(a.publishDate) <= today);
 };
-
-// Pour la maquette : tous les articles visibles
-export const getAllVisibleArticles = () => articles.filter(a => a.visible);
