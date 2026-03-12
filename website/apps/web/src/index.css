@@ -105,9 +105,9 @@ h1, h2, h3, h4, h5, h6 {
               0 0 70px rgba(0, 194, 255, 0.4);
 }
 
-/* Smooth Transitions */
+/* Smooth Transitions — opacity & transform excluded (handled by Framer Motion) */
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }

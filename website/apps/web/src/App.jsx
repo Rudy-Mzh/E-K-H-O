@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
@@ -16,6 +17,7 @@ import { Toaster } from './components/ui/toaster.jsx';
 
 function App() {
   return (
+    <MotionConfig transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}>
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
@@ -36,6 +38,7 @@ function App() {
       </div>
       <Toaster />
     </Router>
+    </MotionConfig>
   );
 }
 
