@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import SEOHead from '@/components/SEOHead.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Check, X, Calendar, CreditCard, Lock, Wallet } from 'lucide-react';
@@ -146,7 +146,7 @@ const OrderModal = ({ plan, onClose }) => {
 };
 
 const PricingPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [selectedPlan, setSelectedPlan] = useState(null);
 
   const rawPlans = t('pricing.plans', { returnObjects: true });
@@ -172,10 +172,12 @@ const PricingPage = () => {
         )}
       </AnimatePresence>
 
-      <Helmet>
-        <title>{t('pricing.seoTitle')}</title>
-        <meta name="description" content={t('pricing.seoDesc')} />
-      </Helmet>
+      <SEOHead
+        title={t('pricing.seoTitle')}
+        description={t('pricing.seoDesc')}
+        canonical="/pricing"
+        lang={i18n.language}
+      />
 
       {/* Hero with video background */}
       <section className="relative flex items-center justify-center min-h-[50vh] pt-24 pb-20 overflow-hidden">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import SEOHead, { articleSchema } from '@/components/SEOHead.jsx';
 import { motion } from 'framer-motion';
 import { Clock, ArrowLeft, ArrowRight } from 'lucide-react';
 import { articles } from '@/data/articles.js';
@@ -18,13 +18,15 @@ const ArticlePage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{article.title} | Le Mag EKHO Studio</title>
-        <meta name="description" content={article.excerpt} />
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.excerpt} />
-        <meta property="og:image" content={article.coverImage} />
-      </Helmet>
+      <SEOHead
+        title={`${article.title} | Le Mag EKHO Studio`}
+        description={article.excerpt}
+        canonical={`/mag/${article.slug}`}
+        ogImage={article.coverImage}
+        lang={article.lang === 'en' ? 'en' : 'fr'}
+        article={article}
+        jsonLd={articleSchema(article)}
+      />
 
       <div className="bg-[#080808] min-h-screen">
         {/* Cover */}

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import SEOHead, { organizationSchema, websiteSchema } from '@/components/SEOHead.jsx';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -40,10 +40,13 @@ const HomePage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('home.seoTitle')}</title>
-        <meta name="description" content={t('home.seoDesc')} />
-      </Helmet>
+      <SEOHead
+        title={t('home.seoTitle')}
+        description={t('home.seoDesc')}
+        canonical="/"
+        lang={i18n.language}
+        jsonLd={[organizationSchema, websiteSchema]}
+      />
 
       {/* Demo Tunnel Modal */}
       <DemoTunnelModal isOpen={tunnelOpen} onClose={() => setTunnelOpen(false)} />

@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import SEOHead from '@/components/SEOHead.jsx';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Upload, Sparkles, Rocket } from 'lucide-react';
 
 const ServicesPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const claimContainerVariants = {
     hidden: {},
@@ -50,10 +50,12 @@ const ServicesPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('services.seoTitle')}</title>
-        <meta name="description" content={t('services.seoDesc')} />
-      </Helmet>
+      <SEOHead
+        title={t('services.seoTitle')}
+        description={t('services.seoDesc')}
+        canonical="/services"
+        lang={i18n.language}
+      />
 
       {/* Hero with video background */}
       <section className="relative flex items-center justify-center min-h-[50vh] pt-24 pb-20 overflow-hidden">

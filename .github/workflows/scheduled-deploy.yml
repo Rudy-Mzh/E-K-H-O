@@ -1,0 +1,33 @@
+name: Scheduled Deploy (Mon & Thu)
+
+# Triggers a fresh build every Mon & Thu at 7:45 UTC (8:45 Paris CET)
+# This ensures the sitemap includes the new article for that day,
+# and Google sees the site has been updated.
+
+on:
+  schedule:
+    - cron: '45 7 * * 1,4'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Bump last-published date
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          echo "{ \"lastPublished\": \"$TODAY\" }" > website/apps/web/public/publish-info.json
+
+      - name: Commit & push to trigger deploy pipeline
+        run: |
+          git config --global user.name "ekho-bot[bot]"
+          git config --global user.email "ekho-bot@users.noreply.github.com"
+          git add website/apps/web/public/publish-info.json
+          git commit -m "chore: scheduled publish $TODAY"
+          git push origin main

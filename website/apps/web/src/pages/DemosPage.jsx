@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import SEOHead from '@/components/SEOHead.jsx';
 import * as Tabs from '@radix-ui/react-tabs';
 import { Video, Megaphone, Dumbbell, Star, Mic2, BookOpen } from 'lucide-react';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
@@ -37,10 +38,12 @@ const DemosPage = () => {
       />
       <DemoTunnelModal isOpen={tunnelOpen} onClose={() => setTunnelOpen(false)} />
 
-      <Helmet>
-        <title>{t('demos.seoTitle')}</title>
-        <meta name="description" content={t('demos.seoDesc')} />
-      </Helmet>
+      <SEOHead
+        title={t('demos.seoTitle')}
+        description={t('demos.seoDesc')}
+        canonical="/demos"
+        lang={i18n.language}
+      />
 
       {/* Hero with video background */}
       <section className="relative flex items-center justify-center min-h-[50vh] pt-24 pb-20 overflow-hidden">

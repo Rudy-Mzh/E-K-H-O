@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import SEOHead from '@/components/SEOHead.jsx';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Mail, Phone, Calendar, Loader2, MessageCircle, Copy, Check } from 'lucide-react';
@@ -10,7 +10,7 @@ const EMAIL = 'rudy.m@ekho-studio.com';
 const FORMSPREE_URL = 'https://formspree.io/f/xvzbldlq';
 
 const ContactPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [formData, setFormData] = useState({ name: '', email: '', need: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -65,10 +65,12 @@ const ContactPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{t('contact.seoTitle')}</title>
-        <meta name="description" content={t('contact.seoDesc')} />
-      </Helmet>
+      <SEOHead
+        title={t('contact.seoTitle')}
+        description={t('contact.seoDesc')}
+        canonical="/contact"
+        lang={i18n.language}
+      />
 
       {/* Hero with video background */}
       <section className="relative flex items-center justify-center min-h-[50vh] pt-24 pb-20 overflow-hidden">

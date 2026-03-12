@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight, ArrowUpRight } from 'lucide-react';
+import SEOHead from '@/components/SEOHead.jsx';
 import { articles } from '@/data/articles.js';
 
 // ── Category color map ────────────────────────────────────────────────────────
@@ -128,10 +129,16 @@ const MagPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Le Mag — Conseils & Stratégies pour créateurs | EKHO Studio</title>
-        <meta name="description" content="Articles stratégiques pour créateurs de contenu, formateurs et e-commerçants qui veulent toucher de nouvelles audiences à l'international." />
-      </Helmet>
+      <SEOHead
+        title={activeLang === 'en'
+          ? 'The Mag — Strategy & Insights for Content Creators | EKHO Studio'
+          : 'Le Mag — Conseils & Stratégies pour créateurs | EKHO Studio'}
+        description={activeLang === 'en'
+          ? 'Strategic articles for content creators, coaches and e-commerce brands who want to reach new audiences internationally.'
+          : "Articles stratégiques pour créateurs de contenu, formateurs et e-commerçants qui veulent toucher de nouvelles audiences à l'international."}
+        canonical="/mag"
+        lang={activeLang}
+      />
 
       {/* ── Hero ── */}
       <section className="relative bg-[#080808] pt-32 pb-0 overflow-hidden">

@@ -25,6 +25,9 @@ jobs:
         working-directory: website
         run: npm ci
 
+      - name: Generate sitemap (published articles only)
+        run: node scripts/generate-sitemap.mjs
+
       - name: Build
         working-directory: website/apps/web
         run: npm run build

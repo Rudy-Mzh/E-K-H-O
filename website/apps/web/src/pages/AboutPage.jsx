@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import SEOHead from '@/components/SEOHead.jsx';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 
 const AboutPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [choiceOpen, setChoiceOpen] = useState(false);
   const [tunnelOpen, setTunnelOpen] = useState(false);
 
@@ -21,10 +21,12 @@ const AboutPage = () => {
       />
       <DemoTunnelModal isOpen={tunnelOpen} onClose={() => setTunnelOpen(false)} />
 
-      <Helmet>
-        <title>{t('about.seoTitle')}</title>
-        <meta name="description" content={t('about.seoDesc')} />
-      </Helmet>
+      <SEOHead
+        title={t('about.seoTitle')}
+        description={t('about.seoDesc')}
+        canonical="/about"
+        lang={i18n.language}
+      />
 
       {/* Hero with video background */}
       <section className="relative flex items-center justify-center min-h-[50vh] pt-24 pb-20 overflow-hidden">
