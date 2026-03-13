@@ -111,7 +111,7 @@ export const articles = [
     excerpt: 'Le français est parlé dans 29 pays. Mais beaucoup de créateurs l\'ignorent et se limitent à la France. Voilà ce que tu rates.',
     category: 'Stratégie',
     readTime: 4,
-    publishDate: '2026-03-16',
+    publishDate: '2026-04-02',
     coverImage: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200&q=80',
     tags: ['francophonie', 'québec', 'belgique', 'afrique'],
     content: `
@@ -136,7 +136,7 @@ export const articles = [
     excerpt: 'Avant de te lancer à l\'international, il y a 7 questions auxquelles tu dois répondre. La plupart des créateurs en ignorent la moitié.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-03-19',
+    publishDate: '2026-04-06',
     coverImage: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=1200&q=80',
     tags: ['checklist', 'lancement', 'international'],
     content: `
@@ -167,7 +167,7 @@ export const articles = [
     excerpt: 'Des créateurs non-anglophones touchent des millions de personnes à l\'international. Leur secret n\'est pas linguistique. C\'est stratégique.',
     category: 'Stratégie',
     readTime: 5,
-    publishDate: '2026-03-23',
+    publishDate: '2026-04-09',
     coverImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
     tags: ['personal branding', 'audience', 'global'],
     content: `
@@ -194,7 +194,7 @@ export const articles = [
     excerpt: 'Dans 5 ans, les créateurs de contenu qui n\'auront pas de stratégie multilingue seront dans la même position que ceux qui n\'avaient pas de chaîne YouTube en 2012.',
     category: 'Stratégie',
     readTime: 4,
-    publishDate: '2026-03-26',
+    publishDate: '2026-04-13',
     coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     tags: ['futur', 'multilingue', 'tendances'],
     content: `
@@ -219,7 +219,7 @@ export const articles = [
     excerpt: 'Tu as une boutique en ligne avec des vidéos produit en français. Tu livres à l\'international. Mais tes conversions hors France sont quasi nulles. Ce n\'est pas ton produit le problème.',
     category: 'Secteurs',
     readTime: 5,
-    publishDate: '2026-03-30',
+    publishDate: '2026-04-16',
     coverImage: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80',
     tags: ['e-commerce', 'conversion', 'vente'],
     content: `
@@ -245,7 +245,7 @@ export const articles = [
     excerpt: 'Tu as créé une formation qui cartonne en France. La même formation, dans 3 langues, c\'est potentiellement 10x plus de revenus avec 0 heure de création supplémentaire.',
     category: 'Secteurs',
     readTime: 5,
-    publishDate: '2026-04-02',
+    publishDate: '2026-04-20',
     coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     tags: ['formation', 'infopreneurs', 'e-learning'],
     content: `
@@ -270,7 +270,7 @@ export const articles = [
     excerpt: 'Tu as une pub qui performe en France. Tu la diffuses en Belgique, au Québec, en Espagne. Les résultats sont décevants. Le problème n\'est souvent pas là où tu le cherches.',
     category: 'Secteurs',
     readTime: 5,
-    publishDate: '2026-04-06',
+    publishDate: '2026-04-23',
     coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
     tags: ['publicité', 'ads', 'conversion'],
     content: `
@@ -295,7 +295,7 @@ export const articles = [
     excerpt: 'Le podcast vidéo est le format le plus adapté à une stratégie multilingue. Voici pourquoi — et surtout comment.',
     category: 'Secteurs',
     readTime: 4,
-    publishDate: '2026-04-09',
+    publishDate: '2026-04-27',
     coverImage: 'https://images.unsplash.com/photo-1579389083046-e3df9c2b3325?w=1200&q=80',
     tags: ['podcast', 'vidéo', 'distribution'],
     content: `
@@ -318,7 +318,7 @@ export const articles = [
     excerpt: 'Le Québec a le plus fort taux de consommation de contenu vidéo en ligne de tout l\'espace francophone. Et presque aucun créateur français ne s\'y adresse directement.',
     category: 'Secteurs',
     readTime: 4,
-    publishDate: '2026-04-13',
+    publishDate: '2026-04-30',
     coverImage: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80',
     tags: ['québec', 'canada', 'francophonie'],
     content: `
@@ -341,7 +341,7 @@ export const articles = [
     excerpt: 'Mal adapté, c\'est pire que pas adapté. Voici les 5 erreurs les plus fréquentes — et comment les éviter.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-16',
+    publishDate: '2026-05-04',
     coverImage: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80',
     tags: ['erreurs', 'adaptation', 'qualité'],
     content: `
@@ -368,7 +368,7 @@ export const articles = [
     excerpt: 'Avant que ton audience décide si ton contenu vaut son temps, elle a déjà jugé ta voix. En 200 millisecondes. Voici ce que ça implique.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-20',
+    publishDate: '2026-05-07',
     coverImage: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80',
     tags: ['voix', 'confiance', 'psychologie'],
     content: `
@@ -392,7 +392,7 @@ export const articles = [
     excerpt: 'Tout le monde n\'est pas prêt en même temps à se lancer à l\'international. Voici les 3 indicateurs qui montrent que le moment est venu pour toi.',
     category: 'Conseils pratiques',
     readTime: 4,
-    publishDate: '2026-04-23',
+    publishDate: '2026-05-11',
     coverImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80',
     tags: ['préparation', 'timing', 'stratégie'],
     content: `
@@ -416,7 +416,7 @@ export const articles = [
     excerpt: 'Retourner tes vidéos dans une autre langue te semble impossible. Trop coûteux, trop long, trop risqué. Mais personne ne te demande de recommencer de zéro.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-27',
+    publishDate: '2026-05-14',
     coverImage: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=1200&q=80',
     tags: ['vente', 'international', 'pratique'],
     content: `
@@ -442,7 +442,7 @@ export const articles = [
     excerpt: 'Tu as essayé de te lancer à l\'international. Ça n\'a pas marché. Avant de conclure que "l\'international, c\'est pas pour toi", identifie les vraies barrières.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-04-30',
+    publishDate: '2026-05-18',
     coverImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&q=80',
     tags: ['obstacles', 'stratégie', 'international'],
     content: `
@@ -468,7 +468,7 @@ export const articles = [
     excerpt: 'L\'inaction a un coût. Il est juste moins visible que le coût de l\'action. Voici ce que tu laisses sur la table chaque mois.',
     category: 'Conseils pratiques',
     readTime: 4,
-    publishDate: '2026-05-04',
+    publishDate: '2026-05-21',
     coverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     tags: ['opportunité', 'coût', 'stratégie'],
     content: `
@@ -492,7 +492,7 @@ export const articles = [
     excerpt: 'Tu as essayé. Tu as posté. Et rien. Avant de conclure que l\'international "ne marche pas pour toi", voici le vrai diagnostic.',
     category: 'Conseils pratiques',
     readTime: 5,
-    publishDate: '2026-05-07',
+    publishDate: '2026-05-25',
     coverImage: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&q=80',
     tags: ['performance', 'diagnostic', 'international'],
     content: `
@@ -624,7 +624,7 @@ export const articles = [
     excerpt: 'Your best course already exists. The students who need it most just can\'t understand it yet. Here\'s the math that changes everything.',
     category: 'Practical tips',
     readTime: 5,
-    publishDate: '2026-03-16',
+    publishDate: '2026-04-02',
     coverImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80',
     tags: ['course', 'e-learning', 'revenue', 'scale'],
     content: `
@@ -650,7 +650,7 @@ export const articles = [
     excerpt: 'Audio content is the most underutilized format for international expansion. Most podcasters don\'t even know this market exists.',
     category: 'Industries',
     readTime: 5,
-    publishDate: '2026-03-19',
+    publishDate: '2026-04-06',
     coverImage: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80',
     tags: ['podcast', 'audio', 'international', 'distribution'],
     content: `
@@ -674,7 +674,7 @@ export const articles = [
     excerpt: 'Most creators wait too long. The truth is, if your content already works in one market, it\'s already ready for another.',
     category: 'Practical tips',
     readTime: 4,
-    publishDate: '2026-03-23',
+    publishDate: '2026-04-09',
     coverImage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80',
     tags: ['readiness', 'international', 'checklist', 'growth'],
     content: `
@@ -700,7 +700,7 @@ export const articles = [
     excerpt: 'You don\'t need a French office or a French team. You need French content. The market is there — it\'s just waiting to understand you.',
     category: 'Industries',
     readTime: 5,
-    publishDate: '2026-03-26',
+    publishDate: '2026-04-13',
     coverImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80',
     tags: ['e-commerce', 'french market', 'brand', 'international'],
     content: `
@@ -725,7 +725,7 @@ export const articles = [
     excerpt: 'The best content strategy isn\'t creating more. It\'s making what you have available to more people. Here\'s the framework.',
     category: 'Practical tips',
     readTime: 4,
-    publishDate: '2026-03-30',
+    publishDate: '2026-04-16',
     coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
     tags: ['repurpose', 'content strategy', 'efficiency', 'scale'],
     content: `
@@ -751,7 +751,7 @@ export const articles = [
     excerpt: 'Being the best in your niche in one country is great. Being known globally for the same expertise is another level entirely. Here\'s the path.',
     category: 'Strategy',
     readTime: 5,
-    publishDate: '2026-04-02',
+    publishDate: '2026-04-20',
     coverImage: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&q=80',
     tags: ['personal brand', 'authority', 'global', 'positioning'],
     content: `
@@ -777,7 +777,7 @@ export const articles = [
     excerpt: 'L\'algorithme TikTok ne connaît pas les frontières géographiques. Il optimise pour l\'engagement, où qu\'il se trouve. Ce que ça change pour les créateurs.',
     category: 'Tendances',
     readTime: 4,
-    publishDate: '2026-05-11',
+    publishDate: '2026-05-28',
     coverImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&q=80',
     tags: ['tiktok', 'algorithme', 'distribution', 'plateformes'],
     content: `
@@ -798,7 +798,7 @@ export const articles = [
     excerpt: '62 millions de personnes. 1 800 milliards de dollars de pouvoir d\'achat. Un déficit structurel en contenu premium. Le marché hispanique américain est une anomalie économique.',
     category: 'Marchés',
     readTime: 5,
-    publishDate: '2026-05-14',
+    publishDate: '2026-06-01',
     coverImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=1200&q=80',
     tags: ['marché', 'états-unis', 'démographie', 'opportunité'],
     content: `
@@ -819,7 +819,7 @@ export const articles = [
     excerpt: 'Netflix a cessé d\'être une chaîne américaine qui exporte. Elle est devenue une infrastructure de distribution qui produit localement et distribue globalement. Ce changement de paradigme redéfinit les standards de l\'industrie.',
     category: 'Tendances',
     readTime: 5,
-    publishDate: '2026-05-18',
+    publishDate: '2026-06-04',
     coverImage: 'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&q=80',
     tags: ['netflix', 'industrie', 'production', 'stratégie'],
     content: `
@@ -840,7 +840,7 @@ export const articles = [
     excerpt: 'Prendre une décision d\'achat complexe en langue étrangère mobilise un effort cognitif mesurable. Ce que la recherche en comportement d\'achat dit des cycles de vente internationaux.',
     category: 'Business',
     readTime: 5,
-    publishDate: '2026-05-21',
+    publishDate: '2026-06-08',
     coverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80',
     tags: ['b2b', 'comportement achat', 'neurosciences', 'ventes'],
     content: `
@@ -861,7 +861,7 @@ export const articles = [
     excerpt: 'Ce n\'est pas un problème de qualité. Ce n\'est pas un problème de régularité. C\'est un plafond de marché inscrit dans la structure même de l\'économie créateur.',
     category: 'Stratégie',
     readTime: 5,
-    publishDate: '2026-05-25',
+    publishDate: '2026-06-11',
     coverImage: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     tags: ['créateurs', 'marché', 'structure', 'croissance'],
     content: `
@@ -882,7 +882,7 @@ export const articles = [
     excerpt: 'Derrière l\'écart de CPM entre langues se cache une réalité structurelle sur la façon dont les budgets publicitaires mondiaux sont alloués — et sur les conséquences concrètes pour les revenus créateurs.',
     category: 'Business',
     readTime: 5,
-    publishDate: '2026-05-28',
+    publishDate: '2026-06-15',
     coverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     tags: ['CPM', 'publicité', 'revenus', 'marché'],
     content: `
@@ -903,7 +903,7 @@ export const articles = [
     excerpt: 'Les profils des créateurs qui franchissent les 10 millions d\'abonnés aujourd\'hui sont structurellement différents de ceux qui y parvenaient il y a cinq ans. Une analyse des patterns.',
     category: 'Stratégie',
     readTime: 6,
-    publishDate: '2026-06-01',
+    publishDate: '2026-06-18',
     coverImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80',
     tags: ['créateurs', 'croissance', 'analyse', 'plateformes'],
     content: `
@@ -924,7 +924,7 @@ export const articles = [
     excerpt: 'Le français est en train de devenir une langue africaine. Les projections démographiques de l\'OIF dessinent un marché de contenu francophone radicalement différent de celui qu\'on connaît.',
     category: 'Marchés',
     readTime: 5,
-    publishDate: '2026-06-04',
+    publishDate: '2026-06-22',
     coverImage: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80',
     tags: ['afrique', 'francophonie', 'démographie', 'marchés'],
     content: `
@@ -945,7 +945,7 @@ export const articles = [
     excerpt: 'CapCut, Canva, les suites IA de montage : produire du contenu de qualité n\'a jamais coûté aussi peu. L\'histoire économique montre toujours ce qui arrive ensuite.',
     category: 'Tendances',
     readTime: 5,
-    publishDate: '2026-06-08',
+    publishDate: '2026-06-25',
     coverImage: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80',
     tags: ['outils', 'IA', 'marché', 'tendances'],
     content: `
@@ -966,7 +966,7 @@ export const articles = [
     excerpt: 'Quand une plateforme à 2,7 milliards d\'utilisateurs intègre nativement une fonctionnalité, c\'est un signal sur la direction du marché — pas une expérimentation.',
     category: 'Tendances',
     readTime: 5,
-    publishDate: '2026-06-11',
+    publishDate: '2026-06-29',
     coverImage: 'https://images.unsplash.com/photo-1488229297570-58520851e868?w=1200&q=80',
     tags: ['youtube', 'plateformes', 'tendances', 'stratégie'],
     content: `
@@ -990,7 +990,7 @@ export const articles = [
     excerpt: 'The tools to create content have never been more accessible. The infrastructure to distribute it across markets remains largely unbuilt. This is the next frontier.',
     category: 'Strategy',
     readTime: 5,
-    publishDate: '2026-04-06',
+    publishDate: '2026-04-23',
     coverImage: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80',
     tags: ['creator economy', 'distribution', 'market structure', 'infrastructure'],
     content: `
@@ -1012,7 +1012,7 @@ export const articles = [
     excerpt: 'A pattern is emerging in high-growth creator accounts in the US market. A disproportionate number aren\'t American. Understanding why reveals something important about how audiences are changing.',
     category: 'Strategy',
     readTime: 5,
-    publishDate: '2026-04-09',
+    publishDate: '2026-04-27',
     coverImage: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&q=80',
     tags: ['market analysis', 'us market', 'growth', 'audience behavior'],
     content: `
@@ -1034,7 +1034,7 @@ export const articles = [
     excerpt: 'The most defensible, most monetizable, and most copied asset in the creator economy isn\'t the content. It\'s the voice behind it. Here\'s how the most valuable creators think about theirs.',
     category: 'Business',
     readTime: 5,
-    publishDate: '2026-04-13',
+    publishDate: '2026-04-30',
     coverImage: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80',
     tags: ['voice', 'IP', 'brand', 'creator economy'],
     content: `
@@ -1056,7 +1056,7 @@ export const articles = [
     excerpt: 'A behavioral economics insight is reshaping how B2B companies approach video content for international markets. The results are measurable — and larger than most expected.',
     category: 'Business',
     readTime: 5,
-    publishDate: '2026-04-16',
+    publishDate: '2026-05-04',
     coverImage: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80',
     tags: ['b2b', 'sales', 'behavioral economics', 'enterprise'],
     content: `
@@ -1078,7 +1078,7 @@ export const articles = [
     excerpt: 'The US Hispanic market is the largest Spanish-speaking economy in the world. Its content supply-demand gap is structural, documented, and largely uncaptured by the creators best positioned to fill it.',
     category: 'Markets',
     readTime: 5,
-    publishDate: '2026-04-20',
+    publishDate: '2026-05-07',
     coverImage: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=1200&q=80',
     tags: ['us market', 'hispanic', 'market analysis', 'opportunity'],
     content: `
@@ -1100,7 +1100,7 @@ export const articles = [
     excerpt: 'The failure rate of international content expansion isn\'t a quality problem. Research on cross-cultural communication reveals a more specific and addressable cause.',
     category: 'Strategy',
     readTime: 5,
-    publishDate: '2026-04-23',
+    publishDate: '2026-05-11',
     coverImage: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=80',
     tags: ['international expansion', 'market research', 'content strategy', 'failure analysis'],
     content: `
@@ -1122,7 +1122,7 @@ export const articles = [
     excerpt: 'The CPM asymmetry between language markets is one of the least-discussed structural realities of the creator economy. The implications for how creators should think about content investment are significant.',
     category: 'Business',
     readTime: 5,
-    publishDate: '2026-04-27',
+    publishDate: '2026-05-14',
     coverImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&q=80',
     tags: ['CPM', 'revenue', 'content economics', 'market structure'],
     content: `
@@ -1144,7 +1144,7 @@ export const articles = [
     excerpt: 'The accounting treatment of content in most organizations hasn\'t caught up with its economic reality. This mismatch has measurable strategic consequences.',
     category: 'Business',
     readTime: 5,
-    publishDate: '2026-04-30',
+    publishDate: '2026-05-18',
     coverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     tags: ['content strategy', 'asset management', 'ROI', 'marketing'],
     content: `
@@ -1166,7 +1166,7 @@ export const articles = [
     excerpt: 'For most of the 2010s, "going international" meant building local teams in each market. That model has been replaced by something more efficient, more scalable, and more accessible. Here\'s what changed.',
     category: 'Strategy',
     readTime: 5,
-    publishDate: '2026-05-04',
+    publishDate: '2026-05-21',
     coverImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80',
     tags: ['operations', 'international strategy', 'workflow', 'organizational design'],
     content: `
@@ -1188,7 +1188,7 @@ export const articles = [
     excerpt: 'The relationship between creators and the language they publish in has fundamentally changed. Understanding how — and what it implies — matters more than any tactical advice.',
     category: 'Strategy',
     readTime: 6,
-    publishDate: '2026-05-07',
+    publishDate: '2026-05-25',
     coverImage: 'https://images.unsplash.com/photo-1495020689067-958852a7765e?w=1200&q=80',
     tags: ['strategy', 'market access', 'creator economy', 'industry shift'],
     content: `
@@ -1212,7 +1212,7 @@ export const articles = [
     excerpt: 'En dix ans, une startup australienne a bâti une entreprise à 26 milliards de dollars en partant d\'une observation que toute l\'industrie du design avait ignorée.',
     category: 'Outils',
     readTime: 5,
-    publishDate: '2026-06-15',
+    publishDate: '2026-03-16',
     coverImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&q=80',
     tags: ['canva', 'design', 'saas', 'stratégie produit'],
     content: `
@@ -1235,7 +1235,7 @@ export const articles = [
     excerpt: 'En 2017, une équipe de Cologne a publié un test en aveugle : leur outil surpassait Google Translate, Microsoft et Facebook en précision. Le marché de la traduction n\'a pas été le même depuis.',
     category: 'Outils',
     readTime: 5,
-    publishDate: '2026-06-18',
+    publishDate: '2026-03-19',
     coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     tags: ['deepl', 'traduction', 'IA', 'entreprises'],
     content: `
@@ -1258,7 +1258,7 @@ export const articles = [
     excerpt: 'Les marques produisent du long format. Les audiences consomment du court. Entre ces deux réalités, un marché entier de repurposing automatisé est apparu — et se consolide rapidement.',
     category: 'Outils',
     readTime: 5,
-    publishDate: '2026-06-22',
+    publishDate: '2026-03-23',
     coverImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&q=80',
     tags: ['banger.ai', 'format court', 'IA', 'repurposing'],
     content: `
@@ -1279,7 +1279,7 @@ export const articles = [
     excerpt: 'La timeline vidéo est un paradigme d\'interface vieux de trois décennies. Descript a eu l\'audace de le remettre en question — et levé 50 millions de dollars en prouvant qu\'un nouveau marché existait.',
     category: 'Outils',
     readTime: 5,
-    publishDate: '2026-06-25',
+    publishDate: '2026-03-26',
     coverImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=80',
     tags: ['descript', 'édition vidéo', 'IA', 'productivité'],
     content: `
@@ -1300,7 +1300,7 @@ export const articles = [
     excerpt: 'En 2023, Atlassian a acquis Loom pour 975 millions de dollars. Derrière ce montant, un signal fort sur le coût réel de la communication synchrone en entreprise — et sur ce que les organisations sont prêtes à payer pour le réduire.',
     category: 'Outils',
     readTime: 5,
-    publishDate: '2026-06-29',
+    publishDate: '2026-03-30',
     coverImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
     tags: ['loom', 'communication', 'asynchrone', 'entreprise'],
     content: `
@@ -1324,7 +1324,7 @@ export const articles = [
     excerpt: 'In ten years, an Australian startup built a $26 billion company by starting from an observation the entire design industry had chosen to ignore.',
     category: 'Tools',
     readTime: 5,
-    publishDate: '2026-06-15',
+    publishDate: '2026-03-16',
     coverImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&q=80',
     tags: ['canva', 'design', 'saas', 'product strategy'],
     content: `
@@ -1348,7 +1348,7 @@ export const articles = [
     excerpt: 'In 2017, a team from Cologne published a blind test: their tool outperformed Google Translate, Microsoft, and Facebook on accuracy. The translation market hasn\'t been the same since.',
     category: 'Tools',
     readTime: 5,
-    publishDate: '2026-06-18',
+    publishDate: '2026-03-19',
     coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     tags: ['deepl', 'translation', 'AI', 'enterprise'],
     content: `
@@ -1372,7 +1372,7 @@ export const articles = [
     excerpt: 'Brands produce long-form. Audiences consume short-form. Between these two realities, an entire automated repurposing market has emerged — and is consolidating quickly.',
     category: 'Tools',
     readTime: 5,
-    publishDate: '2026-06-22',
+    publishDate: '2026-03-23',
     coverImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&q=80',
     tags: ['banger.ai', 'short-form', 'AI', 'repurposing'],
     content: `
@@ -1394,7 +1394,7 @@ export const articles = [
     excerpt: 'The video timeline is a three-decade-old interface paradigm. Descript had the audacity to question it — and raised $50 million proving that a new market existed.',
     category: 'Tools',
     readTime: 5,
-    publishDate: '2026-06-25',
+    publishDate: '2026-03-26',
     coverImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=80',
     tags: ['descript', 'video editing', 'AI', 'productivity'],
     content: `
@@ -1416,7 +1416,7 @@ export const articles = [
     excerpt: 'In 2023, Atlassian acquired Loom for $975 million. Behind that figure, a strong signal about the real cost of synchronous communication in organizations — and what companies are willing to pay to reduce it.',
     category: 'Tools',
     readTime: 5,
-    publishDate: '2026-06-29',
+    publishDate: '2026-03-30',
     coverImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
     tags: ['loom', 'communication', 'async', 'enterprise'],
     content: `
