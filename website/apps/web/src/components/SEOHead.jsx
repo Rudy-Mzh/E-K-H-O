@@ -3,8 +3,7 @@ import { Helmet } from 'react-helmet';
 
 const SITE_URL  = 'https://ekho-studio.com';
 const SITE_NAME = 'EKHO Studio';
-// TODO: remplacer par og-ekho.jpg (1200×630px, fond sombre, logo EKHO centré)
-const DEFAULT_OG_IMAGE = `${SITE_URL}/rudy.jpg`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-ekho.jpg`;
 
 /**
  * SEOHead — centralized SEO metadata component

@@ -21,6 +21,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install Chromium for react-snap
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y chromium-browser
+
       - name: Install dependencies
         working-directory: website
         run: npm ci
@@ -28,9 +33,11 @@ jobs:
       - name: Generate sitemap (published articles only)
         run: node scripts/generate-sitemap.mjs
 
-      - name: Build
+      - name: Build + prerender
         working-directory: website/apps/web
         run: npm run build
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
 
       - name: Push dist to deploy branch
         run: |
