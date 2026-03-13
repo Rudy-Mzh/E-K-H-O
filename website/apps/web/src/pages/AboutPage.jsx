@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SEOHead from '@/components/SEOHead.jsx';
+import SEOHead, { personSchema, organizationSchema } from '@/components/SEOHead.jsx';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
@@ -26,6 +26,8 @@ const AboutPage = () => {
         description={t('about.seoDesc')}
         canonical="/about"
         lang={i18n.language}
+        keywords="Rudy Mezoughi, EKHO Studio, fondateur, adaptation vidéo, studio localisation"
+        jsonLd={[personSchema, organizationSchema]}
       />
 
       {/* Hero with video background */}
