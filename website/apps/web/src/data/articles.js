@@ -1202,6 +1202,233 @@ export const articles = [
       <p>If language is a choice, then every piece of content produced in a single language is a choice to serve one market when multiple markets are available. That choice has a cost — the foregone reach, revenue, and compound growth of markets not accessed. For some content, in some categories, that cost is acceptable. For content with broad appeal and demonstrable cross-market demand, the cost of single-language publishing is increasingly difficult to justify on economic grounds alone.</p>
       <p>The creators who build the largest audiences in the next decade won't necessarily be those who create more or create better. They'll be those who understood that the addressable market for their expertise was never limited to the language they were born speaking.</p>
     `
+  },
+
+  // ─── ARTICLES OUTILS / SAAS (51-55 FR + 61-65 EN) ───────────────────────
+  {
+    id: 51,
+    slug: 'canva-26-milliards-marche-non-designers',
+    title: 'Canva n\'a pas créé un outil de design. Elle a créé un marché pour 130 millions de non-designers.',
+    excerpt: 'En dix ans, une startup australienne a bâti une entreprise à 26 milliards de dollars en partant d\'une observation que toute l\'industrie du design avait ignorée.',
+    category: 'Outils',
+    readTime: 5,
+    publishDate: '2026-06-15',
+    coverImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&q=80',
+    tags: ['canva', 'design', 'saas', 'stratégie produit'],
+    content: `
+      <h2>Le marché qu\'Adobe n\'a jamais voulu servir</h2>
+      <p>Adobe a construit son empire sur les professionnels du design. Illustrator, Photoshop, InDesign : des outils puissants, coûteux, avec une courbe d'apprentissage de plusieurs centaines d'heures. Ce positionnement était logique — les professionnels paient, les amateurs ne paient pas. Adobe a optimisé pour la profondeur de fonctionnalités plutôt que pour l'accessibilité.</p>
+      <p>Ce faisant, elle a laissé de côté un marché bien plus grand : les responsables marketing, les community managers, les enseignants, les PME, les créateurs de contenu — tous ceux qui avaient besoin de créer du visuel professionnel sans être designers. En 2012, Melanie Perkins a posé une question simple : et si on créait un outil pour eux ?</p>
+      <h2>La douleur que personne ne quantifiait</h2>
+      <p>Avant Canva, une PME qui avait besoin d'une présentation professionnelle avait trois options : embaucher un designer freelance (coût : 200 à 800€ par livrable), former un employé à Photoshop (coût : plusieurs semaines), ou produire un rendu médiocre avec PowerPoint. Ce goulet d'étranglement créatif existait dans des millions d'entreprises dans le monde — et personne n'avait construit d'outil pour le résoudre.</p>
+      <blockquote>Adobe voyait un marché premium de plusieurs millions de professionnels. Canva voyait un marché de masse de plusieurs centaines de millions de personnes qui avaient besoin de créer sans être des experts. L'un des deux marchés valait 26 milliards de dollars.</blockquote>
+      <h2>Le modèle qui a tout changé</h2>
+      <p>Canva n'a pas seulement résolu le problème technique du design accessible. Elle a validé un modèle économique : freemium à grande échelle sur un outil de productivité. Gratuit pour l'usage personnel de base, payant pour les fonctionnalités professionnelles et le travail en équipe. Ce modèle a généré 130 millions d'utilisateurs actifs mensuels et un taux de conversion vers les offres payantes suffisamment élevé pour justifier une valorisation comparable aux éditeurs de logiciels les plus établis de la planète.</p>
+      <h2>Ce que la trajectoire de Canva révèle sur le marché</h2>
+      <p>L'histoire de Canva est d'abord une leçon sur les marchés ignorés. L'industrie du design avait collectivement décidé que les non-designers n'étaient pas des clients. En réalité, ils étaient le plus grand segment non-servi de tout l'écosystème créatif. Chaque fois qu'une industrie mature se concentre exclusivement sur ses clients premium, elle laisse derrière elle un marché de masse que quelqu'un finira par construire — et ce quelqu'un part de zéro face à un concurrent qui ne regarde pas dans sa direction.</p>
+    `
+  },
+  {
+    id: 52,
+    slug: 'deepl-qualite-contre-echelle-google-traduction',
+    title: 'DeepL a prouvé qu\'une startup européenne pouvait battre Google sur la qualité. Ce que ça dit du marché de la traduction.',
+    excerpt: 'En 2017, une équipe de Cologne a publié un test en aveugle : leur outil surpassait Google Translate, Microsoft et Facebook en précision. Le marché de la traduction n\'a pas été le même depuis.',
+    category: 'Outils',
+    readTime: 5,
+    publishDate: '2026-06-18',
+    coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
+    tags: ['deepl', 'traduction', 'IA', 'entreprises'],
+    content: `
+      <h2>La démonstration qui a changé le marché</h2>
+      <p>En août 2017, DeepL a lancé son traducteur avec une communication inhabituelle pour une startup : un test en aveugle comparatif contre Google Translate, Microsoft Translator et Facebook. Des traducteurs professionnels ont évalué les sorties sans savoir quelle machine les avait produites. DeepL a remporté le test dans toutes les langues européennes testées, avec une marge significative.</p>
+      <p>Ce n'était pas du marketing. C'était une démonstration technique fondée sur une architecture différente : quand Google optimisait pour la vitesse et la couverture de langues, DeepL concentrait sa puissance de calcul sur un nombre restreint de paires de langues avec un entraînement plus profond. Moins large, mais structurellement meilleur sur son périmètre.</p>
+      <h2>La douleur que Google Translate ne résolvait pas</h2>
+      <p>Google Translate est gratuit, rapide, et disponible pour 100+ langues. Pour une recherche rapide ou une traduction personnelle approximative, c'est suffisant. Pour une communication professionnelle — une proposition commerciale, un contrat, un email client — la tolérance à l'erreur est radicalement différente. Une formulation maladroite dans une langue étrangère n'est pas un inconfort : c'est un signal de manque de professionnalisme qui peut coûter un deal.</p>
+      <blockquote>Google Translate résout le problème de la compréhension. DeepL a résolu le problème de la crédibilité. Ce sont deux marchés différents — et le second est prêt à payer pour la qualité.</blockquote>
+      <h2>La stratégie enterprise qui a construit le business</h2>
+      <p>DeepL a levé 100 millions de dollars en 2021 sur la base d'un modèle clair : une offre gratuite grand public pour construire la notoriété, une offre DeepL Pro pour les professionnels, et une API entreprise qui s'est imposée dans les workflows de traduction des grandes organisations. Des entreprises comme Zendesk, Deutsche Bahn, et des centaines de cabinets juridiques et d'agences de communication européennes ont intégré l'API DeepL dans leurs systèmes — non pas parce que c'était moins cher que Google, mais parce que la qualité justifiait le coût.</p>
+      <h2>Le signal sur le marché</h2>
+      <p>DeepL illustre un principe économique que les marchés tech tendent à oublier : sur les marchés où l'erreur a un coût réel — traduction professionnelle, diagnostic médical, conseil juridique — la qualité crée un segment premium imperméable à la disruption par le "assez bon et gratuit". Ce segment est souvent moins visible que le marché de masse, mais il est plus rentable, plus fidèle, et plus défendable.</p>
+    `
+  },
+  {
+    id: 53,
+    slug: 'banger-ai-guerre-format-court-repurposing',
+    title: 'Banger.ai et la guerre du format court : pourquoi toute une industrie IA s\'est construite sur la friction entre long et court.',
+    excerpt: 'Les marques produisent du long format. Les audiences consomment du court. Entre ces deux réalités, un marché entier de repurposing automatisé est apparu — et se consolide rapidement.',
+    category: 'Outils',
+    readTime: 5,
+    publishDate: '2026-06-22',
+    coverImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&q=80',
+    tags: ['banger.ai', 'format court', 'IA', 'repurposing'],
+    content: `
+      <h2>La friction structurelle que TikTok a créée</h2>
+      <p>Le comportement d'attention des audiences numériques a évolué plus vite que les workflows de production des entreprises. En 2024, la durée d'attention moyenne sur les réseaux sociaux est inférieure à 8 secondes pour la décision de continuer ou de scroller. Dans le même temps, les conférences enregistrent des keynotes de 45 minutes, les équipes marketing produisent des webinars d'une heure, les créateurs publient des interviews de 30 minutes. Ce décalage est massif, mesurable, et largement non résolu.</p>
+      <p>C'est dans cette friction que des outils comme Banger.ai ont trouvé leur marché : identifier automatiquement les moments les plus engageants d'une vidéo longue, les extraire, les reformater en 9:16, ajouter des sous-titres animés, et produire 10 clips de 30 à 90 secondes prêts pour TikTok, Reels et Shorts — en quelques minutes plutôt qu'en plusieurs heures.</p>
+      <h2>Ce que ça coûtait avant</h2>
+      <p>Avant l'automatisation, couper un webinar d'une heure en 10 clips courts nécessitait un éditeur vidéo, 3 à 5 heures de travail, et une compréhension de ce qui allait performer sur chaque plateforme. Pour une équipe marketing avec un budget serré et un calendrier de publication dense, c'était un travail que personne n'avait vraiment le temps de faire correctement. Résultat : la majorité du contenu long-format produit par les entreprises restait dans un dossier Google Drive, vu par une poignée de personnes, puis oublié.</p>
+      <blockquote>Banger.ai n'a pas inventé le repurposing. Il a rendu économiquement viable ce que toutes les équipes marketing savaient qu'elles auraient dû faire et ne faisaient pas.</blockquote>
+      <h2>La dynamique de marché qui s'accélère</h2>
+      <p>Le marché des outils de repurposing automatisé (Banger.ai, Opus Clip, Vidyo.ai, Munch) est en consolidation rapide. Ces outils ne se différencient plus uniquement sur la qualité du découpage — ils intègrent des fonctionnalités de scheduling, d'analyse de performance prédictive, et commencent à personnaliser les clips par plateforme et par audience cible. Ce mouvement vers la suite complète de distribution courte-forme reflète une réalité : le problème de production est résolu. Le problème de distribution intelligente est le prochain terrain de compétition.</p>
+    `
+  },
+  {
+    id: 54,
+    slug: 'descript-edition-video-texte-question-personne-posait',
+    title: 'Descript a posé la question que 30 ans d\'édition vidéo avaient ignorée : et si on éditait comme un texte ?',
+    excerpt: 'La timeline vidéo est un paradigme d\'interface vieux de trois décennies. Descript a eu l\'audace de le remettre en question — et levé 50 millions de dollars en prouvant qu\'un nouveau marché existait.',
+    category: 'Outils',
+    readTime: 5,
+    publishDate: '2026-06-25',
+    coverImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=80',
+    tags: ['descript', 'édition vidéo', 'IA', 'productivité'],
+    content: `
+      <h2>La tyrannie de la timeline</h2>
+      <p>Depuis Avid Media Composer dans les années 90 jusqu'à Premiere Pro aujourd'hui, l'édition vidéo professionnelle repose sur le même paradigme : une timeline horizontale où des clips s'empilent sur des pistes. Ce paradigme est puissant pour les monteurs professionnels qui ont passé des années à le maîtriser. Il est opaque et intimidant pour tous les autres.</p>
+      <p>Le problème : "tous les autres" représente aujourd'hui une part croissante des personnes qui ont besoin d'éditer de la vidéo. Les journalistes qui interviewent et doivent couper. Les formateurs qui produisent des cours en ligne. Les équipes RH qui créent des contenus d'onboarding. Les marketeurs qui enregistrent des témoignages clients. Aucun d'eux n'est monteur vidéo — et aucun outil ne leur parlait.</p>
+      <h2>L\'insight de Descript</h2>
+      <p>Descript a observé que toutes ces personnes maîtrisaient parfaitement un autre paradigme d'édition : le texte. Elles savaient couper, copier, coller, supprimer, réorganiser dans un document Word ou Google Docs. Descript a simplement transposé cette interface à la vidéo : chaque phrase dite dans la vidéo apparaît comme du texte éditable. Supprimer une phrase dans le texte supprime le segment vidéo correspondant. Chercher "euh" dans le texte et supprimer toutes les occurrences retire automatiquement tous les tics de langage de la vidéo.</p>
+      <blockquote>Descript n'a pas simplifié l'édition vidéo. Il a changé le public de l'édition vidéo. Ce sont deux stratégies très différentes — et la seconde adresse un marché bien plus grand.</blockquote>
+      <h2>Ce que le succès de Descript révèle</h2>
+      <p>Descript a levé plus de 50 millions de dollars et compte parmi ses utilisateurs des journalistes du New York Times, des équipes podcast de grandes entreprises, et des créateurs de cours en ligne. Ce succès illustre un pattern récurrent dans les outils de productivité : les meilleures innovations ne rendent pas un outil existant plus puissant pour les mêmes utilisateurs — elles rendent l'usage accessible à des utilisateurs qui en étaient structurellement exclus. Le marché total adressable change radicalement.</p>
+    `
+  },
+  {
+    id: 55,
+    slug: 'loom-975-millions-communication-asynchrone',
+    title: 'Loom a été racheté 975 millions de dollars pour un outil d\'envoi de vidéos. Ce chiffre mérite qu\'on s\'y arrête.',
+    excerpt: 'En 2023, Atlassian a acquis Loom pour 975 millions de dollars. Derrière ce montant, un signal fort sur le coût réel de la communication synchrone en entreprise — et sur ce que les organisations sont prêtes à payer pour le réduire.',
+    category: 'Outils',
+    readTime: 5,
+    publishDate: '2026-06-29',
+    coverImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
+    tags: ['loom', 'communication', 'asynchrone', 'entreprise'],
+    content: `
+      <h2>Le problème que Zoom n\'a pas résolu</h2>
+      <p>La pandémie de 2020 a propulsé Zoom à 300 millions de participants quotidiens. Elle a aussi révélé un problème que la visioconférence amplifie plutôt qu'elle ne résout : la tyrannie de la synchronicité. Pour qu'une réunion ait lieu, 5 à 15 personnes doivent être disponibles simultanément, dans le même fuseau horaire, avec suffisamment de contexte partagé pour que la conversation soit productive. Ce n'est pas toujours possible, souvent sous-optimal, et presque toujours coûteux en temps agrégé.</p>
+      <p>Loom a posé une question différente : combien de ces réunions transmettent de l'information qui aurait pu être envoyée de manière asynchrone, à n'importe quel moment, sans imposer de contrainte temporelle à quiconque ?</p>
+      <h2>La valeur de l\'async vidéo</h2>
+      <p>Un message Loom de 3 minutes peut remplacer une réunion de 30 minutes. Il peut être visionné à n'importe quelle heure, dans n'importe quel fuseau horaire, à 1.5x de vitesse. Il peut être repassé, mis en pause, partagé avec des membres de l'équipe absents. Il contient le ton de voix, les expressions faciales, et le contexte visuel qu'un email ne peut pas transmettre. Et contrairement à une réunion, il ne requiert pas la simultanéité de tous les participants.</p>
+      <blockquote>Une heure de réunion avec 8 personnes à 60€ de coût horaire coûte 480€. Un message Loom de 5 minutes distribuant la même information coûte quelques centimes de stockage et 5 minutes d'enregistrement. L'équation économique est brutalement claire.</blockquote>
+      <h2>Pourquoi Atlassian a payé 975 millions</h2>
+      <p>Atlassian, éditeur de Jira et Confluence, a compris que la communication asynchrone est le complément naturel de ses outils de gestion de projet. Les équipes qui travaillent dans Jira ont besoin de communiquer du contexte sans casser leur flux de travail pour organiser une réunion. Loom s'intègre directement dans ce workflow : un développeur enregistre une vidéo de 2 minutes pour expliquer un bug, l'attache au ticket Jira, et le product manager la regarde le lendemain matin à 8h avant sa première réunion. 975 millions de dollars pour une réduction mesurable de la friction de communication dans les équipes tech — c'est l'un des calculs d'acquisition les plus clairs de la décennie.</p>
+    `
+  },
+
+  // ─── TRADUCTIONS EN DES ARTICLES OUTILS (61-65) ──────────────────────────
+  {
+    id: 61,
+    lang: 'en',
+    slug: 'canva-26-billion-market-non-designers',
+    title: 'Canva Didn\'t Build a Design Tool. It Built a Market for 130 Million Non-Designers.',
+    excerpt: 'In ten years, an Australian startup built a $26 billion company by starting from an observation the entire design industry had chosen to ignore.',
+    category: 'Tools',
+    readTime: 5,
+    publishDate: '2026-06-15',
+    coverImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&q=80',
+    tags: ['canva', 'design', 'saas', 'product strategy'],
+    content: `
+      <h2>The market Adobe never wanted to serve</h2>
+      <p>Adobe built its empire on professional designers. Illustrator, Photoshop, InDesign: powerful tools, expensive, with learning curves measured in hundreds of hours. That positioning was logical — professionals pay, amateurs don't. Adobe optimized for depth of features rather than accessibility.</p>
+      <p>In doing so, it left behind a much larger market: marketing managers, community managers, teachers, SMEs, content creators — everyone who needed to produce professional visuals without being a designer. In 2012, Melanie Perkins asked a simple question: what if we built a tool for them?</p>
+      <h2>The pain point nobody was quantifying</h2>
+      <p>Before Canva, a small business that needed a professional presentation had three options: hire a freelance designer (cost: $200 to $800 per deliverable), train an employee on Photoshop (cost: several weeks), or produce a mediocre result with PowerPoint. This creative bottleneck existed in millions of companies worldwide — and nobody had built a tool to solve it.</p>
+      <blockquote>Adobe saw a premium market of several million professionals. Canva saw a mass market of several hundred million people who needed to create without being experts. One of those markets was worth $26 billion.</blockquote>
+      <h2>The model that changed everything</h2>
+      <p>Canva didn't just solve the technical problem of accessible design. It validated an economic model: large-scale freemium on a productivity tool. Free for basic personal use, paid for professional features and team collaboration. This model generated 130 million monthly active users and a conversion rate to paid plans high enough to justify a valuation comparable to the most established software publishers on the planet.</p>
+      <h2>What Canva's trajectory reveals about the market</h2>
+      <p>Canva's story is first a lesson about ignored markets. The design industry had collectively decided that non-designers were not customers. In reality, they were the largest underserved segment of the entire creative ecosystem. Every time a mature industry focuses exclusively on its premium customers, it leaves behind a mass market that someone will eventually build — and that someone starts from zero against a competitor who isn't looking in their direction.</p>
+    `
+  },
+  {
+    id: 62,
+    lang: 'en',
+    slug: 'deepl-quality-vs-scale-translation-market',
+    title: 'DeepL Proved a European Startup Could Beat Google on Quality. What This Says About the Translation Market.',
+    excerpt: 'In 2017, a team from Cologne published a blind test: their tool outperformed Google Translate, Microsoft, and Facebook on accuracy. The translation market hasn\'t been the same since.',
+    category: 'Tools',
+    readTime: 5,
+    publishDate: '2026-06-18',
+    coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
+    tags: ['deepl', 'translation', 'AI', 'enterprise'],
+    content: `
+      <h2>The demonstration that changed the market</h2>
+      <p>In August 2017, DeepL launched its translator with an unusual communication strategy for a startup: a comparative blind test against Google Translate, Microsoft Translator, and Facebook. Professional translators evaluated the outputs without knowing which machine had produced them. DeepL won the test across all European language pairs tested, with a significant margin.</p>
+      <p>This wasn't marketing. It was a technical demonstration built on a different architecture: while Google optimized for speed and language coverage, DeepL concentrated its computing power on a smaller set of language pairs with deeper training. Less broad, but structurally better within its scope.</p>
+      <h2>The pain Google Translate wasn't solving</h2>
+      <p>Google Translate is free, fast, and available for 100+ languages. For a quick search or approximate personal translation, that's sufficient. For professional communication — a business proposal, a contract, a client email — the tolerance for error is radically different. A clumsy formulation in a foreign language isn't a minor inconvenience: it's a signal of unprofessionalism that can cost a deal.</p>
+      <blockquote>Google Translate solves the comprehension problem. DeepL solved the credibility problem. These are two different markets — and the second is willing to pay for quality.</blockquote>
+      <h2>The enterprise strategy that built the business</h2>
+      <p>DeepL raised $100 million in 2021 on the basis of a clear model: a free consumer offering to build brand awareness, a DeepL Pro offering for professionals, and an enterprise API that established itself in the translation workflows of major organizations. Companies like Zendesk and hundreds of legal firms and European communication agencies integrated the DeepL API into their systems — not because it was cheaper than Google, but because the quality justified the cost.</p>
+      <h2>The market signal</h2>
+      <p>DeepL illustrates an economic principle that tech markets tend to forget: in markets where errors have a real cost — professional translation, medical diagnosis, legal advice — quality creates a premium segment impervious to disruption by "good enough and free." This segment is often less visible than the mass market, but it's more profitable, more loyal, and more defensible.</p>
+    `
+  },
+  {
+    id: 63,
+    lang: 'en',
+    slug: 'banger-ai-short-form-war-repurposing-market',
+    title: 'Banger.ai and the Short-Form War: Why an Entire AI Industry Built Itself Around the Gap Between Long and Short.',
+    excerpt: 'Brands produce long-form. Audiences consume short-form. Between these two realities, an entire automated repurposing market has emerged — and is consolidating quickly.',
+    category: 'Tools',
+    readTime: 5,
+    publishDate: '2026-06-22',
+    coverImage: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&q=80',
+    tags: ['banger.ai', 'short-form', 'AI', 'repurposing'],
+    content: `
+      <h2>The structural friction TikTok created</h2>
+      <p>The attention behavior of digital audiences has evolved faster than the production workflows of organizations. In 2024, the average attention span on social media before deciding to continue or scroll is under 8 seconds. Meanwhile, conferences record 45-minute keynotes, marketing teams produce hour-long webinars, and creators publish 30-minute interviews. This mismatch is massive, measurable, and largely unresolved.</p>
+      <p>It's in this friction that tools like Banger.ai found their market: automatically identifying the most engaging moments in a long video, extracting them, reformatting them in 9:16, adding animated subtitles, and producing 10 clips of 30 to 90 seconds ready for TikTok, Reels, and Shorts — in minutes rather than hours.</p>
+      <h2>What it cost before automation</h2>
+      <p>Before automation, cutting an hour-long webinar into 10 short clips required a video editor, 3 to 5 hours of work, and an understanding of what would perform on each platform. For a marketing team with a tight budget and a dense publication calendar, this was work that nobody ever had time to do properly. Result: the majority of long-form content produced by companies sat in a Google Drive folder, viewed by a handful of people, then forgotten.</p>
+      <blockquote>Banger.ai didn't invent repurposing. It made economically viable what every marketing team knew they should be doing — and weren't.</blockquote>
+      <h2>The market dynamic accelerating</h2>
+      <p>The automated repurposing tools market (Banger.ai, Opus Clip, Vidyo.ai, Munch) is consolidating rapidly. These tools no longer differentiate only on clipping quality — they're integrating scheduling, predictive performance analytics, and platform-specific and audience-specific clip personalization. This move toward a complete short-form distribution suite reflects a reality: the production problem is solved. Intelligent distribution is the next competitive terrain.</p>
+    `
+  },
+  {
+    id: 64,
+    lang: 'en',
+    slug: 'descript-video-editing-text-paradigm',
+    title: 'Descript Asked the Question That 30 Years of Video Editing Had Ignored: What If You Edited Like a Text Document?',
+    excerpt: 'The video timeline is a three-decade-old interface paradigm. Descript had the audacity to question it — and raised $50 million proving that a new market existed.',
+    category: 'Tools',
+    readTime: 5,
+    publishDate: '2026-06-25',
+    coverImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=80',
+    tags: ['descript', 'video editing', 'AI', 'productivity'],
+    content: `
+      <h2>The tyranny of the timeline</h2>
+      <p>From Avid Media Composer in the 1990s to Premiere Pro today, professional video editing has been built on the same paradigm: a horizontal timeline where clips stack on tracks. This paradigm is powerful for professional editors who have spent years mastering it. It's opaque and intimidating for everyone else.</p>
+      <p>The problem: "everyone else" now represents a growing share of the people who need to edit video. Journalists who interview and need to cut. Trainers who produce online courses. HR teams creating onboarding content. Marketers recording customer testimonials. None of them are video editors — and no tool was speaking to them.</p>
+      <h2>Descript's insight</h2>
+      <p>Descript observed that all these people perfectly mastered a different editing paradigm: text. They knew how to cut, copy, paste, delete, and rearrange in a Word document or Google Docs. Descript simply transposed this interface to video: every sentence spoken in the video appears as editable text. Deleting a sentence in the text deletes the corresponding video segment. Searching "uh" in the text and deleting all occurrences automatically removes all filler words from the video.</p>
+      <blockquote>Descript didn't simplify video editing. It changed the audience for video editing. These are very different strategies — and the second one addresses a much larger market.</blockquote>
+      <h2>What Descript's success reveals</h2>
+      <p>Descript has raised over $50 million and counts among its users New York Times journalists, enterprise podcast teams, and online course creators. This success illustrates a recurring pattern in productivity tools: the best innovations don't make an existing tool more powerful for the same users — they make the use case accessible to users who were structurally excluded from it. The total addressable market changes dramatically.</p>
+    `
+  },
+  {
+    id: 65,
+    lang: 'en',
+    slug: 'loom-975-million-async-communication',
+    title: 'Loom Was Acquired for $975 Million for a Video Messaging Tool. That Number Deserves Attention.',
+    excerpt: 'In 2023, Atlassian acquired Loom for $975 million. Behind that figure, a strong signal about the real cost of synchronous communication in organizations — and what companies are willing to pay to reduce it.',
+    category: 'Tools',
+    readTime: 5,
+    publishDate: '2026-06-29',
+    coverImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
+    tags: ['loom', 'communication', 'async', 'enterprise'],
+    content: `
+      <h2>The problem Zoom didn't solve</h2>
+      <p>The 2020 pandemic propelled Zoom to 300 million daily participants. It also revealed a problem that video conferencing amplifies rather than resolves: the tyranny of synchronicity. For a meeting to happen, 5 to 15 people must be available simultaneously, in the same timezone, with enough shared context for the conversation to be productive. This is not always possible, often suboptimal, and almost always expensive in aggregated time.</p>
+      <p>Loom asked a different question: how many of these meetings transmit information that could have been sent asynchronously, at any time, without imposing a time constraint on anyone?</p>
+      <h2>The value of async video</h2>
+      <p>A 3-minute Loom message can replace a 30-minute meeting. It can be viewed at any hour, in any timezone, at 1.5x speed. It can be replayed, paused, and shared with absent team members. It carries the tone of voice, facial expressions, and visual context that an email cannot convey. And unlike a meeting, it doesn't require the simultaneous availability of all participants.</p>
+      <blockquote>One hour of meeting with 8 people at a $60 hourly cost costs $480. A 5-minute Loom message distributing the same information costs a few cents of storage and 5 minutes of recording. The economic equation is brutally clear.</blockquote>
+      <h2>Why Atlassian paid $975 million</h2>
+      <p>Atlassian, publisher of Jira and Confluence, understood that asynchronous communication is the natural complement of its project management tools. Teams working in Jira need to communicate context without breaking their workflow to schedule a meeting. Loom integrates directly into this workflow: a developer records a 2-minute video explaining a bug, attaches it to the Jira ticket, and the product manager watches it the next morning at 8am before their first meeting. $975 million for a measurable reduction in communication friction in tech teams — one of the clearest acquisition calculations of the decade.</p>
+    `
   }
 ];
 
