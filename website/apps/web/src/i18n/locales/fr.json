@@ -20,10 +20,10 @@
     "call": "Appeler"
   },
   "home": {
-    "seoTitle": "EKHO Studio - Adaptez vos vidéos pour de nouveaux marchés",
-    "seoDesc": "EKHO adapte vos vidéos pour de nouveaux marchés. Même message, nouvelle langue, nouvelle audience. Déployez en 48h.",
+    "seoTitle": "EKHO Studio — Doublage Audio & Adaptation Vidéo Multilingue",
+    "seoDesc": "EKHO double et adapte vos vidéos pour de nouveaux marchés. Même voix, nouvelle langue, nouvelle audience. Livraison en 48h.",
     "hero": "Même contenu. Nouveau marché. Nouveau revenu.",
-    "heroSub": "EKHO adapte vos vidéos pour de nouveaux marchés. Même message, nouvelle langue, nouvelle audience.",
+    "heroSub": "EKHO double et adapte vos vidéos pour de nouveaux marchés. Même message, nouvelle langue, nouvelle audience.",
     "ctaDemo": "Obtenez votre démo gratuite ici",
     "ctaBefore": "Voir les avant/après",
     "demoTitle": "Entendez la différence.",
@@ -73,12 +73,12 @@
     ]
   },
   "services": {
-    "seoTitle": "Services - EKHO Studio | Comment ça marche",
-    "seoDesc": "Découvrez le processus EKHO en 3 étapes : partagez, nous adaptons, vous déployez. Simple, rapide, efficace.",
+    "seoTitle": "Doublage Audio & Adaptation Vidéo — Comment ça marche | EKHO Studio",
+    "seoDesc": "Découvrez le processus de doublage audio EKHO en 3 étapes : partagez, nous doublons et adaptons, vous déployez.",
     "heroTitle": "Comment ça marche",
-    "heroSub": "Un processus simple en 3 étapes pour transformer vos vidéos et toucher de nouveaux marchés.",
-    "diffTitle": "EKHO n'est pas un outil de traduction. C'est un studio d'adaptation.",
-    "diffSub": "Nous ne nous contentons pas de traduire des mots. Nous adaptons votre message pour qu'il résonne dans une nouvelle culture, avec la même force et la même authenticité.",
+    "heroSub": "Un processus simple en 3 étapes pour doubler et adapter vos vidéos pour de nouveaux marchés.",
+    "diffTitle": "EKHO n'est pas un outil de traduction. C'est un studio de doublage audio et d'adaptation.",
+    "diffSub": "Nous ne nous contentons pas de traduire des mots. Nous doublons et adaptons votre message pour qu'il résonne dans une nouvelle culture, avec la même force et la même authenticité.",
     "diffTagline": "Votre message intact — votre impact, décuplé.",
     "claim1": "IA pour la vitesse",
     "claim2": "Humains pour l'exigence",
@@ -205,10 +205,10 @@
     ]
   },
   "demos": {
-    "seoTitle": "Démos - EKHO Studio | Entendez la différence",
-    "seoDesc": "Découvrez des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue.",
+    "seoTitle": "Démos Doublage Audio - EKHO Studio | Entendez la différence",
+    "seoDesc": "Découvrez des exemples réels de doublage audio par EKHO. Avant/après, même voix, nouvelle langue.",
     "heroTitle": "Entendez la différence.",
-    "heroSub": "Voici des exemples réels de contenus adaptés par EKHO. Avant/après, même message, nouvelle langue.",
+    "heroSub": "Voici des exemples réels de doublage audio et d'adaptation par EKHO. Avant/après, même voix, nouvelle langue.",
     "before": "Avant",
     "after": "Après",
     "original": "Original",

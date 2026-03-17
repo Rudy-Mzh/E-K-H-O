@@ -20,10 +20,10 @@
     "call": "Call"
   },
   "home": {
-    "seoTitle": "EKHO Studio - Adapt Your Videos for New Markets",
-    "seoDesc": "EKHO adapts your videos for new markets. Same message, new language, new audience. Deploy in 48h.",
+    "seoTitle": "EKHO Studio — AI Dubbing & Video Adaptation for New Markets",
+    "seoDesc": "EKHO dubs and adapts your videos for new markets. Same voice, new language, new audience. Delivered in 48h.",
     "hero": "Same content. New market. New revenue.",
-    "heroSub": "EKHO adapts your videos for new markets. Same message, new language, new audience.",
+    "heroSub": "EKHO dubs and adapts your videos for new markets. Same message, new language, new audience.",
     "ctaDemo": "Get your free demo",
     "ctaBefore": "See before/after",
     "demoTitle": "Hear the difference.",
@@ -73,12 +73,12 @@
     ]
   },
   "services": {
-    "seoTitle": "How It Works - EKHO Studio",
-    "seoDesc": "Discover the EKHO process in 3 steps: share, we adapt, you deploy. Simple, fast, effective.",
+    "seoTitle": "AI Dubbing & Video Adaptation — How It Works | EKHO Studio",
+    "seoDesc": "Discover the EKHO dubbing process in 3 steps: share, we dub & adapt, you deploy. Simple, fast, effective.",
     "heroTitle": "How it works",
-    "heroSub": "A simple 3-step process to transform your videos and reach new markets.",
-    "diffTitle": "EKHO isn't a translation tool. It's an adaptation studio.",
-    "diffSub": "We don't just translate words. We adapt your message so it resonates in a new culture, with the same force and authenticity.",
+    "heroSub": "A simple 3-step process to dub and adapt your videos for new markets.",
+    "diffTitle": "EKHO isn't a translation tool. It's an AI dubbing & adaptation studio.",
+    "diffSub": "We don't just translate words. We dub and adapt your message so it resonates in a new culture, with the same force and authenticity.",
     "diffTagline": "Your message intact — your impact, multiplied.",
     "claim1": "AI for speed",
     "claim2": "Humans for quality",
@@ -205,10 +205,10 @@
     ]
   },
   "demos": {
-    "seoTitle": "Demos - EKHO Studio | Hear the difference",
-    "seoDesc": "Discover real examples of content adapted by EKHO. Before/after, same message, new language.",
+    "seoTitle": "AI Dubbing Demos - EKHO Studio | Hear the difference",
+    "seoDesc": "Discover real examples of dubbed and adapted content by EKHO. Before/after, same voice, new language.",
     "heroTitle": "Hear the difference.",
-    "heroSub": "Real examples of content adapted by EKHO. Before/after, same message, new language.",
+    "heroSub": "Real examples of dubbed and adapted content by EKHO. Before/after, same voice, new language.",
     "before": "Before",
     "after": "After",
     "original": "Original",
