@@ -7,6 +7,7 @@ import SEOHead from '@/components/SEOHead.jsx';
 import * as Tabs from '@radix-ui/react-tabs';
 import { Video, Megaphone, Dumbbell, Star, Mic2, BookOpen } from 'lucide-react';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
+import MultiLangPlayer from '@/components/MultiLangPlayer.jsx';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 import { demos } from '@/data/demos.js';
 
@@ -111,7 +112,9 @@ const DemosPage = () => {
                       <p className="text-gray-400 text-sm mt-2">{i18n.language === 'en' ? (demo.contextEn || demo.context) : demo.context}</p>
                     </div>
 
-                    {demo.beforeVideo ? (
+                    {demo.multilang ? (
+                      <MultiLangPlayer videos={demo.videos} langCount={demo.langCount} />
+                    ) : demo.beforeVideo ? (
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                         <div className="bg-dark-navy rounded-lg p-3">
                           <p className="text-xs font-semibold text-neon-blue mb-2 uppercase tracking-wide">

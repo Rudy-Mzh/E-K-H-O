@@ -1,5 +1,25 @@
 export const demos = [
   {
+    id: 13,
+    category: 'interview',
+    title: 'Multilangue : Légend Business — 5 langues, 5 vidéos, 0 compromis',
+    titleEn: 'Multilingual: Légend Business — 5 languages, 5 videos, 0 compromise',
+    shortTitle: 'Multilangue — Légend Business',
+    shortTitleEn: 'Multilingual — Légend Business',
+    languages: 'FR → EN · ZH · PT · IT',
+    context: "Une seule vidéo source, 5 versions lip-syncées indépendantes. Chaque langue dispose de sa propre reconstruction vidéo — synchronisation labiale recalculée, fluidité de lecture garantie. C'est ça, la distribution multilingue selon EKHO.",
+    contextEn: "One source video, 5 independent lip-synced versions. Each language has its own full video reconstruction — recalculated lip sync, guaranteed reading fluency. That's multilingual distribution, the EKHO way.",
+    multilang: true,
+    langCount: 5,
+    videos: {
+      fr: { id: '1174810990' },
+      en: { id: '1174811109' },
+      zh: { id: '1174811152' },
+      pt: { id: '1174811068' },
+      it: { id: '1174811021' },
+    },
+  },
+  {
     id: 12,
     category: 'interview',
     title: 'Interview : Yann Darwin & Alec Henry — Entrepreneuriat immobilier',
