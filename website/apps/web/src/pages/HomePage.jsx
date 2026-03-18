@@ -14,7 +14,7 @@ const AUTO_ROTATE_INTERVAL = 8000; // 8 secondes par démo
 const HomePage = () => {
   const { t, i18n } = useTranslation();
 
-  const FEATURED_DEMOS = demos.map(d => ({
+  const FEATURED_DEMOS = demos.filter(d => !d.multilang).map(d => ({
     title: i18n.language === 'en' ? (d.shortTitleEn || d.shortTitle) : d.shortTitle,
     languages: d.languages,
     desc: i18n.language === 'en' ? (d.descEn || d.desc) : d.desc,
