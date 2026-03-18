@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Player from '@vimeo/player';
 
 const LANG_META = {
   fr: { label: 'Français',  flag: '🇫🇷', short: 'FR' },
@@ -13,6 +14,65 @@ const LANG_META = {
 const MultiLangPlayer = ({ videos, langCount }) => {
   const langs = Object.keys(videos);
   const [active, setActive] = useState(langs[0]);
+  const [switching, setSwitching] = useState(false);
+  const containerRef = useRef(null);
+  const playerRef = useRef(null);
+  const pendingTimeRef = useRef(0);
+
+  // Init or reinit player when active lang changes
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    // Destroy previous player
+    if (playerRef.current) {
+      playerRef.current.destroy();
+      playerRef.current = null;
+    }
+
+    const player = new Player(containerRef.current, {
+      id: videos[active].id,
+      responsive: true,
+      title: false,
+      byline: false,
+      portrait: false,
+      badge: false,
+    });
+
+    playerRef.current = player;
+
+    // Once ready, seek to saved position and play
+    player.ready().then(() => {
+      const seekTo = pendingTimeRef.current;
+      if (seekTo > 0) {
+        return player.setCurrentTime(seekTo).then(() => player.play());
+      }
+    }).then(() => {
+      setSwitching(false);
+    }).catch(() => {
+      setSwitching(false);
+    });
+
+    return () => {
+      player.destroy().catch(() => {});
+    };
+  }, [active]);
+
+  const handleSwitch = async (lang) => {
+    if (lang === active || switching) return;
+    setSwitching(true);
+
+    // Save current time before switching
+    if (playerRef.current) {
+      try {
+        const time = await playerRef.current.getCurrentTime();
+        pendingTimeRef.current = time;
+      } catch {
+        pendingTimeRef.current = 0;
+      }
+    }
+
+    setActive(lang);
+  };
 
   const count = langCount || langs.length;
 
@@ -37,10 +97,13 @@ const MultiLangPlayer = ({ videos, langCount }) => {
           return (
             <button
               key={lang}
-              onClick={() => setActive(lang)}
+              onClick={() => handleSwitch(lang)}
+              disabled={switching}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-semibold transition-all duration-200 ${
                 isActive
                   ? 'bg-electric-purple text-white shadow-[0_0_12px_rgba(139,92,246,0.5)]'
+                  : switching
+                  ? 'bg-[#050814] text-gray-600 border border-electric-purple/20 cursor-not-allowed'
                   : 'bg-[#050814] text-gray-400 border border-electric-purple/30 hover:border-electric-purple/60 hover:text-white'
               }`}
             >
@@ -61,18 +124,11 @@ const MultiLangPlayer = ({ videos, langCount }) => {
         })()}
       </p>
 
-      {/* Vimeo embed */}
-      <div className="aspect-video w-full rounded-lg overflow-hidden bg-black">
-        <iframe
-          key={active}
-          src={`https://player.vimeo.com/video/${videos[active].id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-          referrerPolicy="strict-origin-when-cross-origin"
-          className="w-full h-full"
-          title={`Version ${active.toUpperCase()}`}
-        />
-      </div>
+      {/* Vimeo player (SDK, not iframe) */}
+      <div
+        ref={containerRef}
+        className="aspect-video w-full rounded-lg overflow-hidden bg-black"
+      />
 
     </div>
   );
