@@ -109,4 +109,17 @@ export const demos = [
     beforeVideo: { id: '1172445718' },
     afterVideo: { id: '1172445691' },
   },
+  {
+    id: 15,
+    category: "interview",
+    title: "Interview : Il Gagne 35 Millions par An - L'Incroyable Interview d'Anthony Bourbon — FR → EN",
+    titleEn: "Interview: Il Gagne 35 Millions par An - L'Incroyable Interview d'Anthony Bourbon — FR → EN",
+    shortTitle: "Interview — Il Gagne 35 Millions par An - L'Incroyable Interview d'Anthony Bourbon",
+    shortTitleEn: "Interview — Il Gagne 35 Millions par An - L'Incroyable Interview d'Anthony Bourbon",
+    languages: "FR → EN",
+    context: "Plongez dans l'interview fascinante d'Anthony Bourbon, un entrepreneur visionnaire qui génère 35 millions d'euros par an. Découvrez son parcours, ses stratégies, et ses conseils pour réussir à grande échelle. Une source d'inspiration incontournable ! 🚀💼",
+    contextEn: "",
+    beforeVideo: { id: '1175409763' },
+    afterVideo: { id: '1175409726' },
+  },
 ];
