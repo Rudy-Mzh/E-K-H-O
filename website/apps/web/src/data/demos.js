@@ -122,4 +122,17 @@ export const demos = [
     beforeVideo: { id: '1172445718' },
     afterVideo: { id: '1172445691' },
   },
+  {
+    id: 17,
+    category: "pedagogy",
+    title: "Pedagogy : Français Authentique — FR → EN",
+    titleEn: "Pedagogy: Français Authentique — FR → EN",
+    shortTitle: "Pedagogy — Français Authentique",
+    shortTitleEn: "Pedagogy — Français Authentique",
+    languages: "FR → EN",
+    context: "Français Authentique s'adresse aux gens dont le français n'est pas la langue maternelle mais qui possèdent de solides bases dans cette langue. Vous avez vécu en France, travaillé dans un pays francophone ou simplement étudié le français à l'école ? Ce site est fait pour vous. Vous aurez l'occasion ici de lire et écouter du français 100% authentique. Tous les articles sont créés par des gens dont le français est la langue maternelle.",
+    contextEn: "",
+    beforeVideo: { id: '1176980538' },
+    afterVideo: { id: '1176980489' },
+  },
 ];
