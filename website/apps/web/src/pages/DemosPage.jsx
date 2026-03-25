@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SEOHead from '@/components/SEOHead.jsx';
 import * as Tabs from '@radix-ui/react-tabs';
-import { Video, Megaphone, Dumbbell, Star, Mic2, BookOpen } from 'lucide-react';
+import { Video, Megaphone, Dumbbell, Star, Mic2, BookOpen, GraduationCap } from 'lucide-react';
 import ContactChoiceModal from '@/components/ContactChoiceModal.jsx';
 import MultiLangPlayer from '@/components/MultiLangPlayer.jsx';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
@@ -24,6 +24,7 @@ const DemosPage = () => {
     { id: 'speaker', name: t('demos.categories.speaker'), icon: <Star className="w-5 h-5" /> },
     { id: 'ad', name: t('demos.categories.ad'), icon: <Megaphone className="w-5 h-5" /> },
     { id: 'tutorial', name: t('demos.categories.tutorial'), icon: <BookOpen className="w-5 h-5" /> },
+    { id: 'pedagogy', name: t('demos.categories.pedagogy'), icon: <GraduationCap className="w-5 h-5" /> },
   ];
 
   const filteredDemos = activeTab === 'all'
