@@ -24,7 +24,7 @@ jobs:
       - name: Install Chromium for react-snap
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y chromium-browser
+          sudo apt-get install -y chromium
 
       - name: Install dependencies
         working-directory: website
@@ -37,7 +37,7 @@ jobs:
         working-directory: website/apps/web
         run: npm run build
         env:
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
 
       - name: Push dist to deploy branch
         run: |
