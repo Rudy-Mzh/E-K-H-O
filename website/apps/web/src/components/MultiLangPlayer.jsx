@@ -11,17 +11,78 @@ const LANG_META = {
   de: { label: 'Deutsch',   flag: '🇩🇪', short: 'DE' },
 };
 
+// Load YouTube IFrame API script once
+function loadYouTubeAPI() {
+  if (window.YT && window.YT.Player) return Promise.resolve();
+  return new Promise((resolve) => {
+    if (document.getElementById('yt-iframe-api')) {
+      // Script already loading — wait for callback
+      const prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => { prev?.(); resolve(); };
+      return;
+    }
+    window.onYouTubeIframeAPIReady = resolve;
+    const tag = document.createElement('script');
+    tag.id = 'yt-iframe-api';
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+  });
+}
+
 const MultiLangPlayer = ({ videos, langCount, platform = 'vimeo' }) => {
   const langs = Object.keys(videos);
   const [active, setActive] = useState(langs[0]);
   const [switching, setSwitching] = useState(false);
-  const containerRef = useRef(null);
-  const playerRef = useRef(null);
+  const containerRef = useRef(null);   // Vimeo container
+  const ytContainerRef = useRef(null); // YouTube container div
+  const playerRef = useRef(null);      // Vimeo Player instance
+  const ytPlayerRef = useRef(null);    // YT.Player instance
   const pendingTimeRef = useRef(0);
 
   const isYoutube = platform === 'youtube';
 
-  // Vimeo SDK: init or reinit player when active lang changes
+  // ── YouTube IFrame API player ──────────────────────────────────────────────
+  useEffect(() => {
+    if (!isYoutube) return;
+
+    let destroyed = false;
+
+    loadYouTubeAPI().then(() => {
+      if (destroyed || !ytContainerRef.current) return;
+
+      // Destroy previous player if any
+      if (ytPlayerRef.current) {
+        try { ytPlayerRef.current.destroy(); } catch {}
+        ytPlayerRef.current = null;
+      }
+
+      const startSeconds = Math.floor(pendingTimeRef.current);
+
+      ytPlayerRef.current = new window.YT.Player(ytContainerRef.current, {
+        videoId: videos[active].id,
+        playerVars: {
+          rel: 0,
+          modestbranding: 1,
+          start: startSeconds > 0 ? startSeconds : undefined,
+          autoplay: startSeconds > 0 ? 1 : 0,
+        },
+        events: {
+          onReady: () => { setSwitching(false); },
+          onError: () => { setSwitching(false); },
+        },
+      });
+    });
+
+    return () => {
+      destroyed = true;
+      if (ytPlayerRef.current) {
+        try { ytPlayerRef.current.destroy(); } catch {}
+        ytPlayerRef.current = null;
+      }
+    };
+  }, [active, isYoutube]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Vimeo SDK ─────────────────────────────────────────────────────────────
   useEffect(() => {
     if (isYoutube) return;
     if (!containerRef.current) return;
@@ -56,23 +117,28 @@ const MultiLangPlayer = ({ videos, langCount, platform = 'vimeo' }) => {
     return () => {
       player.destroy().catch(() => {});
     };
-  }, [active, isYoutube]);
+  }, [active, isYoutube]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // ── Language switch ───────────────────────────────────────────────────────
   const handleSwitch = async (lang) => {
     if (lang === active || switching) return;
     setSwitching(true);
 
-    if (!isYoutube && playerRef.current) {
+    if (isYoutube && ytPlayerRef.current) {
       try {
-        const time = await playerRef.current.getCurrentTime();
-        pendingTimeRef.current = time;
+        pendingTimeRef.current = ytPlayerRef.current.getCurrentTime() || 0;
+      } catch {
+        pendingTimeRef.current = 0;
+      }
+    } else if (!isYoutube && playerRef.current) {
+      try {
+        pendingTimeRef.current = await playerRef.current.getCurrentTime();
       } catch {
         pendingTimeRef.current = 0;
       }
     }
 
     setActive(lang);
-    if (isYoutube) setSwitching(false);
   };
 
   const count = langCount || langs.length;
@@ -125,18 +191,10 @@ const MultiLangPlayer = ({ videos, langCount, platform = 'vimeo' }) => {
         })()}
       </p>
 
-      {/* Player : Vimeo SDK ou YouTube iframe selon platform */}
+      {/* Player */}
       {isYoutube ? (
         <div className="aspect-video w-full rounded-lg overflow-hidden bg-black">
-          <iframe
-            key={active}
-            src={`https://www.youtube.com/embed/${videos[active].id}?rel=0&modestbranding=1`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            referrerPolicy="strict-origin-when-cross-origin"
-            className="w-full h-full"
-            title={`EKHO — ${active.toUpperCase()}`}
-          />
+          <div ref={ytContainerRef} className="w-full h-full" />
         </div>
       ) : (
         <div
