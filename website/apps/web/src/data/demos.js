@@ -1,5 +1,26 @@
 export const demos = [
   {
+    id: 18,
+    category: 'pedagogy',
+    title: 'Multilangue : Balade Mentale — 5 langues, 5 vidéos, 0 compromis',
+    titleEn: 'Multilingual: Balade Mentale — 5 languages, 5 videos, 0 compromise',
+    shortTitle: 'Multilangue — Balade Mentale',
+    shortTitleEn: 'Multilingual — Balade Mentale',
+    languages: 'FR → EN · ES · DE · ZH',
+    context: "Balade Mentale explique des concepts complexes avec une clarté rare. EKHO a reconstruit 5 versions indépendantes — lip-sync recalculé, voix préservée, énergie intacte. Le même contenu, accessible à 4 milliards de personnes supplémentaires.",
+    contextEn: "Balade Mentale breaks down complex concepts with rare clarity. EKHO rebuilt 5 independent versions — recalculated lip sync, preserved voice, energy intact. The same content, now accessible to 4 billion more people.",
+    multilang: true,
+    langCount: 5,
+    platform: 'youtube',
+    videos: {
+      fr: { id: 'Htq0a_9kEBA' },
+      en: { id: 'JTy_4wR60pM' },
+      es: { id: '7Mfrdx9j4vw' },
+      de: { id: 'r64lZIrQIhs' },
+      zh: { id: 'vyYntx4DnF8' },
+    },
+  },
+  {
     id: 13,
     category: 'interview',
     title: 'Multilangue : Légend Business — 5 langues, 5 vidéos, 0 compromis',
