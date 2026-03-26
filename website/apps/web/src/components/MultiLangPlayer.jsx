@@ -29,7 +29,7 @@ function loadYouTubeAPI() {
   });
 }
 
-const MultiLangPlayer = ({ videos, langCount, platform = 'vimeo' }) => {
+const MultiLangPlayer = ({ videos, langCount, platform = 'vimeo', pitch }) => {
   const langs = Object.keys(videos);
   const [active, setActive] = useState(langs[0]);
   const [switching, setSwitching] = useState(false);
@@ -149,11 +149,15 @@ const MultiLangPlayer = ({ videos, langCount, platform = 'vimeo' }) => {
       {/* Pitch badge */}
       <div className="flex items-start gap-3 bg-electric-purple/10 border border-electric-purple/30 rounded-lg px-4 py-3 mb-4">
         <span className="text-electric-purple text-lg mt-0.5">⚡</span>
-        <p className="text-sm text-gray-300 leading-snug">
-          <span className="text-white font-semibold">{count} vidéos indépendantes</span>
-          {' '}— une par langue, synchronisation labiale recalculée pour chacune.{' '}
-          <span className="text-electric-purple">Pas du doublage audio : chaque version est une reconstruction complète.</span>
-        </p>
+        {pitch ? (
+          <p className="text-sm text-gray-300 leading-snug">{pitch}</p>
+        ) : (
+          <p className="text-sm text-gray-300 leading-snug">
+            <span className="text-white font-semibold">{count} vidéos indépendantes</span>
+            {' '}— une par langue, synchronisation labiale recalculée pour chacune.{' '}
+            <span className="text-electric-purple">Pas du doublage audio : chaque version est une reconstruction complète.</span>
+          </p>
+        )}
       </div>
 
       {/* Language selector */}

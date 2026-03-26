@@ -32,6 +32,8 @@ export const demos = [
     contextEn: "One source video, 5 independent lip-synced versions. Each language has its own full video reconstruction — recalculated lip sync, guaranteed reading fluency. That's multilingual distribution, the EKHO way.",
     multilang: true,
     langCount: 5,
+    pitch: "Doublage sans retouche labiale. On a recalibré la courbe temporelle du texte pour qu'elle épouse chaque prise de parole — sans toucher à l'image. Le flux naturel reste intact. Convaincant ? C'est le but.",
+    pitchEn: "Dubbing without lip-sync. We recalibrated the text timing to match every speech moment — without touching the image. The natural flow stays intact. Convincing? That's the point.",
     videos: {
       fr: { id: '1174810990' },
       en: { id: '1174811109' },

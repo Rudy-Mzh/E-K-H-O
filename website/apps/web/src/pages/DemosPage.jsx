@@ -131,7 +131,7 @@ const DemosPage = () => {
                     </div>
 
                     {demo.multilang ? (
-                      <MultiLangPlayer videos={demo.videos} langCount={demo.langCount} platform={demo.platform || 'vimeo'} />
+                      <MultiLangPlayer videos={demo.videos} langCount={demo.langCount} platform={demo.platform || 'vimeo'} pitch={i18n.language === 'fr' ? demo.pitch : (demo.pitchEn || demo.pitch)} />
                     ) : demo.beforeVideo ? (
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                         <div className="bg-dark-navy rounded-lg p-3">
