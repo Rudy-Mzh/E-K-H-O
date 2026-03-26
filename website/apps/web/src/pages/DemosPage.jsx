@@ -11,6 +11,23 @@ import MultiLangPlayer from '@/components/MultiLangPlayer.jsx';
 import DemoTunnelModal from '@/components/DemoTunnelModal.jsx';
 import { demos } from '@/data/demos.js';
 
+const videoSrc = (videoObj, demoPlatform) => {
+  if (!videoObj?.id) return null;
+  const platform = videoObj.platform || demoPlatform || 'vimeo';
+  if (platform === 'youtube') {
+    return `https://www.youtube.com/embed/${videoObj.id}?rel=0&modestbranding=1`;
+  }
+  return `https://player.vimeo.com/video/${videoObj.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`;
+};
+
+const videoAllow = (videoObj, demoPlatform) => {
+  const platform = videoObj?.platform || demoPlatform || 'vimeo';
+  if (platform === 'youtube') {
+    return 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  }
+  return 'autoplay; fullscreen; picture-in-picture; clipboard-write';
+};
+
 const DemosPage = () => {
   const { t, i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState('all');
@@ -114,7 +131,7 @@ const DemosPage = () => {
                     </div>
 
                     {demo.multilang ? (
-                      <MultiLangPlayer videos={demo.videos} langCount={demo.langCount} />
+                      <MultiLangPlayer videos={demo.videos} langCount={demo.langCount} platform={demo.platform || 'vimeo'} />
                     ) : demo.beforeVideo ? (
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                         <div className="bg-dark-navy rounded-lg p-3">
@@ -123,9 +140,9 @@ const DemosPage = () => {
                           </p>
                           <div className="aspect-video w-full rounded overflow-hidden">
                             <iframe
-                              src={`https://player.vimeo.com/video/${demo.beforeVideo.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
+                              src={videoSrc(demo.beforeVideo, demo.platform)}
                               frameBorder="0"
-                              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                              allow={videoAllow(demo.beforeVideo, demo.platform)}
                               referrerPolicy="strict-origin-when-cross-origin"
                               className="w-full h-full"
                               title="Version originale"
@@ -138,9 +155,9 @@ const DemosPage = () => {
                           </p>
                           <div className="aspect-video w-full rounded overflow-hidden">
                             <iframe
-                              src={`https://player.vimeo.com/video/${demo.afterVideo.id}?title=0&byline=0&portrait=0&badge=0&autopause=0`}
+                              src={videoSrc(demo.afterVideo, demo.platform)}
                               frameBorder="0"
-                              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                              allow={videoAllow(demo.afterVideo, demo.platform)}
                               referrerPolicy="strict-origin-when-cross-origin"
                               className="w-full h-full"
                               title="Version adaptée EKHO"

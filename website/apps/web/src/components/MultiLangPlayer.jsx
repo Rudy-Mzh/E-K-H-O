@@ -11,7 +11,7 @@ const LANG_META = {
   de: { label: 'Deutsch',   flag: '🇩🇪', short: 'DE' },
 };
 
-const MultiLangPlayer = ({ videos, langCount }) => {
+const MultiLangPlayer = ({ videos, langCount, platform = 'vimeo' }) => {
   const langs = Object.keys(videos);
   const [active, setActive] = useState(langs[0]);
   const [switching, setSwitching] = useState(false);
@@ -19,11 +19,13 @@ const MultiLangPlayer = ({ videos, langCount }) => {
   const playerRef = useRef(null);
   const pendingTimeRef = useRef(0);
 
-  // Init or reinit player when active lang changes
+  const isYoutube = platform === 'youtube';
+
+  // Vimeo SDK: init or reinit player when active lang changes
   useEffect(() => {
+    if (isYoutube) return;
     if (!containerRef.current) return;
 
-    // Destroy previous player
     if (playerRef.current) {
       playerRef.current.destroy();
       playerRef.current = null;
@@ -40,7 +42,6 @@ const MultiLangPlayer = ({ videos, langCount }) => {
 
     playerRef.current = player;
 
-    // Once ready, seek to saved position and play
     player.ready().then(() => {
       const seekTo = pendingTimeRef.current;
       if (seekTo > 0) {
@@ -55,14 +56,13 @@ const MultiLangPlayer = ({ videos, langCount }) => {
     return () => {
       player.destroy().catch(() => {});
     };
-  }, [active]);
+  }, [active, isYoutube]);
 
   const handleSwitch = async (lang) => {
     if (lang === active || switching) return;
     setSwitching(true);
 
-    // Save current time before switching
-    if (playerRef.current) {
+    if (!isYoutube && playerRef.current) {
       try {
         const time = await playerRef.current.getCurrentTime();
         pendingTimeRef.current = time;
@@ -72,6 +72,7 @@ const MultiLangPlayer = ({ videos, langCount }) => {
     }
 
     setActive(lang);
+    if (isYoutube) setSwitching(false);
   };
 
   const count = langCount || langs.length;
@@ -124,11 +125,25 @@ const MultiLangPlayer = ({ videos, langCount }) => {
         })()}
       </p>
 
-      {/* Vimeo player (SDK, not iframe) */}
-      <div
-        ref={containerRef}
-        className="aspect-video w-full rounded-lg overflow-hidden bg-black"
-      />
+      {/* Player : Vimeo SDK ou YouTube iframe selon platform */}
+      {isYoutube ? (
+        <div className="aspect-video w-full rounded-lg overflow-hidden bg-black">
+          <iframe
+            key={active}
+            src={`https://www.youtube.com/embed/${videos[active].id}?rel=0&modestbranding=1`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerPolicy="strict-origin-when-cross-origin"
+            className="w-full h-full"
+            title={`EKHO — ${active.toUpperCase()}`}
+          />
+        </div>
+      ) : (
+        <div
+          ref={containerRef}
+          className="aspect-video w-full rounded-lg overflow-hidden bg-black"
+        />
+      )}
 
     </div>
   );
