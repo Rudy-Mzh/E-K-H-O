@@ -3,7 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import SEOHead, { articleSchema } from '@/components/SEOHead.jsx';
 import { motion } from 'framer-motion';
 import { Clock, ArrowLeft, ArrowRight } from 'lucide-react';
-import { articles } from '@/data/articles.js';
+import { allArticles as articles } from '@/data/articles.js';
 
 const ArticlePage = () => {
   const { slug } = useParams();

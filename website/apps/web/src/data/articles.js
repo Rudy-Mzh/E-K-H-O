@@ -1,4 +1,6 @@
 
+import { articlesH2 } from './articles-h2-2026.js';
+
 export const articles = [
   {
     id: 1,
@@ -1432,9 +1434,11 @@ export const articles = [
   }
 ];
 
+export const allArticles = [...articles, ...articlesH2];
+
 // Retourne uniquement les articles publiés (pour la mise en production)
 export const getPublishedArticles = () => {
   const today = new Date();
   today.setHours(23, 59, 59, 999);
-  return articles.filter(a => new Date(a.publishDate) <= today);
+  return allArticles.filter(a => new Date(a.publishDate) <= today);
 };

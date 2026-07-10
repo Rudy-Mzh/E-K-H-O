@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight, ArrowUpRight } from 'lucide-react';
 import SEOHead from '@/components/SEOHead.jsx';
-import { articles } from '@/data/articles.js';
+import { allArticles as articles } from '@/data/articles.js';
 
 // ── Category color map ────────────────────────────────────────────────────────
 const catColor = {
