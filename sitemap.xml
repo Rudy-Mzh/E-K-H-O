@@ -7,43 +7,43 @@
     <loc>https://ekho-studio.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/demos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/pricing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/mag</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/mag/tu-perds-80-pourcent-de-tes-revenus-potentiels</loc>
@@ -74,6 +74,118 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/arbitrage-geographique-une-video-dix-marches"/>
   </url>
   <url>
+    <loc>https://ekho-studio.com/mag/tu-parles-a-300-millions-ou-68-millions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/tu-parles-a-300-millions-ou-68-millions"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/la-checklist-avant-de-lancer-tes-videos-sur-un-nouveau-marche</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/la-checklist-avant-de-lancer-tes-videos-sur-un-nouveau-marche"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/marque-personnelle-audience-globale-sans-parler-anglais</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/marque-personnelle-audience-globale-sans-parler-anglais"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/l-avenir-du-contenu-est-multilingue</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/l-avenir-du-contenu-est-multilingue"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/ecommerce-tes-videos-produit-ne-vendent-pas-a-l-etranger</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/ecommerce-tes-videos-produit-ne-vendent-pas-a-l-etranger"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/formations-en-ligne-toucher-un-public-international</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/formations-en-ligne-toucher-un-public-international"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/video-publicitaire-pourquoi-ton-ad-ne-convertit-pas-hors-france</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/video-publicitaire-pourquoi-ton-ad-ne-convertit-pas-hors-france"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/podcast-video-toucher-5-marches-un-seul-enregistrement</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/podcast-video-toucher-5-marches-un-seul-enregistrement"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/canada-francophone-le-marche-que-tout-le-monde-ignore</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/canada-francophone-le-marche-que-tout-le-monde-ignore"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/les-5-erreurs-qui-tuent-une-adaptation-video</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/les-5-erreurs-qui-tuent-une-adaptation-video"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/la-voix-premier-critere-de-confiance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/la-voix-premier-critere-de-confiance"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/3-signes-que-tu-es-pret-a-internationaliser</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/3-signes-que-tu-es-pret-a-internationaliser"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/comment-vendre-a-l-etranger-sans-retourner-ses-videos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/comment-vendre-a-l-etranger-sans-retourner-ses-videos"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/les-barrieres-invisibles-qui-bloquent-tes-videos-a-l-international</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/les-barrieres-invisibles-qui-bloquent-tes-videos-a-l-international"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/ce-que-tu-sacrifies-en-ne-localisant-pas-ton-contenu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/ce-que-tu-sacrifies-en-ne-localisant-pas-ton-contenu"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/pourquoi-ton-contenu-ne-performe-pas-a-l-international</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/pourquoi-ton-contenu-ne-performe-pas-a-l-international"/>
+  </url>
+  <url>
     <loc>https://ekho-studio.com/mag/your-content-is-trapped-in-one-language</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -100,6 +212,188 @@
     <priority>0.7</priority>
     <lastmod>2026-03-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/youtube-algorithm-multilingual-secret"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/how-course-creators-multiply-revenue-without-more-content</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/how-course-creators-multiply-revenue-without-more-content"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/podcast-playbook-going-global</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/podcast-playbook-going-global"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/3-signs-your-content-is-ready-to-go-international</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/3-signs-your-content-is-ready-to-go-international"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/ecommerce-brand-doubled-sales-speaking-french</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/ecommerce-brand-doubled-sales-speaking-french"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/before-you-rebuild-repurpose</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/before-you-rebuild-repurpose"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/from-local-expert-to-global-voice</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/from-local-expert-to-global-voice"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/tiktok-distribution-sans-frontieres</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/tiktok-distribution-sans-frontieres"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/marche-contenu-sous-exploite-etats-unis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/marche-contenu-sous-exploite-etats-unis"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/netflix-strategie-production-signal-industrie</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/netflix-strategie-production-signal-industrie"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/b2b-langue-decideur-variable-closing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/b2b-langue-decideur-variable-closing"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/plafond-structurel-createurs-500k</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/plafond-structurel-createurs-500k"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/cpm-anglais-asymetrie-marche-publicitaire</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/cpm-anglais-asymetrie-marche-publicitaire"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/anatomie-createur-10m-abonnes-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/anatomie-createur-10m-abonnes-2026"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/francophonie-africaine-2050-marche-contenu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/francophonie-africaine-2050-marche-contenu"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/democratisation-outils-creation-prochaine-couche-valeur</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/democratisation-outils-creation-prochaine-couche-valeur"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/youtube-doublage-automatique-signal-plateformes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/youtube-doublage-automatique-signal-plateformes"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/creator-economy-production-vs-distribution-gap</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/creator-economy-production-vs-distribution-gap"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/european-creators-us-market-data-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/european-creators-us-market-data-2026"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/voice-as-ip-most-valuable-creator-asset</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-04-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/voice-as-ip-most-valuable-creator-asset"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/enterprise-video-native-language-deal-cycles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/enterprise-video-native-language-deal-cycles"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/us-hispanic-market-content-gap-1800-billion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/us-hispanic-market-content-gap-1800-billion"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/why-good-content-fails-international-expansion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/why-good-content-fails-international-expansion"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/cpm-gap-english-8x-french-content-economics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/cpm-gap-english-8x-french-content-economics"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/content-as-asset-class-not-cost-center</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/content-as-asset-class-not-cost-center"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/international-content-model-distributed-not-local</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/international-content-model-distributed-not-local"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/language-geographic-constraint-to-editorial-choice</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/language-geographic-constraint-to-editorial-choice"/>
   </url>
   <url>
     <loc>https://ekho-studio.com/mag/canva-26-milliards-marche-non-designers</loc>
@@ -130,6 +424,13 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/descript-edition-video-texte-question-personne-posait"/>
   </url>
   <url>
+    <loc>https://ekho-studio.com/mag/loom-975-millions-communication-asynchrone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/loom-975-millions-communication-asynchrone"/>
+  </url>
+  <url>
     <loc>https://ekho-studio.com/mag/canva-26-billion-market-non-designers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -156,5 +457,12 @@
     <priority>0.7</priority>
     <lastmod>2026-03-26</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/descript-video-editing-text-paradigm"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/loom-975-million-async-communication</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/loom-975-million-async-communication"/>
   </url>
 </urlset>
