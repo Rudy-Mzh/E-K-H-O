@@ -1,6 +1,6 @@
 
 import React from 'react';
-import SEOHead from '@/components/SEOHead.jsx';
+import SEOHead, { organizationSchema } from '@/components/SEOHead.jsx';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Upload, Sparkles, Rocket } from 'lucide-react';
@@ -55,6 +55,17 @@ const ServicesPage = () => {
         description={t('services.seoDesc')}
         canonical="/services"
         lang={i18n.language}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Adaptation vidéo multilingue',
+          description: 'EKHO Studio adapte vos vidéos en plusieurs langues en préservant voix, ton et énergie : doublage IA, sous-titres, adaptation culturelle.',
+          url: 'https://ekho-studio.com/services',
+          provider: organizationSchema,
+          serviceType: 'Video Localization',
+          areaServed: ['FR', 'US', 'GB', 'BE', 'CH', 'CA', 'ES', 'DE'],
+          availableLanguage: ['French', 'English', 'Spanish', 'German', 'Portuguese', 'Chinese'],
+        }}
       />
 
       {/* Hero with video background */}

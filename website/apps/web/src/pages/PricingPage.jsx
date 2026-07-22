@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import SEOHead from '@/components/SEOHead.jsx';
+import SEOHead, { organizationSchema } from '@/components/SEOHead.jsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Check, X, Calendar, CreditCard, Lock, Wallet } from 'lucide-react';
@@ -177,6 +177,39 @@ const PricingPage = () => {
         description={t('pricing.seoDesc')}
         canonical="/pricing"
         lang={i18n.language}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Adaptation vidéo multilingue — EKHO Studio',
+          url: 'https://ekho-studio.com/pricing',
+          provider: organizationSchema,
+          areaServed: ['FR', 'US', 'GB', 'BE', 'CH', 'CA', 'ES', 'DE'],
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Plans EKHO Studio',
+            itemListElement: [
+              {
+                '@type': 'Offer',
+                name: 'Starter',
+                description: '1 vidéo adaptée dans 1 langue',
+                priceCurrency: 'EUR',
+                eligibleCustomerType: 'https://schema.org/EndUserType',
+              },
+              {
+                '@type': 'Offer',
+                name: 'Pro',
+                description: "Jusqu'à 4 vidéos par mois dans 2 langues",
+                priceCurrency: 'EUR',
+              },
+              {
+                '@type': 'Offer',
+                name: 'Studio',
+                description: 'Volume illimité, équipe dédiée',
+                priceCurrency: 'EUR',
+              },
+            ],
+          },
+        }}
       />
 
       {/* Hero with video background */}

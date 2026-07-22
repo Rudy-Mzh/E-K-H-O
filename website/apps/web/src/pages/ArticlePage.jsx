@@ -16,6 +16,22 @@ const ArticlePage = () => {
   const next = articles[currentIndex + 1] || null;
   const related = articles.filter(a => a.category === article.category && a.id !== article.id).slice(0, 3);
 
+  // Hreflang pairing : article FR ↔ EN du même jour
+  const pairArticle = articles.find(a =>
+    a.publishDate === article.publishDate &&
+    (a.lang || 'fr') !== (article.lang || 'fr')
+  );
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'EKHO Studio', item: 'https://ekho-studio.com' },
+      { '@type': 'ListItem', position: 2, name: article.lang === 'en' ? 'The Mag' : 'Le Mag', item: 'https://ekho-studio.com/mag' },
+      { '@type': 'ListItem', position: 3, name: article.title, item: `https://ekho-studio.com/mag/${article.slug}` },
+    ],
+  };
+
   return (
     <>
       <SEOHead
@@ -25,7 +41,8 @@ const ArticlePage = () => {
         ogImage={article.coverImage}
         lang={article.lang === 'en' ? 'en' : 'fr'}
         article={article}
-        jsonLd={articleSchema(article)}
+        articlePairSlug={pairArticle?.slug || null}
+        jsonLd={[articleSchema(article, pairArticle?.slug), breadcrumbSchema]}
       />
 
       <div className="bg-[#080808] min-h-screen">

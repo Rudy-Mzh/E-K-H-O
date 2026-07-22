@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import SEOHead from '@/components/SEOHead.jsx';
+import SEOHead, { organizationSchema } from '@/components/SEOHead.jsx';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Mail, Phone, Calendar, Loader2, MessageCircle, Copy, Check } from 'lucide-react';
@@ -70,6 +70,18 @@ const ContactPage = () => {
         description={t('contact.seoDesc')}
         canonical="/contact"
         lang={i18n.language}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: 'EKHO Studio',
+          url: 'https://ekho-studio.com',
+          email: 'rudy.m@ekho-studio.com',
+          description: 'Studio de localisation vidéo multilingue. Adaptation voix, doublage IA, sous-titres pour créateurs et entreprises.',
+          founder: organizationSchema.founder,
+          contactPoint: organizationSchema.contactPoint,
+          areaServed: organizationSchema.areaServed,
+          sameAs: organizationSchema.sameAs,
+        }}
       />
 
       {/* Hero with video background */}

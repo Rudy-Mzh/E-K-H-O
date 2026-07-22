@@ -15,9 +15,9 @@ const today = new Date();
 today.setHours(23, 59, 59, 999);
 
 // ── Load articles ──────────────────────────────────────────────────────────
-const { articles } = await import('../website/apps/web/src/data/articles.js');
+const { allArticles } = await import('../website/apps/web/src/data/articles.js');
 
-const published = articles.filter(a => new Date(a.publishDate) <= today);
+const published = allArticles.filter(a => new Date(a.publishDate) <= today);
 
 // ── Static pages ───────────────────────────────────────────────────────────
 const staticPages = [
