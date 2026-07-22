@@ -7,43 +7,43 @@
     <loc>https://ekho-studio.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/demos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/pricing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/mag</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
   </url>
   <url>
     <loc>https://ekho-studio.com/mag/tu-perds-80-pourcent-de-tes-revenus-potentiels</loc>
@@ -464,5 +464,89 @@
     <priority>0.7</priority>
     <lastmod>2026-03-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/loom-975-million-async-communication"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/comment-adapter-video-anglais-sans-studio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/comment-adapter-video-anglais-sans-studio"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/creator-economy-phase-distribution</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/creator-economy-phase-distribution"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/traduction-video-ia-bilan-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/traduction-video-ia-bilan-2026"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/ce-que-algorithmes-ne-font-pas-pour-toi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/ce-que-algorithmes-ne-font-pas-pour-toi"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/vendre-formation-en-ligne-international</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/vendre-formation-en-ligne-international"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/paradoxe-contenu-parfait-que-personne-ne-voit</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ekho-studio.com/mag/paradoxe-contenu-parfait-que-personne-ne-voit"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/how-to-adapt-video-english-without-studio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/how-to-adapt-video-english-without-studio"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/creator-economy-enters-distribution-phase</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/creator-economy-enters-distribution-phase"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/ai-video-translation-what-works-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/ai-video-translation-what-works-2026"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/what-algorithms-will-never-do-for-you</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/what-algorithms-will-never-do-for-you"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/selling-online-course-internationally-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/selling-online-course-internationally-guide"/>
+  </url>
+  <url>
+    <loc>https://ekho-studio.com/mag/paradox-perfect-content-nobody-sees</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://ekho-studio.com/mag/paradox-perfect-content-nobody-sees"/>
   </url>
 </urlset>
